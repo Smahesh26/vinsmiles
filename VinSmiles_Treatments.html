@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treatments | VinSmiles Advanced Dentistry — Greater Kailash II, New Delhi</title>
+<meta name="description" content="15 specialist dental treatments — implants, veneers, Invisalign, laser dentistry, full mouth rehabilitation. Every procedure by a dedicated specialist, under one roof in GK-II.">
+<link rel="canonical" href="https://www.vinsmiles.com/treatments">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════════════════════
+   TOKENS
+════════════════════════════ */
+:root {
+  --brand:       #904588;
+  --brand-mid:   #A855A0;
+  --brand-light: #F3EBF2;
+  --brand-xlt:   #FAF5FA;
+  --brand-dark:  #64305F;
+  --gold:        #C9A96E;
+  --gold-light:  #F7F0E4;
+  --gold-dark:   #8B6B3D;
+  --ink:         #0F0E0F;
+  --ink-80:      #2A2A2A;
+  --ink-60:      #555;
+  --ink-40:      #888;
+  --ink-20:      #C2C2C2;
+  --rule:        #E8E2E8;
+  --surface:     #FFFFFF;
+  --surface-2:   #FAFAFA;
+  --surface-3:   #F5F0F5;
+  --font-d: 'Cormorant Garamond', Georgia, serif;
+  --font-b: 'DM Sans', system-ui, sans-serif;
+  --ease:   cubic-bezier(0.16,1,0.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:var(--surface);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:var(--font-b);border:none;background:none;}
+img{display:block;max-width:100%;}
+
+/* ════════════════════════════
+   NAV — exact About v2 copy
+════════════════════════════ */
+.nav {
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:68px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 var(--rule);
+  transition:background .4s var(--ease),box-shadow .4s;
+}
+.nav.scrolled {
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 var(--rule);
+}
+.nav-logo{display:flex;flex-direction:column;gap:1px;}
+.nav-logo-mark{
+  font-family:var(--font-d);font-size:23px;font-weight:400;
+  color:var(--ink);line-height:1;letter-spacing:.3px;transition:color .4s;
+}
+.nav.scrolled .nav-logo-mark{color:var(--ink);}
+.nav-logo-mark span{color:var(--gold);}
+.nav-logo-sub{
+  font-size:9px;font-weight:400;letter-spacing:3px;
+  text-transform:uppercase;color:var(--ink-40);transition:color .4s;
+}
+.nav.scrolled .nav-logo-sub{color:var(--ink-40);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{
+  font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--ink-60);transition:color .2s;position:relative;padding-bottom:3px;
+}
+.nav.scrolled .nav-links a{color:var(--ink-60);}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;right:100%;
+  height:1px;background:var(--brand);transition:right .3s var(--ease);
+}
+.nav-links a:hover::after,.nav-links a.active::after{right:0;}
+.nav-links a:hover,.nav-links a.active{color:var(--brand)!important;}
+.nav-cta{
+  background:var(--brand);color:#fff;padding:10px 24px;
+  font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;
+  border-radius:2px;transition:background .2s,transform .15s,box-shadow .2s;
+}
+.nav-cta:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(144,69,136,.3);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--brand);border-radius:2px;}
+.mobile-menu{
+  display:none;position:fixed;inset:0;z-index:190;
+  background:rgba(255,255,255,.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;
+  gap:32px;padding-top:68px;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:22px;font-family:var(--font-d);font-weight:300;color:var(--ink);letter-spacing:1px;}
+.mobile-menu a:hover{color:var(--brand);}
+.mobile-menu .m-cta{background:var(--brand);color:#fff;padding:14px 40px;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;}
+
+/* ════════════════════════════
+   BUTTONS — exact About v2
+════════════════════════════ */
+.btn-brand{
+  background:var(--brand);color:#fff;padding:14px 32px;
+  font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;
+  border-radius:2px;display:inline-flex;align-items:center;gap:10px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+}
+.btn-brand:hover{background:var(--brand-dark);transform:translateY(-2px);box-shadow:0 10px 28px rgba(144,69,136,.28);}
+.btn-outline-brand{
+  background:transparent;color:var(--brand);border:1.5px solid var(--brand);
+  padding:13px 30px;font-size:11px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;border-radius:2px;display:inline-flex;align-items:center;gap:10px;
+  transition:background .2s,color .2s;
+}
+.btn-outline-brand:hover{background:var(--brand);color:#fff;}
+.btn-white{
+  background:#fff;color:var(--brand);padding:14px 30px;
+  font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;
+  border-radius:2px;display:inline-flex;align-items:center;gap:10px;
+  transition:background .2s,transform .15s;
+}
+.btn-white:hover{background:var(--brand-xlt);transform:translateY(-2px);}
+
+/* ════════════════════════════
+   REVEAL UTILITY
+════════════════════════════ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.reveal-l.in{opacity:1;transform:translateX(0);}
+.reveal-r{opacity:0;transform:translateX(28px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.reveal-r.in{opacity:1;transform:translateX(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+/* ════════════════════════════
+   HERO — white editorial split
+   Left: large type + category list
+   Right: interactive anatomy diagram
+════════════════════════════ */
+.tx-hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  padding-top:68px;position:relative;overflow:visible;
+  background:var(--surface);
+}
+/* Left panel */
+.tx-hero-left{
+  padding:80px 64px 80px 52px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--rule);position:relative;
+}
+/* Subtle dot grid */
+.tx-hero-left::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(144,69,136,.06) 1px,transparent 1px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(to right,transparent,rgba(0,0,0,.5) 40%,rgba(0,0,0,.5));
+  pointer-events:none;
+}
+.tx-hero-breadcrumb{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:40px;
+  font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);
+  position:relative;z-index:1;
+  opacity:0;animation:floatIn .6s var(--ease) .1s both;
+}
+.tx-hero-breadcrumb a{color:var(--ink-40);transition:color .2s;}
+.tx-hero-breadcrumb a:hover{color:var(--brand);}
+.tx-hero-breadcrumb-sep{color:var(--ink-20);}
+.tx-hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--brand-xlt);border:1px solid rgba(144,69,136,.2);
+  padding:6px 16px;border-radius:100px;margin-bottom:24px;
+  font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--brand);
+  position:relative;z-index:1;
+  opacity:0;animation:floatIn .7s var(--ease) .2s both;
+}
+.tx-hero-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--brand);}
+.tx-hero-h1{
+  font-family:var(--font-d);
+  font-size:clamp(52px,5.5vw,80px);
+  font-weight:300;line-height:1.05;color:var(--ink);
+  margin-bottom:24px;position:relative;z-index:1;
+  opacity:0;animation:floatIn .8s var(--ease) .35s both;
+}
+.tx-hero-h1 em{font-style:italic;color:var(--brand);display:block;}
+.tx-hero-p{
+  font-size:15px;font-weight:300;color:var(--ink-60);line-height:1.85;
+  max-width:420px;margin-bottom:44px;position:relative;z-index:1;
+  opacity:0;animation:floatIn .8s var(--ease) .5s both;
+}
+/* Category quick-list */
+.tx-cat-list{
+  display:flex;flex-direction:column;gap:0;
+  border-top:1px solid var(--rule);
+  position:relative;z-index:1;
+  opacity:0;animation:floatIn .8s var(--ease) .65s both;
+}
+.tx-cat-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 0;border-bottom:1px solid var(--rule);
+  cursor:pointer;transition:padding-left .25s var(--ease);
+}
+.tx-cat-item:hover{padding-left:8px;}
+.tx-cat-item-left{display:flex;align-items:center;gap:14px;}
+.tx-cat-num{font-family:var(--font-d);font-size:12px;font-weight:300;color:var(--ink-20);min-width:24px;transition:color .2s;}
+.tx-cat-item:hover .tx-cat-num{color:var(--brand);}
+.tx-cat-name{font-size:13px;font-weight:500;color:var(--ink-80);transition:color .2s;}
+.tx-cat-item:hover .tx-cat-name{color:var(--brand);}
+.tx-cat-count{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-20);transition:color .2s;}
+.tx-cat-item:hover .tx-cat-count{color:var(--brand);}
+.tx-cat-arrow{font-size:16px;color:var(--ink-20);transition:color .2s,transform .25s var(--ease);}
+.tx-cat-item:hover .tx-cat-arrow{color:var(--brand);transform:translateX(4px);}
+
+/* Right panel — anatomy diagram */
+.tx-hero-right{
+  background:var(--surface-3);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:80px 60px;position:relative;overflow:hidden;
+}
+.tx-hero-right-label{
+  position:absolute;top:100px;left:0;right:0;
+  text-align:center;font-size:9px;font-weight:500;letter-spacing:3px;
+  text-transform:uppercase;color:var(--ink-40);
+  opacity:0;animation:floatIn .8s ease .9s both;
+}
+/* Large circular anatomy visual */
+.tx-anatomy-wrap{
+  position:relative;width:min(440px,80%);aspect-ratio:1;
+  opacity:0;animation:floatIn 1s var(--ease) .7s both;
+}
+.tx-anatomy-wrap svg{width:100%;height:100%;overflow:visible;}
+/* Floating treatment labels around the circle */
+.tx-anat-label{
+  position:absolute;display:flex;align-items:center;gap:8px;
+  white-space:nowrap;cursor:pointer;
+  transition:opacity .25s;
+}
+.tx-anat-label:hover{opacity:.7;}
+.tx-anat-label-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--brand);flex-shrink:0;
+  box-shadow:0 0 0 3px rgba(144,69,136,.15);
+  transition:box-shadow .25s,background .25s;
+}
+.tx-anat-label:hover .tx-anat-label-dot{box-shadow:0 0 0 6px rgba(144,69,136,.2);}
+.tx-anat-label-text{font-size:11px;font-weight:500;color:var(--ink-60);letter-spacing:.5px;}
+/* Position each label */
+.tal-1{top:6%;left:50%;transform:translateX(-50%);}
+.tal-2{top:22%;right:2%;}
+.tal-3{top:45%;right:2%;}
+.tal-4{bottom:22%;right:2%;}
+.tal-5{bottom:6%;left:50%;transform:translateX(-50%);}
+.tal-6{bottom:22%;left:0%;}
+.tal-7{top:45%;left:2%;}
+.tal-8{top:22%;left:0%;}
+
+/* ════════════════════════════
+   IMMERSIVE TREATMENT SELECTOR
+   Left: numbered list  |  Right: full visual panel
+════════════════════════════ */
+.tx-selector{
+  min-height:100vh;display:grid;grid-template-columns:420px 1fr;
+  position:relative;
+  background:var(--surface);
+  border-top:1px solid var(--rule);
+}
+/* Sticky left list */
+.tx-list-col{
+  border-right:1px solid var(--rule);
+  display:flex;flex-direction:column;
+  position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--rule) transparent;
+}
+.tx-list-col::-webkit-scrollbar{width:3px;}
+.tx-list-col::-webkit-scrollbar-track{background:transparent;}
+.tx-list-col::-webkit-scrollbar-thumb{background:var(--rule);border-radius:2px;}
+.tx-list-header{
+  padding:36px 36px 24px;border-bottom:1px solid var(--rule);flex-shrink:0;
+}
+.tx-list-header-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:8px;
+}
+.tx-list-header-bar{width:24px;height:1.5px;background:var(--brand);}
+.tx-list-header-txt{font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--brand);}
+.tx-list-header h2{
+  font-family:var(--font-d);font-size:28px;font-weight:300;color:var(--ink);line-height:1.2;
+}
+.tx-list-header h2 em{font-style:italic;color:var(--brand);}
+/* Category groups in list */
+.tx-group{padding:20px 0 0;}
+.tx-group-label{
+  padding:0 36px 10px;
+  font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--ink-20);border-bottom:1px solid var(--rule);margin-bottom:0;
+}
+/* Individual treatment row */
+.tx-item{
+  display:flex;align-items:center;gap:14px;
+  padding:18px 36px;border-bottom:1px solid var(--rule);
+  cursor:pointer;
+  box-shadow:inset 0 0 0 0 var(--brand);
+  transition:background .2s var(--ease), padding-left .2s var(--ease), box-shadow .25s var(--ease);
+}
+.tx-item.active{
+  background:var(--brand-xlt);
+  padding-left:44px;
+  box-shadow:inset 3px 0 0 0 var(--brand);
+}
+.tx-item:hover:not(.active){background:var(--surface-2);padding-left:42px;}
+.tx-item-num{
+  font-family:var(--font-d);font-size:18px;font-weight:300;
+  color:var(--ink-20);min-width:32px;line-height:1;
+  transition:color .2s;
+}
+.tx-item.active .tx-item-num{color:var(--brand);}
+.tx-item-info{flex:1;}
+.tx-item-name{font-size:14px;font-weight:500;color:var(--ink-80);margin-bottom:2px;transition:color .2s;}
+.tx-item.active .tx-item-name{color:var(--brand);}
+.tx-item-spec{font-size:11px;font-weight:300;color:var(--ink-40);}
+.tx-item-badge{
+  font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  padding:3px 10px;border-radius:100px;
+  background:var(--surface-3);color:var(--ink-40);flex-shrink:0;
+  transition:background .2s,color .2s;
+}
+.tx-item.active .tx-item-badge{background:var(--brand);color:#fff;}
+.tx-item-badge.gold{background:var(--gold-light);color:var(--gold-dark);}
+.tx-item.active .tx-item-badge.gold{background:var(--gold);color:var(--ink);}
+
+/* Right panel — treatment display */
+.tx-panel-col{
+  position:sticky;top:68px;
+  overflow:hidden;background:var(--surface);
+  height:calc(100vh - 68px);
+}
+.tx-panel{
+  position:absolute;inset:0;
+  display:grid;grid-template-columns:1fr 1fr;
+  opacity:0;transform:translateY(16px);
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+  pointer-events:none;
+}
+.tx-panel.active{
+  opacity:1;transform:translateY(0);
+  pointer-events:auto;
+}
+/* Panel visual — left half */
+.tp-visual{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.tp-visual-bg{
+  position:absolute;inset:0;
+  transition:transform .8s var(--ease);
+}
+.tx-panel:hover .tp-visual-bg{transform:scale(1.03);}
+.tp-visual-num{
+  position:absolute;bottom:-10px;right:-8px;
+  font-family:var(--font-d);font-size:clamp(120px,14vw,200px);
+  font-weight:300;font-style:italic;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.08);
+  line-height:1;pointer-events:none;user-select:none;
+}
+.tp-badge{
+  position:absolute;top:24px;left:24px;
+  background:rgba(255,255,255,.15);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.25);
+  font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:#fff;padding:5px 14px;border-radius:100px;
+}
+.tp-badge.gold{background:rgba(201,169,110,.25);border-color:rgba(201,169,110,.4);color:var(--gold);}
+.tp-icon{position:relative;z-index:2;}
+/* Panel text — right half */
+.tp-text{
+  padding:52px 48px;display:flex;flex-direction:column;
+  justify-content:center;overflow-y:auto;
+}
+.tp-cat{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--brand);margin-bottom:12px;}
+.tp-title{
+  font-family:var(--font-d);font-size:clamp(30px,3vw,44px);
+  font-weight:300;color:var(--ink);line-height:1.1;margin-bottom:18px;
+}
+.tp-title em{font-style:italic;color:var(--brand);}
+.tp-desc{
+  font-size:14px;font-weight:300;color:var(--ink-60);line-height:1.85;
+  margin-bottom:28px;border-left:2px solid var(--brand-light);padding-left:18px;
+}
+.tp-facts{display:flex;flex-direction:column;gap:0;margin-bottom:32px;}
+.tp-fact{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:11px 0;border-bottom:1px solid var(--rule);
+}
+.tp-fact:last-child{border-bottom:none;}
+.tp-fact-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);}
+.tp-fact-value{font-size:13px;font-weight:500;color:var(--ink-80);}
+.tp-fact-value.brand{color:var(--brand);}
+.tp-btns{display:flex;gap:12px;flex-wrap:wrap;}
+/* Progress indicator — sits at bottom of flex column, never bleeds */
+.tx-progress{
+  flex-shrink:0;margin-top:auto;
+  height:3px;background:var(--rule);
+  position:sticky;bottom:0;
+}
+.tx-progress-fill{
+  height:100%;background:var(--brand);
+  transition:width .4s var(--ease);width:0%;
+}
+
+/* ════════════════════════════
+   MOBILE TREATMENT LIST
+   (replaces selector on small screens)
+════════════════════════════ */
+.tx-mobile-list{display:none;border-top:1px solid var(--rule);}
+.tx-mobile-item{
+  border-bottom:1px solid var(--rule);overflow:hidden;
+}
+.tx-mobile-head{
+  display:flex;align-items:center;gap:14px;padding:20px 20px;
+  cursor:pointer;background:var(--surface);transition:background .2s;
+}
+.tx-mobile-head:hover{background:var(--surface-2);}
+.tx-mobile-num{font-family:var(--font-d);font-size:22px;font-weight:300;color:var(--ink-20);min-width:36px;}
+.tx-mobile-name{font-size:15px;font-weight:500;color:var(--ink-80);flex:1;}
+.tx-mobile-chevron{
+  width:28px;height:28px;border-radius:50%;border:1px solid var(--rule);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .3s var(--ease);flex-shrink:0;
+}
+.tx-mobile-item.open .tx-mobile-chevron{background:var(--brand);border-color:var(--brand);transform:rotate(45deg);}
+.tx-mobile-item.open .tx-mobile-num{color:var(--brand);}
+.tx-mobile-item.open .tx-mobile-name{color:var(--brand);}
+.tx-mobile-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .55s var(--ease);
+}
+.tx-mobile-item.open .tx-mobile-body{max-height:600px;}
+.tx-mobile-body-inner{
+  padding:0 20px 28px;
+  background:var(--brand-xlt);border-top:1px solid rgba(144,69,136,.12);
+}
+.tx-mobile-visual{
+  height:180px;border-radius:4px;overflow:hidden;margin-bottom:20px;
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.tx-mobile-desc{font-size:14px;font-weight:300;color:var(--ink-60);line-height:1.75;margin-bottom:20px;}
+.tx-mobile-facts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+.tx-mobile-fact{
+  padding:6px 14px;background:#fff;border:1px solid var(--rule);border-radius:100px;
+  font-size:10px;font-weight:500;letter-spacing:1px;color:var(--ink-60);
+}
+
+/* ════════════════════════════
+   CTA — exact About v2 copy
+════════════════════════════ */
+.about-cta{
+  padding:100px 52px;
+  background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 60%,#b87ab2 100%);
+  text-align:center;position:relative;overflow:hidden;
+}
+.about-cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 100% at 50% 0%,rgba(255,255,255,.06) 0%,transparent 60%);
+}
+.about-cta-inner{position:relative;max-width:620px;margin:0 auto;}
+.cta-eyebrow{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;}
+.cta-h2{font-family:var(--font-d);font-size:clamp(38px,4vw,54px);font-weight:300;color:#fff;line-height:1.1;margin-bottom:18px;}
+.cta-h2 em{font-style:italic;color:var(--gold);}
+.cta-p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:44px;}
+.cta-btns{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;}
+
+/* ════════════════════════════
+   FOOTER — exact About v2 copy
+════════════════════════════ */
+footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
+.footer-top{max-width:1300px;margin:0 auto;padding:72px 52px 56px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+.f-logo-mark{font-family:var(--font-d);font-size:26px;font-weight:300;color:#fff;margin-bottom:4px;}
+.f-logo-mark span{color:var(--gold);}
+.f-logo-sub{font-size:9px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:20px;}
+.f-addr{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:20px;}
+.f-contacts{display:flex;flex-direction:column;gap:8px;}
+.f-contacts a{font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:8px;transition:color .2s;}
+.f-contacts a:hover{color:var(--gold);}
+.f-col-title{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:20px;}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.f-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,.42);transition:color .2s;}
+.f-links a:hover{color:#fff;}
+.f-hours{margin-top:24px;}
+.f-hours-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:8px;}
+.f-hours-val{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);line-height:1.8;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.05);padding:22px 52px;max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.f-copy{font-size:12px;color:rgba(255,255,255,.2);}
+.f-badges{display:flex;gap:12px;}
+.f-badge{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.08);padding:4px 10px;border-radius:2px;}
+
+/* ════════════════════════════
+   WHATSAPP — exact About v2
+════════════════════════════ */
+.wa-btn{
+  position:fixed;bottom:28px;right:28px;z-index:300;
+  width:56px;height:56px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 28px rgba(37,211,102,.4);
+  transition:transform .2s var(--ease),box-shadow .2s;
+  animation:waPulse 3s ease-in-out infinite;
+}
+.wa-btn:hover{transform:scale(1.12);box-shadow:0 12px 40px rgba(37,211,102,.55);animation:none;}
+
+/* ════════════════════════════
+   KEYFRAMES
+════════════════════════════ */
+@keyframes floatIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes waPulse{0%,100%{box-shadow:0 8px 28px rgba(37,211,102,.4)}50%{box-shadow:0 8px 44px rgba(37,211,102,.6)}}
+@keyframes svgDraw{from{stroke-dashoffset:800}to{stroke-dashoffset:0}}
+@keyframes rotateSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes pulseGlow{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.8;transform:scale(1.08)}}
+
+/* ════════════════════════════
+   RESPONSIVE — 1024px
+════════════════════════════ */
+@media(max-width:1024px){
+  .nav{padding:0 28px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+
+  .tx-hero{grid-template-columns:1fr;min-height:auto;}
+  .tx-hero-left{padding:88px 28px 56px;border-right:none;border-bottom:1px solid var(--rule);}
+  .tx-hero-right{display:none;}
+
+  .tx-selector{display:none;}
+  .tx-mobile-list{display:block;}
+
+  .about-cta{padding:72px 28px;}
+  .cta-btns{flex-direction:column;align-items:center;}
+
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px;padding:56px 28px 40px;}
+  .footer-bottom{padding:20px 28px;flex-direction:column;gap:12px;text-align:center;}
+}
+@media(max-width:640px){
+  .tx-hero-left{padding:80px 20px 48px;}
+  .tx-hero-h1{font-size:clamp(42px,11vw,58px);}
+  .btn-brand,.btn-outline-brand,.btn-white{width:100%;justify-content:center;}
+  nav .nav-cta{padding:8px 16px;font-size:10px;}
+  .footer-top{grid-template-columns:1fr;gap:28px;}
+  .about-cta{padding:56px 20px;}
+  .footer-bottom{padding:16px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV — exact About v2 ════ -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">Vin<span>Smiles</span></div>
+    <div class="nav-logo-sub">Advanced Dentistry · GK-II, New Delhi</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/treatments" class="active">Treatments</a></li>
+    <li><a href="/smile-gallery">Smile Gallery</a></li>
+    <li><a href="/our-team">Our Team</a></li>
+    <li><a href="/technology">Technology</a></li>
+    <li><a href="/international-patients">International</a></li>
+  </ul>
+  <a href="/book" class="nav-cta">Book Consultation</a>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/treatments" onclick="toggleMenu()">Treatments</a>
+  <a href="/smile-gallery" onclick="toggleMenu()">Smile Gallery</a>
+  <a href="/our-team" onclick="toggleMenu()">Our Team</a>
+  <a href="/technology" onclick="toggleMenu()">Technology</a>
+  <a href="/international-patients" onclick="toggleMenu()">International</a>
+  <a href="/about" onclick="toggleMenu()">Our Story</a>
+  <a href="/book" class="m-cta" onclick="toggleMenu()">Book Consultation</a>
+</div>
+
+<!-- ════ HERO — white editorial split ════ -->
+<section class="tx-hero">
+
+  <!-- LEFT: editorial headline + category index -->
+  <div class="tx-hero-left">
+    <nav class="tx-hero-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="tx-hero-breadcrumb-sep">/</span>
+      <span>Treatments</span>
+    </nav>
+    <div class="tx-hero-tag">
+      <span class="tx-hero-tag-dot"></span>
+      15+ Treatments · 7 Specialists · GK-II
+    </div>
+    <h1 class="tx-hero-h1">
+      Every Treatment.
+      <em>Every Specialist.</em>
+    </h1>
+    <p class="tx-hero-p">
+      No procedure at VinSmiles is performed by a generalist. Each treatment below is delivered by a specialist who has spent their career perfecting exactly that discipline.
+    </p>
+    <nav class="tx-cat-list" aria-label="Treatment categories">
+      <div class="tx-cat-item" onclick="scrollToGroup('cosmetic')">
+        <div class="tx-cat-item-left">
+          <span class="tx-cat-num">01</span>
+          <span class="tx-cat-name">Cosmetic Dentistry</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span class="tx-cat-count">4 treatments</span>
+          <span class="tx-cat-arrow">→</span>
+        </div>
+      </div>
+      <div class="tx-cat-item" onclick="scrollToGroup('restorative')">
+        <div class="tx-cat-item-left">
+          <span class="tx-cat-num">02</span>
+          <span class="tx-cat-name">Restorative Dentistry</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span class="tx-cat-count">4 treatments</span>
+          <span class="tx-cat-arrow">→</span>
+        </div>
+      </div>
+      <div class="tx-cat-item" onclick="scrollToGroup('orthodontics')">
+        <div class="tx-cat-item-left">
+          <span class="tx-cat-num">03</span>
+          <span class="tx-cat-name">Orthodontics</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span class="tx-cat-count">3 treatments</span>
+          <span class="tx-cat-arrow">→</span>
+        </div>
+      </div>
+      <div class="tx-cat-item" onclick="scrollToGroup('specialist')">
+        <div class="tx-cat-item-left">
+          <span class="tx-cat-num">04</span>
+          <span class="tx-cat-name">Specialist Treatments</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <span class="tx-cat-count">4 treatments</span>
+          <span class="tx-cat-arrow">→</span>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- RIGHT: anatomy illustration -->
+  <div class="tx-hero-right">
+    <div class="tx-hero-right-label">Tap a treatment to explore</div>
+    <div class="tx-anatomy-wrap">
+      <svg viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer decorative rings -->
+        <circle cx="220" cy="220" r="200" stroke="var(--rule)" stroke-width="1"/>
+        <circle cx="220" cy="220" r="165" stroke="rgba(144,69,136,.08)" stroke-width="1" stroke-dasharray="4 6"/>
+        <!-- Rotating dashed ring -->
+        <circle cx="220" cy="220" r="180" stroke="rgba(144,69,136,.07)" stroke-width="1.5" stroke-dasharray="8 12"
+          style="transform-origin:220px 220px;animation:rotateSlow 40s linear infinite;"/>
+        <!-- Inner white circle -->
+        <circle cx="220" cy="220" r="130" fill="var(--surface)" stroke="var(--rule)" stroke-width="1.5"/>
+        <!-- Central tooth shape -->
+        <path d="M220 148 C232 148 244 156 248 168 C252 178 250 192 246 204 C242 218 238 232 238 248 C238 258 234 266 228 268 C224 270 220 268 220 268 C220 268 216 270 212 268 C206 266 202 258 202 248 C202 232 198 218 194 204 C190 192 188 178 192 168 C196 156 208 148 220 148Z"
+          fill="var(--brand-xlt)" stroke="var(--brand)" stroke-width="1.5"/>
+        <!-- Root lines -->
+        <path d="M212 256 C210 270 209 282 210 292" stroke="rgba(144,69,136,.3)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M228 256 C230 270 231 282 230 292" stroke="rgba(144,69,136,.3)" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- Enamel highlight -->
+        <path d="M210 158 C216 152 224 150 230 154" stroke="rgba(255,255,255,.8)" stroke-width="2" stroke-linecap="round"/>
+        <!-- Crown label line -->
+        <line x1="220" y1="145" x2="220" y2="122" stroke="var(--rule)" stroke-width="1" stroke-dasharray="3 3"/>
+        <circle cx="220" cy="120" r="4" fill="var(--brand)" opacity=".4"/>
+        <!-- Connecting lines to labels (8 positions) -->
+        <line x1="220" y1="118" x2="220" y2="58" stroke="rgba(144,69,136,.15)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="352" y1="156" x2="285" y2="180" stroke="rgba(144,69,136,.15)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="368" y1="220" x2="302" y2="220" stroke="rgba(144,69,136,.15)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="352" y1="284" x2="285" y2="256" stroke="rgba(144,69,136,.15)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="220" y1="322" x2="220" y2="370" stroke="rgba(144,69,136,.15)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="88" y1="284" x2="155" y2="256" stroke="rgba(144,69,136,.15)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="72" y1="220" x2="138" y2="220" stroke="rgba(144,69,136,.15)" stroke-width="1" stroke-dasharray="2 4"/>
+        <line x1="88" y1="156" x2="155" y2="180" stroke="rgba(144,69,136,.15)" stroke-width="1" stroke-dasharray="2 4"/>
+        <!-- Central text -->
+        <text x="220" y="208" text-anchor="middle" font-family="'Cormorant Garamond'" font-size="13" font-weight="300" fill="rgba(144,69,136,.5)">15+</text>
+        <text x="220" y="224" text-anchor="middle" font-family="'DM Sans'" font-size="8" letter-spacing="2" fill="rgba(144,69,136,.35)" text-transform="uppercase">TREATMENTS</text>
+      </svg>
+      <!-- Floating treatment labels -->
+      <div class="tx-anat-label tal-1" onclick="activateItem(0)">
+        <span class="tx-anat-label-dot"></span>
+        <span class="tx-anat-label-text">Smile Design</span>
+      </div>
+      <div class="tx-anat-label tal-2" onclick="activateItem(1)">
+        <span class="tx-anat-label-dot"></span>
+        <span class="tx-anat-label-text">Veneers</span>
+      </div>
+      <div class="tx-anat-label tal-3" onclick="activateItem(4)">
+        <span class="tx-anat-label-dot"></span>
+        <span class="tx-anat-label-text">Invisalign</span>
+      </div>
+      <div class="tx-anat-label tal-4" onclick="activateItem(6)">
+        <span class="tx-anat-label-dot"></span>
+        <span class="tx-anat-label-text">Implants</span>
+      </div>
+      <div class="tx-anat-label tal-5" onclick="activateItem(9)">
+        <span class="tx-anat-label-dot"></span>
+        <span class="tx-anat-label-text">Root Canal</span>
+      </div>
+      <div class="tx-anat-label tal-6" onclick="activateItem(10)">
+        <span class="tx-anat-label-dot"></span>
+        <span class="tx-anat-label-text">Laser</span>
+      </div>
+      <div class="tx-anat-label tal-7" onclick="activateItem(7)">
+        <span class="tx-anat-label-dot"></span>
+        <span class="tx-anat-label-text">Gum Care</span>
+      </div>
+      <div class="tx-anat-label tal-8" onclick="activateItem(3)">
+        <span class="tx-anat-label-dot"></span>
+        <span class="tx-anat-label-text">Whitening</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ════ IMMERSIVE SELECTOR — desktop ════ -->
+<div class="tx-selector" id="txSelector">
+
+  <!-- LEFT: sticky list -->
+  <div class="tx-list-col" id="txListCol">
+    <div class="tx-list-header">
+      <div class="tx-list-header-eyebrow">
+        <div class="tx-list-header-bar"></div>
+        <span class="tx-list-header-txt">All Treatments</span>
+      </div>
+      <h2>Choose a <em>Treatment</em></h2>
+    </div>
+    <div id="txGroupsContainer"><!-- Built by JS --></div>
+    <div class="tx-progress"><div class="tx-progress-fill" id="txProgressFill"></div></div>
+  </div>
+
+  <!-- RIGHT: visual panel -->
+  <div class="tx-panel-col" id="txPanelCol">
+    <div id="txPanelsContainer"><!-- Built by JS --></div>
+  </div>
+
+</div>
+
+<!-- ════ MOBILE TREATMENT LIST ════ -->
+<div class="tx-mobile-list" id="txMobileList">
+  <!-- Built by JS -->
+</div>
+
+<!-- ════ CTA — exact About v2 ════ -->
+<div class="about-cta reveal">
+  <div class="about-cta-inner">
+    <div class="cta-eyebrow">Not Sure Where to Start?</div>
+    <h2 class="cta-h2">Book a Free <em>Consultation</em></h2>
+    <p class="cta-p">Tell us your concern — our specialists will assess your needs and recommend the right treatment path, with complete transparency on costs and timeline.</p>
+    <div class="cta-btns">
+      <a href="/book" class="btn-white">
+        Book a Consultation
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://wa.me/919654988858?text=Hi%20VinSmiles%2C%20I%27d%20like%20to%20know%20more%20about%20treatments" class="btn-wa" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:14px 26px;font-size:11px;font-weight:400;letter-spacing:1px;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.12)'" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="white"><path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.35.37 2.63 1 3.74L1.5 16.5l3.88-1c1.06.55 2.27.87 3.62.87 4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5zm3.69 10.35c-.15.42-.87.8-1.2.85-.3.04-.68.06-1.1-.07-.25-.08-.58-.18-.99-.36C7.8 11.65 6.5 10.2 6.38 10.03c-.12-.17-.97-1.29-.97-2.46 0-1.17.61-1.74.83-1.98.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.41.2.5.68 1.68.74 1.8.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.97 1.33 1.57.91.8 1.68 1.05 1.92 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12l1.71.81c.2.1.33.14.38.22.05.08.05.48-.1.9z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════ FOOTER — exact About v2 ════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="f-logo-mark">Vin<span>Smiles</span></div>
+      <div class="f-logo-sub">Advanced Dentistry · Since 2005</div>
+      <div class="f-addr">Greater Kailash II, New Delhi — 110048<br>Near M-Block Market, GK-2</div>
+      <div class="f-contacts">
+        <a href="tel:+919654988858">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          +91 96549 88858
+        </a>
+        <a href="mailto:vinsmiles88@gmail.com">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>
+          vinsmiles88@gmail.com
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="f-col-title">Treatments</div>
+      <ul class="f-links">
+        <li><a href="/treatments/dental-implants-delhi">Dental Implants</a></li>
+        <li><a href="/treatments/smile-design-delhi">Smile Design</a></li>
+        <li><a href="/treatments/invisalign-delhi">Invisalign</a></li>
+        <li><a href="/treatments/dental-veneers-delhi">Veneers</a></li>
+        <li><a href="/treatments/laser-dentistry-delhi">Laser Dentistry</a></li>
+        <li><a href="/treatments/full-mouth-rehabilitation">Full Mouth Rehab</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">Clinic</div>
+      <ul class="f-links">
+        <li><a href="/about">Our Story</a></li>
+        <li><a href="/our-team">Meet the Team</a></li>
+        <li><a href="/technology">Technology</a></li>
+        <li><a href="/smile-gallery">Smile Gallery</a></li>
+        <li><a href="/patient-stories">Patient Stories</a></li>
+        <li><a href="/contact">Contact &amp; Location</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">International</div>
+      <ul class="f-links">
+        <li><a href="/international-patients">Patient Guide</a></li>
+        <li><a href="/international-patients#cost">Cost Comparison</a></li>
+        <li><a href="/international-patients#journey">Treatment Journey</a></li>
+        <li><a href="/book">Book Consultation</a></li>
+      </ul>
+      <div class="f-hours">
+        <div class="f-hours-label">Hours</div>
+        <div class="f-hours-val">Mon–Sat: 10am – 7pm<br>Sunday: By appointment</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="f-copy">&copy; 2025 VinSmiles Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
+    <div class="f-badges">
+      <span class="f-badge">Invisalign Provider</span>
+      <span class="f-badge">IDA Member</span>
+      <span class="f-badge">5.0 &#9733; JustDial</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ════ WHATSAPP — exact About v2 ════ -->
+<a href="https://wa.me/919654988858" class="wa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="white"><path d="M14 2.5C7.6 2.5 2.5 7.6 2.5 14c0 2.1.57 4.1 1.57 5.83L2.5 25.5l5.84-1.55A11.43 11.43 0 0014 25.5c6.4 0 11.5-5.1 11.5-11.5S20.4 2.5 14 2.5zm5.65 15.9c-.23.65-1.34 1.24-1.85 1.31-.46.07-1.05.1-1.69-.1-.39-.13-.9-.3-1.54-.56C11.7 18.03 9.7 15.8 9.5 15.53c-.2-.26-1.5-2-.5-3.79.21-.37.56-.71 1.02-.98.19-.11.38-.17.53-.17h.7c.23 0 .54-.08.84.64.3.77 1.04 2.6 1.13 2.79.09.19.15.4.04.64-.11.24-.17.38-.36.58-.19.2-.39.46-.56.62-.18.17-.37.37-.15.73.21.36.96 1.5 2.06 2.43 1.41 1.23 2.59 1.61 2.96 1.8.37.18.58.15.8-.09.21-.24.92-1.07 1.17-1.44.24-.37.49-.3.83-.18l2.63 1.24c.3.14.5.2.57.32.08.12.08.72-.15 1.37z"/></svg>
+</a>
+
+<script>
+/* ═══════════════════════
+   TREATMENT DATA
+═══════════════════════ */
+const GROUPS = [
+  {
+    id: 'cosmetic',
+    label: 'Cosmetic Dentistry',
+    treatments: [
+      {
+        num: '01', name: 'Digital Smile Design', spec: 'DSD · Signature Treatment', badge: 'Signature', badgeGold: true,
+        cat: 'Cosmetic Dentistry', catColor: 'linear-gradient(145deg,#1a0818 0%,#4a1540 45%,#904588 100%)',
+        title: 'Digital', titleEm: 'Smile Design',
+        desc: 'The most advanced cosmetic consultation in South Delhi. DSD creates a precise 3D simulation of your transformed smile — every detail approved by you before a single procedure begins. No surprises. No guesswork.',
+        facts: [['Specialist','Dr. Neha Sachdeva'],['Technology','DSD Software + iTero'],['Sessions','2-visit process'],['Preview','Before treatment starts']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <rect x="18" y="24" width="84" height="56" rx="6" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
+          <path d="M32 52 Q48 38 60 52 Q72 66 88 52" stroke="rgba(255,255,255,.55)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="60" cy="52" r="5" fill="rgba(201,169,110,.7)"/>
+          <circle cx="60" cy="52" r="10" stroke="rgba(201,169,110,.3)" stroke-width="1"/>
+          <line x1="60" y1="80" x2="60" y2="90" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
+          <line x1="46" y1="90" x2="74" y2="90" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
+          <path d="M22 32 L32 38" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+          <circle cx="22" cy="32" r="3" fill="rgba(255,255,255,.12)"/>
+          <circle cx="30" cy="28" r="3" fill="rgba(255,255,255,.08)"/>
+          <circle cx="38" cy="26" r="3" fill="rgba(255,255,255,.06)"/>
+        </svg>`
+      },
+      {
+        num: '02', name: 'Porcelain Veneers', spec: 'Cosmetic · 2 visits', badge: 'Popular',
+        cat: 'Cosmetic Dentistry', catColor: 'linear-gradient(145deg,#1c0a1c 0%,#521852 45%,#a05098 100%)',
+        title: 'Porcelain', titleEm: 'Veneers',
+        desc: 'Ultra-thin custom porcelain veneers bonded to the front surface of teeth — permanently transforming colour, shape and size. The gold standard for a dramatic, lasting smile change with a 15+ year lifespan.',
+        facts: [['Specialist','Dr. Neha Sachdeva'],['Visits','2 appointments'],['Lifespan','15+ years'],['Procedure','Minimally invasive']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M60 28 Q74 28 80 40 Q86 52 82 68 Q78 82 60 88 Q42 82 38 68 Q34 52 40 40 Q46 28 60 28Z" stroke="rgba(255,255,255,.25)" stroke-width="2" fill="rgba(255,255,255,.05)"/>
+          <path d="M60 30 Q73 30 79 41 Q84 52 81 67 Q77 80 60 86" stroke="rgba(255,255,255,.5)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+          <path d="M46 36 Q52 30 60 29 Q68 30 74 36" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="60" cy="58" r="6" fill="rgba(201,169,110,.5)"/>
+        </svg>`
+      },
+      {
+        num: '03', name: 'Composite Bonding', spec: 'Cosmetic · Same day', badge: 'Same Day',
+        cat: 'Cosmetic Dentistry', catColor: 'linear-gradient(145deg,#160a18 0%,#401850 50%,#8840a8 100%)',
+        title: 'Composite', titleEm: 'Bonding',
+        desc: 'Minimally invasive cosmetic reshaping, chip repair, and colour correction completed in a single appointment. No drilling required in most cases — natural-looking results achieved in a single visit.',
+        facts: [['Specialist','Dr. Neha Sachdeva'],['Duration','Single visit'],['Anaesthesia','Usually none needed'],['Correction','Chips, gaps, shape']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M28 76 Q60 44 92 76" stroke="rgba(255,255,255,.55)" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M32 66 Q60 36 88 66" stroke="rgba(255,255,255,.3)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M36 56 Q60 28 84 56" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <circle cx="60" cy="60" r="8" fill="rgba(201,169,110,.4)" stroke="rgba(201,169,110,.4)" stroke-width="1"/>
+        </svg>`
+      },
+      {
+        num: '04', name: 'Teeth Whitening', spec: 'Cosmetic · 1 session', badge: 'Quick Result',
+        cat: 'Cosmetic Dentistry', catColor: 'linear-gradient(145deg,#120814 0%,#3a1048 50%,#8030a8 100%)',
+        title: 'Teeth', titleEm: 'Whitening',
+        desc: 'Professional ZOOM and laser whitening delivering 6–8 shades of lightening in a single session. Dramatically brighter results that last significantly longer than home kits — supervised by our specialists.',
+        facts: [['Specialist','Dr. Neha Sachdeva'],['Duration','60–90 minutes'],['Result','6–8 shades lighter'],['Maintenance','Take-home kit included']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="28" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
+          <circle cx="60" cy="60" r="18" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+          <circle cx="60" cy="60" r="8" fill="rgba(201,169,110,.6)"/>
+          <path d="M60 18v8M60 94v8M18 60h8M94 60h8" stroke="rgba(255,255,255,.3)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M31 31l5.7 5.7M83.3 83.3l5.7 5.7M83.3 36.7l-5.7 5.7M36.7 83.3l-5.7 5.7" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>`
+      },
+    ]
+  },
+  {
+    id: 'restorative',
+    label: 'Restorative Dentistry',
+    treatments: [
+      {
+        num: '05', name: 'Dental Implants', spec: 'Restorative · CBCT-guided', badge: 'Most Requested',
+        cat: 'Restorative Dentistry', catColor: 'linear-gradient(145deg,#0c0618 0%,#22104c 45%,#5030a0 100%)',
+        title: 'Dental', titleEm: 'Implants',
+        desc: 'CBCT-guided titanium implants placed by our specialist implantologist. Looks, feels, and functions exactly like a natural tooth. A lifetime solution with a 98.7% success rate — backed by 20+ years of cases.',
+        facts: [['Specialist','Dr. Neha Sachdeva'],['Technology','CBCT 3D Planning'],['Success Rate','98.7%'],['Duration','8–12 weeks total']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M60 22v14M52 36h16M46 48h28M42 60h36M46 72h28M52 84h16" stroke="rgba(255,255,255,.45)" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="60" cy="30" rx="12" ry="7" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
+          <rect x="42" y="60" width="36" height="26" rx="5" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
+          <circle cx="60" cy="73" r="4" fill="rgba(201,169,110,.6)"/>
+        </svg>`
+      },
+      {
+        num: '06', name: 'All-on-4 Implants', spec: 'Restorative · Full arch', badge: 'Life-Changing', badgeGold: true,
+        cat: 'Restorative Dentistry', catColor: 'linear-gradient(145deg,#080614 0%,#1a0e48 50%,#3828a0 100%)',
+        title: 'All-on-4', titleEm: 'Implants',
+        desc: 'A complete upper or lower arch of permanent teeth supported by just four implants. The most efficient full-arch restoration — goodbye to dentures, hello to a fixed, permanent smile.',
+        facts: [['Specialist','Dr. Neha Sachdeva'],['Implants Required','Just 4 per arch'],['Result','Permanent fixed teeth'],['Duration','Surgery + healing time']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M24 62 Q24 36 60 36 Q96 36 96 62" stroke="rgba(255,255,255,.3)" stroke-width="1.5" fill="none"/>
+          <rect x="24" y="60" width="16" height="28" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+          <rect x="44" y="56" width="16" height="32" rx="3" stroke="rgba(255,255,255,.45)" stroke-width="2"/>
+          <rect x="64" y="56" width="16" height="32" rx="3" stroke="rgba(255,255,255,.45)" stroke-width="2"/>
+          <rect x="80" y="60" width="16" height="28" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+          <line x1="24" y1="62" x2="96" y2="62" stroke="rgba(201,169,110,.5)" stroke-width="2"/>
+        </svg>`
+      },
+      {
+        num: '07', name: 'Crowns & Bridges', spec: 'Restorative · Same-day CAD/CAM', badge: 'Durable',
+        cat: 'Restorative Dentistry', catColor: 'linear-gradient(145deg,#0a0618 0%,#1e1244 50%,#443090 100%)',
+        title: 'Crowns &', titleEm: 'Bridges',
+        desc: 'CAD/CAM milled same-day crowns matched precisely to your natural teeth. Precision porcelain bridges for spanning gaps — all with clinical accuracy from our prosthodontist.',
+        facts: [['Specialist','Dr. Neha Sachdeva'],['Option','Same-day CAD/CAM'],['Material','Porcelain / Zirconia'],['Process','Digital impression']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M28 88 L34 52 L60 64 L86 52 L92 88Z" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linejoin="round" fill="rgba(255,255,255,.05)"/>
+          <line x1="28" y1="92" x2="92" y2="92" stroke="rgba(255,255,255,.2)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="60" cy="64" r="5" fill="rgba(201,169,110,.5)"/>
+          <path d="M34 52 C34 44 92 44 86 52" stroke="rgba(255,255,255,.15)" stroke-width="1.5" fill="none"/>
+        </svg>`
+      },
+      {
+        num: '08', name: 'Full Mouth Rehabilitation', spec: 'Restorative · Multi-specialist', badge: 'Specialist',
+        cat: 'Restorative Dentistry', catColor: 'linear-gradient(145deg,#0a0414 0%,#180c3c 50%,#3020a0 100%)',
+        title: 'Full Mouth', titleEm: 'Rehabilitation',
+        desc: 'A comprehensive, multi-specialist restoration for severely worn or damaged dentitions. One coordinated team, one treatment plan — our most complex, and most life-changing, service.',
+        facts: [['Specialists','Full team of 7'],['Coordination','Single treatment plan'],['Duration','Case-dependent'],['Complexity','Our most advanced service']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="32" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <circle cx="60" cy="60" r="20" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
+          <circle cx="60" cy="60" r="9" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+          <circle cx="60" cy="60" r="3.5" fill="rgba(201,169,110,.7)"/>
+          <path d="M46 34 L42 26 M74 34 L78 26 M34 46 L26 42 M86 46 L94 42" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>`
+      },
+    ]
+  },
+  {
+    id: 'orthodontics',
+    label: 'Orthodontics',
+    treatments: [
+      {
+        num: '09', name: 'Invisalign', spec: 'Orthodontics · Certified provider', badge: 'Certified', badgeGold: true,
+        cat: 'Orthodontics', catColor: 'linear-gradient(145deg,#0a0618 0%,#1e1050 50%,#5838b8 100%)',
+        title: 'Invisalign &', titleEm: 'Clear Aligners',
+        desc: 'VinSmiles is an official Invisalign certified partner. iTero digital scanning — no messy impressions. A 3D Clincheck preview you approve before starting. Monthly tracking by our orthodontist.',
+        facts: [['Specialist','Dr. Radhika Kapoor'],['Technology','iTero Scanner + Clincheck'],['Provider','Officially Certified'],['Duration','8–24 months']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M26 80 Q60 96 94 80" stroke="rgba(255,255,255,.6)" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M28 68 Q60 82 92 68" stroke="rgba(255,255,255,.38)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M26 56 Q60 70 94 56" stroke="rgba(255,255,255,.2)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M28 44 Q60 58 92 44" stroke="rgba(255,255,255,.08)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          <circle cx="60" cy="32" r="10" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="none"/>
+          <circle cx="60" cy="32" r="5" fill="rgba(201,169,110,.5)"/>
+        </svg>`
+      },
+      {
+        num: '10', name: 'Braces', spec: 'Orthodontics · Metal & ceramic', badge: 'Reliable',
+        cat: 'Orthodontics', catColor: 'linear-gradient(145deg,#08041a 0%,#160e48 50%,#4030b0 100%)',
+        title: 'Metal &', titleEm: 'Ceramic Braces',
+        desc: 'Traditional metal and tooth-coloured ceramic braces for complex malocclusions, crowding, and jaw corrections that aligners cannot address. Managed by our orthodontist.',
+        facts: [['Specialist','Dr. Radhika Kapoor'],['Options','Metal or ceramic'],['Cases','Complex alignment'],['Duration','18–36 months typically']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <rect x="18" y="50" width="18" height="20" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="2" fill="none"/>
+          <rect x="42" y="46" width="18" height="24" rx="3" stroke="rgba(255,255,255,.5)" stroke-width="2" fill="none"/>
+          <rect x="66" y="46" width="18" height="24" rx="3" stroke="rgba(255,255,255,.5)" stroke-width="2" fill="none"/>
+          <rect x="90" y="50" width="18" height="20" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="2" fill="none"/>
+          <line x1="14" y1="60" x2="112" y2="60" stroke="rgba(201,169,110,.5)" stroke-width="2.5"/>
+          <circle cx="27" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
+          <circle cx="51" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
+          <circle cx="75" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
+          <circle cx="99" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
+        </svg>`
+      },
+      {
+        num: '11', name: 'Retainers', spec: 'Orthodontics · Post-treatment', badge: 'Essential',
+        cat: 'Orthodontics', catColor: 'linear-gradient(145deg,#060418 0%,#100c3c 50%,#302898 100%)',
+        title: 'Retainers &', titleEm: 'Maintenance',
+        desc: 'Fixed lingual retainers and removable Essix retainers to maintain your result long-term. The most overlooked but critical part of orthodontic treatment — done properly at VinSmiles.',
+        facts: [['Specialist','Dr. Radhika Kapoor'],['Types','Fixed + removable'],['Purpose','Maintain alignment'],['Recommended','Lifelong maintenance']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M28 60 Q28 36 60 36 Q92 36 92 60 Q92 84 60 84 Q28 84 28 60Z" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="none" stroke-dasharray="6 4"/>
+          <path d="M36 60 Q36 44 60 44 Q84 44 84 60" stroke="rgba(255,255,255,.45)" stroke-width="2.5" fill="none"/>
+          <circle cx="60" cy="60" r="5" fill="rgba(201,169,110,.6)"/>
+          <circle cx="42" cy="53" r="3" fill="rgba(255,255,255,.2)"/>
+          <circle cx="78" cy="53" r="3" fill="rgba(255,255,255,.2)"/>
+        </svg>`
+      },
+    ]
+  },
+  {
+    id: 'specialist',
+    label: 'Specialist Treatments',
+    treatments: [
+      {
+        num: '12', name: 'Laser Dentistry', spec: 'Specialist · Diode laser', badge: 'Advanced',
+        cat: 'Specialist Treatments', catColor: 'linear-gradient(145deg,#0e0614 0%,#2c0e30 50%,#782070 100%)',
+        title: 'Laser', titleEm: 'Dentistry',
+        desc: 'Diode laser for gum contouring, depigmentation, whitening, and soft-tissue procedures. Dramatically less discomfort than conventional methods, faster healing, and precision that scalpels cannot match.',
+        facts: [['Specialist','Dr. Anita Sharma'],['Technology','Diode Laser System'],['Recovery','24–48 hours'],['Applications','Gum, whitening, tissue']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <line x1="60" y1="18" x2="60" y2="102" stroke="rgba(255,255,255,.5)" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M60 48 L80 34" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M60 60 L84 60" stroke="rgba(255,255,255,.22)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M60 72 L80 86" stroke="rgba(255,255,255,.12)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="60" cy="60" r="9" fill="rgba(201,169,110,.65)"/>
+          <circle cx="60" cy="60" r="15" stroke="rgba(201,169,110,.2)" stroke-width="1.5"/>
+          <circle cx="60" cy="60" r="22" stroke="rgba(201,169,110,.08)" stroke-width="1"/>
+        </svg>`
+      },
+      {
+        num: '13', name: 'Gum Treatment', spec: 'Specialist · Periodontist', badge: 'Specialist',
+        cat: 'Specialist Treatments', catColor: 'linear-gradient(145deg,#0c0814 0%,#220e34 50%,#621868 100%)',
+        title: 'Periodontal', titleEm: 'Treatment',
+        desc: 'From professional deep cleaning to laser-assisted flap surgery and bone regeneration — complete gum care by our dedicated periodontist. The foundation every great smile is built on.',
+        facts: [['Specialist','Dr. Anita Sharma'],['Experience','10+ years'],['Range','Maintenance → surgery'],['Technology','Laser-assisted']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M22 86 Q60 46 98 86" stroke="rgba(255,255,255,.55)" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M24 74 Q60 36 96 74" stroke="rgba(255,255,255,.32)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M22 62 Q60 26 98 62" stroke="rgba(255,255,255,.14)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="60" cy="66" r="7" fill="rgba(201,169,110,.4)"/>
+        </svg>`
+      },
+      {
+        num: '14', name: 'Root Canal', spec: 'Specialist · Single-sitting', badge: 'Pain-Free',
+        cat: 'Specialist Treatments', catColor: 'linear-gradient(145deg,#0a0614 0%,#1c0c38 50%,#501880 100%)',
+        title: 'Root Canal', titleEm: 'Treatment',
+        desc: 'Modern endodontics under The Wand STA computer-controlled anaesthesia — virtually painless. Single-sitting for straightforward cases. Saves your natural tooth. Nothing to fear.',
+        facts: [['Specialist','Endodontist'],['Anaesthesia','The Wand STA'],['Duration','1–2 sessions'],['Goal','Save natural tooth']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M60 24 Q60 52 52 82 M60 24 Q60 52 68 82" stroke="rgba(255,255,255,.4)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <ellipse cx="60" cy="32" rx="18" ry="11" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+          <ellipse cx="60" cy="32" rx="10" ry="6" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
+          <circle cx="60" cy="32" r="4" fill="rgba(201,169,110,.6)"/>
+          <path d="M52 82 Q48 92 50 98 M68 82 Q72 92 70 98" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>`
+      },
+      {
+        num: '15', name: 'Oral Surgery', spec: 'Specialist · Hospital-trained', badge: 'Expert',
+        cat: 'Specialist Treatments', catColor: 'linear-gradient(145deg,#080412 0%,#160a30 50%,#3c1468 100%)',
+        title: 'Oral', titleEm: 'Surgery',
+        desc: 'Wisdom tooth extractions, complex impactions, bone grafting for implant preparation, and maxillofacial procedures — performed by our hospital-trained oral and maxillofacial surgeon.',
+        facts: [['Specialist','Dr. Vikram Rajan'],['Training','Hospital-trained surgeon'],['Includes','Wisdom teeth, bone graft'],['Anaesthesia','Local / sedation options']],
+        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="30" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
+          <path d="M42 42 L78 78 M78 42 L42 78" stroke="rgba(255,255,255,.4)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="60" cy="60" r="8" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="rgba(255,255,255,.04)"/>
+          <circle cx="60" cy="60" r="3" fill="rgba(201,169,110,.6)"/>
+        </svg>`
+      },
+    ]
+  }
+];
+
+// Flatten treatments with group reference
+const ALL = GROUPS.flatMap(g => g.treatments.map(t => ({...t, groupId: g.id})));
+let activeIdx = 0;
+
+/* ═══════════════════════
+   BUILD DOM
+═══════════════════════ */
+const groupsContainer  = document.getElementById('txGroupsContainer');
+const panelsContainer  = document.getElementById('txPanelsContainer');
+const mobileListEl     = document.getElementById('txMobileList');
+const progressFill     = document.getElementById('txProgressFill');
+
+// Build desktop list
+GROUPS.forEach(group => {
+  const groupEl = document.createElement('div');
+  groupEl.className = 'tx-group';
+  groupEl.id = 'group-' + group.id;
+  groupEl.innerHTML = `<div class="tx-group-label">${group.label}</div>`;
+  group.treatments.forEach(t => {
+    const item = document.createElement('div');
+    item.className = 'tx-item' + (t.num === '01' ? ' active' : '');
+    item.id = 'item-' + t.num;
+    item.dataset.idx = ALL.findIndex(a => a.num === t.num);
+    item.innerHTML = `
+      <span class="tx-item-num">${t.num}</span>
+      <div class="tx-item-info">
+        <div class="tx-item-name">${t.name}</div>
+        <div class="tx-item-spec">${t.spec}</div>
+      </div>
+      <span class="tx-item-badge${t.badgeGold ? ' gold' : ''}">${t.badge}</span>`;
+    item.addEventListener('click', () => activateItem(parseInt(item.dataset.idx)));
+    groupEl.appendChild(item);
+  });
+  groupsContainer.appendChild(groupEl);
+});
+
+// Build desktop panels
+ALL.forEach((t, i) => {
+  const factsHTML = t.facts.map(([l,v]) =>
+    `<div class="tp-fact"><span class="tp-fact-label">${l}</span><span class="tp-fact-value">${v}</span></div>`
+  ).join('');
+  const panel = document.createElement('div');
+  panel.className = 'tx-panel' + (i === 0 ? ' active' : '');
+  panel.id = 'panel-' + i;
+  panel.innerHTML = `
+    <div class="tp-visual">
+      <div class="tp-visual-bg" style="background:${t.catColor};"></div>
+      <div class="tp-visual-num">${t.num}</div>
+      <div class="tp-badge${t.badgeGold ? ' gold' : ''}">${t.badge}</div>
+      <div class="tp-icon">${t.svg}</div>
+    </div>
+    <div class="tp-text">
+      <div class="tp-cat">${t.cat}</div>
+      <h3 class="tp-title">${t.title} <em>${t.titleEm}</em></h3>
+      <p class="tp-desc">${t.desc}</p>
+      <div class="tp-facts">${factsHTML}</div>
+      <div class="tp-btns">
+        <a href="/book" class="btn-brand">
+          Book This Treatment
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/smile-gallery" class="btn-outline-brand">See Results</a>
+      </div>
+    </div>`;
+  panelsContainer.appendChild(panel);
+});
+
+// Build mobile accordion
+GROUPS.forEach(group => {
+  const groupSection = document.createElement('div');
+  groupSection.style.cssText = 'border-top:1px solid var(--rule);padding:16px 20px 8px;';
+  groupSection.innerHTML = `<div style="font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--brand);margin-bottom:12px;">${group.label}</div>`;
+  group.treatments.forEach(t => {
+    const idx = ALL.findIndex(a => a.num === t.num);
+    const factsHTML = t.facts.map(([l,v]) =>
+      `<span class="tx-mobile-fact">${l}: <strong style="color:var(--ink-80);">${v}</strong></span>`
+    ).join('');
+    const item = document.createElement('div');
+    item.className = 'tx-mobile-item';
+    item.innerHTML = `
+      <div class="tx-mobile-head" onclick="toggleMobile(this)">
+        <div class="tx-mobile-num">${t.num}</div>
+        <div class="tx-mobile-name">${t.name}</div>
+        <div class="tx-mobile-chevron">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+      <div class="tx-mobile-body">
+        <div class="tx-mobile-body-inner" style="padding-top:20px;">
+          <div class="tx-mobile-visual" style="background:${t.catColor};">
+            <div style="opacity:.7;">${t.svg}</div>
+          </div>
+          <p class="tx-mobile-desc">${t.desc}</p>
+          <div class="tx-mobile-facts">${factsHTML}</div>
+          <a href="/book" class="btn-brand" style="display:inline-flex;font-size:11px;padding:12px 24px;">
+            Book This Treatment
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>`;
+    groupSection.appendChild(item);
+  });
+  mobileListEl.appendChild(groupSection);
+});
+
+/* ═══════════════════════
+   INTERACTIONS
+═══════════════════════ */
+function activateItem(idx) {
+  if (idx === activeIdx) return;
+  // Deactivate old
+  document.getElementById('panel-' + activeIdx)?.classList.remove('active');
+  document.getElementById('item-' + ALL[activeIdx].num)?.classList.remove('active');
+  // Activate new
+  activeIdx = idx;
+  document.getElementById('panel-' + idx)?.classList.add('active');
+  const itemEl = document.getElementById('item-' + ALL[idx].num);
+  itemEl?.classList.add('active');
+  itemEl?.scrollIntoView({block:'nearest',behavior:'smooth'});
+  // Progress
+  progressFill.style.width = ((idx + 1) / ALL.length * 100) + '%';
+}
+
+function toggleMobile(headEl) {
+  const item = headEl.closest('.tx-mobile-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.tx-mobile-item.open').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+function scrollToGroup(id) {
+  const el = document.getElementById('group-' + id) || document.getElementById('txSelector');
+  if (el) {
+    window.scrollTo({top: el.getBoundingClientRect().top + scrollY - 80, behavior:'smooth'});
+    // Also activate first item of that group
+    const firstOfGroup = ALL.findIndex(t => t.groupId === id);
+    if (firstOfGroup >= 0) setTimeout(() => activateItem(firstOfGroup), 300);
+  }
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const selector = document.getElementById('txSelector');
+  if (!selector) return;
+  const r = selector.getBoundingClientRect();
+  if (r.top > window.innerHeight || r.bottom < 0) return;
+  if (e.key === 'ArrowDown') { e.preventDefault(); activateItem(Math.min(ALL.length-1, activeIdx+1)); }
+  if (e.key === 'ArrowUp')   { e.preventDefault(); activateItem(Math.max(0, activeIdx-1)); }
+});
+
+/* ═══════════════════════
+   NAV + REVEAL
+═══════════════════════ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), {passive:true});
+
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+}
+
+const ro = new IntersectionObserver(entries =>
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }),
+  {threshold:.1});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => ro.observe(el));
+
+// Init progress
+progressFill.style.width = (1 / ALL.length * 100) + '%';
+</script>
+</body>
+</html>
