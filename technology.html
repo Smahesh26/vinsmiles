@@ -1,0 +1,1150 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology | VinSmiles Advanced Dentistry â€” Greater Kailash II, New Delhi</title>
+<meta name="description" content="Precision dental technology at VinSmiles â€” CBCT 3D imaging, Digital Smile Design, iTero scanning, The Wand STA, diode laser and Invisalign. GK-II, New Delhi.">
+<link rel="canonical" href="https://www.vinsmiles.com/technology">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+<style>
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TOKENS
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+:root {
+  --brand:      #904588;
+  --brand-dark: #64305F;
+  --brand-light:#F3EBF2;
+  --brand-xlt:  #FAF5FA;
+  --gold:       #C9A96E;
+  --gold-dark:  #8B6B3D;
+  --gold-light: #F7F0E4;
+  --ink:        #0F0E0F;
+  --ink-60:     #555;
+  --ink-40:     #888;
+  --ink-20:     #C2C2C2;
+  --rule:       #E8E2E8;
+  --surface:    #FFFFFF;
+  --surface-2:  #FAFAFA;
+  --surface-3:  #F5F0F5;
+  /* Lab palette */
+  --lab:        #07060A;
+  --lab-2:      #0E0C14;
+  --lab-3:      #161220;
+  --lab-line:   rgba(255,255,255,.07);
+  --lab-line2:  rgba(255,255,255,.04);
+  --font-d:'Cormorant Garamond',Georgia,serif;
+  --font-b:'DM Sans',system-ui,sans-serif;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+  --ease-out: cubic-bezier(0,0,.3,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-b);background:var(--lab);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:var(--font-b);border:none;background:none;}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   NAV â€” exact match treatments page
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:68px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;
+  background:rgba(7,6,10,0);
+  transition:background .5s var(--ease),box-shadow .5s;
+}
+.nav.scrolled{
+  background:rgba(7,6,10,0.92);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  box-shadow:0 1px 0 var(--lab-line);
+}
+.nav.light{
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 var(--rule);
+}
+.nav-logo{display:flex;flex-direction:column;gap:1px;}
+.nav-logo-mark{
+  font-family:var(--font-d);font-size:23px;font-weight:400;
+  color:#fff;line-height:1;letter-spacing:.3px;transition:color .4s;
+}
+.nav.light .nav-logo-mark{color:var(--ink);}
+.nav-logo-mark span{color:var(--gold);}
+.nav-logo-sub{
+  font-size:9px;font-weight:400;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(255,255,255,.35);transition:color .4s;
+}
+.nav.light .nav-logo-sub{color:var(--ink-40);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{
+  font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.6);transition:color .2s;position:relative;padding-bottom:3px;
+}
+.nav.light .nav-links a{color:var(--ink-60);}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;right:100%;
+  height:1px;background:var(--brand);transition:right .3s var(--ease);
+}
+.nav-links a:hover::after,.nav-links a.active::after{right:0;}
+.nav-links a:hover,.nav-links a.active{color:var(--brand)!important;}
+.nav-cta{
+  background:var(--brand);color:#fff;padding:10px 24px;
+  font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;
+  border-radius:2px;transition:background .2s,transform .15s,box-shadow .2s;
+}
+.nav-cta:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(144,69,136,.35);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--gold);border-radius:2px;}
+.nav.light .nav-hamburger span{background:var(--brand);}
+.mobile-menu{
+  display:none;position:fixed;inset:0;z-index:290;
+  background:rgba(7,6,10,.97);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:32px;padding-top:68px;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{font-size:22px;font-family:var(--font-d);font-weight:300;color:rgba(255,255,255,.8);letter-spacing:1px;}
+.mobile-menu a:hover{color:var(--gold);}
+.mobile-menu .m-cta{background:var(--brand);color:#fff;padding:14px 40px;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   HERO â€” full-viewport dark precision lab
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.hero{
+  min-height:100vh;
+  background:var(--lab);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  padding:68px 52px 0;
+}
+/* Fine precision grid */
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--lab-line2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--lab-line2) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+/* Crosshair centre */
+.hero-cross{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:1px;height:100vh;background:var(--lab-line2);pointer-events:none;
+}
+.hero-cross::after{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:100vw;height:1px;background:var(--lab-line2);
+}
+/* Corner tick marks */
+.hero-ticks{position:absolute;inset:0;pointer-events:none;}
+.hero-tick{position:absolute;display:flex;align-items:center;gap:8px;}
+.hero-tick span{font-size:9px;font-weight:400;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.2);font-family:var(--font-b);}
+.ht-tl{top:80px;left:52px;flex-direction:row;}
+.ht-tr{top:80px;right:52px;flex-direction:row-reverse;}
+.ht-bl{bottom:40px;left:52px;flex-direction:row;}
+.ht-br{bottom:40px;right:52px;flex-direction:row-reverse;}
+.hero-tick-line{width:20px;height:1px;background:rgba(255,255,255,.2);}
+/* Ambient glow */
+.hero-glow{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(144,69,136,.12) 0%,transparent 70%);
+  pointer-events:none;animation:glowPulse 6s ease-in-out infinite;
+}
+/* Hero content */
+.hero-content{
+  position:relative;z-index:2;text-align:center;
+  max-width:900px;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:12px;margin-bottom:36px;
+  opacity:0;animation:fadeUp .7s var(--ease) .2s both;
+}
+.hero-eyebrow-line{width:32px;height:1px;background:var(--gold);}
+.hero-eyebrow-txt{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.hero-h1{
+  font-family:var(--font-d);
+  font-size:clamp(60px,8vw,112px);
+  font-weight:300;line-height:1.02;
+  color:#fff;margin-bottom:28px;
+  opacity:0;animation:fadeUp .9s var(--ease) .35s both;
+}
+.hero-h1 em{font-style:italic;color:var(--gold);display:block;}
+.hero-p{
+  font-size:16px;font-weight:300;
+  color:rgba(255,255,255,.45);line-height:1.85;
+  max-width:520px;margin:0 auto 52px;
+  opacity:0;animation:fadeUp .9s var(--ease) .5s both;
+}
+/* Central instrument â€” animated SVG hub */
+.hero-instrument{
+  position:relative;width:min(480px,70vw);margin:0 auto 40px;
+  opacity:0;animation:fadeUp 1s var(--ease) .6s both;
+}
+.hero-instrument svg{width:100%;height:auto;overflow:visible;}
+/* Scroll indicator */
+.hero-scroll{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  opacity:0;animation:fadeUp .8s ease 1.2s both;
+}
+.hero-scroll-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);}
+.hero-scroll-bar{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.3),transparent);animation:scrollBar 2s ease-in-out infinite;}
+/* Tech count strip */
+.hero-strip{
+  position:absolute;bottom:0;left:0;right:0;
+  border-top:1px solid var(--lab-line);
+  display:grid;grid-template-columns:repeat(6,1fr);
+  opacity:0;animation:fadeUp .8s var(--ease) 1s both;
+}
+.hs-item{
+  padding:18px 24px;border-right:1px solid var(--lab-line);
+  display:flex;align-items:center;gap:10px;cursor:pointer;
+  transition:background .2s;
+}
+.hs-item:last-child{border-right:none;}
+.hs-item:hover{background:rgba(255,255,255,.03);}
+.hs-item.active-strip{background:rgba(144,69,136,.08);}
+.hs-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);flex-shrink:0;transition:background .2s;}
+.hs-item.active-strip .hs-dot,.hs-item:hover .hs-dot{background:var(--gold);}
+.hs-name{font-size:10px;font-weight:500;letter-spacing:1px;color:rgba(255,255,255,.35);transition:color .2s;white-space:nowrap;}
+.hs-item.active-strip .hs-name,.hs-item:hover .hs-name{color:rgba(255,255,255,.7);}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TECHNOLOGY SECTIONS
+   Each: full-viewport, dark left + white right
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.tech-section{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;
+}
+.tech-section:nth-child(even) .tech-visual{order:2;}
+.tech-section:nth-child(even) .tech-info{order:1;}
+
+/* Visual panel â€” dark */
+.tech-visual{
+  background:var(--lab-2);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  min-height:60vh;
+}
+/* Fine grid on visual panels */
+.tech-visual::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--lab-line2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--lab-line2) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+.tech-visual-num{
+  position:absolute;bottom:-8px;right:-4px;
+  font-family:var(--font-d);font-size:clamp(120px,14vw,200px);
+  font-weight:300;font-style:italic;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.04);
+  line-height:1;pointer-events:none;user-select:none;
+}
+.tech-visual-label{
+  position:absolute;top:32px;left:32px;
+  display:flex;align-items:center;gap:8px;
+}
+.tech-visual-label-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.tech-visual-label-txt{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);}
+.tech-anim{position:relative;z-index:2;width:min(380px,70%);aspect-ratio:1;}
+.tech-anim svg{width:100%;height:100%;overflow:visible;}
+
+/* Info panel â€” white */
+.tech-info{
+  background:var(--surface);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 72px;position:relative;overflow:hidden;
+}
+/* Subtle dot texture */
+.tech-info::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(144,69,136,.04) 1px,transparent 1px);
+  background-size:28px 28px;pointer-events:none;
+}
+.tech-info-inner{position:relative;z-index:1;max-width:480px;}
+.tech-num{
+  font-family:var(--font-d);font-size:11px;font-weight:300;
+  color:var(--ink-20);letter-spacing:3px;margin-bottom:14px;
+}
+.tech-cat{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--brand);margin-bottom:10px;}
+.tech-name{
+  font-family:var(--font-d);
+  font-size:clamp(36px,4vw,56px);
+  font-weight:300;line-height:1.06;color:var(--ink);margin-bottom:28px;
+}
+.tech-name em{font-style:italic;color:var(--brand);}
+.tech-desc{
+  font-size:15px;font-weight:300;color:var(--ink-60);line-height:1.85;
+  border-left:2px solid var(--brand-light);padding-left:20px;margin-bottom:36px;
+}
+/* Specs grid */
+.tech-specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-bottom:36px;border:1px solid var(--rule);}
+.tech-spec{
+  background:var(--surface);padding:16px 20px;
+  display:flex;flex-direction:column;gap:5px;
+  transition:background .2s;
+}
+.tech-spec:hover{background:var(--brand-xlt);}
+.tech-spec-label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);}
+.tech-spec-value{font-size:15px;font-weight:500;color:var(--ink);}
+.tech-spec-value.accent{color:var(--brand);}
+.tech-cta{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* Buttons â€” exact */
+.btn-brand{background:var(--brand);color:#fff;padding:14px 32px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .15s,box-shadow .2s;}
+.btn-brand:hover{background:var(--brand-dark);transform:translateY(-2px);box-shadow:0 10px 28px rgba(144,69,136,.28);}
+.btn-outline-brand{background:transparent;color:var(--brand);border:1.5px solid var(--brand);padding:13px 30px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .2s,color .2s;}
+.btn-outline-brand:hover{background:var(--brand);color:#fff;}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PRECISION NUMBERS STRIP
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.precision-strip{
+  background:var(--lab);
+  border-top:1px solid var(--lab-line);
+  border-bottom:1px solid var(--lab-line);
+  padding:0;overflow:hidden;
+}
+.precision-strip-inner{
+  display:flex;
+  animation:stripScroll 30s linear infinite;
+  width:max-content;
+}
+.precision-strip-inner:hover{animation-play-state:paused;}
+.ps-item{
+  display:flex;align-items:center;gap:20px;
+  padding:24px 48px;border-right:1px solid var(--lab-line);
+  flex-shrink:0;
+}
+.ps-val{font-family:var(--font-d);font-size:28px;font-weight:300;color:#fff;letter-spacing:-1px;}
+.ps-val span{color:var(--gold);}
+.ps-label{font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);max-width:80px;line-height:1.4;}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CTA â€” exact treatments copy
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.about-cta{padding:100px 52px;background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 60%,#b87ab2 100%);text-align:center;position:relative;overflow:hidden;}
+.about-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 0%,rgba(255,255,255,.06) 0%,transparent 60%);}
+.about-cta-inner{position:relative;max-width:620px;margin:0 auto;}
+.cta-eyebrow{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;}
+.cta-h2{font-family:var(--font-d);font-size:clamp(38px,4vw,54px);font-weight:300;color:#fff;line-height:1.1;margin-bottom:18px;}
+.cta-h2 em{font-style:italic;color:var(--gold);}
+.cta-p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:44px;}
+.cta-btns{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;}
+.btn-white{background:#fff;color:var(--brand);padding:14px 30px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .15s;}
+.btn-white:hover{background:var(--brand-xlt);transform:translateY(-2px);}
+.btn-wa{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:14px 26px;font-size:11px;font-weight:400;letter-spacing:1px;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .2s;}
+.btn-wa:hover{background:rgba(255,255,255,.2);}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FOOTER â€” exact treatments copy
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
+.footer-top{max-width:1300px;margin:0 auto;padding:72px 52px 56px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
+.f-logo-mark{font-family:var(--font-d);font-size:26px;font-weight:300;color:#fff;margin-bottom:4px;}
+.f-logo-mark span{color:var(--gold);}
+.f-logo-sub{font-size:9px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:20px;}
+.f-addr{font-size:13px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:20px;}
+.f-contacts{display:flex;flex-direction:column;gap:8px;}
+.f-contacts a{font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:8px;transition:color .2s;}
+.f-contacts a:hover{color:var(--gold);}
+.f-col-title{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:20px;}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.f-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,.42);transition:color .2s;}
+.f-links a:hover{color:#fff;}
+.f-hours{margin-top:24px;}
+.f-hours-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:8px;}
+.f-hours-val{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);line-height:1.8;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.05);padding:22px 52px;max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.f-copy{font-size:12px;color:rgba(255,255,255,.2);}
+.f-badges{display:flex;gap:12px;}
+.f-badge{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.08);padding:4px 10px;border-radius:2px;}
+
+/* WA float */
+.wa-btn{position:fixed;bottom:28px;right:28px;z-index:400;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,.4);transition:transform .2s var(--ease),box-shadow .2s;animation:waPulse 3s ease-in-out infinite;}
+.wa-btn:hover{transform:scale(1.12);box-shadow:0 12px 40px rgba(37,211,102,.55);animation:none;}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   REVEAL
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-l{opacity:0;transform:translateX(-24px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.reveal-l.in{opacity:1;transform:translateX(0);}
+.reveal-r{opacity:0;transform:translateX(24px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.reveal-r.in{opacity:1;transform:translateX(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   KEYFRAMES
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes waPulse{0%,100%{box-shadow:0 8px 28px rgba(37,211,102,.4)}50%{box-shadow:0 8px 44px rgba(37,211,102,.6)}}
+@keyframes glowPulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15)}}
+@keyframes rotateSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes rotateSlowR{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes scrollBar{0%{opacity:1;transform:scaleY(1) translateY(0)}100%{opacity:0;transform:scaleY(.3) translateY(48px)}}
+@keyframes stripScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* CBCT scan beam */
+@keyframes scanBeam{0%{transform:translateY(-180px);opacity:0}5%{opacity:1}95%{opacity:1}100%{transform:translateY(180px);opacity:0}}
+/* iTero point appear */
+@keyframes ptAppear{from{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+/* Wand pressure pulse */
+@keyframes wandPulse{0%,100%{r:20;opacity:.5}50%{r:40;opacity:.15}}
+@keyframes wandPulse2{0%,100%{r:35;opacity:.3}50%{r:60;opacity:.08}}
+/* Pain meter drop */
+@keyframes painDrop{0%{width:76%}40%{width:72%}100%{width:3%}}
+/* Laser rings */
+@keyframes laserRing{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.12);opacity:.2}}
+@keyframes laserRing2{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.18);opacity:.1}}
+/* Align teeth */
+@keyframes toothShift1{0%,30%{transform:translateX(0)}60%,100%{transform:translateX(8px)}}
+@keyframes toothShift2{0%,30%{transform:translateX(0)}60%,100%{transform:translateX(-6px)}}
+@keyframes toothShift3{0%,30%{transform:translateX(4px)}60%,100%{transform:translateX(-4px)}}
+/* DSD split morph */
+@keyframes splitReveal{0%,100%{clip-path:inset(0 50% 0 0)}50%{clip-path:inset(0 0% 0 0)}}
+/* CBCT rotate */
+@keyframes jawRotate{0%{transform:rotateY(0deg)}100%{transform:rotateY(360deg)}}
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+@media(max-width:1024px){
+  .nav{padding:0 28px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .hero{padding:68px 28px 0;}
+  .hero-strip{grid-template-columns:repeat(3,1fr);}
+  .hs-item:nth-child(n+4){border-top:1px solid var(--lab-line);}
+  .tech-section{grid-template-columns:1fr;min-height:auto;}
+  .tech-section:nth-child(even) .tech-visual{order:0;}
+  .tech-section:nth-child(even) .tech-info{order:1;}
+  .tech-visual{min-height:50vw;}
+  .tech-info{padding:52px 32px;}
+  .tech-info-inner{max-width:none;}
+  .about-cta{padding:72px 28px;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px;padding:56px 28px 40px;}
+  .footer-bottom{padding:20px 28px;flex-direction:column;gap:12px;text-align:center;}
+  .precision-strip{overflow-x:auto;}
+  .ht-tr,.ht-br{display:none;}
+}
+@media(max-width:640px){
+  .hero-h1{font-size:clamp(48px,13vw,70px);}
+  .hero-strip{grid-template-columns:1fr 1fr;}
+  .hs-item:nth-child(n+3){border-top:1px solid var(--lab-line);}
+  .tech-info{padding:40px 20px;}
+  .tech-specs{grid-template-columns:1fr;}
+  .btn-brand,.btn-outline-brand,.btn-white{width:100%;justify-content:center;}
+  nav .nav-cta{padding:8px 16px;font-size:10px;}
+  .footer-top{grid-template-columns:1fr;gap:28px;}
+  .about-cta{padding:56px 20px;}
+  .footer-bottom{padding:16px 20px;}
+  .ht-tl,.ht-bl{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- â•â• NAV â•â• -->
+<nav class="nav" id="nav">
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">Vin<span>Smiles</span></div>
+    <div class="nav-logo-sub">Advanced Dentistry Â· GK-II, New Delhi</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/treatments">Treatments</a></li>
+    <li><a href="/smile-gallery">Smile Gallery</a></li>
+    <li><a href="/our-team">Our Team</a></li>
+    <li><a href="technology.html" class="active">Technology</a></li>
+    <li><a href="/international-patients">International</a></li>
+  </ul>
+  <a href="/book" class="nav-cta">Book Consultation</a>
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/treatments" onclick="toggleMenu()">Treatments</a>
+  <a href="/smile-gallery" onclick="toggleMenu()">Smile Gallery</a>
+  <a href="/our-team" onclick="toggleMenu()">Our Team</a>
+  <a href="technology.html" onclick="toggleMenu()">Technology</a>
+  <a href="/international-patients" onclick="toggleMenu()">International</a>
+  <a href="/about" onclick="toggleMenu()">Our Story</a>
+  <a href="/book" class="m-cta" onclick="toggleMenu()">Book Consultation</a>
+</div>
+
+<!-- â•â• HERO â•â• -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-cross"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-ticks">
+    <div class="hero-tick ht-tl"><div class="hero-tick-line"></div><span>GK-II Precision Lab</span></div>
+    <div class="hero-tick ht-tr"><span>Est. 2005</span><div class="hero-tick-line"></div></div>
+    <div class="hero-tick ht-bl"><div class="hero-tick-line"></div><span>6 Technologies</span></div>
+    <div class="hero-tick ht-br"><span>0.09mm Accuracy</span><div class="hero-tick-line"></div></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-txt">Clinical Technology Â· VinSmiles</span>
+      <div class="hero-eyebrow-line"></div>
+    </div>
+    <h1 class="hero-h1">
+      Precision.
+      <em>By Design.</em>
+    </h1>
+    <p class="hero-p">Every instrument in our clinic was chosen because it makes the impossible routine â€” and the routine extraordinary. Six technologies. One standard: yours.</p>
+
+    <!-- Hero central instrument SVG -->
+    <div class="hero-instrument">
+      <svg viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer rings -->
+        <circle cx="240" cy="160" r="145" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+        <circle cx="240" cy="160" r="120" stroke="rgba(255,255,255,.06)" stroke-width="1" stroke-dasharray="6 8" style="transform-origin:240px 160px;animation:rotateSlow 60s linear infinite;"/>
+        <circle cx="240" cy="160" r="95" stroke="rgba(144,69,136,.12)" stroke-width="1.5"/>
+        <circle cx="240" cy="160" r="68" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+        <!-- Inner core -->
+        <circle cx="240" cy="160" r="44" fill="rgba(144,69,136,.08)" stroke="rgba(144,69,136,.3)" stroke-width="1.5"/>
+        <circle cx="240" cy="160" r="24" fill="rgba(144,69,136,.15)" stroke="rgba(144,69,136,.5)" stroke-width="1"/>
+        <circle cx="240" cy="160" r="8" fill="rgba(201,169,110,.6)"/>
+        <!-- Radiating tick lines -->
+        <line x1="240" y1="15" x2="240" y2="32" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="240" y1="288" x2="240" y2="305" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="95" y1="160" x2="112" y2="160" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="368" y1="160" x2="385" y2="160" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Diagonal ticks -->
+        <line x1="138" y1="57" x2="148" y2="67" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="332" y1="57" x2="342" y2="67" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="138" y1="263" x2="148" y2="253" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="332" y1="263" x2="342" y2="253" stroke="rgba(255,255,255,.1)" stroke-width="1" stroke-linecap="round"/>
+        <!-- 6 tech nodes around the ring -->
+        <circle cx="240" cy="65" r="7" fill="rgba(201,169,110,.3)" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle cx="323" cy="112" r="7" fill="rgba(201,169,110,.3)" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle cx="323" cy="208" r="7" fill="rgba(201,169,110,.3)" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle cx="240" cy="255" r="7" fill="rgba(201,169,110,.3)" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle cx="157" cy="208" r="7" fill="rgba(201,169,110,.3)" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle cx="157" cy="112" r="7" fill="rgba(201,169,110,.3)" stroke="var(--gold)" stroke-width="1.5"/>
+        <!-- Connecting spokes -->
+        <line x1="240" y1="116" x2="240" y2="72" stroke="rgba(201,169,110,.15)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="240" y1="204" x2="240" y2="248" stroke="rgba(201,169,110,.15)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="284" y1="143" x2="316" y2="119" stroke="rgba(201,169,110,.15)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="196" y1="143" x2="164" y2="119" stroke="rgba(201,169,110,.15)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="284" y1="177" x2="316" y2="201" stroke="rgba(201,169,110,.15)" stroke-width="1" stroke-dasharray="3 4"/>
+        <line x1="196" y1="177" x2="164" y2="201" stroke="rgba(201,169,110,.15)" stroke-width="1" stroke-dasharray="3 4"/>
+        <!-- Tech labels -->
+        <text x="240" y="48" text-anchor="middle" font-family="'DM Sans'" font-size="7.5" letter-spacing="1.5" fill="rgba(255,255,255,.4)">CBCT</text>
+        <text x="348" y="109" text-anchor="start" font-family="'DM Sans'" font-size="7.5" letter-spacing="1.5" fill="rgba(255,255,255,.4)">DSD</text>
+        <text x="348" y="212" text-anchor="start" font-family="'DM Sans'" font-size="7.5" letter-spacing="1.5" fill="rgba(255,255,255,.4)">iTERO</text>
+        <text x="240" y="278" text-anchor="middle" font-family="'DM Sans'" font-size="7.5" letter-spacing="1.5" fill="rgba(255,255,255,.4)">WAND</text>
+        <text x="126" y="212" text-anchor="end" font-family="'DM Sans'" font-size="7.5" letter-spacing="1.5" fill="rgba(255,255,255,.4)">LASER</text>
+        <text x="126" y="109" text-anchor="end" font-family="'DM Sans'" font-size="7.5" letter-spacing="1.5" fill="rgba(255,255,255,.4)">ALIGN</text>
+        <!-- Outer decorative ring â€” counter-rotating -->
+        <circle cx="240" cy="160" r="145" stroke="rgba(255,255,255,.03)" stroke-width="1" stroke-dasharray="2 12" style="transform-origin:240px 160px;animation:rotateSlowR 40s linear infinite;"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Bottom tech strip -->
+  <div class="hero-strip" id="heroStrip">
+    <div class="hs-item active-strip" onclick="scrollToTech(0)"><span class="hs-dot"></span><span class="hs-name">CBCT 3D Imaging</span></div>
+    <div class="hs-item" onclick="scrollToTech(1)"><span class="hs-dot"></span><span class="hs-name">Smile Design</span></div>
+    <div class="hs-item" onclick="scrollToTech(2)"><span class="hs-dot"></span><span class="hs-name">iTero Scanner</span></div>
+    <div class="hs-item" onclick="scrollToTech(3)"><span class="hs-dot"></span><span class="hs-name">The Wand STA</span></div>
+    <div class="hs-item" onclick="scrollToTech(4)"><span class="hs-dot"></span><span class="hs-name">Diode Laser</span></div>
+    <div class="hs-item" onclick="scrollToTech(5)"><span class="hs-dot"></span><span class="hs-name">Invisalign</span></div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="hero-scroll-label">Scroll to explore</span>
+    <div class="hero-scroll-bar"></div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     TECH 1 â€” CBCT 3D IMAGING
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="tech-section" id="tech-0">
+  <div class="tech-visual">
+    <div class="tech-visual-num">01</div>
+    <div class="tech-visual-label"><span class="tech-visual-label-dot"></span><span class="tech-visual-label-txt">Diagnostic Imaging</span></div>
+    <div class="tech-anim">
+      <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg" id="cbct-svg">
+        <!-- Jaw wireframe -->
+        <path d="M80 200 Q80 120 190 100 Q300 120 300 200 Q300 280 260 300 Q230 315 190 315 Q150 315 120 300 Q80 280 80 200Z" stroke="rgba(144,69,136,.35)" stroke-width="1.5" fill="none"/>
+        <!-- Teeth row top -->
+        <rect x="130" y="142" width="18" height="24" rx="3" stroke="rgba(255,255,255,.3)" stroke-width="1.2" fill="none"/>
+        <rect x="152" y="136" width="20" height="30" rx="3" stroke="rgba(255,255,255,.3)" stroke-width="1.2" fill="none"/>
+        <rect x="176" y="132" width="22" height="34" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="1.5" fill="none"/>
+        <rect x="202" y="132" width="22" height="34" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="1.5" fill="none"/>
+        <rect x="228" y="136" width="20" height="30" rx="3" stroke="rgba(255,255,255,.3)" stroke-width="1.2" fill="none"/>
+        <rect x="250" y="142" width="18" height="24" rx="3" stroke="rgba(255,255,255,.3)" stroke-width="1.2" fill="none"/>
+        <!-- Roots -->
+        <line x1="139" y1="166" x2="137" y2="190" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="162" y1="166" x2="160" y2="196" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="187" y1="166" x2="184" y2="202" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="213" y1="166" x2="216" y2="202" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="238" y1="166" x2="240" y2="196" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
+        <line x1="259" y1="166" x2="261" y2="190" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
+        <!-- Outer grid rings -->
+        <circle cx="190" cy="200" r="140" stroke="rgba(255,255,255,.04)" stroke-width="1" stroke-dasharray="4 6"/>
+        <circle cx="190" cy="200" r="100" stroke="rgba(144,69,136,.08)" stroke-width="1"/>
+        <!-- Crosshair -->
+        <line x1="190" y1="60" x2="190" y2="340" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <line x1="50" y1="200" x2="330" y2="200" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <!-- SCAN BEAM â€” animated -->
+        <rect x="50" y="60" width="280" height="8" rx="1" fill="url(#scanGrad)" opacity=".8" style="animation:scanBeam 2.8s ease-in-out infinite;"/>
+        <!-- Scan data readout -->
+        <rect x="290" y="260" width="72" height="52" rx="2" fill="rgba(0,0,0,.4)" stroke="rgba(144,69,136,.3)" stroke-width="1"/>
+        <text x="304" y="278" font-family="'DM Sans'" font-size="7" fill="rgba(144,69,136,.8)" letter-spacing="1">SCAN</text>
+        <text x="296" y="292" font-family="'DM Sans'" font-size="10" font-weight="600" fill="rgba(255,255,255,.7)">0.09mm</text>
+        <text x="304" y="304" font-family="'DM Sans'" font-size="7" fill="rgba(255,255,255,.3)" letter-spacing="1">VOXEL</text>
+        <defs>
+          <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="transparent"/>
+            <stop offset="30%" stop-color="rgba(144,69,136,.6)"/>
+            <stop offset="50%" stop-color="rgba(201,169,110,.9)"/>
+            <stop offset="70%" stop-color="rgba(144,69,136,.6)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  <div class="tech-info">
+    <div class="tech-info-inner">
+      <div class="tech-num reveal">01 / 06</div>
+      <div class="tech-cat reveal d1">Diagnostic Imaging</div>
+      <h2 class="tech-name reveal d1">CBCT <em>3D Imaging</em></h2>
+      <p class="tech-desc reveal d2">Cone Beam CT scanning produces a complete 3D map of your jaw, teeth, nerves, and bone density in a single 14-second scan. We plan implants, root canals, and extractions with surgical precision before touching a single tooth.</p>
+      <div class="tech-specs reveal d2">
+        <div class="tech-spec"><div class="tech-spec-label">Voxel Resolution</div><div class="tech-spec-value accent">0.09 mm</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Scan Duration</div><div class="tech-spec-value">14 seconds</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Radiation Dose</div><div class="tech-spec-value">â†“ 98% vs CT</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Output</div><div class="tech-spec-value">Full 3D model</div></div>
+      </div>
+      <div class="tech-cta reveal d3">
+        <a href="/book" class="btn-brand">Book a Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/treatments/dental-implants-delhi" class="btn-outline-brand">Implant Planning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     TECH 2 â€” DIGITAL SMILE DESIGN
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="tech-section" id="tech-1">
+  <div class="tech-visual">
+    <div class="tech-visual-num">02</div>
+    <div class="tech-visual-label"><span class="tech-visual-label-dot"></span><span class="tech-visual-label-txt">Treatment Planning</span></div>
+    <div class="tech-anim">
+      <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Monitor frame -->
+        <rect x="60" y="70" width="260" height="180" rx="8" stroke="rgba(255,255,255,.2)" stroke-width="2" fill="rgba(255,255,255,.03)"/>
+        <rect x="60" y="70" width="260" height="26" rx="8" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)" stroke-width="1"/>
+        <!-- Traffic light dots -->
+        <circle cx="80" cy="83" r="4" fill="rgba(255,80,80,.5)"/>
+        <circle cx="95" cy="83" r="4" fill="rgba(255,180,0,.5)"/>
+        <circle cx="110" cy="83" r="4" fill="rgba(0,200,80,.5)"/>
+        <!-- Screen content â€” before smile (left half) -->
+        <rect x="68" y="104" width="122" height="138" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+        <!-- After smile (right half, brand glow) -->
+        <rect x="190" y="104" width="122" height="138" fill="rgba(144,69,136,.06)" stroke="rgba(144,69,136,.25)" stroke-width="1"/>
+        <!-- Before teeth â€” slightly irregular -->
+        <path d="M82 175 Q85 165 90 168 Q95 162 102 165 Q108 158 116 162 Q122 156 130 159 Q136 162 138 170 Q136 178 130 180 Q122 182 116 178 Q108 182 102 179 Q95 182 90 180 Q84 180 82 175Z" stroke="rgba(255,255,255,.25)" stroke-width="1.2" fill="rgba(255,255,255,.06)"/>
+        <!-- After teeth â€” aligned, brighter -->
+        <path d="M204 173 Q207 163 213 165 Q219 160 226 162 Q232 157 240 160 Q248 157 254 162 Q260 160 266 165 Q272 163 276 173 Q274 182 266 183 Q260 186 254 183 Q248 186 240 183 Q232 186 226 183 Q219 186 213 183 Q207 182 204 173Z" stroke="rgba(144,69,136,.7)" stroke-width="1.5" fill="rgba(144,69,136,.12)"/>
+        <!-- Gold smile arc after -->
+        <path d="M208 173 Q240 190 272 173" stroke="rgba(201,169,110,.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- Divider line with label -->
+        <line x1="190" y1="104" x2="190" y2="242" stroke="rgba(201,169,110,.6)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <rect x="178" y="166" width="24" height="16" rx="2" fill="rgba(201,169,110,.15)" stroke="rgba(201,169,110,.4)" stroke-width="1"/>
+        <text x="190" y="178" text-anchor="middle" font-family="'DM Sans'" font-size="7" fill="rgba(201,169,110,.9)" letter-spacing=".5">DSD</text>
+        <!-- Labels -->
+        <text x="129" y="120" text-anchor="middle" font-family="'DM Sans'" font-size="7" fill="rgba(255,255,255,.3)" letter-spacing="1">BEFORE</text>
+        <text x="251" y="120" text-anchor="middle" font-family="'DM Sans'" font-size="7" fill="rgba(144,69,136,.8)" letter-spacing="1">AFTER</text>
+        <!-- Measurement guides -->
+        <line x1="204" y1="130" x2="276" y2="130" stroke="rgba(144,69,136,.2)" stroke-width="1" stroke-dasharray="2 3"/>
+        <line x1="204" y1="130" x2="204" y2="215" stroke="rgba(144,69,136,.2)" stroke-width="1" stroke-dasharray="2 3"/>
+        <line x1="276" y1="130" x2="276" y2="215" stroke="rgba(144,69,136,.2)" stroke-width="1" stroke-dasharray="2 3"/>
+        <!-- Stand -->
+        <line x1="190" y1="250" x2="190" y2="280" stroke="rgba(255,255,255,.15)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="155" y1="280" x2="225" y2="280" stroke="rgba(255,255,255,.15)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Accuracy badge -->
+        <rect x="62" y="300" width="256" height="32" rx="4" fill="rgba(144,69,136,.1)" stroke="rgba(144,69,136,.25)" stroke-width="1"/>
+        <text x="112" y="321" text-anchor="middle" font-family="'DM Sans'" font-size="8" letter-spacing="1" fill="rgba(255,255,255,.4)">YOUR APPROVAL</text>
+        <text x="112" y="313" text-anchor="middle" font-family="'DM Sans'" font-size="7" letter-spacing="2" fill="rgba(144,69,136,.7)">REQUIRED BEFORE</text>
+        <text x="258" y="317" text-anchor="middle" font-family="'DM Sans'" font-size="8" letter-spacing="1" fill="rgba(201,169,110,.7)">ZERO SURPRISES</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tech-info">
+    <div class="tech-info-inner">
+      <div class="tech-num reveal">02 / 06</div>
+      <div class="tech-cat reveal d1">Treatment Planning</div>
+      <h2 class="tech-name reveal d1">Digital <em>Smile Design</em></h2>
+      <p class="tech-desc reveal d2">DSD translates your face, proportions, and personality into a precise 3D simulation of your transformed smile. You see â€” and approve â€” every detail before any procedure begins. No guesswork. No surprises.</p>
+      <div class="tech-specs reveal d2">
+        <div class="tech-spec"><div class="tech-spec-label">Preview</div><div class="tech-spec-value accent">Before treatment</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Process</div><div class="tech-spec-value">2-visit design</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Approval</div><div class="tech-spec-value">Patient sign-off</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Accuracy</div><div class="tech-spec-value">Sub-mm precision</div></div>
+      </div>
+      <div class="tech-cta reveal d3">
+        <a href="/book" class="btn-brand">Design My Smile <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/treatments/smile-design-delhi" class="btn-outline-brand">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     TECH 3 â€” iTERO SCANNER
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="tech-section" id="tech-2">
+  <div class="tech-visual">
+    <div class="tech-visual-num">03</div>
+    <div class="tech-visual-label"><span class="tech-visual-label-dot"></span><span class="tech-visual-label-txt">Digital Impressions</span></div>
+    <div class="tech-anim">
+      <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg" id="itero-svg">
+        <!-- Arch base -->
+        <path d="M80 240 Q80 140 190 120 Q300 140 300 240" stroke="rgba(255,255,255,.12)" stroke-width="2" fill="none"/>
+        <!-- Point cloud dots along arch â€” built up by JS -->
+        <g id="iteroPoints"></g>
+        <!-- Scan wand -->
+        <rect x="170" y="50" width="40" height="90" rx="8" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="rgba(255,255,255,.04)"/>
+        <rect x="178" y="56" width="24" height="16" rx="3" fill="rgba(144,69,136,.15)" stroke="rgba(144,69,136,.4)" stroke-width="1"/>
+        <circle cx="190" cy="64" r="5" fill="rgba(201,169,110,.5)"/>
+        <line x1="190" y1="140" x2="190" y2="168" stroke="rgba(144,69,136,.3)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <!-- Scan beam from wand -->
+        <path d="M175 140 L155 168 L225 168 L205 140Z" fill="rgba(144,69,136,.06)" stroke="rgba(144,69,136,.2)" stroke-width="1" stroke-dasharray="2 3"/>
+        <!-- Digital readout bottom -->
+        <rect x="62" y="268" width="256" height="68" rx="4" fill="rgba(0,0,0,.3)" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <text x="82" y="288" font-family="'DM Sans'" font-size="7.5" letter-spacing="2" fill="rgba(255,255,255,.3)">SCAN ACCURACY</text>
+        <text x="82" y="306" font-family="'Cormorant Garamond'" font-size="22" font-weight="300" fill="rgba(255,255,255,.8)">17 Î¼m</text>
+        <text x="82" y="325" font-family="'DM Sans'" font-size="7" letter-spacing="1.5" fill="rgba(144,69,136,.7)">NO IMPRESSION MATERIAL</text>
+        <!-- Progress bar -->
+        <rect x="186" y="298" width="120" height="6" rx="3" fill="rgba(255,255,255,.06)"/>
+        <rect x="186" y="298" width="90" height="6" rx="3" fill="rgba(144,69,136,.6)"/>
+        <text x="250" y="318" text-anchor="middle" font-family="'DM Sans'" font-size="7" letter-spacing="1" fill="rgba(144,69,136,.7)">SCAN 75%</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tech-info">
+    <div class="tech-info-inner">
+      <div class="tech-num reveal">03 / 06</div>
+      <div class="tech-cat reveal d1">Digital Impressions</div>
+      <h2 class="tech-name reveal d1">iTero <em>Scanner</em></h2>
+      <p class="tech-desc reveal d2">A handheld wand replaces the messy impression trays of traditional dentistry. 6,000 laser pulses per second build a perfectly accurate 3D model of your mouth in minutes â€” used for Invisalign planning, crown fabrication, and smile simulation.</p>
+      <div class="tech-specs reveal d2">
+        <div class="tech-spec"><div class="tech-spec-label">Scan Accuracy</div><div class="tech-spec-value accent">17 microns</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Impressions</div><div class="tech-spec-value">None required</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Scan Speed</div><div class="tech-spec-value">6,000 fps</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Output</div><div class="tech-spec-value">Instant 3D model</div></div>
+      </div>
+      <div class="tech-cta reveal d3">
+        <a href="/book" class="btn-brand">Book a Scan <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/treatments/invisalign-delhi" class="btn-outline-brand">Invisalign Planning</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     TECH 4 â€” THE WAND STA
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="tech-section" id="tech-3">
+  <div class="tech-visual">
+    <div class="tech-visual-num">04</div>
+    <div class="tech-visual-label"><span class="tech-visual-label-dot"></span><span class="tech-visual-label-txt">Pain-Free Anaesthesia</span></div>
+    <div class="tech-anim">
+      <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Device body -->
+        <rect x="160" y="48" width="60" height="140" rx="12" stroke="rgba(255,255,255,.2)" stroke-width="2" fill="rgba(255,255,255,.04)"/>
+        <rect x="170" y="60" width="40" height="50" rx="6" fill="rgba(144,69,136,.1)" stroke="rgba(144,69,136,.35)" stroke-width="1"/>
+        <!-- LED indicator -->
+        <circle cx="190" cy="76" r="8" fill="rgba(80,220,120,.25)" stroke="rgba(80,220,120,.6)" stroke-width="1.5" style="animation:laserRing 2s ease-in-out infinite;"/>
+        <circle cx="190" cy="76" r="4" fill="rgba(80,220,120,.8)"/>
+        <!-- Display readout -->
+        <text x="190" y="98" text-anchor="middle" font-family="'DM Sans'" font-size="8" letter-spacing="1" fill="rgba(255,255,255,.5)">STA</text>
+        <text x="190" y="112" text-anchor="middle" font-family="'Cormorant Garamond'" font-size="16" font-weight="300" fill="rgba(255,255,255,.7)">0.005</text>
+        <text x="190" y="122" text-anchor="middle" font-family="'DM Sans'" font-size="6" letter-spacing="1" fill="rgba(255,255,255,.3)">ML/SEC</text>
+        <!-- Wand tip -->
+        <line x1="190" y1="188" x2="190" y2="240" stroke="rgba(255,255,255,.3)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="190" cy="245" r="4" fill="rgba(255,255,255,.5)"/>
+        <!-- Pressure pulse rings from tip -->
+        <circle cx="190" cy="245" r="20" stroke="rgba(144,69,136,.5)" stroke-width="1.5" fill="none" style="animation:wandPulse 2s ease-in-out infinite;"/>
+        <circle cx="190" cy="245" r="35" stroke="rgba(144,69,136,.3)" stroke-width="1" fill="none" style="animation:wandPulse2 2s ease-in-out .4s infinite;"/>
+        <circle cx="190" cy="245" r="52" stroke="rgba(144,69,136,.15)" stroke-width="1" fill="none" style="animation:wandPulse 2s ease-in-out .8s infinite;"/>
+        <!-- Pain comparison bars -->
+        <text x="62" y="310" font-family="'DM Sans'" font-size="8" letter-spacing="1.5" fill="rgba(255,255,255,.3)">TRADITIONAL</text>
+        <rect x="62" y="316" width="200" height="7" rx="3.5" fill="rgba(255,80,80,.15)"/>
+        <rect x="62" y="316" width="200" height="7" rx="3.5" fill="rgba(255,80,80,.5)" style="clip-path:inset(0 24% 0 0);"/>
+        <text x="268" y="323" font-family="'DM Sans'" font-size="7" fill="rgba(255,80,80,.6)">HIGH</text>
+        <text x="62" y="342" font-family="'DM Sans'" font-size="8" letter-spacing="1.5" fill="rgba(255,255,255,.3)">THE WAND STA</text>
+        <rect x="62" y="348" width="200" height="7" rx="3.5" fill="rgba(144,69,136,.15)"/>
+        <rect x="62" y="348" width="7" height="7" rx="3.5" fill="rgba(80,220,120,.8)"/>
+        <text x="268" y="355" font-family="'DM Sans'" font-size="7" fill="rgba(80,220,120,.8)">NEAR ZERO</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tech-info">
+    <div class="tech-info-inner">
+      <div class="tech-num reveal">04 / 06</div>
+      <div class="tech-cat reveal d1">Pain-Free Anaesthesia</div>
+      <h2 class="tech-name reveal d1">The Wand <em>STA System</em></h2>
+      <p class="tech-desc reveal d2">Computer-controlled local anaesthesia delivery at a precisely metered 0.005 ml/sec â€” the exact rate at which tissue absorbs anaesthetic without pain. No sharp jab. No burning. Patients who were terrified of needles describe The Wand as feeling like nothing at all.</p>
+      <div class="tech-specs reveal d2">
+        <div class="tech-spec"><div class="tech-spec-label">Delivery Rate</div><div class="tech-spec-value accent">0.005 ml/sec</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Control</div><div class="tech-spec-value">Computer-regulated</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Pain Level</div><div class="tech-spec-value">Near zero</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Used For</div><div class="tech-spec-value">All procedures</div></div>
+      </div>
+      <div class="tech-cta reveal d3">
+        <a href="/book" class="btn-brand">Book Pain-Free Care <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/treatments/root-canal-treatment-delhi" class="btn-outline-brand">Root Canal Info</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     TECH 5 â€” DIODE LASER
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="tech-section" id="tech-4">
+  <div class="tech-visual">
+    <div class="tech-visual-num">05</div>
+    <div class="tech-visual-label"><span class="tech-visual-label-dot"></span><span class="tech-visual-label-txt">Soft Tissue Precision</span></div>
+    <div class="tech-anim">
+      <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Central target crosshair -->
+        <circle cx="190" cy="190" r="90" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <circle cx="190" cy="190" r="60" stroke="rgba(255,255,255,.08)" stroke-width="1.5"/>
+        <circle cx="190" cy="190" r="30" stroke="rgba(144,69,136,.25)" stroke-width="1.5" style="animation:laserRing 1.8s ease-in-out infinite;"/>
+        <circle cx="190" cy="190" r="52" stroke="rgba(144,69,136,.15)" stroke-width="1" style="animation:laserRing2 1.8s ease-in-out .3s infinite;"/>
+        <circle cx="190" cy="190" r="76" stroke="rgba(144,69,136,.08)" stroke-width="1" style="animation:laserRing 1.8s ease-in-out .6s infinite;"/>
+        <!-- Crosshair lines -->
+        <line x1="190" y1="60" x2="190" y2="120" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="190" y1="260" x2="190" y2="320" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="60" y1="190" x2="120" y2="190" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="260" y1="190" x2="320" y2="190" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- Gold centre dot -->
+        <circle cx="190" cy="190" r="7" fill="rgba(201,169,110,.8)"/>
+        <circle cx="190" cy="190" r="3" fill="rgba(255,255,255,.9)"/>
+        <!-- Wavelength beam lines from centre -->
+        <line x1="190" y1="183" x2="190" y2="100" stroke="url(#laserBeam)" stroke-width="2" stroke-linecap="round"/>
+        <!-- Spec data boxes -->
+        <rect x="260" y="130" width="92" height="72" rx="4" fill="rgba(0,0,0,.4)" stroke="rgba(144,69,136,.25)" stroke-width="1"/>
+        <text x="306" y="150" text-anchor="middle" font-family="'DM Sans'" font-size="7" letter-spacing="2" fill="rgba(144,69,136,.8)">WAVELENGTH</text>
+        <text x="306" y="168" text-anchor="middle" font-family="'Cormorant Garamond'" font-size="20" font-weight="300" fill="rgba(255,255,255,.8)">940 nm</text>
+        <text x="306" y="183" text-anchor="middle" font-family="'DM Sans'" font-size="7" letter-spacing="1" fill="rgba(255,255,255,.25)">DIODE LASER</text>
+        <!-- Application labels -->
+        <text x="76" y="100" text-anchor="middle" font-family="'DM Sans'" font-size="7.5" letter-spacing="1" fill="rgba(255,255,255,.35)">GUM CONTOURING</text>
+        <text x="310" y="260" text-anchor="middle" font-family="'DM Sans'" font-size="7.5" letter-spacing="1" fill="rgba(255,255,255,.35)">DEPIGMENTATION</text>
+        <text x="68" y="260" text-anchor="middle" font-family="'DM Sans'" font-size="7.5" letter-spacing="1" fill="rgba(255,255,255,.35)">WHITENING</text>
+        <text x="310" y="120" text-anchor="middle" font-family="'DM Sans'" font-size="7.5" letter-spacing="1" fill="rgba(255,255,255,.35)">SOFT TISSUE</text>
+        <defs>
+          <linearGradient id="laserBeam" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="rgba(201,169,110,.9)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  <div class="tech-info">
+    <div class="tech-info-inner">
+      <div class="tech-num reveal">05 / 06</div>
+      <div class="tech-cat reveal d1">Soft Tissue Precision</div>
+      <h2 class="tech-name reveal d1">Diode <em>Laser</em></h2>
+      <p class="tech-desc reveal d2">A 940nm diode laser replaces scalpels for gum contouring, depigmentation, and soft-tissue procedures. Cuts with light â€” no bleeding, no stitches in most cases, dramatically faster healing, and precision that no blade can achieve.</p>
+      <div class="tech-specs reveal d2">
+        <div class="tech-spec"><div class="tech-spec-label">Wavelength</div><div class="tech-spec-value accent">940 nm</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Bleeding</div><div class="tech-spec-value">Near zero</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Recovery</div><div class="tech-spec-value">24â€“48 hours</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Stitches</div><div class="tech-spec-value">Rarely needed</div></div>
+      </div>
+      <div class="tech-cta reveal d3">
+        <a href="/book" class="btn-brand">Book Laser Treatment <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/treatments/laser-dentistry-delhi" class="btn-outline-brand">Laser Dentistry</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     TECH 6 â€” INVISALIGN
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<section class="tech-section" id="tech-5">
+  <div class="tech-visual">
+    <div class="tech-visual-num">06</div>
+    <div class="tech-visual-label"><span class="tech-visual-label-dot"></span><span class="tech-visual-label-txt">Clear Orthodontics</span></div>
+    <div class="tech-anim">
+      <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Arch base lines -->
+        <path d="M70 240 Q70 130 190 110 Q310 130 310 240" stroke="rgba(255,255,255,.06)" stroke-width="2" fill="none"/>
+        <!-- Crowded teeth before (offset) -->
+        <g opacity=".5">
+          <rect x="90" y="188" width="22" height="38" rx="4" stroke="rgba(255,255,255,.2)" stroke-width="1.2" fill="rgba(255,255,255,.04)" style="animation:toothShift2 5s ease-in-out infinite;"/>
+          <rect x="116" y="178" width="24" height="48" rx="4" stroke="rgba(255,255,255,.2)" stroke-width="1.2" fill="rgba(255,255,255,.04)" style="animation:toothShift1 5s ease-in-out infinite;"/>
+          <rect x="144" y="168" width="26" height="58" rx="4" stroke="rgba(255,255,255,.25)" stroke-width="1.5" fill="rgba(255,255,255,.04)" style="animation:toothShift3 5s ease-in-out .2s infinite;"/>
+          <rect x="178" y="164" width="26" height="62" rx="4" stroke="rgba(255,255,255,.25)" stroke-width="1.5" fill="rgba(255,255,255,.04)"/>
+          <rect x="212" y="168" width="26" height="58" rx="4" stroke="rgba(255,255,255,.25)" stroke-width="1.5" fill="rgba(255,255,255,.04)" style="animation:toothShift3 5s ease-in-out .4s infinite;"/>
+          <rect x="244" y="178" width="24" height="48" rx="4" stroke="rgba(255,255,255,.2)" stroke-width="1.2" fill="rgba(255,255,255,.04)" style="animation:toothShift2 5s ease-in-out .2s infinite;"/>
+          <rect x="272" y="188" width="22" height="38" rx="4" stroke="rgba(255,255,255,.2)" stroke-width="1.2" fill="rgba(255,255,255,.04)" style="animation:toothShift1 5s ease-in-out .4s infinite;"/>
+        </g>
+        <!-- Aligner overlay -->
+        <path d="M84 226 Q84 205 100 200 Q190 192 280 200 Q296 205 296 226 Q296 240 280 244 Q190 248 100 244 Q84 240 84 226Z" stroke="rgba(144,69,136,.5)" stroke-width="1.5" fill="rgba(144,69,136,.06)" stroke-dasharray="5 3"/>
+        <!-- Progress bar -->
+        <rect x="80" y="278" width="220" height="8" rx="4" fill="rgba(255,255,255,.06)"/>
+        <rect x="80" y="278" width="165" height="8" rx="4" fill="rgba(144,69,136,.6)"/>
+        <circle cx="245" cy="282" r="6" fill="var(--brand)" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
+        <text x="190" y="302" text-anchor="middle" font-family="'DM Sans'" font-size="8" letter-spacing="1.5" fill="rgba(144,69,136,.8)">ALIGNER 18 OF 24</text>
+        <!-- Clincheck label -->
+        <rect x="80" y="318" width="100" height="38" rx="4" fill="rgba(0,0,0,.3)" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+        <text x="130" y="334" text-anchor="middle" font-family="'DM Sans'" font-size="7" letter-spacing="2" fill="rgba(255,255,255,.3)">CLINCHECK</text>
+        <text x="130" y="348" text-anchor="middle" font-family="'Cormorant Garamond'" font-size="14" font-weight="300" fill="rgba(255,255,255,.7)">3D Forecast</text>
+        <!-- Certified badge -->
+        <rect x="200" y="318" width="100" height="38" rx="4" fill="rgba(201,169,110,.08)" stroke="rgba(201,169,110,.3)" stroke-width="1"/>
+        <text x="250" y="334" text-anchor="middle" font-family="'DM Sans'" font-size="7" letter-spacing="2" fill="rgba(201,169,110,.6)">CERTIFIED</text>
+        <text x="250" y="348" text-anchor="middle" font-family="'Cormorant Garamond'" font-size="14" font-weight="300" fill="rgba(201,169,110,.8)">Provider</text>
+      </svg>
+    </div>
+  </div>
+  <div class="tech-info">
+    <div class="tech-info-inner">
+      <div class="tech-num reveal">06 / 06</div>
+      <div class="tech-cat reveal d1">Clear Orthodontics</div>
+      <h2 class="tech-name reveal d1">Invisalign <em>System</em></h2>
+      <p class="tech-desc reveal d2">VinSmiles is a certified Invisalign provider. iTero scanning replaces messy impressions, Clincheck 3D software maps your tooth movement aligner-by-aligner, and you approve the full forecast before treatment starts. Monthly check-ins with our orthodontist.</p>
+      <div class="tech-specs reveal d2">
+        <div class="tech-spec"><div class="tech-spec-label">Status</div><div class="tech-spec-value accent">Certified Provider</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Planning</div><div class="tech-spec-value">Clincheck 3D</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Impressions</div><div class="tech-spec-value">None â€” iTero scan</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Tracking</div><div class="tech-spec-value">Monthly specialist</div></div>
+      </div>
+      <div class="tech-cta reveal d3">
+        <a href="/book" class="btn-brand">Start Invisalign <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/treatments/invisalign-delhi" class="btn-outline-brand">See Results</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â• PRECISION NUMBERS STRIP â•â• -->
+<div class="precision-strip">
+  <div class="precision-strip-inner">
+    <!-- Repeated twice for seamless loop -->
+    <div class="ps-item"><div class="ps-val">0.09<span>mm</span></div><div class="ps-label">CBCT voxel resolution</div></div>
+    <div class="ps-item"><div class="ps-val">17<span>Î¼m</span></div><div class="ps-label">iTero scan accuracy</div></div>
+    <div class="ps-item"><div class="ps-val">14<span>sec</span></div><div class="ps-label">Full jaw 3D scan</div></div>
+    <div class="ps-item"><div class="ps-val">940<span>nm</span></div><div class="ps-label">Laser wavelength</div></div>
+    <div class="ps-item"><div class="ps-val">98.7<span>%</span></div><div class="ps-label">Implant success rate</div></div>
+    <div class="ps-item"><div class="ps-val">0<span>Ã—</span></div><div class="ps-label">Traditional impressions needed</div></div>
+    <div class="ps-item"><div class="ps-val">6,000<span>fps</span></div><div class="ps-label">iTero laser pulses/sec</div></div>
+    <div class="ps-item"><div class="ps-val">â†“98<span>%</span></div><div class="ps-label">Radiation vs medical CT</div></div>
+    <!-- Duplicate for scroll -->
+    <div class="ps-item"><div class="ps-val">0.09<span>mm</span></div><div class="ps-label">CBCT voxel resolution</div></div>
+    <div class="ps-item"><div class="ps-val">17<span>Î¼m</span></div><div class="ps-label">iTero scan accuracy</div></div>
+    <div class="ps-item"><div class="ps-val">14<span>sec</span></div><div class="ps-label">Full jaw 3D scan</div></div>
+    <div class="ps-item"><div class="ps-val">940<span>nm</span></div><div class="ps-label">Laser wavelength</div></div>
+    <div class="ps-item"><div class="ps-val">98.7<span>%</span></div><div class="ps-label">Implant success rate</div></div>
+    <div class="ps-item"><div class="ps-val">0<span>Ã—</span></div><div class="ps-label">Traditional impressions needed</div></div>
+    <div class="ps-item"><div class="ps-val">6,000<span>fps</span></div><div class="ps-label">iTero laser pulses/sec</div></div>
+    <div class="ps-item"><div class="ps-val">â†“98<span>%</span></div><div class="ps-label">Radiation vs medical CT</div></div>
+  </div>
+</div>
+
+<!-- â•â• CTA â•â• -->
+<div class="about-cta reveal">
+  <div class="about-cta-inner">
+    <div class="cta-eyebrow">Experience the Difference</div>
+    <h2 class="cta-h2">See Our Technology <em>In Action</em></h2>
+    <p class="cta-p">Book a free consultation â€” we'll walk you through every instrument relevant to your treatment and show you exactly what precision looks like.</p>
+    <div class="cta-btns">
+      <a href="/book" class="btn-white">Book a Free Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://wa.me/919654988858" class="btn-wa" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="white"><path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.35.37 2.63 1 3.74L1.5 16.5l3.88-1c1.06.55 2.27.87 3.62.87 4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5zm3.69 10.35c-.15.42-.87.8-1.2.85-.3.04-.68.06-1.1-.07-.25-.08-.58-.18-.99-.36C7.8 11.65 6.5 10.2 6.38 10.03c-.12-.17-.97-1.29-.97-2.46 0-1.17.61-1.74.83-1.98.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.41.2.5.68 1.68.74 1.8.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.97 1.33 1.57.91.8 1.68 1.05 1.92 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12l1.71.81c.2.1.33.14.38.22.05.08.05.48-.1.9z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- â•â• FOOTER â•â• -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="f-logo-mark">Vin<span>Smiles</span></div>
+      <div class="f-logo-sub">Advanced Dentistry Â· Since 2005</div>
+      <div class="f-addr">Greater Kailash II, New Delhi â€” 110048<br>Near M-Block Market, GK-2</div>
+      <div class="f-contacts">
+        <a href="tel:+919654988858">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          +91 96549 88858
+        </a>
+        <a href="mailto:vinsmiles88@gmail.com">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>
+          vinsmiles88@gmail.com
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="f-col-title">Treatments</div>
+      <ul class="f-links">
+        <li><a href="/treatments/dental-implants-delhi">Dental Implants</a></li>
+        <li><a href="/treatments/smile-design-delhi">Smile Design</a></li>
+        <li><a href="/treatments/invisalign-delhi">Invisalign</a></li>
+        <li><a href="/treatments/dental-veneers-delhi">Veneers</a></li>
+        <li><a href="/treatments/laser-dentistry-delhi">Laser Dentistry</a></li>
+        <li><a href="/treatments/full-mouth-rehabilitation">Full Mouth Rehab</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">Clinic</div>
+      <ul class="f-links">
+        <li><a href="/about">Our Story</a></li>
+        <li><a href="/our-team">Meet the Team</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="/smile-gallery">Smile Gallery</a></li>
+        <li><a href="/patient-stories">Patient Stories</a></li>
+        <li><a href="/contact">Contact &amp; Location</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">International</div>
+      <ul class="f-links">
+        <li><a href="/international-patients">Patient Guide</a></li>
+        <li><a href="/international-patients#cost">Cost Comparison</a></li>
+        <li><a href="/international-patients#journey">Treatment Journey</a></li>
+        <li><a href="/book">Book Consultation</a></li>
+      </ul>
+      <div class="f-hours">
+        <div class="f-hours-label">Hours</div>
+        <div class="f-hours-val">Monâ€“Sat: 10am â€“ 7pm<br>Sunday: By appointment</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="f-copy">&copy; 2025 VinSmiles Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
+    <div class="f-badges">
+      <span class="f-badge">Invisalign Provider</span>
+      <span class="f-badge">IDA Member</span>
+      <span class="f-badge">5.0 &#9733; JustDial</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WA float -->
+<a href="https://wa.me/919654988858" class="wa-btn" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="white"><path d="M14 2.5C7.6 2.5 2.5 7.6 2.5 14c0 2.1.57 4.1 1.57 5.83L2.5 25.5l5.84-1.55A11.43 11.43 0 0014 25.5c6.4 0 11.5-5.1 11.5-11.5S20.4 2.5 14 2.5zm5.65 15.9c-.23.65-1.34 1.24-1.85 1.31-.46.07-1.05.1-1.69-.1-.39-.13-.9-.3-1.54-.56C11.7 18.03 9.7 15.8 9.5 15.53c-.2-.26-1.5-2-.5-3.79.21-.37.56-.71 1.02-.98.19-.11.38-.17.53-.17h.7c.23 0 .54-.08.84.64.3.77 1.04 2.6 1.13 2.79.09.19.15.4.04.64-.11.24-.17.38-.36.58-.19.2-.39.46-.56.62-.18.17-.37.37-.15.73.21.36.96 1.5 2.06 2.43 1.41 1.23 2.59 1.61 2.96 1.8.37.18.58.15.8-.09.21-.24.92-1.07 1.17-1.44.24-.37.49-.3.83-.18l2.63 1.24c.3.14.5.2.57.32.08.12.08.72-.15 1.37z"/></svg>
+</a>
+
+<script>
+/* â•â• NAV: darkâ†”light transition at tech sections â•â• */
+const nav       = document.getElementById('nav');
+const techInfos = document.querySelectorAll('.tech-info');
+const sections  = document.querySelectorAll('.tech-section');
+const heroStrip = document.getElementById('heroStrip');
+const stripItems= heroStrip.querySelectorAll('.hs-item');
+
+function updateNav() {
+  const scrollY = window.scrollY;
+  const heroH   = document.getElementById('hero').offsetHeight;
+  // In hero: transparent dark
+  // In tech-info (white panels): light nav
+  // After last section: back to dark (CTA/footer)
+  let inLight = false;
+  if (scrollY > heroH - 34) {
+    // Check if we're over a white info panel
+    techInfos.forEach(info => {
+      const r = info.getBoundingClientRect();
+      if (r.top < 68 && r.bottom > 68) inLight = true;
+    });
+    // CTA and footer are dark
+    const cta = document.querySelector('.about-cta');
+    if (cta) {
+      const r = cta.getBoundingClientRect();
+      if (r.top < 68) inLight = false;
+    }
+  }
+  nav.classList.toggle('light', inLight);
+  nav.classList.toggle('scrolled', scrollY > heroH * 0.7 && !inLight);
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+updateNav();
+
+/* â•â• Strip active state on scroll â•â• */
+function updateStrip() {
+  let active = -1;
+  sections.forEach((s, i) => {
+    const r = s.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.5) active = i;
+  });
+  stripItems.forEach((item, i) => item.classList.toggle('active-strip', i === active));
+}
+window.addEventListener('scroll', updateStrip, {passive:true});
+
+function scrollToTech(i) {
+  const el = document.getElementById('tech-' + i);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+/* â•â• Mobile menu â•â• */
+function toggleMenu() {
+  const m = document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+  document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+}
+
+/* â•â• Scroll reveal â•â• */
+const ro = new IntersectionObserver(entries =>
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }),
+  {threshold:.1});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => ro.observe(el));
+
+/* â•â• iTero point cloud builder â•â• */
+(function buildITeroCloud() {
+  const g = document.getElementById('iteroPoints');
+  if (!g) return;
+  // Points along dental arch shape
+  const pts = [];
+  for (let i = 0; i <= 40; i++) {
+    const t  = (i / 40) * Math.PI;
+    const x  = 80 + (300 - 80) * (i / 40);
+    const cx = 190;
+    const y  = 240 - Math.sin(t) * 110;
+    pts.push({x, y});
+  }
+  // Add inner arch row
+  for (let i = 0; i <= 35; i++) {
+    const t = (i / 35) * Math.PI;
+    const x = 90 + (290 - 90) * (i / 35);
+    const y = 230 - Math.sin(t) * 80;
+    pts.push({x, y});
+  }
+  pts.forEach((p, i) => {
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', p.x);
+    c.setAttribute('cy', p.y);
+    c.setAttribute('r', i % 5 === 0 ? '2.5' : '1.5');
+    const col = i % 7 === 0 ? 'rgba(201,169,110,' : 'rgba(144,69,136,';
+    const op  = (0.3 + Math.random() * 0.5).toFixed(2);
+    c.setAttribute('fill', col + op + ')');
+    c.style.animation = `ptAppear .4s ease ${(i * 0.018).toFixed(2)}s both`;
+    g.appendChild(c);
+  });
+})();
+</script>
+</body>
+</html>
+
