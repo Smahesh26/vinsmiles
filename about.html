@@ -59,7 +59,9 @@ img { display:block; max-width:100%; }
   position:fixed; top:0; left:0; right:0; z-index:200;
   height:68px; display:flex; align-items:center; justify-content:space-between;
   padding:0 52px;
-  background:rgba(255,255,255,0);
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 var(--rule);
   transition:background .4s var(--ease), box-shadow .4s;
 }
 .nav.scrolled {
@@ -70,19 +72,19 @@ img { display:block; max-width:100%; }
 .nav-logo { display:flex; flex-direction:column; gap:1px; }
 .nav-logo-mark {
   font-family:var(--font-d); font-size:23px; font-weight:400;
-  color:var(--surface); line-height:1; letter-spacing:.3px; transition:color .4s;
+  color:var(--ink); line-height:1; letter-spacing:.3px; transition:color .4s;
 }
 .nav.scrolled .nav-logo-mark { color:var(--ink); }
 .nav-logo-mark span { color:var(--gold); }
 .nav-logo-sub {
   font-size:9px; font-weight:400; letter-spacing:3px; text-transform:uppercase;
-  color:rgba(255,255,255,.45); transition:color .4s;
+  color:var(--ink-40); transition:color .4s;
 }
 .nav.scrolled .nav-logo-sub { color:var(--ink-40); }
 .nav-links { display:flex; gap:32px; list-style:none; }
 .nav-links a {
   font-size:12px; font-weight:400; letter-spacing:1.5px; text-transform:uppercase;
-  color:rgba(255,255,255,.7); transition:color .2s; position:relative; padding-bottom:3px;
+  color:var(--ink-60); transition:color .2s; position:relative; padding-bottom:3px;
 }
 .nav.scrolled .nav-links a { color:var(--ink-60); }
 .nav-links a::after {
@@ -978,11 +980,11 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </a>
   <ul class="nav-links">
     <li><a href="treatments.html">Treatments</a></li>
-    <li><a href="/smile-gallery">Smile Gallery</a></li>
-    <li><a href="/our-team">Our Team</a></li>
+    <li><a href="gallery.html">Smile Gallery</a></li>
+    <li><a href="our-team.html">Our Team</a></li>
     <li><a href="about.html" class="active">Our Story</a></li>
     <li><a href="technology.html">Technology</a></li>
-    <li><a href="/international-patients">International</a></li>
+    <li><a href="international.html">International</a></li>
   </ul>
   <a href="/book" class="nav-cta">Book Consultation</a>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
@@ -991,10 +993,10 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
-  <a href="/smile-gallery" onclick="toggleMenu()">Smile Gallery</a>
-  <a href="/our-team" onclick="toggleMenu()">Our Team</a>
+  <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
+  <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
   <a href="technology.html" onclick="toggleMenu()">Technology</a>
-  <a href="/international-patients" onclick="toggleMenu()">International</a>
+  <a href="international.html" onclick="toggleMenu()">International</a>
   <a href="about.html" class="active" onclick="toggleMenu()">Our Story</a>
   <a href="/book" class="m-cta" onclick="toggleMenu()">Book Consultation</a>
 </div>
@@ -1080,7 +1082,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
       <div class="is-l">In-House Specialists</div>
     </div>
     <div class="is-stat reveal d2">
-      <div class="is-n">5.0<span>â˜…</span></div>
+      <div class="is-n">5.0 <span>★</span></div>
       <div class="is-l">Patient Rating</div>
     </div>
     <div class="is-stat reveal d3">
@@ -1149,7 +1151,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         </p>
 
         <div class="story-btns">
-          <a href="/our-team" class="btn-brand">Meet the Full Team
+          <a href="our-team.html" class="btn-brand">Meet the Full Team
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
           <a href="/book" class="btn-outline-brand">Book a Consultation
@@ -1520,7 +1522,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <div class="doc-name">Dr. Neha Sachdeva</div>
           <div class="doc-role">Founder Â· Lead Prosthodontist</div>
           <div class="doc-bio">MDS Prosthodontics. Clinical Research Fellowship. 20+ years. Specialises in full mouth rehabilitation, implants, and smile design.</div>
-          <a href="/our-team/dr-neha-sachdeva" class="doc-link">Full Profile
+          <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -1535,7 +1537,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <div class="doc-name">Dr. Radhika K.</div>
           <div class="doc-role">Orthodontist Â· Invisalign Specialist</div>
           <div class="doc-bio">MDS Orthodontics. Certified Invisalign provider. Specialises in clear aligners, braces, and jaw correction.</div>
-          <a href="/our-team" class="doc-link">Full Profile
+          <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -1550,7 +1552,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <div class="doc-name">Dr. Anita S.</div>
           <div class="doc-role">Periodontist Â· 10+ Years</div>
           <div class="doc-bio">MDS Periodontics. Laser-assisted gum surgery specialist. Manages everything from routine maintenance to advanced flap procedures.</div>
-          <a href="/our-team" class="doc-link">Full Profile
+          <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -1565,7 +1567,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <div class="doc-name">Dr. Vikram R.</div>
           <div class="doc-role">Oral &amp; Maxillofacial Surgeon</div>
           <div class="doc-bio">MDS Oral Surgery. Hospital-trained. Wisdom tooth extractions, implant surgeries, and complex oral procedures.</div>
-          <a href="/our-team" class="doc-link">Full Profile
+          <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -1574,7 +1576,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     </div>
 
     <div class="team-cta-strip reveal">
-      <a href="/our-team" class="btn-brand">
+      <a href="our-team.html" class="btn-brand">
         Meet the Full Team
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -1657,7 +1659,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           </svg>
         </div>
         <div class="award-text">
-          <div class="award-name">5.0 â˜… JustDial</div>
+          <div class="award-name">5.0 ★ JustDial</div>
           <div class="award-body">231+ Verified Reviews</div>
         </div>
       </div>
@@ -1759,21 +1761,21 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     <div>
       <div class="f-col-title">Treatments</div>
       <ul class="f-links">
-        <li><a href="/treatments/dental-implants-delhi">Dental Implants</a></li>
-        <li><a href="/treatments/smile-design-delhi">Smile Design</a></li>
-        <li><a href="/treatments/invisalign-delhi">Invisalign</a></li>
-        <li><a href="/treatments/dental-veneers-delhi">Veneers</a></li>
-        <li><a href="/treatments/laser-dentistry-delhi">Laser Dentistry</a></li>
-        <li><a href="/treatments/full-mouth-rehabilitation">Full Mouth Rehab</a></li>
+        <li><a href="treatments.html">Dental Implants</a></li>
+        <li><a href="treatments.html">Smile Design</a></li>
+        <li><a href="treatments.html">Invisalign</a></li>
+        <li><a href="treatments.html">Veneers</a></li>
+        <li><a href="treatments.html">Laser Dentistry</a></li>
+        <li><a href="treatments.html">Full Mouth Rehab</a></li>
       </ul>
     </div>
     <div>
       <div class="f-col-title">Clinic</div>
       <ul class="f-links">
         <li><a href="about.html" style="color:rgba(255,255,255,.7);">Our Story</a></li>
-        <li><a href="/our-team">Meet the Team</a></li>
+        <li><a href="our-team.html">Meet the Team</a></li>
         <li><a href="technology.html">Technology</a></li>
-        <li><a href="/smile-gallery">Smile Gallery</a></li>
+        <li><a href="gallery.html">Smile Gallery</a></li>
         <li><a href="/patient-stories">Patient Stories</a></li>
         <li><a href="/contact">Contact &amp; Location</a></li>
       </ul>
@@ -1781,9 +1783,9 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     <div>
       <div class="f-col-title">International</div>
       <ul class="f-links">
-        <li><a href="/international-patients">Patient Guide</a></li>
-        <li><a href="/international-patients#cost">Cost Comparison</a></li>
-        <li><a href="/international-patients#journey">Treatment Journey</a></li>
+        <li><a href="international.html">Patient Guide</a></li>
+        <li><a href="international.html#cost">Cost Comparison</a></li>
+        <li><a href="international.html#journey">Treatment Journey</a></li>
         <li><a href="/book">Book Consultation</a></li>
       </ul>
       <div class="f-hours">
@@ -1946,4 +1948,7 @@ if (tj) autoObs.observe(tj);
 </script>
 </body>
 </html>
+
+
+
 
