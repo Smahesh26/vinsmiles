@@ -547,8 +547,8 @@ const TEAM=[
    bio:'Dr. Mitiksha Shahani is a certified Invisalign provider who combines digital smile planning with a strong focus on facial harmony and bite stability. She guides each patient from initial iTero scan through to retention with detailed oversight at every step.',
   treats:['Invisalign','Clear Aligners','Ceramic Braces','Smile Makeover Alignment','Bite Correction','Digital Ortho Planning'],
    edu:'MDS Orthodontics\nCertified Invisalign Provider � Align Technology\niTero Digital Scanning & Planning'},
-  {role:'General Dental Surgeon',name:'Dr. Lakshya Arya',quals:'BDS � General Dentistry � Preventive & Restorative Care',badge:'General Dentistry',
-   img:'images/WhatsApp%20Image%202026-05-18%20at%203.46.26%20PM.jpeg',
+  {role:'General Dental Surgeon',name:'Dr. Lakshya Arya',quals:'BDS',badge:'General Dentistry',
+   img:'images/DrLakshya.jpeg',
    bio:'Dr. Lakshya Arya is the clinic\u2019s general dental surgeon, providing first-contact care, routine examinations, and restorative treatments. His thorough diagnostic eye and reassuring manner make him the preferred starting point for patients new to VinSmiles, ensuring seamless referrals to the right specialist.',
    treats:['Dental Examinations','Tooth-Coloured Fillings','Scaling & Polishing','X-rays & Diagnosis','Preventive Dentistry','Specialist Referral'],
    edu:'BDS (Bachelor of Dental Surgery)\nGeneral & Preventive Dentistry\nClinical Diagnosis & Restorative Care'},
@@ -577,8 +577,6 @@ function buildCreds(){
 function buildCards(){
   const grid=document.getElementById('teamGrid');
   TEAM.forEach((m,i)=>{
-    const treats=m.treats.map(t=>`<span class="team-card-treat">${t}</span>`).join('');
-    const eduHtml=m.edu.split('\n').map(l=>`<div>${l}</div>`).join('');
     const delay=i%3===0?'':i%3===1?' d1':' d2';
     const card=document.createElement('div');
     card.className=`team-card reveal${delay}`;
@@ -590,32 +588,9 @@ function buildCards(){
       <div class="team-card-body">
         <div class="team-card-role">${m.role}</div>
         <div class="team-card-name">${m.name}</div>
-        <div class="team-card-quals">${m.quals}</div>
-        <p class="team-card-bio">${m.bio}</p>
-        <div class="team-card-treats">${treats}</div>
-        <div class="team-card-edu">${eduHtml}</div>
-        <button class="team-card-toggle" onclick="toggleCard(this)" aria-expanded="false">
-          <span class="toggle-label">Read Profile</span>
-          <span class="team-card-toggle-icon">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </span>
-        </button>
       </div>`;
     grid.appendChild(card);
   });
-}
-
-function toggleCard(btn){
-  const card=btn.closest('.team-card');
-  const expanded=card.classList.toggle('expanded');
-  btn.setAttribute('aria-expanded',expanded);
-  btn.querySelector('.toggle-label').textContent=expanded?'Close Profile':'Read Profile';
-  if(expanded){
-    setTimeout(()=>{
-      const r=card.getBoundingClientRect();
-      if(r.top<80) card.scrollIntoView({behavior:'smooth',block:'start'});
-    },100);
-  }
 }
 
 function toggleMenu(){
