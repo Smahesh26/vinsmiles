@@ -80,10 +80,10 @@ button{cursor:pointer;font-family:var(--font-b);border:none;background:none;}
   text-transform:uppercase;color:rgba(255,255,255,.35);transition:color .4s;
 }
 .nav.light .nav-logo-sub{color:var(--ink-40);}
-.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links{display:flex;gap:24px;list-style:none;flex-wrap:nowrap;}
 .nav-links a{
   font-size:12px;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;
-  color:rgba(255,255,255,.6);transition:color .2s;position:relative;padding-bottom:3px;
+  color:rgba(255,255,255,.6);transition:color .2s;position:relative;padding-bottom:3px;white-space:nowrap;
 }
 .nav.light .nav-links a{color:var(--ink-60);}
 .nav-links a::after{
@@ -95,9 +95,12 @@ button{cursor:pointer;font-family:var(--font-b);border:none;background:none;}
 .nav-cta{
   background:var(--brand);color:#fff;padding:10px 24px;
   font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;
-  border-radius:2px;transition:background .2s,transform .15s,box-shadow .2s;
+  border-radius:2px;transition:background .2s,transform .15s,box-shadow .2s;white-space:nowrap;
 }
 .nav-cta:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(144,69,136,.35);}
+.nav{flex-wrap:nowrap;}
+.nav-logo{flex-shrink:0;}
+.nav-logo-sub{white-space:nowrap;}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
 .nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--gold);border-radius:2px;}
 .nav.light .nav-hamburger span{background:var(--brand);}
@@ -108,6 +111,12 @@ button{cursor:pointer;font-family:var(--font-b);border:none;background:none;}
 }
 .mobile-menu.open{display:flex;}
 .mobile-menu a{font-size:22px;font-family:var(--font-d);font-weight:300;color:rgba(255,255,255,.8);letter-spacing:1px;}
+
+@media(max-width:1200px){
+  .nav{padding:0 28px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+}
 .mobile-menu a:hover{color:var(--gold);}
 .mobile-menu .m-cta{background:var(--brand);color:#fff;padding:14px 40px;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;}
 

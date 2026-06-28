@@ -126,11 +126,11 @@ img { display:block; max-width:100%; }
   white-space:nowrap;
 }
 .nav.scrolled .nav-logo-sub { color:var(--ink-40); }
-.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links { display:flex; gap:24px; list-style:none; flex-wrap:nowrap; }
 .nav-links a {
   font-size:12px; font-weight:400; letter-spacing:1.5px;
   text-transform:uppercase; color:rgba(255,255,255,.7);
-  transition:color .2s; position:relative; padding-bottom:3px;
+  transition:color .2s; position:relative; padding-bottom:3px; white-space:nowrap;
 }
 .nav.scrolled .nav-links a { color:var(--ink-60); }
 .nav-links a::after {
@@ -144,7 +144,7 @@ img { display:block; max-width:100%; }
   background:var(--brand); color:#fff;
   padding:10px 24px; font-size:11px; font-weight:500;
   letter-spacing:1.8px; text-transform:uppercase;
-  border-radius:2px; transition:background .2s, transform .15s, box-shadow .2s;
+  border-radius:2px; transition:background .2s, transform .15s, box-shadow .2s; white-space:nowrap;
 }
 .nav-cta:hover { background:var(--brand-dark); transform:translateY(-1px); box-shadow:0 8px 24px rgba(144,69,136,.3); }
 .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
@@ -158,9 +158,10 @@ img { display:block; max-width:100%; }
 
 @media (max-width:1280px) {
   .nav { padding:0 28px; }
-  .nav-links { gap:18px; }
+  .nav-links { display:none; }
   .nav-links a { font-size:11px; letter-spacing:1.2px; }
   .nav-logo-sub { font-size:8px; letter-spacing:2px; }
+  .nav-hamburger { display:flex; }
 }
 .mobile-menu.open { display:flex; }
 .mobile-menu a { font-size:22px; font-family:var(--font-d); font-weight:300; color:var(--ink); letter-spacing:1px; }
@@ -173,12 +174,9 @@ img { display:block; max-width:100%; }
 .hero {
   position:relative; min-height:100vh;
   min-height:100svh;
-  background:linear-gradient(145deg,
-    #1a0d1a 0%,
-    #4a1d45 30%,
-    var(--brand) 62%,
-    #c47bb8 85%,
-    #e8d5e8 100%);
+  background:
+    linear-gradient(145deg, rgba(26,13,26,.78) 0%, rgba(74,29,69,.62) 30%, rgba(144,69,136,.52) 62%, rgba(196,123,184,.42) 85%, rgba(232,213,232,.28) 100%),
+    url("images/homepage/Vin Smiles Home Page Hero Banner.jpg") center/cover no-repeat;
   display:flex; align-items:flex-end; overflow:hidden;
 }
 /* subtle noise overlay */
@@ -391,9 +389,19 @@ img { display:block; max-width:100%; }
 .gallery-card:hover .gc-before { clip-path:inset(0 100% 0 0); }
 .gallery-card:hover .gc-after  { clip-path:inset(0 0 0 0); }
 
-/* Colour gradient stand-ins for before (desaturated) / after (vibrant) */
-.gc-before { background:linear-gradient(160deg,#1c1218 0%,#2e1a2a 50%,#1c1218 100%); filter:grayscale(.8) brightness(.7); }
-.gc-after  { background:linear-gradient(160deg,#5c2356 0%,var(--brand) 50%,#b06aaa 100%); filter:brightness(1.05); }
+/* Real before/after photo pairs for homepage marquee */
+.gallery-track .gallery-card:nth-child(6n+1) .gc-before { background-image:url("images/homepage/Gallery 1 - Before.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+1) .gc-after  { background-image:url("images/homepage/Gallery 1 - After.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+2) .gc-before { background-image:url("images/homepage/Gallery 2 - Before.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+2) .gc-after  { background-image:url("images/homepage/Gallery 2 - After.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+3) .gc-before { background-image:url("images/homepage/Gallery 3 - Before.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+3) .gc-after  { background-image:url("images/homepage/Gallery 3 - After.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+4) .gc-before { background-image:url("images/homepage/Gallery 4 - Before.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+4) .gc-after  { background-image:url("images/homepage/Gallery 4 - After.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+5) .gc-before { background-image:url("images/homepage/Gallery 1 - Before.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+5) .gc-after  { background-image:url("images/homepage/Gallery 1 - After.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+6) .gc-before { background-image:url("images/homepage/Gallery 2 - Before.jpg"); }
+.gallery-track .gallery-card:nth-child(6n+6) .gc-after  { background-image:url("images/homepage/Gallery 2 - After.jpg"); }
 
 /* inner tooth pattern */
 .gc-before::after, .gc-after::after {
@@ -403,14 +411,6 @@ img { display:block; max-width:100%; }
     radial-gradient(ellipse 70% 50% at 50% 80%, rgba(255,255,255,.12) 0%, transparent 70%),
     radial-gradient(ellipse 90% 30% at 50% 100%, rgba(255,255,255,.07) 0%, transparent 80%);
 }
-
-/* Case variants */
-.gallery-card:nth-child(2n) .gc-before { background:linear-gradient(135deg,#1a1015 0%,#251520 50%,#1a1015 100%); }
-.gallery-card:nth-child(2n) .gc-after  { background:linear-gradient(135deg,#4a1a46 0%,#8b3d84 50%,var(--brand) 100%); }
-.gallery-card:nth-child(3n) .gc-before { background:linear-gradient(160deg,#180e14 0%,#2a1525 50%,#180e14 100%); }
-.gallery-card:nth-child(3n) .gc-after  { background:linear-gradient(160deg,#5e2459 0%,var(--brand-mid) 50%,#d488cc 100%); }
-.gallery-card:nth-child(4n) .gc-before { background:linear-gradient(140deg,#1a0f17 0%,#2d1728 50%,#1a0f17 100%); }
-.gallery-card:nth-child(4n) .gc-after  { background:linear-gradient(140deg,#531e50 0%,#904588 50%,#c17ab8 100%); }
 
 /* centre divider line */
 .gc-divider {
@@ -594,7 +594,9 @@ img { display:block; max-width:100%; }
   min-height:640px; border-top:1px solid var(--rule);
 }
 .founder-left {
-  background:linear-gradient(145deg, #1a0d1a 0%, #4a1d45 50%, var(--brand) 100%);
+  background:
+    linear-gradient(145deg, rgba(26,13,26,.78) 0%, rgba(74,29,69,.58) 50%, rgba(144,69,136,.45) 100%),
+    url("images/homepage/Home Page Founder Image.jpg") center/cover no-repeat;
   position:relative; overflow:hidden;
   display:flex; flex-direction:column; justify-content:flex-end;
   padding:56px 60px;

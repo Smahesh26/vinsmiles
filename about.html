@@ -99,6 +99,12 @@ img { display:block; max-width:100%; }
   border-radius:2px; transition:background .2s, transform .15s, box-shadow .2s;
 }
 .nav-cta:hover { background:var(--brand-dark); transform:translateY(-1px); box-shadow:0 8px 24px rgba(144,69,136,.3); }
+.nav { flex-wrap:nowrap; }
+.nav-logo { flex-shrink:0; }
+.nav-logo-sub { white-space:nowrap; }
+.nav-links { flex-wrap:nowrap; gap:24px; }
+.nav-links a { white-space:nowrap; }
+.nav-cta { white-space:nowrap; flex-shrink:0; }
 .nav-hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
 .nav-hamburger span { display:block; width:24px; height:1.5px; background:var(--brand); border-radius:2px; }
 .mobile-menu {
@@ -110,6 +116,13 @@ img { display:block; max-width:100%; }
 .mobile-menu.open { display:flex; }
 .mobile-menu a { font-size:22px; font-family:var(--font-d); font-weight:300; color:var(--ink); letter-spacing:1px; }
 .mobile-menu a:hover { color:var(--brand); }
+.mobile-menu .m-cta { background:var(--brand); color:#fff; padding:14px 40px; font-size:13px; font-weight:500; letter-spacing:2px; text-transform:uppercase; border-radius:2px; margin-top:8px; }
+
+@media (max-width:1200px) {
+  .nav { padding:0 28px; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+}
 .mobile-menu .m-cta { background:var(--brand); color:#fff; padding:14px 40px; font-size:13px; font-weight:500; letter-spacing:2px; text-transform:uppercase; border-radius:2px; }
 
 /* ═══════════════════════════════════════
@@ -222,7 +235,9 @@ img { display:block; max-width:100%; }
 /* Portrait placeholder — warm gradient representing the clinic / Dr. Neha */
 .hero-portrait {
   position:absolute; inset:0;
-  background:linear-gradient(160deg, #f9f5fa 0%, var(--brand-light) 40%, #dcc5d8 100%);
+  background:
+    linear-gradient(160deg, rgba(249,245,250,.2) 0%, rgba(243,235,242,.15) 40%, rgba(220,197,216,.18) 100%),
+    url("images/Our Story Page/Our Story Hero Image.jpg") center/cover no-repeat;
 }
 .hero-portrait::after {
   content:'';
@@ -299,7 +314,9 @@ img { display:block; max-width:100%; }
 .story-left { position:sticky; top:120px; }
 .story-portrait-frame {
   width:100%; aspect-ratio:3/4;
-  background:linear-gradient(150deg, #e8dde8 0%, var(--brand-light) 50%, #d4bcd0 100%);
+  background:
+    linear-gradient(150deg, rgba(232,221,232,.16) 0%, rgba(243,235,242,.1) 50%, rgba(212,188,208,.16) 100%),
+    url("images/Our Story Page/Our Story Founder Image.jpg") center/cover no-repeat;
   border-radius:4px; position:relative; overflow:hidden;
   margin-bottom:28px;
 }
@@ -654,6 +671,9 @@ img { display:block; max-width:100%; }
 .doctor-photo {
   aspect-ratio:3/4; background:var(--brand-light); position:relative; overflow:hidden;
 }
+.doctor-photo img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;display:block;position:relative;z-index:1;
+}
 /* Gradient placeholder for each doctor — distinct colour per card */
 .doctor-photo::before {
   content:''; position:absolute; inset:0;
@@ -735,6 +755,10 @@ img { display:block; max-width:100%; }
 .gb-item:nth-child(3) .gb-bg { background:linear-gradient(160deg, #ede5ec 0%, var(--brand-light) 100%); }
 .gb-item:nth-child(4) .gb-bg { background:linear-gradient(135deg, #f0eaf0 0%, #dccbda 100%); }
 .gb-item:nth-child(5) .gb-bg { background:linear-gradient(160deg, #f7f3f7 0%, #e8d8e6 100%); }
+.gb-item:nth-child(1) .gb-bg { background:url("images/Our Story Page/Our Story Clinic Image 1.jpg") center/cover no-repeat; }
+.gb-item:nth-child(2) .gb-bg { background:url("images/Our Story Page/Our Story Clinic Image 2.jpg") center/cover no-repeat; }
+.gb-item:nth-child(3) .gb-bg { background:url("images/Our Story Page/Our Story Clinic Image 3.jpg") center/cover no-repeat; }
+.gb-item:nth-child(4) .gb-bg { background:url("images/Our Story Page/Our Story Clinic Image 4.jpg") center/cover no-repeat; }
 /* Dark overlay on hover */
 .gb-overlay {
   position:absolute; inset:0;
@@ -865,7 +889,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
   .about-hero { grid-template-columns:1fr; min-height:auto; }
   .hero-left { padding:100px 36px 64px; min-height:90vh; }
-  .hero-right { min-height:50vh; display:none; } /* show once real photo is available */
+  .hero-right { min-height:50vh; display:block; }
 
   .intro-strip { padding:0 28px; }
   .is-stat { padding:28px 24px; }
@@ -1515,13 +1539,13 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
       <div class="doctor-card reveal" style="--photo-bg:linear-gradient(160deg,#f0e6ef 0%,#dcc5d8 100%);">
         <div class="doctor-photo">
-          <div class="doctor-initials">NS</div>
-          <div class="doc-specialty-chip">Prosthodontist & Implantologist</div>
+          <img src="images/Our Story Page/Our Story Team Members Images/1 Dr. Shincy Anthony.jpg" alt="Dr. Shincy Anthony" loading="lazy">
+          <div class="doc-specialty-chip">Endodontist</div>
         </div>
         <div class="doctor-info">
-          <div class="doc-name">Dr. Neha Sachdeva</div>
-          <div class="doc-role">Founder · Lead Prosthodontist</div>
-          <div class="doc-bio">MDS Prosthodontics. Clinical Research Fellowship. Practicing since 2009. Specialises in full mouth rehabilitation, implants, and smile makeover planning.</div>
+          <div class="doc-name">Dr. Shincy Anthony</div>
+          <div class="doc-role">MDS · Endodontist</div>
+          <div class="doc-bio">Specialist in conservative dentistry and endodontics, focused on precise and gentle root canal care with modern protocols.</div>
           <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -1530,13 +1554,13 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
       <div class="doctor-card reveal d1" style="--photo-bg:linear-gradient(135deg,#ede0ec 0%,#d4b8cf 100%);">
         <div class="doctor-photo">
-          <div class="doctor-initials">RK</div>
+          <img src="images/Our Story Page/Our Story Team Members Images/2 Dr. Sombir Singh.jpg" alt="Dr. Sombir Singh" loading="lazy">
           <div class="doc-specialty-chip">Orthodontist</div>
         </div>
         <div class="doctor-info">
-          <div class="doc-name">Dr. Radhika K.</div>
-          <div class="doc-role">Orthodontist · Invisalign Specialist</div>
-          <div class="doc-bio">MDS Orthodontics. Certified Invisalign provider. Specialises in clear aligners, braces, and jaw correction.</div>
+          <div class="doc-name">Dr. Sombir Singh</div>
+          <div class="doc-role">MDS · Orthodontist</div>
+          <div class="doc-bio">Expert in comprehensive alignment and bite correction with evidence-based orthodontic planning for teens and adults.</div>
           <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -1545,13 +1569,13 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
       <div class="doctor-card reveal d2" style="--photo-bg:linear-gradient(160deg,#ebe0ea 0%,#d8c3d5 100%);">
         <div class="doctor-photo">
-          <div class="doctor-initials">AS</div>
+          <img src="images/Our Story Page/Our Story Team Members Images/3 Dr. Varun Suhag.jpg" alt="Dr. Varun Suhag" loading="lazy">
           <div class="doc-specialty-chip">Periodontist</div>
         </div>
         <div class="doctor-info">
-          <div class="doc-name">Dr. Anita S.</div>
-          <div class="doc-role">Periodontist · 10+ Years</div>
-          <div class="doc-bio">MDS Periodontics. Laser-assisted gum surgery specialist. Manages everything from routine maintenance to advanced flap procedures.</div>
+          <div class="doc-name">Dr. Varun Suhag</div>
+          <div class="doc-role">MDS · Periodontist & Laser Dentist</div>
+          <div class="doc-bio">Specialist in gum therapies, laser-assisted periodontal procedures, and cosmetic gum contouring with minimally invasive care.</div>
           <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -1560,13 +1584,13 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
       <div class="doctor-card reveal d3" style="--photo-bg:linear-gradient(135deg,#f3ebf2 0%,#ddc4d9 100%);">
         <div class="doctor-photo">
-          <div class="doctor-initials">VR</div>
-          <div class="doc-specialty-chip">Oral &amp; Maxillofacial Surgeon</div>
+          <img src="images/Our Story Page/Our Story Team Members Images/4 Dr. Nisheeth Sharma.jpg" alt="Dr. Nisheeth Sharma" loading="lazy">
+          <div class="doc-specialty-chip">Orthodontist</div>
         </div>
         <div class="doctor-info">
-          <div class="doc-name">Dr. Vikram R.</div>
-          <div class="doc-role">Oral &amp; Maxillofacial Surgeon</div>
-          <div class="doc-bio">MDS Oral Surgery. Hospital-trained. Wisdom tooth extractions, implant surgeries, and complex oral procedures.</div>
+          <div class="doc-name">Dr. Nisheeth Sharma</div>
+          <div class="doc-role">Orthodontist</div>
+          <div class="doc-bio">Focused on braces and clear aligner treatment with detailed finishing for stable bite correction and facial harmony.</div>
           <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>

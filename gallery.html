@@ -40,6 +40,12 @@ img{display:block;max-width:100%;}
 .nav-links a:hover,.nav-links a.active{color:var(--brand)!important;}
 .nav-cta{background:var(--brand);color:#fff;padding:10px 24px;font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;border-radius:2px;transition:background .2s,transform .15s,box-shadow .2s;}
 .nav-cta:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(144,69,136,.3);}
+.nav{flex-wrap:nowrap;}
+.nav-logo{flex-shrink:0;}
+.nav-logo-sub{white-space:nowrap;}
+.nav-links{flex-wrap:nowrap;gap:24px;}
+.nav-links a{white-space:nowrap;}
+.nav-cta{white-space:nowrap;flex-shrink:0;}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
 .nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--brand);border-radius:2px;}
 .mobile-menu{display:none;position:fixed;inset:0;z-index:290;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:32px;padding-top:68px;}
@@ -47,6 +53,12 @@ img{display:block;max-width:100%;}
 .mobile-menu a{font-size:22px;font-family:var(--font-d);font-weight:300;color:var(--ink);letter-spacing:1px;}
 .mobile-menu a:hover{color:var(--brand);}
 .mobile-menu .m-cta{background:var(--brand);color:#fff;padding:14px 40px;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;margin-top:8px;}
+
+@media(max-width:1200px){
+  .nav{padding:0 28px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+}
 
 /* ══ UTILS ══ */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
@@ -706,8 +718,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 <script>
 /* ════════════════════════════════
    CASE DATA
-   Images from Unsplash — smiling portraits for "after"
-   and more candid/natural for "before"
+  Homepage-provided local before/after assets
 ════════════════════════════════ */
 const CASES = [
   {
@@ -715,8 +726,8 @@ const CASES = [
     name:'Riya\'s Complete Smile Redesign',
     nameShort:'Riya M.',
     patient:'Female · 28 · Marketing Professional · Delhi',
-    afterImg:'https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 1 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 1 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','DSD + 8 Veneers'],['Duration','3 weeks'],['Result','Complete smile rebuild']],
     challenge:'Riya presented with severe discolouration, uneven tooth proportions, and a midline discrepancy that had made her self-conscious for years. She had avoided smiling in photographs for her entire adult life.',
     treatment:'Dr. Neha used Digital Smile Design to create a 3D simulation mapped precisely to Riya\'s facial proportions. After her approval, 8 ultra-thin porcelain veneers were fabricated and bonded — zero drilling on healthy tooth structure.',
@@ -727,8 +738,8 @@ const CASES = [
     name:'Arjun\'s Single Implant Restoration',
     nameShort:'Arjun K.',
     patient:'Male · 34 · Business Owner · Gurgaon',
-    afterImg:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 2 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 2 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','CBCT Implant + Crown'],['Duration','10 weeks'],['Success Rate','98.7%']],
     challenge:'Arjun had lost an upper premolar in an accident three years prior and had worn a removable partial denture he described as "embarrassing and uncomfortable" since then.',
     treatment:'CBCT 3D imaging guided precise implant placement by Dr. Neha in a 45-minute procedure under The Wand STA anaesthesia. After 8 weeks of osseointegration, a custom porcelain crown was seated — matching the adjacent teeth in colour, shape, and translucency.',
@@ -739,8 +750,8 @@ const CASES = [
     name:'Sunita\'s Total Oral Reconstruction',
     nameShort:'Sunita R.',
     patient:'Female · 52 · Retired Academic · South Delhi',
-    afterImg:'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 3 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 3 - Before.jpg',
     facts:[['Specialist','Full team · 7 specialists'],['Treatment','FMR · 12 crowns · 4 implants'],['Duration','14 days + follow-up'],['Investment','Life-changing']],
     challenge:'Decades of bruxism had worn Sunita\'s teeth to less than 60% of their original height. Her bite had collapsed, causing jaw pain, headaches, and extreme aesthetic concerns. Multiple specialists had quoted her astronomical fees in Delhi.',
     treatment:'A seven-specialist coordinated plan: Dr. Vikram performed bone grafting, Dr. Anita managed periodontal preparation, and Dr. Neha orchestrated 12 zirconia crowns and 4 implants across two visits using DSD for precise aesthetic planning.',
@@ -751,8 +762,8 @@ const CASES = [
     name:'Priya\'s Hollywood Smile',
     nameShort:'Priya S.',
     patient:'Female · 31 · Media Professional · Mumbai',
-    afterImg:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 4 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 4 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','10 Porcelain Veneers'],['Duration','2 visits · 5 days'],['Lifespan','15+ years']],
     challenge:'Priya\'s career placed her in front of cameras daily. She had significant tetracycline staining from childhood antibiotics — a discolouration that whitening cannot address — combined with minor crowding.',
     treatment:'10 ultra-thin (0.3mm) feldspathic porcelain veneers were designed using DSD and fabricated by a specialist ceramic lab. No anaesthesia required — minimal preparation, maximum result.',
@@ -763,8 +774,8 @@ const CASES = [
     name:'Rahul\'s Alignment Journey',
     nameShort:'Rahul T.',
     patient:'Male · 26 · Software Engineer · Bengaluru (visiting family)',
-    afterImg:'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 1 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 1 - Before.jpg',
     facts:[['Specialist','Dr. Radhika Kapoor'],['Treatment','Invisalign Comprehensive'],['Duration','14 months · 28 aligners'],['Provider','Certified']],
     challenge:'Rahul had moderate crowding in his upper arch and a mild crossbite. He had been quoted for braces at 16 but refused — now as an adult he wanted an invisible solution that wouldn\'t affect his professional life.',
     treatment:'iTero digital scan (no impressions), Clincheck 3D simulation approved by Rahul before starting, 28 sequential aligners managed by Dr. Radhika remotely between his Delhi visits. Monthly video check-ins.',
@@ -775,8 +786,8 @@ const CASES = [
     name:'Kavya\'s Pre-Wedding Transformation',
     nameShort:'Kavya M.',
     patient:'Female · 27 · Bride · Hyderabad',
-    afterImg:'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1520810627419-35e592369295?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 2 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 2 - Before.jpg',
     facts:[['Specialist','Dr. Neha · Dr. Sonia'],['Treatment','DSD + Bonding + Whitening'],['Duration','2 days'],['Occasion','Wedding — 10 days out']],
     challenge:'Kavya arrived 10 days before her wedding with two chipped lateral incisors, uneven gum line, and significant discolouration. She had never prioritised dental care and now faced a deadline.',
     treatment:'Dr. Sonia performed composite bonding on both chipped teeth in a single session. ZOOM whitening followed the next morning, lifting 5 shades. Laser gum contouring completed the transformation in the same appointment.',
@@ -787,8 +798,8 @@ const CASES = [
     name:'Aditya\'s Confidence Rebuild',
     nameShort:'Aditya S.',
     patient:'Male · 38 · Entrepreneur · New Delhi',
-    afterImg:'https://images.unsplash.com/photo-1548142813-c348350df52b?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 3 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 3 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','6 Veneers + Whitening'],['Duration','5 days'],['Change','Dramatic but natural']],
     challenge:'Aditya presented with severe fluorosis staining — white spots and brownish patches across his upper front six teeth — which had affected his confidence in business meetings and social situations for 15 years.',
     treatment:'Six precisely calibrated feldspathic porcelain veneers, designed in DSD to mask the staining entirely while maintaining perfect lateral symmetry. Lower arch whitening to match.',
@@ -799,8 +810,8 @@ const CASES = [
     name:'Mrs. Sharma\'s All-on-4',
     nameShort:'Meena S.',
     patient:'Female · 61 · Homemaker · Noida',
-    afterImg:'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 4 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 4 - Before.jpg',
     facts:[['Specialist','Dr. Neha + Dr. Vikram'],['Treatment','All-on-4 Lower Arch'],['Duration','2 visits · 4 months'],['Result','Permanent fixed teeth']],
     challenge:'Meena had worn a full lower denture for 8 years. Bone loss had made the denture increasingly unstable — she could not eat without it slipping, which had severely impacted her diet and social confidence.',
     treatment:'Dr. Vikram assessed bone availability via CBCT and placed 4 titanium implants in strategic positions. After osseointegration, Dr. Neha fitted a fixed zirconia bridge — teeth that do not come out.',
@@ -811,8 +822,8 @@ const CASES = [
     name:'James\' Dental Tourism Case',
     nameShort:'James T.',
     patient:'Male · 44 · Finance Director · Singapore',
-    afterImg:'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 1 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 1 - Before.jpg',
     facts:[['Specialist','Dr. Neha · Full team'],['Treatment','FMR · 8 crowns · 2 implants'],['Duration','10 days total'],['Origin','Singapore']],
     challenge:'James had been quoted SGD 120,000 in Singapore for his full mouth rehabilitation. He researched clinics across Asia and selected VinSmiles after video consultations with Dr. Neha. He flew in specifically for treatment.',
     treatment:'A compressed 10-day programme: CBCT on day 1, surgical work days 2-3, crown preparation and temporaries days 4-5, final seating days 8-10. Dr. Neha coordinated all seven specialists around James\'s travel window.',
@@ -823,8 +834,8 @@ const CASES = [
     name:'Deepa\'s Gentle Transformation',
     nameShort:'Deepa V.',
     patient:'Female · 45 · Educator · Pune',
-    afterImg:'https://images.unsplash.com/photo-1592621385612-4d7129426394?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1520810627419-35e592369295?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 2 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 2 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','4 Conservative Veneers'],['Duration','2 visits'],['Approach','Ultra-minimal prep']],
     challenge:'Deepa wanted improvement but was deeply nervous about the procedure. She had read horror stories about veneer preparation and came to VinSmiles having refused treatment elsewhere three times.',
     treatment:'Dr. Neha designed 4 ultra-thin no-prep veneers on the upper central and lateral incisors only. The entire process was explained step by step before each action. No injections required.',
@@ -835,8 +846,8 @@ const CASES = [
     name:'Neha P.\'s DSD Journey',
     nameShort:'Neha P.',
     patient:'Female · 33 · Content Creator · Delhi',
-    afterImg:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1514315384763-ba401779410f?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 3 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 3 - Before.jpg',
     facts:[['Specialist','Dr. Neha · Dr. Sonia'],['Treatment','DSD + Composite Makeover'],['Duration','1 day'],['Camera-Ready','Yes']],
     challenge:'As a full-time content creator, Neha\'s teeth appeared constantly on video. Minor irregularities in shape and colour that would be unnoticeable in person were amplified on camera. She wanted a camera-ready result.',
     treatment:'DSD analysis mapped her facial proportions to ideal dental aesthetics. Dr. Sonia executed composite bonding on four upper teeth in a single 3-hour session — reshaping and brightening without any preparation.',
@@ -847,8 +858,8 @@ const CASES = [
     name:'Shruti\'s Adult Orthodontics',
     nameShort:'Shruti K.',
     patient:'Female · 41 · Lawyer · New Delhi',
-    afterImg:'https://images.unsplash.com/photo-1598550874175-4d0ef436c909?w=900&q=80&fit=crop&crop=faces',
-    beforeImg:'https://images.unsplash.com/photo-1488716820095-cbe80883c496?w=900&q=80&fit=crop&crop=faces',
+    afterImg:'images/Gallery Page/Gallery Page 4 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 4 - Before.jpg',
     facts:[['Specialist','Dr. Radhika Kapoor'],['Treatment','Invisalign Lite'],['Duration','9 months · 18 aligners'],['Comfort','No dietary restrictions']],
     challenge:'Shruti had mild crowding she\'d lived with since her twenties and had always assumed it was "too late" to address as an adult without traditional braces she couldn\'t wear in court.',
     treatment:'Dr. Radhika assessed Shruti\'s case as Invisalign Lite — 18 aligners over 9 months, worn 22 hours per day. Removed for hearings and client meetings. Monthly remote check-ins fitted around her schedule.',

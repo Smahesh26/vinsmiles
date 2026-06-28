@@ -39,6 +39,12 @@ img{display:block;max-width:100%;}
 .nav-links a:hover,.nav-links a.active{color:var(--brand)!important;}
 .nav-cta{background:var(--brand);color:#fff;padding:10px 24px;font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;border-radius:2px;transition:background .2s,transform .15s,box-shadow .2s;}
 .nav-cta:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(144,69,136,.3);}
+.nav{flex-wrap:nowrap;}
+.nav-logo{flex-shrink:0;}
+.nav-logo-sub{white-space:nowrap;}
+.nav-links{flex-wrap:nowrap;gap:24px;}
+.nav-links a{white-space:nowrap;}
+.nav-cta{white-space:nowrap;flex-shrink:0;}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
 .nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--brand);border-radius:2px;}
 .mobile-menu{display:none;position:fixed;inset:0;z-index:190;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:32px;padding-top:68px;}
@@ -46,6 +52,12 @@ img{display:block;max-width:100%;}
 .mobile-menu a{font-size:22px;font-family:var(--font-d);font-weight:300;color:var(--ink);letter-spacing:1px;}
 .mobile-menu a:hover{color:var(--brand);}
 .mobile-menu .m-cta{background:var(--brand);color:#fff;padding:14px 40px;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;margin-top:8px;}
+
+@media(max-width:1200px){
+  .nav{padding:0 28px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+}
 
 /* UTILS */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
@@ -372,7 +384,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="featured-inner">
     <div class="featured-photo-wrap reveal-l">
       <div class="featured-photo">
-        <img src="images/Dr-Neha-Sachdeva.jpeg" alt="Dr. Neha Sachdeva">
+        <img src="images/OurTeam/Team Page Founder Image.jpg" alt="Dr. Neha Sachdeva">
         <div class="featured-photo-badge">Founder</div>
         <div class="featured-photo-name">
           <div class="featured-photo-name-main">Dr. Neha Sachdeva</div>
@@ -518,47 +530,47 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 <script>
 const TEAM=[
   {role:'Endodontist',name:'Dr. Shincy Anthony',quals:'MDS Conservative Dentistry & Endodontics � Root Canal Specialist',badge:'Endodontics',
-   img:'images/Dr-Shincy-Anthony-Endodontist.jpeg',
+  img:'images/OurTeam/1 Dr. Shincy Anthony.jpg',
    bio:'Dr. Shincy Anthony is VinSmiles\u2019 dedicated endodontist, with deep expertise in conservative and endodontic care. She is known for precise, minimally painful root canal procedures with strong infection-control protocols, and her calm approach puts even the most anxious patients at ease.',
    treats:['Root Canal Treatment','Single-Visit RCT','Re-Root Canal','Pulp Capping','Tooth Pain Management','Post-Endodontic Restoration'],
    edu:'MDS Conservative Dentistry & Endodontics\nRotary Endodontic Systems Training\nAtraumatic Anaesthesia Protocols'},
   {role:'Orthodontist',name:'Dr. Sombir Singh',quals:'MDS Orthodontics � Comprehensive Alignment � Bite Correction',badge:'Orthodontics',
-   img:'images/Dr-Sombir-Singh-orthodontist.jpeg',
+  img:'images/OurTeam/2 Dr. Sombir Singh.jpg',
    bio:'Dr. Sombir Singh brings a methodical, evidence-based approach to orthodontic treatment. He manages everything from simple tooth alignment to complex malocclusion cases, with precise biomechanics, staged refinements, and thorough retention planning.',
    treats:['Comprehensive Braces','Alignment Refinements','Bite Balancing','Relapse Correction','Retention Plans','Interdisciplinary Cases'],
    edu:'MDS Orthodontics\nAdvanced Biomechanics & Finishing Techniques\nInterdisciplinary Orthodontic Case Planning'},
   {role:'Periodontist & Laser Dentist',name:'Dr. Varun Suhag',quals:'MDS Periodontics � Laser Dentistry � Gum Surgery Specialist',badge:'Periodontics',
-   img:'images/Dr-Varun-Suhag-periodontist-laser-dentist.jpeg',
+  img:'images/OurTeam/3 Dr. Varun Suhag.jpg',
    bio:'Dr. Varun Suhag is VinSmiles\u2019 gum and periodontal specialist, offering both surgical and laser-based treatments for gum disease, recession, and cosmetic contouring. His laser-assisted protocols reduce surgical trauma and promote significantly faster recovery.',
    treats:['Deep Gum Therapy','Laser Gum Treatment','Gum Contouring','Periodontal Surgery','Bone Regeneration','Implant Maintenance'],
    edu:'MDS Periodontics\nDiode Laser Dentistry Certification\nAdvanced Periodontal Surgical Training'},
   {role:'Orthodontist',name:'Dr. Nisheeth Sharma',quals:'Orthodontics � Braces & Clear Aligners � Adult & Teen Ortho',badge:'Orthodontics',
-   img:'images/dr-nisheeth-Sharma-orthodontist.jpeg',
+  img:'images/OurTeam/4 Dr. Nisheeth Sharma.jpg',
    bio:'Dr. Nisheeth Sharma focuses on precise tooth movement and facial harmony for adolescent and adult patients. His treatment planning considers both functional bite correction and the aesthetic finishing that gives every patient a confident smile.',
    treats:['Metal Braces','Ceramic Braces','Adult Orthodontics','Teen Orthodontics','Smile Alignment','Retention'],
    edu:'Orthodontic Specialty Training\nEvidence-Based Braces Protocols\nAdvanced Occlusal Finishing'},
   {role:'Oral & Maxillofacial Surgeon',name:'Dr. Arpit Srivastav',quals:'Oral Surgery � Implant Placement � Complex Extractions',badge:'Oral Surgery',
-   img:'images/dr-arpit-srivastav-oral-surgeon.jpeg',
+  img:'images/OurTeam/5 Dr. Arpit Srivastav.jpg',
    bio:'Dr. Arpit Srivastav handles the surgical backbone of VinSmiles � wisdom tooth surgery, impacted teeth, implant site preparation, and pre-prosthetic oral surgical procedures. His minimally traumatic surgical technique consistently results in faster healing and predictable implant outcomes.',
    treats:['Wisdom Tooth Surgery','Implant Placement','Bone Grafting','Complex Extractions','Impacted Teeth','Surgical Site Prep'],
    edu:'Oral & Maxillofacial Surgery Training\nAdvanced Implant Surgery Protocols\nComplex Surgical & Extraction Techniques'},
   {role:'Orthodontist & Invisalign Provider',name:'Dr. Mitiksha Shahani',quals:'MDS Orthodontics � Certified Invisalign Provider � Digital Planning',badge:'Invisalign',
-   img:'images/dr-mitiksha-shahani-orthodontist-Invisalign-provider.jpeg',
+  img:'images/OurTeam/6 Dr. Mitiksha Shahani.jpg',
    bio:'Dr. Mitiksha Shahani is a certified Invisalign provider who combines digital smile planning with a strong focus on facial harmony and bite stability. She guides each patient from initial iTero scan through to retention with detailed oversight at every step.',
   treats:['Invisalign','Clear Aligners','Ceramic Braces','Smile Makeover Alignment','Bite Correction','Digital Ortho Planning'],
    edu:'MDS Orthodontics\nCertified Invisalign Provider � Align Technology\niTero Digital Scanning & Planning'},
   {role:'General Dental Surgeon',name:'Dr. Lakshya Arya',quals:'BDS',badge:'General Dentistry',
-   img:'images/DrLakshya.jpeg',
+  img:'images/OurTeam/7 Dr. Lakshya Arya.jpg',
    bio:'Dr. Lakshya Arya is the clinic\u2019s general dental surgeon, providing first-contact care, routine examinations, and restorative treatments. His thorough diagnostic eye and reassuring manner make him the preferred starting point for patients new to VinSmiles, ensuring seamless referrals to the right specialist.',
    treats:['Dental Examinations','Tooth-Coloured Fillings','Scaling & Polishing','X-rays & Diagnosis','Preventive Dentistry','Specialist Referral'],
    edu:'BDS (Bachelor of Dental Surgery)\nGeneral & Preventive Dentistry\nClinical Diagnosis & Restorative Care'},
   {role:'Oral & Maxillofacial Surgeon',name:'Dr. Sooraj S Pillai',quals:'Oral & Maxillofacial Surgery � Surgical Excellence',badge:'Oral Surgery',
-   img:'images/Sooraj.jpeg',
+  img:'images/OurTeam/8 Dr. Sooraj S Pillai.jpg',
    bio:'Dr. Sooraj S Pillai is an oral and maxillofacial surgeon with expertise in a wide range of surgical procedures including dentoalveolar surgery, impacted tooth management, and pre-implant surgical preparation. His precision and patient-focused care make complex procedures feel straightforward.',
    treats:['Oral Surgery','Impacted Tooth Removal','Dentoalveolar Surgery','Implant Site Surgery','Cyst Management','Minor Maxillofacial Procedures'],
    edu:'Oral & Maxillofacial Surgery Specialisation\nSurgical Implant Protocols\nAdvanced Dentoalveolar Surgical Training'},
   {role:'Oral & Maxillofacial Surgeon',name:'Dr. Deeksha Sharma',quals:'Oral & Maxillofacial Surgery � Conservative Surgical Approach',badge:'Oral Surgery',
-   img:'images/DrDeeksha.jpeg',
+  img:'images/OurTeam/9 Dr. Deeksha Sharma.jpg',
    bio:'Dr. Deeksha Sharma brings a precise and conservative surgical philosophy to her maxillofacial practice at VinSmiles. She manages surgical extractions, soft tissue procedures, and co-manages complex implant cases alongside the prosthodontic team, ensuring surgical and restorative outcomes are always aligned.',
    treats:['Surgical Extractions','Soft Tissue Surgery','Implant Co-management','Pre-Prosthetic Surgery','Wound Management','Surgical Follow-Up Care'],
    edu:'Oral & Maxillofacial Surgery Specialisation\nConservative Surgical Techniques\nImplant-Prosthetic Case Coordination'},
