@@ -40,6 +40,12 @@ img{display:block;max-width:100%;}
 .nav-links a:hover,.nav-links a.active{color:var(--brand)!important;}
 .nav-cta{background:var(--brand);color:#fff;padding:10px 24px;font-size:11px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;border-radius:2px;transition:background .2s,transform .15s,box-shadow .2s;}
 .nav-cta:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(144,69,136,.3);}
+.nav{flex-wrap:nowrap;}
+.nav-logo{flex-shrink:0;}
+.nav-logo-sub{white-space:nowrap;}
+.nav-links{flex-wrap:nowrap;gap:24px;}
+.nav-links a{white-space:nowrap;}
+.nav-cta{white-space:nowrap;flex-shrink:0;}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
 .nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--brand);border-radius:2px;}
 .mobile-menu{display:none;position:fixed;inset:0;z-index:290;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:32px;padding-top:68px;}
@@ -47,6 +53,12 @@ img{display:block;max-width:100%;}
 .mobile-menu a{font-size:22px;font-family:var(--font-d);font-weight:300;color:var(--ink);letter-spacing:1px;}
 .mobile-menu a:hover{color:var(--brand);}
 .mobile-menu .m-cta{background:var(--brand);color:#fff;padding:14px 40px;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;margin-top:8px;}
+
+@media(max-width:1200px){
+  .nav{padding:0 28px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+}
 
 /* â•â• UTILS â•â• */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
@@ -87,13 +99,19 @@ img{display:block;max-width:100%;}
   opacity:0;animation:fadeUp .8s var(--ease) .25s both;
 }
 .hero-count{
-  text-align:right;
-  opacity:0;animation:fadeUp .8s var(--ease) .3s both;
-  flex-shrink:0;
+  position:absolute;left:18px;bottom:18px;z-index:3;
+  opacity:0;animation:fadeUp .8s var(--ease) .35s both;
+  text-align:left;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(144,69,136,.14);
+  border-radius:6px;
+  padding:12px 14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
 }
 .hero-count-num{font-family:var(--font-d);font-size:72px;font-weight:300;color:var(--ink);line-height:1;}
 .hero-count-num span{color:var(--brand);}
-.hero-count-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);}
+.hero-count-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);} 
 
 /* â•â• FILTER BAR â•â• */
 .filter-bar{
@@ -140,27 +158,22 @@ img{display:block;max-width:100%;}
 }
 .gallery-grid{
   max-width:1300px;margin:0 auto;padding:0 52px;
-  columns:3;column-gap:10px;
+  columns:3;column-gap:16px;
 }
 /* Individual gallery tile */
 .gtile{
   break-inside:avoid;
-  margin-bottom:10px;
+  margin-bottom:16px;
   position:relative;overflow:hidden;
   cursor:pointer;border-radius:3px;
   background:var(--surface-3);
-  box-shadow:0 1px 0 rgba(15,14,15,.04);
-  transition:transform .24s var(--ease),box-shadow .24s var(--ease);
 }
-.gtile:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(15,14,15,.12);}
 .gtile:hover .gtile-overlay{opacity:1;}
 .gtile:hover .gtile-img-after{transform:scale(1.04);}
 .gtile:hover .gtile-meta{transform:translateY(0);opacity:1;}
 /* After image (shown by default) */
 .gtile-img-after{
   width:100%;display:block;
-  aspect-ratio:4/5;
-  object-fit:cover;
   transition:transform .6s var(--ease);
 }
 /* Overlay */
@@ -204,20 +217,6 @@ img{display:block;max-width:100%;}
   transition:opacity .3s,transform .3s var(--ease);
 }
 .gtile:hover .gtile-view{opacity:1;transform:scale(1);}
-
-/* Masonry pattern to match staggered collage look */
-.gtile.shape-1 .gtile-img-after{aspect-ratio:3/4;}
-.gtile.shape-2 .gtile-img-after{aspect-ratio:1/1;}
-.gtile.shape-3 .gtile-img-after{aspect-ratio:3/4;}
-.gtile.shape-4 .gtile-img-after{aspect-ratio:1/1;}
-.gtile.shape-5 .gtile-img-after{aspect-ratio:5/3;}
-.gtile.shape-6 .gtile-img-after{aspect-ratio:4/5;}
-.gtile.shape-7 .gtile-img-after{aspect-ratio:4/5;}
-.gtile.shape-8 .gtile-img-after{aspect-ratio:5/3;}
-.gtile.shape-9 .gtile-img-after{aspect-ratio:1/1;}
-.gtile.shape-10 .gtile-img-after{aspect-ratio:4/5;}
-.gtile.shape-11 .gtile-img-after{aspect-ratio:1/1;}
-.gtile.shape-12 .gtile-img-after{aspect-ratio:5/3;}
 
 /* â•â• CASE STUDY LIGHTBOX â•â• */
 .lightbox{
@@ -444,7 +443,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .hero-inner{padding:64px 28px 52px;grid-template-columns:1fr;gap:24px;}
   .hero-count{text-align:left;}
   .filter-inner{padding:0 28px;}
-  .gallery-grid{padding:0 28px;columns:2;column-gap:10px;}
+  .gallery-grid{padding:0 28px;columns:2;}
   .lb-panel{margin:24px;grid-template-columns:1fr 1fr;}
   .lb-text{padding:36px 36px;}
   .about-cta{padding:72px 28px;}
@@ -456,7 +455,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 /* â•â• RESPONSIVE 768px â•â• */
 @media(max-width:768px){
   .hero-inner{padding:56px 20px 44px;}
-  .gallery-grid{columns:2;padding:0 20px;column-gap:10px;}
+  .gallery-grid{columns:2;padding:0 20px;}
   /* Lightbox: stack vertically */
   .lb-panel{
     grid-template-columns:1fr;
@@ -505,28 +504,28 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 
 <!-- NAV -->
 <nav class="nav" id="nav">
-  <a href="/" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <div class="nav-logo-mark">Vin<span>Smiles</span></div>
     <div class="nav-logo-sub">Advanced Dentistry Â· GK-II, New Delhi</div>
   </a>
   <ul class="nav-links">
-    <li><a href="/treatments">Treatments</a></li>
-    <li><a href="/smile-gallery" class="active">Smile Gallery</a></li>
-    <li><a href="/our-team">Our Team</a></li>
-    <li><a href="/about">Our Story</a></li>
-    <li><a href="/technology">Technology</a></li>
-    <li><a href="/international-patients">International</a></li>
+    <li><a href="treatments.html">Treatments</a></li>
+    <li><a href="gallery.html" class="active">Smile Gallery</a></li>
+    <li><a href="our-team.html">Our Team</a></li>
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="technology.html">Technology</a></li>
+    <li><a href="international.html">International</a></li>
   </ul>
   <a href="/book" class="nav-cta">Book Consultation</a>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/treatments" onclick="toggleMenu()">Treatments</a>
-  <a href="/smile-gallery" onclick="toggleMenu()">Smile Gallery</a>
-  <a href="/our-team" onclick="toggleMenu()">Our Team</a>
-  <a href="/about" onclick="toggleMenu()">Our Story</a>
-  <a href="/technology" onclick="toggleMenu()">Technology</a>
-  <a href="/international-patients" onclick="toggleMenu()">International</a>
+  <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
+  <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
+  <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
+  <a href="about.html" onclick="toggleMenu()">Our Story</a>
+  <a href="technology.html" onclick="toggleMenu()">Technology</a>
+  <a href="international.html" onclick="toggleMenu()">International</a>
   <a href="/book" class="m-cta" onclick="toggleMenu()">Book Consultation</a>
 </div>
 
@@ -659,7 +658,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <h2 class="cta-h2">Ready for Your Own <em>Case Study?</em></h2>
     <p class="cta-p">Every smile in this gallery began with a single consultation. Book yours â€” it's free, and it commits you to nothing.</p>
     <div class="cta-btns">
-      <a href="/book" class="btn-white">Book a Free Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="/book" class="btn-white">Book a Video Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="https://wa.me/919654988858" class="btn-wa" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="white"><path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.35.37 2.63 1 3.74L1.5 16.5l3.88-1c1.06.55 2.27.87 3.62.87 4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5zm3.69 10.35c-.15.42-.87.8-1.2.85-.3.04-.68.06-1.1-.07-.25-.08-.58-.18-.99-.36C7.8 11.65 6.5 10.2 6.38 10.03c-.12-.17-.97-1.29-.97-2.46 0-1.17.61-1.74.83-1.98.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.41.2.5.68 1.68.74 1.8.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.97 1.33 1.57.91.8 1.68 1.05 1.92 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12l1.71.81c.2.1.33.14.38.22.05.08.05.48-.1.9z"/></svg>
         WhatsApp Us
@@ -673,7 +672,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="footer-top">
     <div>
       <div class="f-logo-mark">Vin<span>Smiles</span></div>
-      <div class="f-logo-sub">Advanced Dentistry Â· Since 2005</div>
+      <div class="f-logo-sub">Practicing Since 2009 Â· VinSmiles Established 2019</div>
       <div class="f-addr">Greater Kailash II, New Delhi â€” 110048<br>Near M-Block Market, GK-2</div>
       <div class="f-contacts">
         <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+91 96549 88858</a>
@@ -697,29 +696,29 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <div>
       <div class="f-col-title">Treatments</div>
       <ul class="f-links">
-        <li><a href="/treatments/dental-implants-delhi">Dental Implants</a></li>
-        <li><a href="/treatments/smile-design-delhi">Smile Design</a></li>
-        <li><a href="/treatments/invisalign-delhi">Invisalign</a></li>
-        <li><a href="/treatments/dental-veneers-delhi">Veneers</a></li>
-        <li><a href="/treatments/full-mouth-rehabilitation">Full Mouth Rehab</a></li>
+        <li><a href="treatments.html">Dental Implants</a></li>
+        <li><a href="treatments.html">Smile Makeover</a></li>
+        <li><a href="treatments.html">Invisalign</a></li>
+        <li><a href="treatments.html">Veneers</a></li>
+        <li><a href="treatments.html">Full Mouth Rehab</a></li>
       </ul>
     </div>
     <div>
       <div class="f-col-title">Clinic</div>
       <ul class="f-links">
-        <li><a href="/about">Our Story</a></li>
-        <li><a href="/our-team">Our Team</a></li>
-        <li><a href="/technology">Technology</a></li>
-        <li><a href="/smile-gallery">Smile Gallery</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="our-team.html">Our Team</a></li>
+        <li><a href="technology.html">Technology</a></li>
+        <li><a href="gallery.html">Smile Gallery</a></li>
         <li><a href="/contact">Contact &amp; Location</a></li>
       </ul>
     </div>
     <div>
       <div class="f-col-title">International</div>
       <ul class="f-links">
-        <li><a href="/international-patients">Patient Guide</a></li>
-        <li><a href="/international-patients#cost">Cost Comparison</a></li>
-        <li><a href="/book">Book Consultation</a></li>
+        <li><a href="international.html">Patient Guide</a></li>
+        <li><a href="international.html#cost">Cost Comparison</a></li>
+        <li><a href="/book">Video Consultation</a></li>
       </ul>
       <div class="f-hours">
         <div class="f-hours-label">Hours</div>
@@ -744,8 +743,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 <script>
 /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CASE DATA
-   Images from Unsplash â€” smiling portraits for "after"
-   and more candid/natural for "before"
+  Homepage-provided local before/after assets
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 const CASES = [
   {
@@ -753,8 +751,8 @@ const CASES = [
     name:'Riya\'s Complete Smile Redesign',
     nameShort:'Riya M.',
     patient:'Female Â· 28 Â· Marketing Professional Â· Delhi',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%201%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%201%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 1 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 1 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','DSD + 8 Veneers'],['Duration','3 weeks'],['Result','Complete smile rebuild']],
     challenge:'Riya presented with severe discolouration, uneven tooth proportions, and a midline discrepancy that had made her self-conscious for years. She had avoided smiling in photographs for her entire adult life.',
     treatment:'Dr. Neha used Digital Smile Design to create a 3D simulation mapped precisely to Riya\'s facial proportions. After her approval, 8 ultra-thin porcelain veneers were fabricated and bonded â€” zero drilling on healthy tooth structure.',
@@ -765,8 +763,8 @@ const CASES = [
     name:'Arjun\'s Single Implant Restoration',
     nameShort:'Arjun K.',
     patient:'Male Â· 34 Â· Business Owner Â· Gurgaon',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%202%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%202%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 2 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 2 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','CBCT Implant + Crown'],['Duration','10 weeks'],['Success Rate','98.7%']],
     challenge:'Arjun had lost an upper premolar in an accident three years prior and had worn a removable partial denture he described as "embarrassing and uncomfortable" since then.',
     treatment:'CBCT 3D imaging guided precise implant placement by Dr. Neha in a 45-minute procedure under The Wand STA anaesthesia. After 8 weeks of osseointegration, a custom porcelain crown was seated â€” matching the adjacent teeth in colour, shape, and translucency.',
@@ -777,8 +775,8 @@ const CASES = [
     name:'Sunita\'s Total Oral Reconstruction',
     nameShort:'Sunita R.',
     patient:'Female Â· 52 Â· Retired Academic Â· South Delhi',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%203%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%203%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 3 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 3 - Before.jpg',
     facts:[['Specialist','Full team Â· 7 specialists'],['Treatment','FMR Â· 12 crowns Â· 4 implants'],['Duration','14 days + follow-up'],['Investment','Life-changing']],
     challenge:'Decades of bruxism had worn Sunita\'s teeth to less than 60% of their original height. Her bite had collapsed, causing jaw pain, headaches, and extreme aesthetic concerns. Multiple specialists had quoted her astronomical fees in Delhi.',
     treatment:'A seven-specialist coordinated plan: Dr. Vikram performed bone grafting, Dr. Anita managed periodontal preparation, and Dr. Neha orchestrated 12 zirconia crowns and 4 implants across two visits using DSD for precise aesthetic planning.',
@@ -789,8 +787,8 @@ const CASES = [
     name:'Priya\'s Hollywood Smile',
     nameShort:'Priya S.',
     patient:'Female Â· 31 Â· Media Professional Â· Mumbai',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%204%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%204%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 4 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 4 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','10 Porcelain Veneers'],['Duration','2 visits Â· 5 days'],['Lifespan','15+ years']],
     challenge:'Priya\'s career placed her in front of cameras daily. She had significant tetracycline staining from childhood antibiotics â€” a discolouration that whitening cannot address â€” combined with minor crowding.',
     treatment:'10 ultra-thin (0.3mm) feldspathic porcelain veneers were designed using DSD and fabricated by a specialist ceramic lab. No anaesthesia required â€” minimal preparation, maximum result.',
@@ -801,8 +799,8 @@ const CASES = [
     name:'Rahul\'s Alignment Journey',
     nameShort:'Rahul T.',
     patient:'Male Â· 26 Â· Software Engineer Â· Bengaluru (visiting family)',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%201%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%201%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 1 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 1 - Before.jpg',
     facts:[['Specialist','Dr. Radhika Kapoor'],['Treatment','Invisalign Comprehensive'],['Duration','14 months Â· 28 aligners'],['Provider','Certified']],
     challenge:'Rahul had moderate crowding in his upper arch and a mild crossbite. He had been quoted for braces at 16 but refused â€” now as an adult he wanted an invisible solution that wouldn\'t affect his professional life.',
     treatment:'iTero digital scan (no impressions), Clincheck 3D simulation approved by Rahul before starting, 28 sequential aligners managed by Dr. Radhika remotely between his Delhi visits. Monthly video check-ins.',
@@ -813,8 +811,8 @@ const CASES = [
     name:'Kavya\'s Pre-Wedding Transformation',
     nameShort:'Kavya M.',
     patient:'Female Â· 27 Â· Bride Â· Hyderabad',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%202%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%202%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 2 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 2 - Before.jpg',
     facts:[['Specialist','Dr. Neha Â· Dr. Sonia'],['Treatment','DSD + Bonding + Whitening'],['Duration','2 days'],['Occasion','Wedding â€” 10 days out']],
     challenge:'Kavya arrived 10 days before her wedding with two chipped lateral incisors, uneven gum line, and significant discolouration. She had never prioritised dental care and now faced a deadline.',
     treatment:'Dr. Sonia performed composite bonding on both chipped teeth in a single session. ZOOM whitening followed the next morning, lifting 5 shades. Laser gum contouring completed the transformation in the same appointment.',
@@ -825,8 +823,8 @@ const CASES = [
     name:'Aditya\'s Confidence Rebuild',
     nameShort:'Aditya S.',
     patient:'Male Â· 38 Â· Entrepreneur Â· New Delhi',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%203%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%203%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 3 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 3 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','6 Veneers + Whitening'],['Duration','5 days'],['Change','Dramatic but natural']],
     challenge:'Aditya presented with severe fluorosis staining â€” white spots and brownish patches across his upper front six teeth â€” which had affected his confidence in business meetings and social situations for 15 years.',
     treatment:'Six precisely calibrated feldspathic porcelain veneers, designed in DSD to mask the staining entirely while maintaining perfect lateral symmetry. Lower arch whitening to match.',
@@ -837,8 +835,8 @@ const CASES = [
     name:'Mrs. Sharma\'s All-on-4',
     nameShort:'Meena S.',
     patient:'Female Â· 61 Â· Homemaker Â· Noida',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%204%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%204%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 4 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 4 - Before.jpg',
     facts:[['Specialist','Dr. Neha + Dr. Vikram'],['Treatment','All-on-4 Lower Arch'],['Duration','2 visits Â· 4 months'],['Result','Permanent fixed teeth']],
     challenge:'Meena had worn a full lower denture for 8 years. Bone loss had made the denture increasingly unstable â€” she could not eat without it slipping, which had severely impacted her diet and social confidence.',
     treatment:'Dr. Vikram assessed bone availability via CBCT and placed 4 titanium implants in strategic positions. After osseointegration, Dr. Neha fitted a fixed zirconia bridge â€” teeth that do not come out.',
@@ -849,8 +847,8 @@ const CASES = [
     name:'James\' Dental Tourism Case',
     nameShort:'James T.',
     patient:'Male Â· 44 Â· Finance Director Â· Singapore',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%201%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%201%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 1 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 1 - Before.jpg',
     facts:[['Specialist','Dr. Neha Â· Full team'],['Treatment','FMR Â· 8 crowns Â· 2 implants'],['Duration','10 days total'],['Origin','Singapore']],
     challenge:'James had been quoted SGD 120,000 in Singapore for his full mouth rehabilitation. He researched clinics across Asia and selected VinSmiles after video consultations with Dr. Neha. He flew in specifically for treatment.',
     treatment:'A compressed 10-day programme: CBCT on day 1, surgical work days 2-3, crown preparation and temporaries days 4-5, final seating days 8-10. Dr. Neha coordinated all seven specialists around James\'s travel window.',
@@ -861,8 +859,8 @@ const CASES = [
     name:'Deepa\'s Gentle Transformation',
     nameShort:'Deepa V.',
     patient:'Female Â· 45 Â· Educator Â· Pune',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%202%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%202%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 2 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 2 - Before.jpg',
     facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','4 Conservative Veneers'],['Duration','2 visits'],['Approach','Ultra-minimal prep']],
     challenge:'Deepa wanted improvement but was deeply nervous about the procedure. She had read horror stories about veneer preparation and came to VinSmiles having refused treatment elsewhere three times.',
     treatment:'Dr. Neha designed 4 ultra-thin no-prep veneers on the upper central and lateral incisors only. The entire process was explained step by step before each action. No injections required.',
@@ -873,8 +871,8 @@ const CASES = [
     name:'Neha P.\'s DSD Journey',
     nameShort:'Neha P.',
     patient:'Female Â· 33 Â· Content Creator Â· Delhi',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%203%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%203%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 3 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 3 - Before.jpg',
     facts:[['Specialist','Dr. Neha Â· Dr. Sonia'],['Treatment','DSD + Composite Makeover'],['Duration','1 day'],['Camera-Ready','Yes']],
     challenge:'As a full-time content creator, Neha\'s teeth appeared constantly on video. Minor irregularities in shape and colour that would be unnoticeable in person were amplified on camera. She wanted a camera-ready result.',
     treatment:'DSD analysis mapped her facial proportions to ideal dental aesthetics. Dr. Sonia executed composite bonding on four upper teeth in a single 3-hour session â€” reshaping and brightening without any preparation.',
@@ -885,8 +883,8 @@ const CASES = [
     name:'Shruti\'s Adult Orthodontics',
     nameShort:'Shruti K.',
     patient:'Female Â· 41 Â· Lawyer Â· New Delhi',
-    afterImg:'images/Gallery%20Page/Gallery%20Page%204%20-%20After.jpg',
-    beforeImg:'images/Gallery%20Page/Gallery%20Page%204%20-%20Before.jpg',
+    afterImg:'images/Gallery Page/Gallery Page 4 - After.jpg',
+    beforeImg:'images/Gallery Page/Gallery Page 4 - Before.jpg',
     facts:[['Specialist','Dr. Radhika Kapoor'],['Treatment','Invisalign Lite'],['Duration','9 months Â· 18 aligners'],['Comfort','No dietary restrictions']],
     challenge:'Shruti had mild crowding she\'d lived with since her twenties and had always assumed it was "too late" to address as an adult without traditional braces she couldn\'t wear in court.',
     treatment:'Dr. Radhika assessed Shruti\'s case as Invisalign Lite â€” 18 aligners over 9 months, worn 22 hours per day. Removed for hearings and client meetings. Monthly remote check-ins fitted around her schedule.',
@@ -907,12 +905,6 @@ let lightboxIdx = 0;
 function buildGallery(cases) {
   const grid = document.getElementById('galleryGrid');
   const empty = document.getElementById('galleryEmpty');
-  const MASONRY_PATTERN = [
-    'shape-1','shape-2','shape-3',
-    'shape-4','shape-5','shape-6',
-    'shape-7','shape-8','shape-9',
-    'shape-10','shape-11','shape-12'
-  ];
   grid.innerHTML = '';
 
   if (!cases.length) {
@@ -924,7 +916,6 @@ function buildGallery(cases) {
   cases.forEach((c, i) => {
     const tile = document.createElement('div');
     tile.className = 'gtile reveal';
-    tile.classList.add(MASONRY_PATTERN[i % MASONRY_PATTERN.length]);
     tile.style.transitionDelay = (i % 6 * 0.06) + 's';
     tile.setAttribute('tabindex', '0');
     tile.setAttribute('role', 'button');
@@ -1096,4 +1087,10 @@ initCompare();
 </script>
 </body>
 </html>
+
+
+
+
+
+
 

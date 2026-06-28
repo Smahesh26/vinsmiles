@@ -97,10 +97,13 @@ img { display:block; max-width:100%; }
 ════════════════════════════════════════════ */
 .nav {
   position: fixed; top:0; left:0; right:0; z-index:200;
-  height:76px;
+  height:68px;
   display:flex; align-items:center; justify-content:space-between;
   padding:0 52px;
-  background:rgba(255,255,255,0);
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 var(--rule);
   transition: background .4s var(--ease), box-shadow .4s;
 }
 .nav.scrolled {
@@ -112,27 +115,24 @@ img { display:block; max-width:100%; }
 .nav-logo { display:flex; flex-direction:column; gap:3px; flex-shrink:0; }
 .nav-logo-mark {
   font-family:var(--font-d); font-size:23px; font-weight:400;
-  color:var(--surface); line-height:1; letter-spacing:.3px;
+  color:var(--ink); line-height:1; letter-spacing:.3px;
   transition:color .4s;
   white-space:nowrap;
 }
-.nav.scrolled .nav-logo-mark { color:var(--ink); }
 .nav-logo-mark span { color:var(--gold); }
 .nav-logo-sub {
   font-size:9px; font-weight:400; letter-spacing:3px;
-  text-transform:uppercase; color:rgba(255,255,255,.45);
+  text-transform:uppercase; color:var(--ink-40);
   transition:color .4s;
   line-height:1.2;
   white-space:nowrap;
 }
-.nav.scrolled .nav-logo-sub { color:var(--ink-40); }
 .nav-links { display:flex; gap:24px; list-style:none; flex-wrap:nowrap; }
 .nav-links a {
   font-size:12px; font-weight:400; letter-spacing:1.5px;
-  text-transform:uppercase; color:rgba(255,255,255,.7);
+  text-transform:uppercase; color:var(--ink-60);
   transition:color .2s; position:relative; padding-bottom:3px; white-space:nowrap;
 }
-.nav.scrolled .nav-links a { color:var(--ink-60); }
 .nav-links a::after {
   content:''; position:absolute; bottom:0; left:0; right:100%;
   height:1px; background:var(--brand);
@@ -153,14 +153,12 @@ img { display:block; max-width:100%; }
   display:none; position:fixed; inset:0; z-index:190;
   background:rgba(255,255,255,.98); backdrop-filter:blur(20px);
   flex-direction:column; align-items:center; justify-content:center; gap:32px;
-  padding-top:76px;
+  padding-top:68px;
 }
 
-@media (max-width:1280px) {
+@media (max-width:1200px) {
   .nav { padding:0 28px; }
   .nav-links { display:none; }
-  .nav-links a { font-size:11px; letter-spacing:1.2px; }
-  .nav-logo-sub { font-size:8px; letter-spacing:2px; }
   .nav-hamburger { display:flex; }
 }
 .mobile-menu.open { display:flex; }
@@ -877,6 +875,11 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 .f-contacts { display:flex; flex-direction:column; gap:8px; }
 .f-contacts a { font-size:13px; color:rgba(255,255,255,.4); display:flex; align-items:center; gap:8px; transition:color .2s; }
 .f-contacts a:hover { color:var(--gold); }
+.f-map{margin-top:22px;}
+.f-map-title{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px;}
+.f-map-frame{display:block;width:100%;height:150px;border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden;background:#1b1a1b;}
+.f-map-link{margin-top:10px;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,169,110,.4);padding-bottom:2px;transition:gap .2s,border-color .2s;}
+.f-map-link:hover{gap:12px;border-color:var(--gold);}
 .f-col-title { font-size:10px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,.22); margin-bottom:20px; }
 .f-links { list-style:none; display:flex; flex-direction:column; gap:10px; }
 .f-links a { font-size:13px; font-weight:300; color:rgba(255,255,255,.42); transition:color .2s; }
@@ -1685,7 +1688,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <h2 class="s-title">What Our Patients <em>Say</em></h2>
       </div>
       <div class="rating-block">
-        <div class="rating-n">5.0 <span>?</span></div>
+        <div class="rating-n">5.0</div>
         <div class="stars-col">
           <div class="stars-row">★★★★★</div>
           <div class="stars-src">231+ Reviews · JustDial & Google</div>
@@ -1756,6 +1759,20 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
       <div class="f-contacts">
         <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+91 96549 88858</a>
         <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>vinsmiles88@gmail.com</a>
+      </div>
+      <div class="f-map">
+        <div class="f-map-title">Directions to the clinic?</div>
+        <iframe
+          class="f-map-frame"
+          src="https://www.google.com/maps?q=VinSmiles%20Advanced%20Dentistry%20Greater%20Kailash%20II%20New%20Delhi&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="VinSmiles location map">
+        </iframe>
+        <a class="f-map-link" href="https://maps.app.goo.gl/5jTNMbCDFUvxKMbP9" target="_blank" rel="noopener">
+          Open in Google Maps
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2l3.5 4-3.5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
     <div>
@@ -1887,6 +1904,7 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+
 
 
 

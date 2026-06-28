@@ -589,6 +589,11 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 .f-contacts{display:flex;flex-direction:column;gap:8px;}
 .f-contacts a{font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:8px;transition:color .2s;}
 .f-contacts a:hover{color:var(--gold);}
+.f-map{margin-top:22px;}
+.f-map-title{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px;}
+.f-map-frame{display:block;width:100%;height:150px;border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden;background:#1b1a1b;}
+.f-map-link{margin-top:10px;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,169,110,.4);padding-bottom:2px;transition:gap .2s,border-color .2s;}
+.f-map-link:hover{gap:12px;border-color:var(--gold);}
 .f-col-title{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:20px;}
 .f-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
 .f-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,.42);transition:color .2s;}
@@ -1302,7 +1307,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <!-- Photo -->
     <div class="letter-photo-wrap reveal-l">
       <div class="letter-photo">
-        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80&fit=crop&crop=faces" alt="Dr. Neha Sachdeva">
+        <img src="images/OurTeam/Team Page Founder Image.jpg" alt="Dr. Neha Sachdeva">
         <div class="letter-photo-cred">
           <div class="letter-photo-name">Dr. Neha Sachdeva</div>
           <div class="letter-photo-title">Prosthodontist · Founder, VinSmiles</div>
@@ -1376,6 +1381,20 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <div class="f-contacts">
         <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+91 96549 88858</a>
         <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>vinsmiles88@gmail.com</a>
+      </div>
+      <div class="f-map">
+        <div class="f-map-title">Directions to the clinic?</div>
+        <iframe
+          class="f-map-frame"
+          src="https://www.google.com/maps?q=VinSmiles%20Advanced%20Dentistry%20Greater%20Kailash%20II%20New%20Delhi&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="VinSmiles location map">
+        </iframe>
+        <a class="f-map-link" href="https://maps.app.goo.gl/5jTNMbCDFUvxKMbP9" target="_blank" rel="noopener">
+          Open in Google Maps
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6.5 2l3.5 4-3.5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
       </div>
     </div>
     <div>
