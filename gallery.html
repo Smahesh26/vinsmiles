@@ -549,17 +549,14 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <button class="filter-btn" data-cat="smile-design" onclick="filterGallery(this,'smile-design')">
       Smile Design <span class="filter-count" id="countSmile">1</span>
     </button>
-    <button class="filter-btn" data-cat="implants" onclick="filterGallery(this,'implants')">
-      Implants <span class="filter-count" id="countImplants">1</span>
-    </button>
     <button class="filter-btn" data-cat="full-mouth" onclick="filterGallery(this,'full-mouth')">
       Full Mouth Rehab <span class="filter-count" id="countFull">1</span>
     </button>
-    <button class="filter-btn" data-cat="veneers" onclick="filterGallery(this,'veneers')">
-      Veneers <span class="filter-count" id="countVeneers">1</span>
+    <button class="filter-btn" data-cat="smile-makeover" onclick="filterGallery(this,'smile-makeover')">
+      Smile Makeover <span class="filter-count" id="countMakeover">1</span>
     </button>
     <button class="filter-btn" data-cat="invisalign" onclick="filterGallery(this,'invisalign')">
-      Invisalign <span class="filter-count" id="countInvis">0</span>
+      Invisalign <span class="filter-count" id="countInvis">1</span>
     </button>
   </div>
 </div>
@@ -741,52 +738,64 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 ════════════════════════════════ */
 const CASES = [
   {
-    id:0, cat:'smile-design', catLabel:'Digital Smile Design',
-    name:'Riya\'s Complete Smile Redesign',
-    nameShort:'Riya M.',
-    patient:'Female · 28 · Marketing Professional · Delhi',
+    id:0, cat:'invisalign',
+    tileBadge:'INVISALIGN',
+    tileTitle:'Aligned Without Compromise',
+    tileSubtitle:'Clear Aligners . No enamel loss',
+    lightboxBadge:'INVISALIGN',
+    name:'A Natural Smile Makeover',
+    patient:'Female . 20s . Delhi',
     afterImg:'images/Gallery%20Page/Gallery%20Page%201%20-%20After.jpg',
     beforeImg:'images/Gallery%20Page/Gallery%20Page%201%20-%20Before.jpg',
-    facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','DSD + 8 Veneers'],['Duration','3 weeks'],['Result','Complete smile rebuild']],
-    challenge:'Riya presented with severe discolouration, uneven tooth proportions, and a midline discrepancy that had made her self-conscious for years. She had avoided smiling in photographs for her entire adult life.',
-    treatment:'Dr. Neha used Digital Smile Design to create a 3D simulation mapped precisely to Riya\'s facial proportions. After her approval, 8 ultra-thin porcelain veneers were fabricated and bonded — zero drilling on healthy tooth structure.',
-    result:'"For the first time in ten years I smiled without thinking about it. At my own wedding. That is what VinSmiles gave me."'
+    facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','Invisalign Clear Aligners'],['Approach','Zero drilling, zero enamel loss'],['Result','Natural alignment, full confidence']],
+    challenge:'She came in with one very specific question: "Can you improve the appearance of my teeth without damaging them?" Years of being offered drilling-based solutions had made her deeply wary of cosmetic dentistry. She wanted a better smile, but not at the cost of her natural tooth structure.',
+    treatment:'Dr. Neha prescribed Invisalign clear aligners: the modern, minimally invasive way to straighten and transform a smile without touching healthy enamel. No drills. No cuts. No damage. Just a series of custom-fit transparent aligners that gradually moved her teeth into their ideal positions.',
+    result:'"I finally have the smile I wanted, and I still have every bit of my natural teeth. Nobody could even tell I was wearing aligners."'
   },
   {
-    id:1, cat:'implants', catLabel:'Dental Implants',
-    name:'Arjun\'s Single Implant Restoration',
-    nameShort:'Arjun K.',
-    patient:'Male · 34 · Business Owner · Gurgaon',
+    id:1, cat:'smile-design',
+    tileBadge:'SMILE DESIGN',
+    tileTitle:'From Paris, For This Smile',
+    tileSubtitle:'Invisalign + Veneers + Frenectomy',
+    lightboxBadge:'DIGITAL SMILE DESIGN',
+    name:'Nikhil\'s Paris-to-Delhi Transformation',
+    patient:'Male . NRI . Returned from Paris after 10 years',
     afterImg:'images/Gallery%20Page/Gallery%20Page%202%20-%20After.jpg',
     beforeImg:'images/Gallery%20Page/Gallery%20Page%202%20-%20Before.jpg',
-    facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','CBCT Implant + Crown'],['Duration','10 weeks'],['Success Rate','98.7%']],
-    challenge:'Arjun had lost an upper premolar in an accident three years prior and had worn a removable partial denture he described as "embarrassing and uncomfortable" since then.',
-    treatment:'CBCT 3D imaging guided precise implant placement by Dr. Neha in a 45-minute procedure under The Wand STA anaesthesia. After 8 weeks of osseointegration, a custom porcelain crown was seated — matching the adjacent teeth in colour, shape, and translucency.',
-    result:'"I genuinely cannot tell which tooth is the implant. Neither can my dentist in London who sees me for check-ups. That is the benchmark I was told to use, and it was met."'
+    facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','Invisalign + Veneers + Frenectomy'],['Origin','Paris, France'],['Result','Complete dream smile']],
+    challenge:'Nikhil had lived in Paris for 10 years. He had access to some of the best dental care in Europe. He still chose to come home to VinSmiles. His smile had multiple concerns: misalignment, proportions that bothered him, and a frenum (the tissue band between the front teeth) that was creating a visible gap. He wanted a complete transformation, not a partial fix.',
+    treatment:'Dr. Neha designed a coordinated plan combining three disciplines. Invisalign aligners addressed the underlying misalignment first. A frenectomy removed the frenum causing the central gap. Dental veneers then completed the aesthetic transformation, creating the precise proportions and finish Nikhil had envisioned. Each stage was sequenced so that the final result was cohesive, not piecemeal.',
+    result:'"After 10 years in Paris, I came back to Delhi for my smile. That should tell you everything about how much I trust Dr. Neha and VinSmiles."'
   },
   {
-    id:2, cat:'full-mouth', catLabel:'Full Mouth Rehabilitation',
-    name:'Sunita\'s Total Oral Reconstruction',
-    nameShort:'Sunita R.',
-    patient:'Female · 52 · Retired Academic · South Delhi',
+    id:2, cat:'full-mouth',
+    tileBadge:'FULL MOUTH REHAB',
+    tileTitle:'A Story Worth Rebuilding',
+    tileSubtitle:'Full Mouth Rehabilitation . 5mm bite raised',
+    lightboxBadge:'FULL MOUTH REHABILITATION',
+    name:'A Complete Rebuild, Top to Bottom',
+    patient:'Male . Long-term tobacco user . South Delhi',
     afterImg:'images/Gallery%20Page/Gallery%20Page%203%20-%20After.jpg',
     beforeImg:'images/Gallery%20Page/Gallery%20Page%203%20-%20Before.jpg',
-    facts:[['Specialist','Full team · 7 specialists'],['Treatment','FMR · 12 crowns · 4 implants'],['Duration','14 days + follow-up'],['Investment','Life-changing']],
-    challenge:'Decades of bruxism had worn Sunita\'s teeth to less than 60% of their original height. Her bite had collapsed, causing jaw pain, headaches, and extreme aesthetic concerns. Multiple specialists had quoted her astronomical fees in Delhi.',
-    treatment:'A seven-specialist coordinated plan: Dr. Vikram performed bone grafting, Dr. Anita managed periodontal preparation, and Dr. Neha orchestrated 12 zirconia crowns and 4 implants across two visits using DSD for precise aesthetic planning.',
-    result:'"I had accepted that this was simply how I would look for the rest of my life. Dr. Neha told me that was not a fact — it was an assumption. She was right."'
+    facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','Full Mouth Rehab + Smile Makeover'],['Bite','Raised 5mm'],['Result','100% confidence restored']],
+    challenge:'Years of tobacco use, combined with natural wear and untreated tooth loss, had left this patient with severe staining, significant bite collapse, and multiple missing teeth. His mouth told the story of years of deferred care. He arrived at VinSmiles not knowing if recovery was even possible at this stage.',
+    treatment:'Dr. Neha began with a complete clinical assessment and designed a Full Mouth Rehabilitation plan from the ground up. Missing teeth were addressed, and the bite was reconstructed and raised by 5mm to restore proper function and facial support. Staining was treated as part of a comprehensive smile makeover included in the rehabilitation plan. Every element was sequenced so that function was restored before aesthetics were finalised.',
+    result:'"5mm bite raised. 100% confidence restored. I walked in not believing this was possible. I walked out with proof that it was."'
   },
   {
-    id:3, cat:'veneers', catLabel:'Porcelain Veneers',
-    name:'Priya\'s Hollywood Smile',
-    nameShort:'Priya S.',
-    patient:'Female · 31 · Media Professional · Mumbai',
+    id:3, cat:'smile-makeover',
+    tileBadge:'SMILE MAKEOVER',
+    tileTitle:'Smile Transformation',
+    tileSubtitle:'Smile Makeover . 2 appointments only',
+    lightboxBadge:'SMILE DESIGN',
+    name:'Malini Rajpal\'s Dream Smile',
+    patient:'Female . Luxury Real Estate Consultant . Greater Kailash II, New Delhi',
     afterImg:'images/Gallery%20Page/Gallery%20Page%204%20-%20After.jpg',
     beforeImg:'images/Gallery%20Page/Gallery%20Page%204%20-%20Before.jpg',
-    facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','10 Porcelain Veneers'],['Duration','2 visits · 5 days'],['Lifespan','15+ years']],
-    challenge:'Priya\'s career placed her in front of cameras daily. She had significant tetracycline staining from childhood antibiotics — a discolouration that whitening cannot address — combined with minor crowding.',
-    treatment:'10 ultra-thin (0.3mm) feldspathic porcelain veneers were designed using DSD and fabricated by a specialist ceramic lab. No anaesthesia required — minimal preparation, maximum result.',
-    result:'"The colour looks completely natural. Not the white you see in bad veneers — real, luminous, mine. Two people have asked if I got whitening. Nobody has guessed veneers."'
+    facts:[['Specialist','Dr. Neha Sachdeva'],['Treatment','Smile Makeover'],['Duration','2 appointments only'],['Result','"The best experience ever at a dental clinic"']],
+    challenge:'Malini Rajpal is a luxury real estate consultant based in GK2. Her work places her in front of clients constantly. Like many professionals, she had put off addressing her smile for years, assuming it would be a long, complicated, multi-visit process that she simply did not have time for.',
+    treatment:'Dr. Neha assessed Malini\'s case and designed a smile makeover achievable in just two appointments. Using VinSmiles\' state-of-the-art technology and Dr. Neha\'s expertise as a smile makeover specialist, the transformation was completed efficiently without compromising on precision or aesthetics. Malini was back to her clients with a new smile faster than she thought possible.',
+    result:'"The best experience ever at a dental clinic." Malini\'s words. Unprompted. On camera. The first thing she said when she saw her smile.'
   }
 ];
 
@@ -819,12 +828,12 @@ function buildGallery(cases) {
     tile.setAttribute('role', 'button');
     tile.setAttribute('aria-label', `View case study: ${c.name}`);
     tile.innerHTML = `
-      <img class="gtile-img-after" src="${c.afterImg}" alt="${c.nameShort} after treatment" loading="lazy">
+      <img class="gtile-img-after" src="${c.afterImg}" alt="${c.tileTitle} after treatment" loading="lazy">
       <div class="gtile-overlay">
         <div class="gtile-meta">
-          <div class="gtile-cat">${c.catLabel}</div>
-          <div class="gtile-name">${c.nameShort}</div>
-          <div class="gtile-sub">Click to read the full case study</div>
+          <div class="gtile-cat">${c.tileBadge}</div>
+          <div class="gtile-name">${c.tileTitle}</div>
+          <div class="gtile-sub">${c.tileSubtitle}</div>
         </div>
       </div>
       <div class="gtile-before-tag">Before →</div>
@@ -898,7 +907,7 @@ function navigateCase(dir) {
 }
 
 function renderCase(c) {
-  document.getElementById('lbCat').textContent = c.catLabel;
+  document.getElementById('lbCat').textContent = c.lightboxBadge;
   document.getElementById('lbTitle').innerHTML = c.name.replace(/'/g,"'");
   document.getElementById('lbPatient').textContent = c.patient;
   document.getElementById('lbAfterImg').src = c.afterImg;
