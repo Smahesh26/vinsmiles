@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smile Gallery | VinSmiles Advanced Dentistry — Greater Kailash II, New Delhi</title>
-<meta name="description" content="Real patient smile transformations at VinSmiles — implants, veneers, Invisalign, full mouth rehabilitation and smile design. GK-II, New Delhi.">
+<title>Smile Gallery | VinSmiles Advanced Dentistry � Greater Kailash II, New Delhi</title>
+<meta name="description" content="Real patient smile transformations at VinSmiles � implants, veneers, Invisalign, full mouth rehabilitation and smile design. GK-II, New Delhi.">
 <link rel="canonical" href="https://www.vinsmiles.com/smile-gallery">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
-/* ══ TOKENS ══ */
+/* -- TOKENS -- */
 :root{
   --brand:#904588;--brand-dark:#64305F;--brand-light:#F3EBF2;--brand-xlt:#FAF5FA;
   --gold:#C9A96E;--gold-dark:#8B6B3D;--gold-light:#F7F0E4;
@@ -27,7 +27,7 @@ body{font-family:var(--font-b);background:var(--surface);color:var(--ink);overfl
 a{text-decoration:none;color:inherit;}
 img{display:block;max-width:100%;}
 
-/* ══ NAV — exact match ══ */
+/* -- NAV � exact match -- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:300;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--rule);transition:background .4s var(--ease),box-shadow .4s;}
 .nav-logo{display:flex;flex-direction:column;gap:1px;}
 .nav-logo-mark{font-family:var(--font-d);font-size:23px;font-weight:400;color:var(--ink);line-height:1;letter-spacing:.3px;}
@@ -48,7 +48,7 @@ img{display:block;max-width:100%;}
 .mobile-menu a:hover{color:var(--brand);}
 .mobile-menu .m-cta{background:var(--brand);color:#fff;padding:14px 40px;font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;border-radius:2px;margin-top:8px;}
 
-/* ══ UTILS ══ */
+/* -- UTILS -- */
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
 .reveal.in{opacity:1;transform:translateY(0);}
 .d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
@@ -59,7 +59,7 @@ img{display:block;max-width:100%;}
 .btn-wa{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:14px 26px;font-size:11px;font-weight:400;letter-spacing:1px;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .2s;}
 .btn-wa:hover{background:rgba(255,255,255,.2);}
 
-/* ══ HERO ══ */
+/* -- HERO -- */
 .hero{
   padding-top:68px;
   background:var(--warm);
@@ -95,7 +95,7 @@ img{display:block;max-width:100%;}
 .hero-count-num span{color:var(--brand);}
 .hero-count-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);}
 
-/* ══ FILTER BAR ══ */
+/* -- FILTER BAR -- */
 .filter-bar{
   background:var(--surface);
   border-bottom:1px solid var(--rule);
@@ -133,7 +133,7 @@ img{display:block;max-width:100%;}
   font-size:9px;font-weight:600;margin-left:6px;
 }
 
-/* ══ GALLERY GRID ══ */
+/* -- GALLERY GRID -- */
 .gallery-section{
   padding:52px 0 120px;
   background:var(--surface);
@@ -211,7 +211,7 @@ img{display:block;max-width:100%;}
 /* Masonry pattern to match staggered collage look */
 .gtile[class*="shape-"] .gtile-img-after{aspect-ratio:4/5;}
 
-/* ══ CASE STUDY LIGHTBOX ══ */
+/* -- CASE STUDY LIGHTBOX -- */
 .lightbox{
   position:fixed;inset:0;z-index:500;
   display:flex;align-items:stretch;
@@ -229,7 +229,7 @@ img{display:block;max-width:100%;}
   background:rgba(10,8,14,.88);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
-/* Main panel — slides up */
+/* Main panel � slides up */
 .lb-panel{
   position:relative;z-index:1;
   width:100%;
@@ -244,7 +244,7 @@ img{display:block;max-width:100%;}
 }
 .lightbox.open .lb-panel{transform:translateY(0);}
 
-/* LEFT — before/after comparison */
+/* LEFT � before/after comparison */
 .lb-visual{
   position:relative;overflow:hidden;
   background:var(--ink);
@@ -299,7 +299,7 @@ img{display:block;max-width:100%;}
   animation:hintPulse 2.5s ease-in-out 1s 3;
 }
 
-/* RIGHT — case study text */
+/* RIGHT � case study text */
 .lb-text{
   padding:48px 52px;
   overflow-y:auto;
@@ -377,14 +377,14 @@ img{display:block;max-width:100%;}
   color:rgba(255,255,255,.5);
 }
 
-/* ══ EMPTY STATE ══ */
+/* -- EMPTY STATE -- */
 .gallery-empty{
   text-align:center;padding:80px 20px;display:none;
 }
 .gallery-empty.show{display:block;}
 .gallery-empty p{font-size:16px;font-weight:300;color:var(--ink-40);}
 
-/* ══ CTA ══ */
+/* -- CTA -- */
 .about-cta{padding:100px 52px;background:linear-gradient(135deg,var(--brand-dark) 0%,var(--brand) 60%,#b87ab2 100%);text-align:center;position:relative;overflow:hidden;}
 .about-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 50% 0%,rgba(255,255,255,.06),transparent 60%);}
 .about-cta-inner{position:relative;max-width:620px;margin:0 auto;}
@@ -394,7 +394,7 @@ img{display:block;max-width:100%;}
 .cta-p{font-size:15px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:44px;}
 .cta-btns{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;}
 
-/* ══ FOOTER ══ */
+/* -- FOOTER -- */
 footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 .footer-top{max-width:1300px;margin:0 auto;padding:72px 52px 56px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;}
 .f-logo-mark{font-family:var(--font-d);font-size:26px;font-weight:300;color:#fff;margin-bottom:4px;}
@@ -423,12 +423,12 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 .wa-btn{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,.4);transition:transform .2s var(--ease),box-shadow .2s;animation:waPulse 3s ease-in-out infinite;}
 .wa-btn:hover{transform:scale(1.12);box-shadow:0 12px 40px rgba(37,211,102,.55);animation:none;}
 
-/* ══ KEYFRAMES ══ */
+/* -- KEYFRAMES -- */
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @keyframes waPulse{0%,100%{box-shadow:0 8px 28px rgba(37,211,102,.4)}50%{box-shadow:0 8px 44px rgba(37,211,102,.6)}}
 @keyframes hintPulse{0%,100%{opacity:.7}50%{opacity:1}}
 
-/* ══ RESPONSIVE 1024px ══ */
+/* -- RESPONSIVE 1024px -- */
 @media(max-width:1024px){
   .nav{padding:0 28px;}
   .nav-links{display:none;}
@@ -445,7 +445,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .footer-bottom{padding:20px 28px;flex-direction:column;gap:12px;text-align:center;}
 }
 
-/* ══ RESPONSIVE 768px ══ */
+/* -- RESPONSIVE 768px -- */
 @media(max-width:768px){
   .hero-inner{padding:56px 20px 44px;}
   .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 20px;gap:10px;}
@@ -463,7 +463,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .lb-counter{bottom:26px;left:16px;}
 }
 
-/* ══ RESPONSIVE 640px ══ */
+/* -- RESPONSIVE 640px -- */
 @media(max-width:640px){
   nav .nav-cta{padding:8px 16px;font-size:10px;}
   .hero-inner{padding:52px 16px 40px;}
@@ -485,7 +485,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .footer-bottom{padding:16px 16px;}
 }
 
-/* ══ RESPONSIVE 420px ══ */
+/* -- RESPONSIVE 420px -- */
 @media(max-width:420px){
   .gallery-grid{grid-template-columns:1fr;}
   .lb-visual{height:56vw;}
@@ -499,7 +499,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-mark">Vin<span>Smiles</span></div>
-    <div class="nav-logo-sub">Advanced Dentistry · GK-II, New Delhi</div>
+    <div class="nav-logo-sub">Advanced Dentistry � GK-II, New Delhi</div>
   </a>
   <ul class="nav-links">
     <li><a href="treatments.html">Treatments</a></li>
@@ -509,7 +509,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <li><a href="technology.html">Technology</a></li>
     <li><a href="international.html">International</a></li>
   </ul>
-  <a href="index.html" class="nav-cta">Book Consultation</a>
+  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta">Book Consultation</a>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -519,7 +519,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <a href="about.html" onclick="toggleMenu()">Our Story</a>
   <a href="technology.html" onclick="toggleMenu()">Technology</a>
   <a href="international.html" onclick="toggleMenu()">International</a>
-  <a href="index.html" class="m-cta" onclick="toggleMenu()">Book Consultation</a>
+  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta" onclick="toggleMenu()">Book Consultation</a>
 </div>
 
 <!-- HERO -->
@@ -528,10 +528,10 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <div>
       <div class="hero-eyebrow">
         <div class="hero-eyebrow-bar"></div>
-        <span class="hero-eyebrow-txt">Real Patients · Real Results</span>
+        <span class="hero-eyebrow-txt">Real Patients � Real Results</span>
       </div>
       <h1 class="hero-h1">Smile Gallery &<em>Case Studies</em></h1>
-      <p class="hero-p">Every image in this gallery is a real VinSmiles patient. Click any photograph to open the full case study — the challenge, the treatment, and the result.</p>
+      <p class="hero-p">Every image in this gallery is a real VinSmiles patient. Click any photograph to open the full case study � the challenge, the treatment, and the result.</p>
     </div>
     <div class="hero-count">
       <div class="hero-count-num">4<span>+</span></div>
@@ -593,7 +593,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
           </div>
         </div>
       </div>
-      <div class="lb-drag-hint" id="lbDragHint">← Drag to Compare →</div>
+      <div class="lb-drag-hint" id="lbDragHint">? Drag to Compare ?</div>
     </div>
 
     <!-- RIGHT: case study -->
@@ -646,7 +646,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="about-cta-inner">
     <div class="cta-eyebrow">Your Transformation Starts Here</div>
     <h2 class="cta-h2">Ready for Your Own <em>Case Study?</em></h2>
-    <p class="cta-p">Every smile in this gallery began with a single consultation. Book yours — it's free, and it commits you to nothing.</p>
+    <p class="cta-p">Every smile in this gallery began with a single consultation. Book yours � it's free, and it commits you to nothing.</p>
     <div class="cta-btns">
       <a href="index.html" class="btn-white">Book a Free Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="https://wa.me/919654988858" class="btn-wa" target="_blank" rel="noopener">
@@ -662,8 +662,8 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="footer-top">
     <div>
       <div class="f-logo-mark">Vin<span>Smiles</span></div>
-      <div class="f-logo-sub">Advanced Dentistry · Since 2005</div>
-      <div class="f-addr">Greater Kailash II, New Delhi — 110048<br>Near M-Block Market, GK-2</div>
+      <div class="f-logo-sub">Practicing Since 2009 - VinSmiles Established 2019</div>
+      <div class="f-addr">Greater Kailash II, New Delhi - 110048<br>Near M-Block Market, GK-2</div>
       <div class="f-contacts">
         <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+91 96549 88858</a>
         <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>vinsmiles88@gmail.com</a>
@@ -700,7 +700,6 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
         <li><a href="our-team.html">Our Team</a></li>
         <li><a href="technology.html">Technology</a></li>
         <li><a href="gallery.html">Smile Gallery</a></li>
-        <li><a href="international.html#guide">Contact &amp; Location</a></li>
       </ul>
     </div>
     <div>
@@ -708,16 +707,16 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <ul class="f-links">
         <li><a href="international.html">Patient Guide</a></li>
         <li><a href="international.html#cost">Cost Comparison</a></li>
-        <li><a href="index.html">Book Consultation</a></li>
+        <li><a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0">Video Consultation</a></li>
       </ul>
       <div class="f-hours">
         <div class="f-hours-label">Hours</div>
-        <div class="f-hours-val">Mon–Sat: 10am – 7pm<br>Sunday: By appointment</div>
+        <div class="f-hours-val">Mon - Sat: 10am - 7pm<br>Sunday: By appointment</div>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="f-copy">&copy; 2025 VinSmiles Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
+    <div class="f-copy">&copy; 2026 VinSmiles Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
     <div class="f-badges">
       <span class="f-badge">Invisalign Provider</span>
       <span class="f-badge">IDA Member</span>
@@ -731,11 +730,11 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 </a>
 
 <script>
-/* ════════════════════════════════
+/* --------------------------------
    CASE DATA
-   Images from Unsplash — smiling portraits for "after"
+   Images from Unsplash � smiling portraits for "after"
    and more candid/natural for "before"
-════════════════════════════════ */
+-------------------------------- */
 const CASES = [
   {
     id:0, cat:'invisalign',
@@ -799,16 +798,16 @@ const CASES = [
   }
 ];
 
-/* ════════════════════════════════
+/* --------------------------------
    GALLERY STATE
-════════════════════════════════ */
+-------------------------------- */
 let currentFilter = 'all';
 let activeCases = [...CASES];
 let lightboxIdx = 0;
 
-/* ════════════════════════════════
+/* --------------------------------
    BUILD GALLERY
-════════════════════════════════ */
+-------------------------------- */
 function buildGallery(cases) {
   const grid = document.getElementById('galleryGrid');
   const empty = document.getElementById('galleryEmpty');
@@ -836,7 +835,7 @@ function buildGallery(cases) {
           <div class="gtile-sub">${c.tileSubtitle}</div>
         </div>
       </div>
-      <div class="gtile-before-tag">Before →</div>
+      <div class="gtile-before-tag">Before ?</div>
       <div class="gtile-view">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="var(--ink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -852,9 +851,9 @@ function buildGallery(cases) {
   grid.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 }
 
-/* ════════════════════════════════
+/* --------------------------------
    FILTER
-════════════════════════════════ */
+-------------------------------- */
 function filterGallery(btn, cat) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -863,9 +862,9 @@ function filterGallery(btn, cat) {
   buildGallery(activeCases);
 }
 
-/* ════════════════════════════════
+/* --------------------------------
    LIGHTBOX
-════════════════════════════════ */
+-------------------------------- */
 function openLightbox(idx) {
   lightboxIdx = idx;
   renderCase(activeCases[idx]);
@@ -928,9 +927,9 @@ function renderCase(c) {
   document.getElementById('lbText').scrollTop = 0;
 }
 
-/* ════════════════════════════════
+/* --------------------------------
    BEFORE/AFTER DRAG
-════════════════════════════════ */
+-------------------------------- */
 function setHandle(pct) {
   const before = document.getElementById('lbBefore');
   const handle = document.getElementById('lbHandle');
@@ -957,9 +956,9 @@ function initCompare() {
   window.addEventListener('touchend', () => { dragging = false; });
 }
 
-/* ════════════════════════════════
+/* --------------------------------
    KEYBOARD
-════════════════════════════════ */
+-------------------------------- */
 document.addEventListener('keydown', e => {
   if (document.getElementById('lightbox').classList.contains('open')) {
     if (e.key === 'Escape') closeLightbox();
@@ -968,27 +967,27 @@ document.addEventListener('keydown', e => {
   }
 });
 
-/* ════════════════════════════════
+/* --------------------------------
    NAV + MOBILE MENU
-════════════════════════════════ */
+-------------------------------- */
 function toggleMenu() {
   const m = document.getElementById('mobileMenu');
   m.classList.toggle('open');
   document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
 }
 
-/* ════════════════════════════════
+/* --------------------------------
    REVEAL OBSERVER
-════════════════════════════════ */
+-------------------------------- */
 const ro = new IntersectionObserver(entries =>
   entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }),
   {threshold:0.06}
 );
 document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-/* ════════════════════════════════
+/* --------------------------------
    INIT
-════════════════════════════════ */
+-------------------------------- */
 buildGallery(CASES);
 initCompare();
 </script>
