@@ -198,17 +198,6 @@ img{display:block;max-width:100%;height:100%;object-fit:cover;}
 .pin-2{top:32%;right:6%;animation:pinFloat .6s var(--ease) both,pinIdle 3.5s ease-in-out 2.6s infinite;}
 .pin-3{bottom:38%;left:6%;animation:pinFloat .6s var(--ease) both,pinIdle 3.5s ease-in-out 0.7s infinite;}
 .pin-4{bottom:22%;right:8%;animation:pinFloat .6s var(--ease) both,pinIdle 3.5s ease-in-out 2s infinite;}
-/* Quote strip on image bottom */
-.hero-quote-strip{
-  position:absolute;bottom:0;left:0;right:0;
-  background:rgba(15,14,15,.75);backdrop-filter:blur(12px);
-  padding:20px 28px;border-top:1px solid rgba(255,255,255,.08);
-}
-.hero-quote-inner{transition:opacity .35s ease,transform .35s var(--ease);}
-.hero-quote-inner.fading{opacity:0;transform:translateY(6px);}
-.hero-quote-txt{font-family:var(--font-d);font-size:17px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);margin-bottom:6px;line-height:1.5;}
-.hero-quote-attr{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);}
-
 /* --
    ORIGIN STRIP - countries marquee
 -- */
@@ -698,10 +687,6 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .hero-pin{padding:5px 12px 5px 8px;gap:6px;}
   .hero-pin-text{font-size:10px;}
   .hero-pin-sub{font-size:8px;display:none;}
-  /* Quote strip - compact */
-  .hero-quote-strip{padding:14px 20px;}
-  .hero-quote-txt{font-size:14px;line-height:1.4;}
-  .hero-quote-attr{font-size:9px;}
   /* Stats */
   .hero-stats{gap:16px;margin-top:28px;padding-top:24px;}
   .hero-stat-num{font-size:28px;}
@@ -729,10 +714,6 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .pin-2{top:32%;right:3%;}
   .pin-3{bottom:34%;left:4%;}
   .pin-4{bottom:14%;right:4%;}
-  /* Quote strip */
-  .hero-quote-strip{padding:12px 16px;}
-  .hero-quote-txt{font-size:13px;line-height:1.4;}
-  .hero-quote-attr{font-size:8px;letter-spacing:1px;}
   /* Sections */
   .why-section,.cost-section,.journey-section,.stories-section,.guide-section,.letter-section{padding:56px 20px;}
   .why-grid{grid-template-columns:1fr;}
@@ -873,7 +854,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <div class="hero-pins" id="heroPins">
       <div class="hero-pin pin-1 active-pin" data-patient="0">
         <span class="hero-pin-flag"></span>
-        <div><div class="hero-pin-text">Sarah M.</div><div class="hero-pin-sub">London - Smile Makeover</div></div>
+        <div><div class="hero-pin-text">Nina Friede</div><div class="hero-pin-sub">Germany - Smile Makeover</div></div>
         <span class="hero-pin-dot"></span>
       </div>
       <div class="hero-pin pin-2" data-patient="1">
@@ -892,42 +873,30 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
         <span class="hero-pin-dot"></span>
       </div>
     </div>
-    <div class="hero-quote-strip">
-      <div class="hero-quote-inner" id="heroQuoteInner">
-      <div class="hero-quote-txt" id="heroQuoteTxt">"I researched clinics across three countries. VinSmiles was the only one that felt like they were actually listening."</div>
-      <div class="hero-quote-attr" id="heroQuoteAttr">- Rebecca Chen - Melbourne, Australia - Porcelain Veneers 2024</div>
-      </div><!-- /quote-inner -->
-    </div>
   </div>
 </section>
 
 <!-- -- ORIGIN MARQUEE -- -->
 <div class="origin-strip">
   <div class="origin-inner">
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Sarah M.</span><span class="origin-from">London, UK</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Jamy H</span><span class="origin-from">Paris, France</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Cha Hin Goh</span><span class="origin-from">Malaysia</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Nina Friede</span><span class="origin-from">Germany</span></div></div>
     <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Khalid A.</span><span class="origin-from">Dubai, UAE</span></div></div>
     <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Priya S.</span><span class="origin-from">Toronto, Canada</span></div></div>
     <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">James T.</span><span class="origin-from">Singapore</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Rebecca C.</span><span class="origin-from">Melbourne, Australia</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Michael B.</span><span class="origin-from">New York, USA</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Lukas H.</span><span class="origin-from">Berlin, Germany</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Emma W.</span><span class="origin-from">Auckland, NZ</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Farah A.</span><span class="origin-from">Kuwait City</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">David M.</span><span class="origin-from">Cape Town, SA</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Charlotte K.</span><span class="origin-from">Manchester, UK</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Ananya R.</span><span class="origin-from">San Francisco, USA</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Sarah M.</span><span class="origin-from">London, UK</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Jamy H</span><span class="origin-from">Paris, France</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Cha Hin Goh</span><span class="origin-from">Malaysia</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Nina Friede</span><span class="origin-from">Germany</span></div></div>
     <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Khalid A.</span><span class="origin-from">Dubai, UAE</span></div></div>
     <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Priya S.</span><span class="origin-from">Toronto, Canada</span></div></div>
     <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">James T.</span><span class="origin-from">Singapore</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Rebecca C.</span><span class="origin-from">Melbourne, Australia</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Michael B.</span><span class="origin-from">New York, USA</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Lukas H.</span><span class="origin-from">Berlin, Germany</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Emma W.</span><span class="origin-from">Auckland, NZ</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Farah A.</span><span class="origin-from">Kuwait City</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">David M.</span><span class="origin-from">Cape Town, SA</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Charlotte K.</span><span class="origin-from">Manchester, UK</span></div></div>
-    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Ananya R.</span><span class="origin-from">San Francisco, USA</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Jamy H</span><span class="origin-from">Paris, France</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Cha Hin Goh</span><span class="origin-from">Malaysia</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Nina Friede</span><span class="origin-from">Germany</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Khalid A.</span><span class="origin-from">Dubai, UAE</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">Priya S.</span><span class="origin-from">Toronto, Canada</span></div></div>
+    <div class="origin-item"><span class="origin-flag"></span><div class="origin-info"><span class="origin-country">James T.</span><span class="origin-from">Singapore</span></div></div>
   </div>
 </div>
 
@@ -1204,10 +1173,10 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
           <div class="story-stars"><span class="story-star"></span><span class="story-star"></span><span class="story-star"></span><span class="story-star"></span><span class="story-star"></span></div>
           <p class="story-quote">I had a root canal, crown, and fillings done in one visit despite my tight schedule. The team planned everything perfectly, and the quality of care exceeded my expectations. Highly recommended.</p>
           <div class="story-attr">
-            <img class="story-avatar" src="images/International Page/Jamy.jpeg" alt="Jamy H.">
+            <img class="story-avatar" src="images/International Page/Jamy.jpeg" alt="Jamy H">
             <div>
-              <div class="story-name">Jamy H.</div>
-              <div class="story-detail">Paris - Root Canal, Crown & Fillings - 2025</div>
+              <div class="story-name">Jamy H</div>
+              <div class="story-detail">Paris - Root Canal, Crown & Fillings, 2025</div>
             </div>
 
           </div>
@@ -1450,16 +1419,13 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 /* -- PATIENT DATA + DYNAMIC PINS -- */
 const PATIENTS=[
   {img:'images/International Page/International Page Hero Images/1.jpg',
-   quote:'\u201cI was quoted \u00a348,000 in London. VinSmiles gave me the exact same result for less than a quarter of that. I\u2019ve since referred three friends.\u201d',
-   attr:'\u2014 Sarah M. \u00b7 London, UK \u00b7 Full Mouth Rehabilitation 2023'},
+   },
   {img:'images/International Page/International Page Hero Images/2.jpg',
-   quote:'\u201cDr. Neha\u2019s communication before I even arrived gave me complete confidence. The DSD preview was remarkable \u2014 I approved every detail before any treatment started.\u201d',
-   attr:'\u2014 Khalid A. \u00b7 Dubai, UAE \u00b7 Implants + 8 Veneers 2024'},
+   },
   {img:'images/International Page/International Page Hero Images/3.jpg',
-   attr:'\u2014 Priya S. \u00b7 Toronto, Canada \u00b7 Invisalign Full 2024'},
+   },
   {img:'images/International Page/International Page Hero Images/4.jpg',
-   quote:'\u201cI flew from Singapore specifically for VinSmiles. The precision, the warmth \u2014 it felt like a personal experience, not a clinic visit.\u201d',
-  attr:'\u2014 James T. \u00b7 Singapore \u00b7 Smile Makeover 2024'},
+  },
 ];
 
 let _apt=0,_atimer=null;
@@ -1467,16 +1433,11 @@ let _apt=0,_atimer=null;
 function activatePatient(idx){
   if(idx===_apt) return;
   _apt=idx;
-  // Crossfade image
   const im=document.getElementById('heroImg');
   if(im){im.style.cssText+=';transition:opacity .4s ease;opacity:0;';setTimeout(()=>{im.style.backgroundImage="url('"+PATIENTS[idx].img+"')";im.style.opacity='1';},380);}
-  // Crossfade quote
-  const qw=document.getElementById('heroQuoteInner'),qt=document.getElementById('heroQuoteTxt'),qa=document.getElementById('heroQuoteAttr');
-  if(qw){qw.classList.add('fading');setTimeout(()=>{if(qt)qt.textContent=PATIENTS[idx].quote;if(qa)qa.textContent=PATIENTS[idx].attr;qw.classList.remove('fading');},370);}
-  // Active pin highlight
   document.querySelectorAll('.hero-pin').forEach((p,i)=>p.classList.toggle('active-pin',i===idx));
   clearTimeout(_atimer);
-  _atimer=setTimeout(()=>{_apt=(_apt+1)%PATIENTS.length-1;activatePatient((_apt+1)%PATIENTS.length);},6000);
+  _atimer=setTimeout(()=>{activatePatient((idx+1)%PATIENTS.length);},6000);
 }
 
 document.querySelectorAll('.hero-pin').forEach((pin,i)=>{
@@ -1487,9 +1448,6 @@ document.querySelectorAll('.hero-pin').forEach((pin,i)=>{
 (function(){
   const im=document.getElementById('heroImg');
   if(im) im.style.backgroundImage="url('"+PATIENTS[0].img+"')";
-  const qt=document.getElementById('heroQuoteTxt'),qa=document.getElementById('heroQuoteAttr');
-  if(qt) qt.textContent=PATIENTS[0].quote;
-  if(qa) qa.textContent=PATIENTS[0].attr;
   _atimer=setTimeout(()=>{_apt=-1;activatePatient(1);},6000);
 })();
 
