@@ -53,9 +53,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
 <style>
-/* --------------------------------------------
+/* --
    TOKENS - LIGHT THEME
--------------------------------------------- */
+-- */
 :root {
   --brand:       #904588;
   --brand-mid:   #A855A0;
@@ -82,9 +82,9 @@
   --ease-in: cubic-bezier(0.4,0,1,1);
 }
 
-/* --------------------------------------------
+/* --
    RESET
--------------------------------------------- */
+-- */
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; }
 body { font-family:var(--font-b); background:var(--surface); color:var(--ink); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
@@ -92,9 +92,9 @@ a { text-decoration:none; color:inherit; }
 button { cursor:pointer; font-family:var(--font-b); border:none; background:none; }
 img { display:block; max-width:100%; }
 
-/* --------------------------------------------
+/* --
    NAV - light sticky
--------------------------------------------- */
+-- */
 .nav {
   position: fixed; top:0; left:0; right:0; z-index:200;
   height:68px;
@@ -166,9 +166,9 @@ img { display:block; max-width:100%; }
 .mobile-menu a:hover { color:var(--brand); }
 .mobile-menu .m-cta { background:var(--brand); color:#fff; padding:14px 40px; font-size:13px; font-weight:500; letter-spacing:2px; text-transform:uppercase; border-radius:2px; margin-top:8px; }
 
-/* --------------------------------------------
+/* --
    HERO - light with brand gradient
--------------------------------------------- */
+-- */
 .hero {
   position:relative; min-height:100vh;
   min-height:100svh;
@@ -287,9 +287,9 @@ img { display:block; max-width:100%; }
 }
 .hero-scroll-text { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,.4); writing-mode:vertical-rl; }
 
-/* --------------------------------------------
+/* --
    TICKER
--------------------------------------------- */
+-- */
 .ticker { background:var(--brand); padding:11px 0; overflow:hidden; white-space:nowrap; }
 .ticker-track { display:inline-flex; animation:tickerScroll 32s linear infinite; }
 .ticker-item {
@@ -299,9 +299,9 @@ img { display:block; max-width:100%; }
 }
 .ticker-gem { width:4px; height:4px; border-radius:50%; background:var(--gold); flex-shrink:0; }
 
-/* --------------------------------------------
+/* --
    SECTION UTILITIES
--------------------------------------------- */
+-- */
 .eyebrow {
   display:inline-flex; align-items:center; gap:10px; margin-bottom:14px;
 }
@@ -321,9 +321,9 @@ img { display:block; max-width:100%; }
 .s-title.on-dark em { color:var(--gold); }
 .container { max-width:1300px; margin:0 auto; padding:0 52px; }
 
-/* --------------------------------------------
+/* --
    SMILE TRANSFORMATION - IMMERSIVE SHOWCASE
--------------------------------------------- */
+-- */
 .gallery-section { padding:108px 0 0; background:var(--surface); }
 .gallery-intro { margin-bottom:64px; }
 .gallery-intro-inner {
@@ -419,7 +419,7 @@ img { display:block; max-width:100%; }
 .gallery-card:hover .gc-divider { opacity:0; }
 /* divider icon */
 .gc-divider::after {
-  content:'?'; position:absolute; top:50%; left:50%;
+  content:''; position:absolute; top:50%; left:50%;
   transform:translate(-50%,-50%);
   width:30px; height:30px; border-radius:50%;
   background:rgba(255,255,255,.9); color:var(--brand);
@@ -462,9 +462,9 @@ img { display:block; max-width:100%; }
 }
 .gallery-hint-arrow { font-size:18px; color:var(--brand); animation:nudge 2s ease-in-out infinite; }
 
-/* --------------------------------------------
+/* --
    TREATMENTS - INTERACTIVE ACCORDION SHOWCASE
--------------------------------------------- */
+-- */
 .treatments-section {
   padding:108px 0; background:var(--surface-2);
   border-top:1px solid var(--rule);
@@ -584,9 +584,9 @@ img { display:block; max-width:100%; }
 }
 .tx-chip span { color:var(--brand); font-weight:600; }
 
-/* --------------------------------------------
+/* --
    FOUNDER
--------------------------------------------- */
+-- */
 .founder-section {
   display:grid; grid-template-columns:1fr 1fr;
   min-height:640px; border-top:1px solid var(--rule);
@@ -627,9 +627,9 @@ img { display:block; max-width:100%; }
 }
 .btn-brand:hover { background:var(--brand-dark); transform:translateY(-2px); box-shadow:0 10px 28px rgba(144,69,136,.28); }
 
-/* --------------------------------------------
+/* --
    TECHNOLOGY - VISUAL SHOWCASE
--------------------------------------------- */
+-- */
 .tech-section {
   padding:108px 0;
   background:var(--surface-3);
@@ -748,11 +748,11 @@ img { display:block; max-width:100%; }
 .tb-wide-stat-n { font-family:var(--font-d); font-size:24px; font-weight:300; color:var(--brand); }
 .tb-wide-stat-l { font-size:10px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink-40); }
 
-/* --------------------------------------------
+/* --
    INTERNATIONAL PATIENTS
--------------------------------------------- */
+-- */
 .intl-section {
-  padding:140px 0 108px;        /* ? extra top margin per feedback */
+  padding:140px 0 108px;        /*  extra top margin per feedback */
   background:#0A0A0A;
   position:relative; overflow:hidden;
   border-top:1px solid rgba(255,255,255,.04);
@@ -807,9 +807,9 @@ img { display:block; max-width:100%; }
 .step-title { font-size:14px; font-weight:500; color:#fff; margin-bottom:5px; }
 .step-desc { font-size:12px; font-weight:300; color:rgba(255,255,255,.38); line-height:1.65; }
 
-/* --------------------------------------------
+/* --
    TESTIMONIALS
--------------------------------------------- */
+-- */
 .reviews-section { padding:108px 0; background:var(--surface); border-top:1px solid var(--rule); }
 .reviews-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; gap:24px; }
 .rating-block { display:flex; align-items:center; gap:14px; }
@@ -841,9 +841,9 @@ img { display:block; max-width:100%; }
 }
 .reviews-more-link:hover { gap:14px; }
 
-/* --------------------------------------------
+/* --
    CTA BAND
--------------------------------------------- */
+-- */
 .cta-band {
   background:linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 60%, #b87ab2 100%);
   padding:88px 52px; text-align:center; position:relative; overflow:hidden;
@@ -863,9 +863,9 @@ img { display:block; max-width:100%; }
 .btn-wa { background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.25); padding:16px 26px; font-size:12px; font-weight:400; letter-spacing:1px; border-radius:2px; display:inline-flex; align-items:center; gap:10px; transition:background .2s; }
 .btn-wa:hover { background:rgba(255,255,255,.2); }
 
-/* --------------------------------------------
+/* --
    FOOTER
--------------------------------------------- */
+-- */
 footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 .footer-top { max-width:1300px; margin:0 auto; padding:72px 52px 56px; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; }
 .f-logo-mark { font-family:var(--font-d); font-size:26px; font-weight:300; color:#fff; margin-bottom:4px; }
@@ -892,9 +892,9 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 .f-badges { display:flex; gap:12px; }
 .f-badge { font-size:10px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.08); padding:4px 10px; border-radius:2px; }
 
-/* --------------------------------------------
+/* --
    WHATSAPP FLOAT
--------------------------------------------- */
+-- */
 .wa-btn {
   position:fixed; bottom:28px; right:28px; z-index:300;
   width:56px; height:56px; border-radius:50%; background:#25D366;
@@ -905,9 +905,9 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 }
 .wa-btn:hover { transform:scale(1.12); box-shadow:0 12px 40px rgba(37,211,102,.55); animation:none; }
 
-/* --------------------------------------------
+/* --
    REVEAL ANIMATIONS
--------------------------------------------- */
+-- */
 .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.in { opacity:1; transform:translateY(0); }
 .reveal-d1 { transition-delay:.1s; }
@@ -915,9 +915,9 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 .reveal-d3 { transition-delay:.3s; }
 .reveal-d4 { transition-delay:.4s; }
 
-/* --------------------------------------------
+/* --
    KEYFRAMES
--------------------------------------------- */
+-- */
 @keyframes fadeUp   { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 @keyframes fadeIn   { from{opacity:0} to{opacity:1} }
 @keyframes tickerScroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
@@ -929,9 +929,9 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 @keyframes scanPulse { 0%,100%{transform:scale(1);opacity:.4} 50%{transform:scale(1.04);opacity:.7} }
 @keyframes waPulse  { 0%,100%{box-shadow:0 8px 28px rgba(37,211,102,.4)} 50%{box-shadow:0 8px 44px rgba(37,211,102,.6)} }
 
-/* --------------------------------------------
+/* --
    RESPONSIVE - TABLET (=1024px)
--------------------------------------------- */
+-- */
 @media (max-width:1024px) {
   .nav { padding:0 28px; }
   .nav-links { display:none; }
@@ -964,9 +964,9 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   .tech-intro-right { text-align:left; }
 }
 
-/* --------------------------------------------
+/* --
    RESPONSIVE - MOBILE (=640px)
--------------------------------------------- */
+-- */
 @media (max-width:640px) {
   .hero-content { padding:96px 20px 40px; }
   .hero-h1 { font-size:clamp(42px,11vw,58px); }
@@ -1036,7 +1036,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 </head>
 <body>
 
-<!-- ------ NAV ------ -->
+<!-- -- NAV -- -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-mark">Vin<span>Smiles</span></div>
@@ -1065,7 +1065,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta" onclick="toggleMenu()">Book Consultation</a>
 </div>
 
-<!-- ------ HERO ------ -->
+<!-- -- HERO -- -->
 <section class="hero">
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
@@ -1102,7 +1102,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </section>
 
-<!-- ------ TICKER ------ -->
+<!-- -- TICKER -- -->
 <div class="ticker">
   <div class="ticker-track">
     <span class="ticker-item"><span class="ticker-gem"></span>Dental Implants</span>
@@ -1128,7 +1128,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </div>
 
-<!-- ------ SMILE GALLERY - IMMERSIVE MARQUEE ------ -->
+<!-- -- SMILE GALLERY - IMMERSIVE MARQUEE -- -->
 <section class="gallery-section">
   <div class="container">
     <div class="gallery-intro reveal">
@@ -1257,7 +1257,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </section>
 
-<!-- ------ TREATMENTS - INTERACTIVE ACCORDION ------ -->
+<!-- -- TREATMENTS - INTERACTIVE ACCORDION -- -->
 <section class="treatments-section">
   <div class="container">
     <div class="tx-layout">
@@ -1510,7 +1510,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </section>
 
-<!-- ------ FOUNDER ------ -->
+<!-- -- FOUNDER -- -->
 <section class="founder-section">
   <div class="founder-left reveal">
     <div class="founder-left-pattern"></div>
@@ -1534,7 +1534,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </section>
 
-<!-- ------ TECHNOLOGY - VISUAL BENTO ------ -->
+<!-- -- TECHNOLOGY - VISUAL BENTO -- -->
 <section class="tech-section">
   <div class="container">
     <div class="tech-intro-row reveal">
@@ -1637,7 +1637,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </section>
 
-<!-- ------ INTERNATIONAL PATIENTS ------ -->
+<!-- -- INTERNATIONAL PATIENTS -- -->
 <section class="intl-section">
   <div class="container">
     <div class="intl-grid">
@@ -1679,7 +1679,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </section>
 
-<!-- ------ TESTIMONIALS ------ -->
+<!-- -- TESTIMONIALS -- -->
 <section class="reviews-section">
   <div class="container">
     <div class="reviews-header reveal">
@@ -1690,14 +1690,14 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
       <div class="rating-block">
         <div class="rating-n">5.0</div>
         <div class="stars-col">
-          <div class="stars-row">★★★★★</div>
+          <div class="stars-row">--</div>
           <div class="stars-src">231+ Reviews - JustDial & Google</div>
         </div>
       </div>
     </div>
     <div class="reviews-grid">
       <div class="review-card reveal">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-stars">--</div>
         <p class="review-txt">"I flew from Dubai specifically for implants at VinSmiles. From the first WhatsApp message to the final crown, every step was handled with absolute professionalism. The result is flawless - and the savings were extraordinary."</p>
         <div class="review-foot">
           <div class="r-avatar">SK</div>
@@ -1705,7 +1705,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         </div>
       </div>
       <div class="review-card reveal reveal-d1">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-stars">--</div>
         <p class="review-txt">"I had severe dental anxiety before coming here. Dr. Neha was extraordinary - patient, thorough, and the clinic feels nothing like a typical dental practice. Six veneers later, I can't stop smiling. Genuinely life-changing."</p>
         <div class="review-foot">
           <div class="r-avatar">PM</div>
@@ -1713,7 +1713,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         </div>
       </div>
       <div class="review-card reveal reveal-d2">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-stars">--</div>
         <p class="review-txt">"Full mouth rehabilitation after years of neglect. The team mapped out everything in advance - I knew exactly what to expect at every stage. VinSmiles gave me my confidence back."</p>
         <div class="review-foot">
           <div class="r-avatar">RG</div>
@@ -1730,7 +1730,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </section>
 
-<!-- ------ CTA BAND ------ -->
+<!-- -- CTA BAND -- -->
 <div class="cta-band reveal">
   <div class="cta-band-inner">
     <div class="cta-eyebrow">Begin Your Journey</div>
@@ -1749,7 +1749,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </div>
 
-<!-- ------ FOOTER ------ -->
+<!-- -- FOOTER -- -->
 <footer>
   <div class="footer-top">
     <div>
@@ -1761,7 +1761,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>vinsmiles88@gmail.com</a>
       </div>
       <div class="f-map">
-        <div class="f-map-title">Directions to the clinic?</div>
+        <div class="f-map-title">Directions to the clinic</div>
         <iframe
           class="f-map-frame"
           src="https://www.google.com/maps?q=VinSmiles%20Advanced%20Dentistry%20Greater%20Kailash%20II%20New%20Delhi&output=embed"
@@ -1817,7 +1817,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   </div>
 </footer>
 
-<!-- ------ WHATSAPP FLOAT ------ -->
+<!-- -- WHATSAPP FLOAT -- -->
 <a href="https://wa.me/919654988858" class="wa-btn" aria-label="Chat on WhatsApp">
   <svg width="28" height="28" viewBox="0 0 28 28" fill="white"><path d="M14 2.5C7.6 2.5 2.5 7.6 2.5 14c0 2.1.57 4.1 1.57 5.83L2.5 25.5l5.84-1.55A11.43 11.43 0 0014 25.5c6.4 0 11.5-5.1 11.5-11.5S20.4 2.5 14 2.5zm5.65 15.9c-.23.65-1.34 1.24-1.85 1.31-.46.07-1.05.1-1.69-.1-.39-.13-.9-.3-1.54-.56C11.7 18.03 9.7 15.8 9.5 15.53c-.2-.26-1.5-2-.5-3.79.21-.37.56-.71 1.02-.98.19-.11.38-.17.53-.17h.7c.23 0 .54-.08.84.64.3.77 1.04 2.6 1.13 2.79.09.19.15.4.04.64-.11.24-.17.38-.36.58-.19.2-.39.46-.56.62-.18.17-.37.37-.15.73.21.36.96 1.5 2.06 2.43 1.41 1.23 2.59 1.61 2.96 1.8.37.18.58.15.8-.09.21-.24.92-1.07 1.17-1.44.24-.37.49-.3.83-.18l2.63 1.24c.3.14.5.2.57.32.08.12.08.72-.15 1.37z"/></svg>
 </a>
