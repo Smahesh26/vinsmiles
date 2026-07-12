@@ -1000,7 +1000,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     <li><a href="technology.html">Technology</a></li>
     <li><a href="international.html">International</a></li>
   </ul>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta">Book Consultation</a>
+  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
@@ -1012,7 +1012,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   <a href="about.html" onclick="toggleMenu()">Our Story</a>
   <a href="technology.html" onclick="toggleMenu()">Technology</a>
   <a href="international.html" onclick="toggleMenu()">International</a>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta" onclick="toggleMenu()">Book Consultation</a>
+  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta" onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
 </div>
 
 <!-- -- HERO -- -->
@@ -1048,7 +1048,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         Read Our Story
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-brand" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);">
+      <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-brand" style="background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);" target="_blank" rel="noopener">
         Book Consultation
       </a>
     </div>
@@ -1079,7 +1079,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
       <div class="is-l">Specialists</div>
     </div>
     <div class="is-stat reveal d2">
-      <div class="is-n">5.0<span>--</span></div>
+      <div class="is-n">5.0<span>★
+</span></div>
       <div class="is-l">Patient Rating</div>
     </div>
     <div class="is-stat reveal d3">
@@ -1151,7 +1152,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <a href="our-team.html" class="btn-brand">Meet the Full Team
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="index.html" class="btn-outline-brand">Book a Consultation
+          <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-outline-brand" target="_blank" rel="noopener">Book a Consultation
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
@@ -1505,7 +1506,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-txt">Our Specialists</span></div>
         <h2 class="s-title">The Team Behind <em>Every Smile</em></h2>
       </div>
-      <p class="team-header-right">Seven specialists. One clinic. Every discipline covered by someone who has spent their career perfecting exactly that procedure.</p>
+      <p class="team-header-right">Ten specialists. One clinic. Every discipline covered by someone who has spent their career perfecting exactly that procedure.</p>
     </div>
 
     <div class="team-grid">
@@ -1725,7 +1726,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     <h2 class="cta-h2">Come and See What<br><em>Dentistry Can Feel Like</em></h2>
     <p class="cta-p">Book a consultation -- no pressure, no commitment. Just an honest conversation about your smile with a specialist who has spent two decades doing exactly this.</p>
     <div class="cta-btns">
-      <a href="index.html" class="btn-white">
+      <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">
         Book a Consultation
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
@@ -1929,6 +1930,7 @@ selectMilestone(0);
 
 // Auto-advance once for a guided first impression (then stops)
 let autoPlayed = false;
+const AUTO_ADVANCE_MS = 2800;
 const autoObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting && !autoPlayed) {
@@ -1938,9 +1940,16 @@ const autoObs = new IntersectionObserver(entries => {
         i++;
         if (i >= MILESTONES) { clearInterval(autoStep); return; }
         selectMilestone(i);
-      }, 900);
+      }, AUTO_ADVANCE_MS);
       // Stop if user interacts
-      document.querySelector('.tooth-journey').addEventListener('click', () => clearInterval(autoStep), {once:true});
+      const journey = document.querySelector('.tooth-journey');
+      if (journey) {
+        const stopAuto = () => clearInterval(autoStep);
+        journey.addEventListener('click', stopAuto, {once:true});
+        journey.addEventListener('mouseenter', stopAuto, {once:true});
+        journey.addEventListener('touchstart', stopAuto, {once:true});
+        journey.addEventListener('keydown', stopAuto, {once:true});
+      }
     }
   });
 }, {threshold:0.5});
