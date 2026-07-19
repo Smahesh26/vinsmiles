@@ -1171,7 +1171,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   <div class="hero-content">
     <div class="hero-pill">
       <span class="hero-pill-dot"></span>
-      <span class="hero-pill-text">South Delhi's Premier Dental Clinic</span>
+      <span class="hero-pill-text hero-text-anim" id="hero-pill-text">Reception Area</span>
     </div>
     <h1 class="hero-h1 hero-text-anim" id="hero-title">
       Where Precision<br>Dentistry Meets
@@ -1873,6 +1873,73 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
 
 <!-- -- INTERNATIONAL PATIENTS -- -->
+
+<section class="stories-section" style="padding: 100px 20px; background: #faf9fa;">
+  <div class="container" style="max-width: 1300px; margin: 0 auto;">
+    <div class="stories-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px;">
+      <div>
+        <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-txt">Patient Stories</span></div>
+        <h2 class="section-title">Real Words from<br><em>Real Patients</em></h2>
+      </div>
+      <div id="google-rating-summary" style="text-align: right;">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+    <div class="stories-grid" id="google-reviews-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
+      <div style="height: 250px; background: #f0f0f0; border-radius: 12px; animation: pulse 1.5s infinite;"></div>
+      <div style="height: 250px; background: #f0f0f0; border-radius: 12px; animation: pulse 1.5s infinite;"></div>
+      <div style="height: 250px; background: #f0f0f0; border-radius: 12px; animation: pulse 1.5s infinite;"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 0.3; } 100% { opacity: 0.6; } }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const grid = document.getElementById('google-reviews-grid');
+  const summary = document.getElementById('google-rating-summary');
+  if (!grid) return;
+  
+  try {
+    const res = await fetch('/api/reviews');
+    if (!res.ok) throw new Error('Network response was not ok');
+    const data = await res.json();
+    
+    if (data.reviews && data.reviews.length > 0) {
+      if (summary) {
+        summary.innerHTML = `
+          <div style="font-size:36px; font-weight:400; font-family:'Playfair Display', serif; color:#bfa693; line-height:1;">
+            ${data.rating} <span style="font-size:24px;">★</span>
+          </div>
+          <div style="color:#666; font-size:14px; margin-top:8px; text-transform:uppercase; letter-spacing:1px;">Based on ${data.total_reviews} Google Reviews</div>
+        `;
+      }
+      
+      grid.innerHTML = data.reviews.slice(0, 3).map(r => `
+        <div style="padding:40px; background:#fff; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.03); display:flex; flex-direction:column; justify-content:space-between;">
+          <p style="color:#4a4a4a; font-size:16px; line-height:1.7; margin-bottom:32px; font-style:italic;">"${r.text.length > 200 ? r.text.substring(0, 200) + '...' : r.text}"</p>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <img src="${r.profile_photo_url}" alt="${r.author_name}" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
+            <div>
+              <div style="font-weight:600; font-size:16px; color:#1a0d1a;">${r.author_name}</div>
+              <div style="color:#bfa693; font-size:12px; margin-top:4px;">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    } else {
+      grid.innerHTML = '<p style="color:#666;">No reviews available at the moment.</p>';
+    }
+  } catch (err) {
+    console.error('Failed to fetch reviews:', err);
+    grid.innerHTML = '<p style="color:#666;">Unable to load reviews. Please visit our Google page to read patient stories.</p>';
+  }
+});
+</script>
+
 <section class="intl-section" style="display: none;">
   <div class="container">
     <div class="intl-grid">
@@ -2086,15 +2153,16 @@ window.addEventListener('load', () => {
   const slides = document.querySelectorAll('.hero-slide');
   const title = document.getElementById('hero-title');
   const desc = document.getElementById('hero-desc');
-  if(!slides.length || !title || !desc) return;
+  const pill = document.getElementById('hero-pill-text');
+  if(!slides.length || !title || !desc || !pill) return;
   
   const content = [
-    { title: "Welcoming<br><em>Reception Area.</em>", desc: "A practice built around your peace of mind, providing a serene environment from the moment you arrive." },
-    { title: "Dedicated<br><em>Consultation Area.</em>", desc: "Personalized treatment plans crafted with complete clarity and specialist expertise for your unique needs." },
-    { title: "Advanced<br><em>Dental Operatory.</em>", desc: "Employing cutting-edge technology and global standards to deliver flawless, lasting dental results." },
-    { title: "Modern<br><em>Dental Operatory.</em>", desc: "Every procedure is performed with meticulous attention to detail by dedicated specialists." },
-    { title: "State-of-the-Art<br><em>Operatory Suite.</em>", desc: "Equipped with the finest instruments to ensure minimally invasive, efficient, and painless treatments." },
-    { title: "Premium<br><em>Dental Operatory.</em>", desc: "Experience a new standard of dental care where your well-being and confidence are our highest priorities." }
+    { pill: "Reception Area", title: "Absolute<br><em>Comfort.</em>", desc: "A practice built around your peace of mind, providing a serene environment from the moment you arrive." },
+    { pill: "Consultation Area", title: "Dedicated<br><em>Treatment Planning.</em>", desc: "Personalized treatment plans crafted with complete clarity and specialist expertise for your unique needs." },
+    { pill: "Advanced Dental Operatory", title: "Flawless<br><em>Clinical Care.</em>", desc: "Employing cutting-edge technology and global standards to deliver flawless, lasting dental results." },
+    { pill: "Modern Dental Operatory", title: "Uncompromising<br><em>Precision.</em>", desc: "Every procedure is performed with meticulous attention to detail by dedicated specialists." },
+    { pill: "State-of-the-Art Operatory", title: "State-of-the-Art<br><em>Technology.</em>", desc: "Equipped with the finest instruments to ensure minimally invasive, efficient, and painless treatments." },
+    { pill: "Premium Dental Operatory", title: "Dentistry That Feels<br><em>Different.</em>", desc: "Experience a new standard of dental care where your well-being and confidence are our highest priorities." }
   ];
   
   let cur = 0;
@@ -2105,13 +2173,16 @@ window.addEventListener('load', () => {
     // fade text out
     title.classList.add('slider-active', 'fading');
     desc.classList.add('slider-active', 'fading');
+    pill.classList.add('slider-active', 'fading');
     
     setTimeout(() => {
       // update text and fade in
       title.innerHTML = content[cur].title;
       desc.innerHTML = content[cur].desc;
+      pill.innerHTML = content[cur].pill;
       title.classList.remove('fading');
       desc.classList.remove('fading');
+      pill.classList.remove('fading');
     }, 600); // Wait for fade out
     
     slides[cur].classList.add('active');
