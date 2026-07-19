@@ -175,9 +175,18 @@ img { display:block; max-width:100%; }
   display:flex; align-items:flex-end; overflow:hidden;
   background:#1a0d1a;
 }
-.hero-video {
-  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; z-index:0;
+.hero-slider {
+  position:absolute; inset:0; width:100%; height:100%; z-index:0; background:#000;
 }
+.hero-slide {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:0; transition:opacity 2s ease-in-out;
+}
+.hero-slide.active { opacity:1; }
+.hero-text-anim { transition: opacity 0.6s ease, transform 0.6s ease; }
+.hero-text-anim.slider-active { animation: none !important; opacity: 1; transform: translateY(0); }
+.hero-text-anim.slider-active.fading { opacity: 0 !important; transform: translateY(10px); }
+
 .hero-overlay {
   position:absolute; inset:0; pointer-events:none; z-index:1;
   background: linear-gradient(145deg, rgba(26,13,26,.78) 0%, rgba(74,29,69,.62) 30%, rgba(144,69,136,.52) 62%, rgba(196,123,184,.42) 85%, rgba(232,213,232,.28) 100%);
@@ -215,7 +224,7 @@ img { display:block; max-width:100%; }
 }
 .hero-content {
   position:relative; z-index:2;
-  padding:120px 52px 100px; max-width:800px;
+  padding:80px 52px 140px; max-width:800px;
   width:100%;
 }
 .hero-pill {
@@ -1146,9 +1155,14 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
 <!-- -- HERO -- -->
 <section class="hero">
-  <video class="hero-video" autoplay loop muted playsinline>
-    <source src="images/hero.mp4" type="video/mp4">
-  </video>
+  <div class="hero-slider">
+    <img src="images/BANNERIMAGES/receptionarea.jpg" class="hero-slide active" alt="Reception Area">
+    <img src="images/BANNERIMAGES/consultationarea.jpg" class="hero-slide" alt="Consultation Area">
+    <img src="images/BANNERIMAGES/dentaloperatory1.jpg" class="hero-slide" alt="Dental Operatory 1">
+    <img src="images/BANNERIMAGES/dentaloperatory2.jpg" class="hero-slide" alt="Dental Operatory 2">
+    <img src="images/BANNERIMAGES/dentaloperatory11.jpg" class="hero-slide" alt="Dental Operatory 11">
+    <img src="images/BANNERIMAGES/dentaloperatory111.jpg" class="hero-slide" alt="Dental Operatory 111">
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
@@ -1159,11 +1173,11 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
       <span class="hero-pill-dot"></span>
       <span class="hero-pill-text">South Delhi's Premier Dental Clinic</span>
     </div>
-    <h1 class="hero-h1">
+    <h1 class="hero-h1 hero-text-anim" id="hero-title">
       Where Precision<br>Dentistry Meets
       <em>Personal Transformation</em>
     </h1>
-    <p class="hero-p">11 specialists. Cutting-edge technology. A patient experience built around comfort, confidence, and clinical excellence - in the heart of Greater Kailash II.</p>
+    <p class="hero-p hero-text-anim" id="hero-desc">11 specialists. Cutting-edge technology. A patient experience built around comfort, confidence, and clinical excellence - in the heart of Greater Kailash II.</p>
     <div class="hero-btns">
       <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-primary" target="_blank" rel="noopener">
         Book Your Consultation
@@ -2064,6 +2078,45 @@ window.addEventListener('load', () => {
     countUp(document.getElementById('s5'), 15, '<span>+</span>');
   }, 900);
 });
+</script>
+
+<script>
+/* -- hero slider -- */
+(function(){
+  const slides = document.querySelectorAll('.hero-slide');
+  const title = document.getElementById('hero-title');
+  const desc = document.getElementById('hero-desc');
+  if(!slides.length || !title || !desc) return;
+  
+  const content = [
+    { title: "Welcoming<br><em>Reception Area.</em>", desc: "A practice built around your peace of mind, providing a serene environment from the moment you arrive." },
+    { title: "Dedicated<br><em>Consultation Area.</em>", desc: "Personalized treatment plans crafted with complete clarity and specialist expertise for your unique needs." },
+    { title: "Advanced<br><em>Dental Operatory.</em>", desc: "Employing cutting-edge technology and global standards to deliver flawless, lasting dental results." },
+    { title: "Modern<br><em>Dental Operatory.</em>", desc: "Every procedure is performed with meticulous attention to detail by dedicated specialists." },
+    { title: "State-of-the-Art<br><em>Operatory Suite.</em>", desc: "Equipped with the finest instruments to ensure minimally invasive, efficient, and painless treatments." },
+    { title: "Premium<br><em>Dental Operatory.</em>", desc: "Experience a new standard of dental care where your well-being and confidence are our highest priorities." }
+  ];
+  
+  let cur = 0;
+  setInterval(() => {
+    slides[cur].classList.remove('active');
+    cur = (cur + 1) % slides.length;
+    
+    // fade text out
+    title.classList.add('slider-active', 'fading');
+    desc.classList.add('slider-active', 'fading');
+    
+    setTimeout(() => {
+      // update text and fade in
+      title.innerHTML = content[cur].title;
+      desc.innerHTML = content[cur].desc;
+      title.classList.remove('fading');
+      desc.classList.remove('fading');
+    }, 600); // Wait for fade out
+    
+    slides[cur].classList.add('active');
+  }, 5000);
+})();
 </script>
 </body>
 </html>
