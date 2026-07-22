@@ -1,3 +1,20 @@
+async function resolvePlaceId(apiKey) {
+  const explicitQuery = process.env.GOOGLE_PLACE_QUERY;
+  const fallbackQuery = 'VinSmiles Greater Kailash II New Delhi';
+  const query = (explicitQuery && explicitQuery.trim()) || fallbackQuery;
+
+  const findUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(query)}&inputtype=textquery&fields=place_id,name,formatted_address&key=${apiKey}`;
+  const findResponse = await fetch(findUrl);
+  const findData = await findResponse.json();
+
+  if (findData.status !== 'OK' || !findData.candidates || !findData.candidates.length) {
+    const message = findData.error_message || `Could not resolve place from query: ${query}`;
+    throw new Error(message);
+  }
+
+  return findData.candidates[0].place_id;
+}
+
 module.exports = async function(req, res) {
   // Allow cross-origin requests if accessed from elsewhere, though Vercel handles this for the same domain
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -9,16 +26,18 @@ module.exports = async function(req, res) {
   }
 
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-  const placeId = process.env.GOOGLE_PLACE_ID;
+  const configuredPlaceId = process.env.GOOGLE_PLACE_ID;
 
-  if (!apiKey || !placeId) {
+  if (!apiKey) {
     return res.status(500).json({ 
       error: 'Missing API Credentials',
-      message: 'Please configure GOOGLE_PLACES_API_KEY and GOOGLE_PLACE_ID in your Vercel Environment Variables.'
+      message: 'Please configure GOOGLE_PLACES_API_KEY in your Vercel Environment Variables.'
     });
   }
 
   try {
+    const placeId = configuredPlaceId || await resolvePlaceId(apiKey);
+
     // The Google Places API Details endpoint
     const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,user_ratings_total,rating&key=${apiKey}`;
     
@@ -33,6 +52,7 @@ module.exports = async function(req, res) {
 
     // Return the cleaned data to the frontend
     return res.status(200).json({
+      place_id: placeId,
       rating: data.result.rating,
       total_reviews: data.result.user_ratings_total,
       reviews: data.result.reviews || []

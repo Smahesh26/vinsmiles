@@ -1362,46 +1362,17 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-txt">Patient Stories</span></div>
         <h2 class="s-title">What Our Patients <em>Say</em></h2>
       </div>
-      <div class="rating-block">
-        <div class="rating-n">5.0</div>
+      <div class="rating-block" id="google-rating-summary">
+        <div class="rating-n" id="google-rating-value">5.0</div>
         <div class="stars-col">
           <div class="stars-row">★
 </div>
-          <div class="stars-src">231+ Reviews - JustDial & Google</div>
+          <div class="stars-src" id="google-rating-count">231+ Reviews - JustDial & Google</div>
         </div>
       </div>
     </div>
-    <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-stars"></div>
-        <p class="review-txt">"I flew from Dubai specifically for implants at VinSmiles. From the first WhatsApp message to the final crown, every step was handled with absolute professionalism. The result is flawless - and the savings were extraordinary."</p>
-        <div class="review-foot">
-          <div class="r-avatar">SK</div>
-          <div><div class="r-name">Sunil K.</div><div class="r-treat">Dental Implants - Dubai, UAE</div></div>
-        </div>
-      </div>
-      <div class="review-card reveal reveal-d1">
-        <div class="review-stars"></div>
-        <p class="review-txt">"I had severe dental anxiety before coming here. Dr. Neha was extraordinary - patient, thorough, and the clinic feels nothing like a typical dental practice. Six veneers later, I can't stop smiling. Genuinely life-changing."</p>
-        <div class="review-foot">
-          <div class="r-avatar">PM</div>
-          <div><div class="r-name">Priya M.</div><div class="r-treat">Hollywood Smile - New Delhi</div></div>
-        </div>
-      </div>
-      <div class="review-card reveal reveal-d2">
-        <div class="review-stars"></div>
-        <p class="review-txt">"Full mouth rehabilitation after years of neglect. The team mapped out everything in advance - I knew exactly what to expect at every stage. VinSmiles gave me my confidence back."</p>
-        <div class="review-foot">
-          <div class="r-avatar">RG</div>
-          <div><div class="r-name">Rohit G.</div><div class="r-treat">Full Mouth Rehabilitation - Gurugram</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="reviews-more reveal">
-      <a href="gallery.html" class="reviews-more-link">
-        Read All Patient Stories
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+    <div class="reviews-grid" id="google-reviews-grid">
+      <div class="review-card reveal"><p class="review-txt">Loading latest Google reviews...</p></div>
     </div>
   </div>
 </section>
@@ -1872,74 +1843,6 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 </section>
 
 
-<!-- -- INTERNATIONAL PATIENTS -- -->
-
-<section class="stories-section" style="padding: 100px 20px; background: #faf9fa;">
-  <div class="container" style="max-width: 1300px; margin: 0 auto;">
-    <div class="stories-header" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px;">
-      <div>
-        <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-txt">Patient Stories</span></div>
-        <h2 class="section-title">Real Words from<br><em>Real Patients</em></h2>
-      </div>
-      <div id="google-rating-summary" style="text-align: right;">
-        <!-- Filled dynamically -->
-      </div>
-    </div>
-    <div class="stories-grid" id="google-reviews-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px;">
-      <div style="height: 250px; background: #f0f0f0; border-radius: 12px; animation: pulse 1.5s infinite;"></div>
-      <div style="height: 250px; background: #f0f0f0; border-radius: 12px; animation: pulse 1.5s infinite;"></div>
-      <div style="height: 250px; background: #f0f0f0; border-radius: 12px; animation: pulse 1.5s infinite;"></div>
-    </div>
-  </div>
-</section>
-
-<style>
-@keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 0.3; } 100% { opacity: 0.6; } }
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', async () => {
-  const grid = document.getElementById('google-reviews-grid');
-  const summary = document.getElementById('google-rating-summary');
-  if (!grid) return;
-  
-  try {
-    const res = await fetch('/api/reviews');
-    if (!res.ok) throw new Error('Network response was not ok');
-    const data = await res.json();
-    
-    if (data.reviews && data.reviews.length > 0) {
-      if (summary) {
-        summary.innerHTML = `
-          <div style="font-size:36px; font-weight:400; font-family:'Playfair Display', serif; color:#bfa693; line-height:1;">
-            ${data.rating} <span style="font-size:24px;">★</span>
-          </div>
-          <div style="color:#666; font-size:14px; margin-top:8px; text-transform:uppercase; letter-spacing:1px;">Based on ${data.total_reviews} Google Reviews</div>
-        `;
-      }
-      
-      grid.innerHTML = data.reviews.slice(0, 3).map(r => `
-        <div style="padding:40px; background:#fff; border-radius:12px; box-shadow:0 10px 40px rgba(0,0,0,0.03); display:flex; flex-direction:column; justify-content:space-between;">
-          <p style="color:#4a4a4a; font-size:16px; line-height:1.7; margin-bottom:32px; font-style:italic;">"${r.text.length > 200 ? r.text.substring(0, 200) + '...' : r.text}"</p>
-          <div style="display:flex; align-items:center; gap:16px;">
-            <img src="${r.profile_photo_url}" alt="${r.author_name}" style="width:48px; height:48px; border-radius:50%; object-fit:cover;">
-            <div>
-              <div style="font-weight:600; font-size:16px; color:#1a0d1a;">${r.author_name}</div>
-              <div style="color:#bfa693; font-size:12px; margin-top:4px;">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
-            </div>
-          </div>
-        </div>
-      `).join('');
-    } else {
-      grid.innerHTML = '<p style="color:#666;">No reviews available at the moment.</p>';
-    }
-  } catch (err) {
-    console.error('Failed to fetch reviews:', err);
-    grid.innerHTML = '<p style="color:#666;">Unable to load reviews. Please visit our Google page to read patient stories.</p>';
-  }
-});
-</script>
-
 <section class="intl-section" style="display: none;">
   <div class="container">
     <div class="intl-grid">
@@ -2188,6 +2091,93 @@ window.addEventListener('load', () => {
     slides[cur].classList.add('active');
   }, 5000);
 })();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+  const grid = document.getElementById('google-reviews-grid');
+  const ratingValue = document.getElementById('google-rating-value');
+  const ratingCount = document.getElementById('google-rating-count');
+  if (!grid) return;
+
+  const host = window.location.hostname;
+  const hasBuiltinApi =
+    host.endsWith('.vercel.app') ||
+    host.endsWith('.netlify.app');
+
+  // Optional override for custom hosts that proxy an API route.
+  const endpoint = window.VINSMILES_REVIEWS_ENDPOINT || '/api/reviews';
+
+  if (!window.VINSMILES_REVIEWS_ENDPOINT && !hasBuiltinApi) {
+    grid.innerHTML = '<div class="review-card"><p class="review-txt">Google reviews are currently unavailable on this hosting setup.</p></div>';
+    if (ratingCount) ratingCount.textContent = 'Google reviews unavailable';
+    return;
+  }
+
+  const escapeHtml = (value = '') => String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+  try {
+    const response = await fetch(endpoint, { cache: 'no-store' });
+    if (!response.ok) {
+      grid.innerHTML = '<div class="review-card"><p class="review-txt">Unable to load Google reviews right now. Please check back shortly.</p></div>';
+      if (ratingCount) ratingCount.textContent = 'Google reviews unavailable';
+      return;
+    }
+    const data = await response.json();
+
+    if (!Array.isArray(data.reviews) || data.reviews.length === 0) {
+      grid.innerHTML = '<div class="review-card"><p class="review-txt">No Google reviews are available at the moment.</p></div>';
+      return;
+    }
+
+    if (ratingValue && typeof data.rating !== 'undefined') {
+      const parsedRating = Number(data.rating);
+      if (!Number.isNaN(parsedRating)) {
+        ratingValue.textContent = parsedRating.toFixed(1);
+      }
+    }
+
+    if (ratingCount) {
+      const total = Number(data.total_reviews);
+      ratingCount.textContent = `${Number.isNaN(total) ? data.reviews.length : total}+ Reviews - Google`;
+    }
+
+    grid.innerHTML = data.reviews.slice(0, 3).map((review) => {
+      const author = escapeHtml(review.author_name || 'Verified Patient');
+      const text = escapeHtml((review.text || '').trim());
+      const truncatedText = text.length > 240 ? `${text.substring(0, 240)}...` : text;
+      const rating = Math.max(1, Math.min(5, Number(review.rating) || 5));
+      const initials = author
+        .split(/\s+/)
+        .filter(Boolean)
+        .slice(0, 2)
+        .map((part) => part[0].toUpperCase())
+        .join('') || 'VP';
+
+      return `
+        <div class="review-card">
+          <div class="review-stars">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>
+          <p class="review-txt">"${truncatedText}"</p>
+          <div class="review-foot">
+            <div class="r-avatar">${initials}</div>
+            <div>
+              <div class="r-name">${author}</div>
+              <div class="r-treat">Google Review</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  } catch (error) {
+    grid.innerHTML = '<div class="review-card"><p class="review-txt">Unable to load Google reviews right now. Please check back shortly.</p></div>';
+    if (ratingCount) ratingCount.textContent = 'Google reviews unavailable';
+  }
+});
 </script>
 </body>
 </html>
