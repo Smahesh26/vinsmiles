@@ -97,7 +97,7 @@ img { display:block; max-width:100%; }
 -- */
 .nav {
   position: fixed; top:0; left:0; right:0; z-index:200;
-  height:68px;
+  height:75px;
   display:flex; align-items:center; justify-content:space-between;
   padding:0 52px;
   background:rgba(255,255,255,.96);
@@ -224,7 +224,7 @@ img { display:block; max-width:100%; }
 }
 .hero-content {
   position:relative; z-index:2;
-  padding:80px 52px 140px; max-width:800px;
+  padding:140px 52px 140px; max-width:800px;
   width:100%;
 }
 .hero-pill {
@@ -237,7 +237,7 @@ img { display:block; max-width:100%; }
 .hero-pill-dot { width:8px; height:8px; border-radius:50%; background:var(--gold); }
 .hero-pill-text { font-size:11px; font-weight:400; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.8);  }
 .hero-h1 {
-  font-family:var(--font-d); font-size:clamp(48px,5.5vw,78px);
+  font-family:var(--font-d); font-size:clamp(40px,4.5vw,60px);
   font-weight:300; line-height:1.04; color:#fff; margin-bottom:24px;
   opacity:0; animation:fadeUp .8s var(--ease) .35s both;
 }
@@ -854,6 +854,43 @@ img { display:block; max-width:100%; }
   border-bottom:1px solid var(--brand); padding-bottom:2px; transition:gap .2s;
 }
 .reviews-more-link:hover { gap:14px; }
+.reviews-pagination {
+  margin-top:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+.reviews-page-btn {
+  border:1px solid var(--rule);
+  background:var(--surface-2);
+  color:var(--ink-80);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  padding:10px 16px;
+  border-radius:2px;
+  transition:background .2s, border-color .2s, color .2s;
+}
+.reviews-page-btn:hover:not(:disabled) {
+  background:var(--brand);
+  border-color:var(--brand);
+  color:#fff;
+}
+.reviews-page-btn:disabled {
+  opacity:.45;
+  cursor:not-allowed;
+}
+.reviews-page-info {
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+  color:var(--ink-40);
+  min-width:92px;
+  text-align:center;
+}
 
 /* --
    CTA BAND
@@ -952,7 +989,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   .nav-hamburger { display:flex; }
   .container { padding:0 28px; }
   .hero { display:block; }
-  .hero-content { padding:112px 28px 72px; max-width:100%; }
+  .hero-content { padding:140px 28px 72px; max-width:100%; }
   .hero-stats { flex-wrap:wrap; height:auto; }
   .hero-stats { position:relative; left:auto; right:auto; bottom:auto; margin-top:0; }
   .hero-stat { flex:0 0 48%; padding:18px 20px; border-right:none; border-bottom:1px solid var(--rule); }
@@ -982,8 +1019,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
    RESPONSIVE - MOBILE (=640px)
 -- */
 @media (max-width:640px) {
-  .hero-content { padding:96px 20px 40px; }
-  .hero-h1 { font-size:clamp(38px,9vw,52px); }
+  .hero-content { padding:120px 20px 40px; }
+  .hero-h1 { font-size:clamp(32px,8vw,44px); }
   .hero-pill { margin-bottom:20px; }
   .hero-p { margin-bottom:28px; }
   .hero-btns { flex-direction:column; }
@@ -1021,7 +1058,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 }
 
 @media (max-width:480px) {
-  .nav { padding:0 10px; height:64px; }
+  .nav { padding:0 10px; height:75px; }
   .nav-logo { max-width:calc(100% - 118px); }
   .nav-logo-sub {
     display:block;
@@ -1127,8 +1164,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 <!-- -- NAV -- -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-mark">Vin<span>Smiles</span></div>
-    <div class="nav-logo-sub">Advanced Dentistry - GK-II, New Delhi</div>
+    <img src="images/VinSmiles.png" alt="" style="height: 90px; width: auto; object-fit: contain; margin-top: -8px; margin-bottom: -8px;">
   </a>
   <ul class="nav-links">
     <li><a href="treatments.html">Treatments</a></li>
@@ -1373,6 +1409,11 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     </div>
     <div class="reviews-grid" id="google-reviews-grid">
       <div class="review-card reveal"><p class="review-txt">Loading latest Google reviews...</p></div>
+    </div>
+    <div class="reviews-pagination" id="google-reviews-pagination" style="display:none;">
+      <button type="button" class="reviews-page-btn" id="google-reviews-prev" disabled>Previous</button>
+      <span class="reviews-page-info" id="google-reviews-page-info">Page 1/1</span>
+      <button type="button" class="reviews-page-btn" id="google-reviews-next" disabled>Next</button>
     </div>
   </div>
 </section>
@@ -1907,8 +1948,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 <footer>
   <div class="footer-top">
     <div>
-      <div class="f-logo-mark">Vin<span>Smiles</span></div>
-      <div class="f-logo-sub">Practicing Since 2009 - VinSmiles Established 2019</div>
+      <img src="images/VinSmiles.png" alt="" style="height: 120px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
       <div class="f-addr">Greater Kailash II, New Delhi - 110048<br>Near M-Block Market, GK-2</div>
       <div class="f-contacts">
         <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+91 96549 88858</a>
@@ -2060,7 +2100,7 @@ window.addEventListener('load', () => {
   if(!slides.length || !title || !desc || !pill) return;
   
   const content = [
-    { pill: "Reception Area", title: "Absolute<br><em>Comfort.</em>", desc: "A practice built around your peace of mind, providing a serene environment from the moment you arrive." },
+    { pill: "Reception Area", title: "Where Precision<br>Dentistry Meets <em>Personal Transformation</em>", desc: "A practice built around your peace of mind, providing a serene environment from the moment you arrive." },
     { pill: "Consultation Area", title: "Dedicated<br><em>Treatment Planning.</em>", desc: "Personalized treatment plans crafted with complete clarity and specialist expertise for your unique needs." },
     { pill: "Advanced Dental Operatory", title: "Flawless<br><em>Clinical Care.</em>", desc: "Employing cutting-edge technology and global standards to deliver flawless, lasting dental results." },
     { pill: "Modern Dental Operatory", title: "Uncompromising<br><em>Precision.</em>", desc: "Every procedure is performed with meticulous attention to detail by dedicated specialists." },
@@ -2098,21 +2138,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   const grid = document.getElementById('google-reviews-grid');
   const ratingValue = document.getElementById('google-rating-value');
   const ratingCount = document.getElementById('google-rating-count');
+  const pagination = document.getElementById('google-reviews-pagination');
+  const prevBtn = document.getElementById('google-reviews-prev');
+  const nextBtn = document.getElementById('google-reviews-next');
+  const pageInfo = document.getElementById('google-reviews-page-info');
   if (!grid) return;
-
-  const host = window.location.hostname;
-  const hasBuiltinApi =
-    host.endsWith('.vercel.app') ||
-    host.endsWith('.netlify.app');
 
   // Optional override for custom hosts that proxy an API route.
   const endpoint = window.VINSMILES_REVIEWS_ENDPOINT || '/api/reviews';
-
-  if (!window.VINSMILES_REVIEWS_ENDPOINT && !hasBuiltinApi) {
-    grid.innerHTML = '<div class="review-card"><p class="review-txt">Google reviews are currently unavailable on this hosting setup.</p></div>';
-    if (ratingCount) ratingCount.textContent = 'Google reviews unavailable';
-    return;
-  }
 
   const escapeHtml = (value = '') => String(value)
     .replace(/&/g, '&amp;')
@@ -2121,33 +2154,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
 
-  try {
-    const response = await fetch(endpoint, { cache: 'no-store' });
-    if (!response.ok) {
-      grid.innerHTML = '<div class="review-card"><p class="review-txt">Unable to load Google reviews right now. Please check back shortly.</p></div>';
-      if (ratingCount) ratingCount.textContent = 'Google reviews unavailable';
-      return;
-    }
-    const data = await response.json();
+  const pageSize = 3;
+  let currentPage = 0;
+  let allReviews = [];
 
-    if (!Array.isArray(data.reviews) || data.reviews.length === 0) {
-      grid.innerHTML = '<div class="review-card"><p class="review-txt">No Google reviews are available at the moment.</p></div>';
-      return;
-    }
+  const renderCurrentPage = () => {
+    const totalPages = Math.max(1, Math.ceil(allReviews.length / pageSize));
+    const safePage = Math.min(currentPage, totalPages - 1);
+    currentPage = Math.max(0, safePage);
 
-    if (ratingValue && typeof data.rating !== 'undefined') {
-      const parsedRating = Number(data.rating);
-      if (!Number.isNaN(parsedRating)) {
-        ratingValue.textContent = parsedRating.toFixed(1);
-      }
-    }
+    const start = currentPage * pageSize;
+    const visibleReviews = allReviews.slice(start, start + pageSize);
 
-    if (ratingCount) {
-      const total = Number(data.total_reviews);
-      ratingCount.textContent = `${Number.isNaN(total) ? data.reviews.length : total}+ Reviews - Google`;
-    }
-
-    grid.innerHTML = data.reviews.slice(0, 3).map((review) => {
+    grid.innerHTML = visibleReviews.map((review) => {
       const author = escapeHtml(review.author_name || 'Verified Patient');
       const text = escapeHtml((review.text || '').trim());
       const truncatedText = text.length > 240 ? `${text.substring(0, 240)}...` : text;
@@ -2173,8 +2192,77 @@ document.addEventListener('DOMContentLoaded', async () => {
         </div>
       `;
     }).join('');
+
+    if (pagination && prevBtn && nextBtn && pageInfo) {
+      pagination.style.display = allReviews.length > pageSize ? 'flex' : 'none';
+      prevBtn.disabled = currentPage === 0;
+      nextBtn.disabled = currentPage >= totalPages - 1;
+      pageInfo.textContent = `Page ${currentPage + 1}/${totalPages}`;
+    }
+  };
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 0) {
+        currentPage -= 1;
+        renderCurrentPage();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const totalPages = Math.max(1, Math.ceil(allReviews.length / pageSize));
+      if (currentPage < totalPages - 1) {
+        currentPage += 1;
+        renderCurrentPage();
+      }
+    });
+  }
+
+  try {
+    grid.innerHTML = '<div class="review-card"><p class="review-txt">Loading latest Google reviews...</p></div>';
+    if (pagination) pagination.style.display = 'none';
+    const response = await fetch(endpoint, { cache: 'no-store' });
+    if (!response.ok) {
+      let backendError = 'Unable to load Google reviews right now. Please check back shortly.';
+      try {
+        const errorData = await response.json();
+        if (errorData && (errorData.error || errorData.message)) {
+          backendError = `Google reviews unavailable: ${errorData.message || errorData.error}`;
+        }
+      } catch (_) {
+        // Non-JSON error body; keep the default fallback message.
+      }
+      grid.innerHTML = `<div class="review-card"><p class="review-txt">${escapeHtml(backendError)}</p></div>`;
+      if (ratingCount) ratingCount.textContent = 'Google reviews unavailable';
+      return;
+    }
+    const data = await response.json();
+
+    if (!Array.isArray(data.reviews) || data.reviews.length === 0) {
+      grid.innerHTML = '<div class="review-card"><p class="review-txt">No Google reviews are available at the moment.</p></div>';
+      return;
+    }
+
+    if (ratingValue && typeof data.rating !== 'undefined') {
+      const parsedRating = Number(data.rating);
+      if (!Number.isNaN(parsedRating)) {
+        ratingValue.textContent = parsedRating.toFixed(1);
+      }
+    }
+
+    if (ratingCount) {
+      const total = Number(data.total_reviews);
+      ratingCount.textContent = `${Number.isNaN(total) ? data.reviews.length : total}+ Reviews - Google`;
+    }
+
+    allReviews = data.reviews;
+    currentPage = 0;
+    renderCurrentPage();
   } catch (error) {
-    grid.innerHTML = '<div class="review-card"><p class="review-txt">Unable to load Google reviews right now. Please check back shortly.</p></div>';
+    const msg = (error && error.message) ? error.message : 'Unable to load Google reviews right now. Please check back shortly.';
+    grid.innerHTML = `<div class="review-card"><p class="review-txt">${escapeHtml(msg)}</p></div>`;
     if (ratingCount) ratingCount.textContent = 'Google reviews unavailable';
   }
 });
