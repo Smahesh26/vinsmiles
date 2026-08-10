@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Technology | VIN SMILES Advanced Dentistry -- Greater Kailash II, New Delhi</title>
-<meta name="description" content="Precision dental technology at VIN SMILES -- CBCT 3D imaging, Digital Smile Design, iTero scanning, The Wand STA, diode laser and Invisalign. GK-II, New Delhi.">
+<title>Technology | VinSmiles Advanced Dentistry -- Greater Kailash II, New Delhi</title>
+<meta name="description" content="Precision dental technology at VinSmiles -- CBCT 3D imaging, Digital Smile Design, iTero scanning, The Wand STA, diode laser and Invisalign. GK-II, New Delhi.">
 <link rel="canonical" href="https://www.vinsmiles.com/technology">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -225,12 +225,15 @@ button{cursor:pointer;font-family:var(--font-b);border:none;background:none;}
 
 /* --
    TECHNOLOGY SECTIONS
-   Each: dark left + white right
+   Each: full-viewport, dark left + white right
 -- */
 .tech-section{
+  min-height:100vh;
   display:grid;grid-template-columns:1fr 1fr;
   position:relative;
 }
+.tech-section:nth-child(even) .tech-visual{order:2;}
+.tech-section:nth-child(even) .tech-info{order:1;}
 
 /* Visual panel -- dark */
 .tech-visual{
@@ -435,7 +438,9 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .hero{padding:68px 28px 0;}
   .hero-strip{grid-template-columns:repeat(3,1fr);}
   .hs-item:nth-child(n+4){border-top:1px solid var(--lab-line);}
-  .tech-section{grid-template-columns:1fr;}
+  .tech-section{grid-template-columns:1fr;min-height:auto;}
+  .tech-section:nth-child(even) .tech-visual{order:0;}
+  .tech-section:nth-child(even) .tech-info{order:1;}
   .tech-visual{min-height:50vw;}
   .tech-info{padding:52px 32px;}
   .tech-info-inner{max-width:none;}
@@ -466,7 +471,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 <!-- -- NAV -- -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
-    <img src="images/VinSmiles.png" alt="" style="height: 120px; width: auto; object-fit: contain; margin-top: -10px; margin-bottom: -10px;">
+    <img src="images/VinSmiles.png" alt="" style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
   </a>
   <ul class="nav-links">
     <li><a href="treatments.html">Treatments</a></li>
@@ -504,7 +509,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="hero-content">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-line"></div>
-      <span class="hero-eyebrow-txt">Clinical Technology -- VIN SMILES</span>
+      <span class="hero-eyebrow-txt">Clinical Technology -- VinSmiles</span>
       <div class="hero-eyebrow-line"></div>
     </div>
     <h1 class="hero-h1">
@@ -569,7 +574,8 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <div class="hs-item" data-tech="tech-1" onclick="scrollToTech(1)"><span class="hs-dot"></span><span class="hs-name">DSD</span></div>
     <div class="hs-item" data-tech="tech-4" onclick="scrollToTech(4)"><span class="hs-dot"></span><span class="hs-name">Laser</span></div>
     <div class="hs-item" data-tech="tech-0" onclick="scrollToTech(0)"><span class="hs-dot"></span><span class="hs-name">CBCT</span></div>
-    <div class="hs-item" data-tech="tech-3" onclick="scrollToTech(3)"><span class="hs-dot"></span><span class="hs-name">Sedation & Wand</span></div>
+    <div class="hs-item" data-tech="tech-3" onclick="scrollToTech(3)"><span class="hs-dot"></span><span class="hs-name">Conscious Sedation</span></div>
+    <div class="hs-item" data-tech="tech-3" onclick="scrollToTech(3)"><span class="hs-dot"></span><span class="hs-name">Wand STA</span></div>
   </div>
 
   <div class="hero-scroll">
@@ -934,7 +940,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <div class="tech-num reveal">06 / 06</div>
       <div class="tech-cat reveal d1">Clear Orthodontics</div>
       <h2 class="tech-name reveal d1">Invisalign <em>System</em></h2>
-      <p class="tech-desc reveal d2">VIN SMILES is a certified Invisalign provider. iTero scanning replaces messy impressions, Clincheck 3D software maps your tooth movement aligner-by-aligner, and you approve the full forecast before treatment starts. Monthly check-ins with our orthodontist.</p>
+      <p class="tech-desc reveal d2">VinSmiles is a certified Invisalign provider. iTero scanning replaces messy impressions, Clincheck 3D software maps your tooth movement aligner-by-aligner, and you approve the full forecast before treatment starts. Monthly check-ins with our orthodontist.</p>
       <div class="tech-specs reveal d2">
         <div class="tech-spec"><div class="tech-spec-label">Status</div><div class="tech-spec-value accent">Certified Provider</div></div>
         <div class="tech-spec"><div class="tech-spec-label">Planning</div><div class="tech-spec-value">Clincheck 3D</div></div>
@@ -978,9 +984,9 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="about-cta-inner">
     <div class="cta-eyebrow">Experience the Difference</div>
     <h2 class="cta-h2">See Our Technology <em>In Action</em></h2>
-    <p class="cta-p">Book a consultation -- we'll walk you through every instrument relevant to your treatment and show you exactly what precision looks like.</p>
+    <p class="cta-p">Book a free consultation -- we'll walk you through every instrument relevant to your treatment and show you exactly what precision looks like.</p>
     <div class="cta-btns">
-      <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">Book a consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">Book a Free Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="https://wa.me/919654988858" class="btn-wa" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="white"><path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.35.37 2.63 1 3.74L1.5 16.5l3.88-1c1.06.55 2.27.87 3.62.87 4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5zm3.69 10.35c-.15.42-.87.8-1.2.85-.3.04-.68.06-1.1-.07-.25-.08-.58-.18-.99-.36C7.8 11.65 6.5 10.2 6.38 10.03c-.12-.17-.97-1.29-.97-2.46 0-1.17.61-1.74.83-1.98.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.41.2.5.68 1.68.74 1.8.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.97 1.33 1.57.91.8 1.68 1.05 1.92 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12l1.71.81c.2.1.33.14.38.22.05.08.05.48-.1.9z"/></svg>
         WhatsApp Us
@@ -1006,7 +1012,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
           src="https://www.google.com/maps?q=VinSmiles%20Advanced%20Dentistry%20Greater%20Kailash%20II%20New%20Delhi&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="VIN SMILES location map">
+          title="VinSmiles location map">
         </iframe>
         <a class="f-map-link" href="https://maps.app.goo.gl/5jTNMbCDFUvxKMbP9" target="_blank" rel="noopener">
           Open in Google Maps
@@ -1047,7 +1053,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="f-copy">&copy; 2026 VIN SMILES Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
+    <div class="f-copy">&copy; 2026 VinSmiles Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
     <div class="f-badges">
       <span class="f-badge">Invisalign Provider</span>
       <span class="f-badge">IDA Member</span>
