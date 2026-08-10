@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Treatments | VinSmiles Advanced Dentistry -- Greater Kailash II, New Delhi</title>
+<title>Treatments | VIN SMILES Advanced Dentistry -- Greater Kailash II, New Delhi</title>
 <meta name="description" content="15 specialist dental treatments -- implants, veneers, Invisalign, laser dentistry, full mouth rehabilitation. Every procedure by a dedicated specialist, under one roof in GK-II.">
 <link rel="canonical" href="https://www.vinsmiles.com/treatments">
 
@@ -571,6 +571,132 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .about-cta{padding:56px 20px;}
   .footer-bottom{padding:16px 20px;}
 }
+/* -- COMPREHENSIVE SERVICES -- */
+.comprehensive-services {
+  padding: 100px 52px;
+  background: var(--surface);
+  border-top: 1px solid var(--rule);
+}
+.cs-header {
+  max-width: 800px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+.cs-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 16px;
+}
+.cs-title {
+  font-family: var(--font-d);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.cs-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.cs-service-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.04);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(0,0,0,0.03);
+  text-decoration: none;
+}
+.cs-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(144,69,136,0.08);
+}
+.cs-service-img {
+  width: 240px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.cs-service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  background: var(--surface-3);
+  transition: transform 0.8s var(--ease);
+}
+.cs-service-card:hover .cs-service-img img {
+  transform: scale(1.05);
+}
+.cs-service-content {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cs-service-title {
+  font-family: var(--font-d);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.cs-service-desc {
+  font-size: 14px;
+  color: var(--ink-60);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.cs-service-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: auto;
+}
+.cs-service-list li {
+  font-size: 13px;
+  color: var(--ink-80);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.4;
+}
+.cs-service-list li svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+@media(max-width: 1024px) {
+  .comprehensive-services { padding: 80px 28px; }
+  .cs-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media(max-width: 640px) {
+  .comprehensive-services { padding: 64px 20px; }
+  .cs-service-card {
+    flex-direction: column;
+  }
+  .cs-service-img {
+    width: 100%;
+    height: 240px;
+  }
+}
 </style>
 </head>
 <body>
@@ -578,7 +704,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 <!-- -- NAV -- exact About v2 -- -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
-    <img src="images/VinSmiles.png" alt="" style="height: 90px; width: auto; object-fit: contain; margin-top: -8px; margin-bottom: -8px;">
+    <img src="images/VinSmiles.png" alt="" style="height: 120px; width: auto; object-fit: contain; margin-top: -10px; margin-bottom: -10px;">
   </a>
   <ul class="nav-links">
     <li><a href="treatments.html" class="active">Treatments</a></li>
@@ -622,7 +748,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <em>Every Specialist.</em>
     </h1>
     <p class="tx-hero-p">
-      No procedure at VinSmiles is performed by a generalist. Each treatment below is delivered by a specialist who has spent their career perfecting exactly that discipline.
+      No procedure at VIN SMILES is performed by a generalist. Each treatment below is delivered by a specialist who has spent their career perfecting exactly that discipline.
     </p>
     <nav class="tx-cat-list" aria-label="Treatment categories">
       <div class="tx-cat-item" onclick="scrollToGroup('cosmetic')">
@@ -771,18 +897,194 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <!-- Built by JS -->
 </div>
 
+<!-- -- COMPREHENSIVE CATALOG -- -->
+<section class="comprehensive-services">
+  <div class="cs-header reveal">
+    <div class="cs-eyebrow">Comprehensive Care</div>
+    <h2 class="cs-title">Complete Treatment Catalog</h2>
+  </div>
+  <div class="cs-catalog-grid">
+    <!-- Item 1: Dental Implants -->
+    <a href="#" class="cs-service-card reveal">
+      <div class="cs-service-img">
+        <img src="treatments/dental-implants.webp" alt="Dental Implants" onerror="this.src='images/BANNERIMAGES/dentaloperatory1.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Dental Implants</h3>
+        <p class="cs-service-desc">Dental implant surgery replaces tooth roots with metal posts and damaged or missing teeth with artificial teeth that look and function much like real ones.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Conventional & Immediate Implants</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Missing Tooth Replacement</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> All on Six / All on Eight</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Sinus Lift & Bone Grafting</li>
+        </ul>
+      </div>
+    </a>
+    
+    <!-- Item 2: Prosthodontics -->
+    <a href="#" class="cs-service-card reveal d1">
+      <div class="cs-service-img">
+        <img src="treatments/Prosthodontics.webp" alt="Prosthodontics" onerror="this.src='images/BANNERIMAGES/dentaloperatory2.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Prosthodontics</h3>
+        <p class="cs-service-desc">Rehabilitation and maintenance of oral function, comfort, and appearance through advanced restorative techniques.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Fixed Partial Dentures</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Porcelain & Metal-Free Crowns</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Complete & BPS Dentures</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Implant Supported Over Dentures</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- Item 3: Conservative Dentistry -->
+    <a href="#" class="cs-service-card reveal">
+      <div class="cs-service-img">
+        <img src="treatments/conservative-dentistry.webp" alt="Conservative Dentistry" onerror="this.src='images/BANNERIMAGES/consultationarea.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Conservative Dentistry</h3>
+        <p class="cs-service-desc">Focuses on preserving as much of the natural tooth structure as possible while restoring damaged or decayed teeth.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Tooth Colored Restorations</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Fluoride Application</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Pit and Fissure Sealants</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- Item 4: Endodontics -->
+    <a href="#" class="cs-service-card reveal d1">
+      <div class="cs-service-img">
+        <img src="treatments/Endodontics.webp" alt="Endodontics" onerror="this.src='images/BANNERIMAGES/dentaloperatory11.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Endodontics</h3>
+        <p class="cs-service-desc">Expert diagnosis and treatment of dental pulp and the tissues surrounding the roots of the teeth.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Single Visit Root Canal Treatment</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Post and Core Build Ups</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Dental Crowns</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- Item 5: Periodontics -->
+    <a href="#" class="cs-service-card reveal">
+      <div class="cs-service-img">
+        <img src="treatments/Periodontics.webp" alt="Periodontics" onerror="this.src='images/BANNERIMAGES/dentaloperatory111.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Periodontics</h3>
+        <p class="cs-service-desc">Prevention, diagnosis, and treatment of diseases that affect the gums and supporting structures of the teeth.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Flap Surgery & Root Planning</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Gingivectomy & Crown Lengthening</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> De-Pigmentation & Ultrasonic Cleaning</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Advanced Laser Gum Surgery</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- Item 6: Oral Surgery -->
+    <a href="#" class="cs-service-card reveal d1">
+      <div class="cs-service-img">
+        <img src="treatments/oralandmaxillofacialsurgery.jpg" alt="Oral Surgery" onerror="this.src='images/BANNERIMAGES/receptionarea.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Oral Surgery</h3>
+        <p class="cs-service-desc">Specialized diagnosis and surgical treatment of diseases, injuries, and deformities of the oral and maxillofacial region.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Painless Wisdom Tooth Removal</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Surgical Extraction</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Jaw Cysts Treatment</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Minor Surgical Procedures</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- Item 7: Orthodontics -->
+    <a href="#" class="cs-service-card reveal">
+      <div class="cs-service-img">
+        <img src="treatments/orthodontics.webp" alt="Orthodontics" onerror="this.src='images/BANNERIMAGES/dentaloperatory1.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Orthodontics</h3>
+        <p class="cs-service-desc">A specialized branch focusing on the diagnosis, prevention, and treatment of dental and facial irregularities.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Fixed Braces & Pre Treatment Trainers</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Invisible Aligners (Invisalign)</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Habit Breaking Appliances</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- Item 8: Smile Designing -->
+    <a href="#" class="cs-service-card reveal d1">
+      <div class="cs-service-img">
+        <img src="treatments/smiledesigning.webp" alt="Smile Designing" onerror="this.src='images/BANNERIMAGES/dentaloperatory2.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Smile Designing</h3>
+        <p class="cs-service-desc">Advanced cosmetic dentistry offering customized Digital Smile Design for perfect aesthetic outcomes.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Digital Smile Design</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Dental Laminates & Veneers</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Lumineers & Emax Crowns</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Tooth Jewelry & Whitening</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- Item 9: Full Mouth Rehab -->
+    <a href="#" class="cs-service-card reveal">
+      <div class="cs-service-img">
+        <img src="treatments/fullmouthrehabiliation.webp" alt="Full Mouth Rehabilitation" onerror="this.src='images/BANNERIMAGES/consultationarea.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Full Mouth Rehab</h3>
+        <p class="cs-service-desc">A comprehensive, multidisciplinary treatment plan that aims to fully restore the function, health, and appearance of the entire mouth.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Thorough Oral Examination</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Complex, Multidisciplinary Care</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Full Restoration of Function</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Complete Aesthetic Reconstruction</li>
+        </ul>
+      </div>
+    </a>
+
+    <!-- Item 10: Pedodontics -->
+    <a href="#" class="cs-service-card reveal d1">
+      <div class="cs-service-img">
+        <img src="treatments/pedodontics.webp" alt="Pedodontics" onerror="this.src='images/BANNERIMAGES/dentaloperatory11.jpg'">
+      </div>
+      <div class="cs-service-content">
+        <h3 class="cs-service-title">Pedodontics</h3>
+        <p class="cs-service-desc">Gentle dental care and treatment of children, including preventive and therapeutic oral healthcare for infants and teenagers.</p>
+        <ul class="cs-service-list">
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Pulpectomy & Pulpotomy</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> SS & Strip Crowns</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Space Maintainers & Fluoride</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Habit Breaking & Myofunctional Appliances</li>
+        </ul>
+      </div>
+    </a>
+  </div>
+</section>
+
 <!-- -- CTA -- exact About v2 -- -->
 <div class="about-cta reveal">
   <div class="about-cta-inner">
     <div class="cta-eyebrow">Not Sure Where to Start</div>
-    <h2 class="cta-h2">Book a Free <em>Consultation</em></h2>
+    <h2 class="cta-h2">Book a <em>Consultation</em></h2>
     <p class="cta-p">Tell us your concern -- our specialists will assess your needs and recommend the right treatment path, with complete transparency on costs and timeline.</p>
     <div class="cta-btns">
       <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">
         Book a Consultation
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="https://wa.me/919654988858?text=Hi%20VinSmiles%2C%20I%27d%20like%20to%20know%20more%20about%20treatments" class="btn-wa" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:14px 26px;font-size:11px;font-weight:400;letter-spacing:1px;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.12)'" target="_blank" rel="noopener">
+      <a href="https://wa.me/919654988858?text=Hi%20VIN%20SMILES%2C%20I%27d%20like%20to%20know%20more%20about%20treatments" class="btn-wa" style="background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:14px 26px;font-size:11px;font-weight:400;letter-spacing:1px;border-radius:2px;display:inline-flex;align-items:center;gap:10px;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.12)'" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="white"><path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.35.37 2.63 1 3.74L1.5 16.5l3.88-1c1.06.55 2.27.87 3.62.87 4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5zm3.69 10.35c-.15.42-.87.8-1.2.85-.3.04-.68.06-1.1-.07-.25-.08-.58-.18-.99-.36C7.8 11.65 6.5 10.2 6.38 10.03c-.12-.17-.97-1.29-.97-2.46 0-1.17.61-1.74.83-1.98.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.41.2.5.68 1.68.74 1.8.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.97 1.33 1.57.91.8 1.68 1.05 1.92 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12l1.71.81c.2.1.33.14.38.22.05.08.05.48-.1.9z"/></svg>
         WhatsApp Us
       </a>
@@ -807,7 +1109,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
           src="https://www.google.com/maps?q=VinSmiles%20Advanced%20Dentistry%20Greater%20Kailash%20II%20New%20Delhi&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="VinSmiles location map">
+          title="VIN SMILES location map">
         </iframe>
         <a class="f-map-link" href="https://maps.app.goo.gl/5jTNMbCDFUvxKMbP9" target="_blank" rel="noopener">
           Open in Google Maps
@@ -848,7 +1150,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="f-copy">&copy; 2026 VinSmiles Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
+    <div class="f-copy">&copy; 2026 VIN SMILES Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
     <div class="f-badges">
       <span class="f-badge">Invisalign Provider</span>
       <span class="f-badge">IDA Member</span>
@@ -877,18 +1179,7 @@ const GROUPS = [
         title: 'Digital', titleEm: 'Smile Design',
         desc: 'The most advanced cosmetic consultation in South Delhi. DSD creates a precise 3D simulation of your transformed smile -- every detail approved by you before a single procedure begins. No surprises. No guesswork.',
         facts: [['Specialist','Dr. Neha Sachdeva'],['Technology','DSD Software + iTero'],['Sessions','2-visit process'],['Preview','Before treatment starts']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <rect x="18" y="24" width="84" height="56" rx="6" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
-          <path d="M32 52 Q48 38 60 52 Q72 66 88 52" stroke="rgba(255,255,255,.55)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <circle cx="60" cy="52" r="5" fill="rgba(201,169,110,.7)"/>
-          <circle cx="60" cy="52" r="10" stroke="rgba(201,169,110,.3)" stroke-width="1"/>
-          <line x1="60" y1="80" x2="60" y2="90" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
-          <line x1="46" y1="90" x2="74" y2="90" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
-          <path d="M22 32 L32 38" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
-          <circle cx="22" cy="32" r="3" fill="rgba(255,255,255,.12)"/>
-          <circle cx="30" cy="28" r="3" fill="rgba(255,255,255,.08)"/>
-          <circle cx="38" cy="26" r="3" fill="rgba(255,255,255,.06)"/>
-        </svg>`
+        image: 'treatments/smiledesigning.webp'
       },
       {
         num: '02', name: 'Porcelain Veneers', spec: 'Cosmetic -- 2 visits', badge: 'Popular',
@@ -896,12 +1187,7 @@ const GROUPS = [
         title: 'Porcelain', titleEm: 'Veneers',
         desc: 'Ultra-thin custom porcelain veneers bonded to the front surface of teeth -- permanently transforming colour, shape and size. The gold standard for a dramatic, lasting smile change with a 15+ year lifespan.',
         facts: [['Specialist','Dr. Neha Sachdeva'],['Visits','2 appointments'],['Lifespan','15+ years'],['Procedure','Minimally invasive']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M60 28 Q74 28 80 40 Q86 52 82 68 Q78 82 60 88 Q42 82 38 68 Q34 52 40 40 Q46 28 60 28Z" stroke="rgba(255,255,255,.25)" stroke-width="2" fill="rgba(255,255,255,.05)"/>
-          <path d="M60 30 Q73 30 79 41 Q84 52 81 67 Q77 80 60 86" stroke="rgba(255,255,255,.5)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
-          <path d="M46 36 Q52 30 60 29 Q68 30 74 36" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <circle cx="60" cy="58" r="6" fill="rgba(201,169,110,.5)"/>
-        </svg>`
+        image: 'treatments/conservative-dentistry.webp'
       },
       {
         num: '03', name: 'Composite Bonding', spec: 'Cosmetic -- Same day', badge: 'Same Day',
@@ -909,12 +1195,7 @@ const GROUPS = [
         title: 'Composite', titleEm: 'Bonding',
         desc: 'Minimally invasive cosmetic reshaping, chip repair, and colour correction completed in a single appointment. No drilling required in most cases -- natural-looking results achieved in a single visit.',
         facts: [['Specialist','Dr. Neha Sachdeva'],['Duration','Single visit'],['Anaesthesia','Usually none needed'],['Correction','Chips, gaps, shape']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M28 76 Q60 44 92 76" stroke="rgba(255,255,255,.55)" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <path d="M32 66 Q60 36 88 66" stroke="rgba(255,255,255,.3)" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <path d="M36 56 Q60 28 84 56" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          <circle cx="60" cy="60" r="8" fill="rgba(201,169,110,.4)" stroke="rgba(201,169,110,.4)" stroke-width="1"/>
-        </svg>`
+        image: 'treatments/conservative-dentistry.webp'
       },
       {
         num: '04', name: 'Teeth Whitening', spec: 'Cosmetic -- 1 session', badge: 'Quick Result',
@@ -922,13 +1203,7 @@ const GROUPS = [
         title: 'Teeth', titleEm: 'Whitening',
         desc: 'Professional ZOOM and laser whitening delivering 6--8 shades of lightening in a single session. Dramatically brighter results that last significantly longer than home kits -- supervised by our specialists.',
         facts: [['Specialist','Dr. Neha Sachdeva'],['Duration','60--90 minutes'],['Result','6--8 shades lighter'],['Maintenance','Take-home kit included']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <circle cx="60" cy="60" r="28" stroke="rgba(255,255,255,.2)" stroke-width="2"/>
-          <circle cx="60" cy="60" r="18" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
-          <circle cx="60" cy="60" r="8" fill="rgba(201,169,110,.6)"/>
-          <path d="M60 18v8M60 94v8M18 60h8M94 60h8" stroke="rgba(255,255,255,.3)" stroke-width="2" stroke-linecap="round"/>
-          <path d="M31 31l5.7 5.7M83.3 83.3l5.7 5.7M83.3 36.7l-5.7 5.7M36.7 83.3l-5.7 5.7" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>`
+        image: 'treatments/smiledesigning.webp'
       },
     ]
   },
@@ -942,12 +1217,7 @@ const GROUPS = [
         title: 'Dental', titleEm: 'Implants',
         desc: 'CBCT-guided titanium implants placed by our specialist implantologist. Looks, feels, and functions exactly like a natural tooth. A lifetime solution with a 98.7% success rate -- backed by specialist care built on experience since 2009.',
         facts: [['Specialist','Dr. Neha Sachdeva'],['Technology','CBCT 3D Planning'],['Success Rate','98.7%'],['Duration','8--12 weeks total']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M60 22v14M52 36h16M46 48h28M42 60h36M46 72h28M52 84h16" stroke="rgba(255,255,255,.45)" stroke-width="2.5" stroke-linecap="round"/>
-          <ellipse cx="60" cy="30" rx="12" ry="7" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/>
-          <rect x="42" y="60" width="36" height="26" rx="5" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
-          <circle cx="60" cy="73" r="4" fill="rgba(201,169,110,.6)"/>
-        </svg>`
+        image: 'treatments/dental-implants.webp'
       },
       {
         num: '06', name: 'All-on-4 Implants', spec: 'Restorative -- Full arch', badge: 'Life-Changing', badgeGold: true,
@@ -955,14 +1225,7 @@ const GROUPS = [
         title: 'All-on-4', titleEm: 'Implants',
         desc: 'A complete upper or lower arch of permanent teeth supported by just four implants. The most efficient full-arch restoration -- goodbye to dentures, hello to a fixed, permanent smile.',
         facts: [['Specialist','Dr. Neha Sachdeva'],['Implants Required','Just 4 per arch'],['Result','Permanent fixed teeth'],['Duration','Surgery + healing time']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M24 62 Q24 36 60 36 Q96 36 96 62" stroke="rgba(255,255,255,.3)" stroke-width="1.5" fill="none"/>
-          <rect x="24" y="60" width="16" height="28" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
-          <rect x="44" y="56" width="16" height="32" rx="3" stroke="rgba(255,255,255,.45)" stroke-width="2"/>
-          <rect x="64" y="56" width="16" height="32" rx="3" stroke="rgba(255,255,255,.45)" stroke-width="2"/>
-          <rect x="80" y="60" width="16" height="28" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
-          <line x1="24" y1="62" x2="96" y2="62" stroke="rgba(201,169,110,.5)" stroke-width="2"/>
-        </svg>`
+        image: 'treatments/dental-implants.webp'
       },
       {
         num: '07', name: 'Crowns & Bridges', spec: 'Restorative -- Same-day CAD/CAM', badge: 'Durable',
@@ -970,12 +1233,7 @@ const GROUPS = [
         title: 'Crowns &', titleEm: 'Bridges',
         desc: 'CAD/CAM milled same-day crowns matched precisely to your natural teeth. Precision porcelain bridges for spanning gaps -- all with clinical accuracy from our prosthodontist.',
         facts: [['Specialist','Dr. Neha Sachdeva'],['Option','Same-day CAD/CAM'],['Material','Porcelain / Zirconia'],['Process','Digital impression']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M28 88 L34 52 L60 64 L86 52 L92 88Z" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linejoin="round" fill="rgba(255,255,255,.05)"/>
-          <line x1="28" y1="92" x2="92" y2="92" stroke="rgba(255,255,255,.2)" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="60" cy="64" r="5" fill="rgba(201,169,110,.5)"/>
-          <path d="M34 52 C34 44 92 44 86 52" stroke="rgba(255,255,255,.15)" stroke-width="1.5" fill="none"/>
-        </svg>`
+        image: 'treatments/Prosthodontics.webp'
       },
       {
         num: '08', name: 'Full Mouth Rehabilitation', spec: 'Restorative -- Multi-specialist', badge: 'Specialist',
@@ -983,13 +1241,7 @@ const GROUPS = [
         title: 'Full Mouth', titleEm: 'Rehabilitation',
         desc: 'A comprehensive, multi-specialist restoration for severely worn or damaged dentitions. One coordinated team, one treatment plan -- our most complex, and most life-changing, service.',
         facts: [['Specialists','Full team of 7'],['Coordination','Single treatment plan'],['Duration','Case-dependent'],['Complexity','Our most advanced service']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <circle cx="60" cy="60" r="32" stroke="rgba(255,255,255,.1)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <circle cx="60" cy="60" r="20" stroke="rgba(255,255,255,.22)" stroke-width="2"/>
-          <circle cx="60" cy="60" r="9" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)" stroke-width="1.5"/>
-          <circle cx="60" cy="60" r="3.5" fill="rgba(201,169,110,.7)"/>
-          <path d="M46 34 L42 26 M74 34 L78 26 M34 46 L26 42 M86 46 L94 42" stroke="rgba(255,255,255,.15)" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>`
+        image: 'treatments/fullmouthrehabiliation.webp'
       },
     ]
   },
@@ -1001,16 +1253,9 @@ const GROUPS = [
         num: '09', name: 'Invisalign', spec: 'Orthodontics -- Certified provider', badge: 'Certified', badgeGold: true,
         cat: 'Orthodontics', catColor: 'linear-gradient(145deg,#0a0618 0%,#1e1050 50%,#5838b8 100%)',
         title: 'Invisalign &', titleEm: 'Clear Aligners',
-        desc: 'VinSmiles is an official Invisalign certified partner. iTero digital scanning -- no messy impressions. A 3D Clincheck preview you approve before starting. Monthly tracking by our orthodontist.',
+        desc: 'VIN SMILES is an official Invisalign certified partner. iTero digital scanning -- no messy impressions. A 3D Clincheck preview you approve before starting. Monthly tracking by our orthodontist.',
         facts: [['Specialist','Dr. Radhika Kapoor'],['Technology','iTero Scanner + Clincheck'],['Provider','Officially Certified'],['Duration','8--24 months']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M26 80 Q60 96 94 80" stroke="rgba(255,255,255,.6)" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <path d="M28 68 Q60 82 92 68" stroke="rgba(255,255,255,.38)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <path d="M26 56 Q60 70 94 56" stroke="rgba(255,255,255,.2)" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <path d="M28 44 Q60 58 92 44" stroke="rgba(255,255,255,.08)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          <circle cx="60" cy="32" r="10" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="none"/>
-          <circle cx="60" cy="32" r="5" fill="rgba(201,169,110,.5)"/>
-        </svg>`
+        image: 'treatments/orthodontics.webp'
       },
       {
         num: '10', name: 'Braces', spec: 'Orthodontics -- Metal & ceramic', badge: 'Reliable',
@@ -1018,31 +1263,15 @@ const GROUPS = [
         title: 'Metal &', titleEm: 'Ceramic Braces',
         desc: 'Traditional metal and tooth-coloured ceramic braces for complex malocclusions, crowding, and jaw corrections that aligners cannot address. Managed by our orthodontist.',
         facts: [['Specialist','Dr. Radhika Kapoor'],['Options','Metal or ceramic'],['Cases','Complex alignment'],['Duration','18--36 months typically']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <rect x="18" y="50" width="18" height="20" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="2" fill="none"/>
-          <rect x="42" y="46" width="18" height="24" rx="3" stroke="rgba(255,255,255,.5)" stroke-width="2" fill="none"/>
-          <rect x="66" y="46" width="18" height="24" rx="3" stroke="rgba(255,255,255,.5)" stroke-width="2" fill="none"/>
-          <rect x="90" y="50" width="18" height="20" rx="3" stroke="rgba(255,255,255,.4)" stroke-width="2" fill="none"/>
-          <line x1="14" y1="60" x2="112" y2="60" stroke="rgba(201,169,110,.5)" stroke-width="2.5"/>
-          <circle cx="27" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
-          <circle cx="51" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
-          <circle cx="75" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
-          <circle cx="99" cy="60" r="3" fill="rgba(255,255,255,.3)"/>
-        </svg>`
+        image: 'treatments/orthodontics.webp'
       },
       {
         num: '11', name: 'Retainers', spec: 'Orthodontics -- Post-treatment', badge: 'Essential',
         cat: 'Orthodontics', catColor: 'linear-gradient(145deg,#060418 0%,#100c3c 50%,#302898 100%)',
         title: 'Retainers &', titleEm: 'Maintenance',
-        desc: 'Fixed lingual retainers and removable Essix retainers to maintain your result long-term. The most overlooked but critical part of orthodontic treatment -- done properly at VinSmiles.',
+        desc: 'Fixed lingual retainers and removable Essix retainers to maintain your result long-term. The most overlooked but critical part of orthodontic treatment -- done properly at VIN SMILES.',
         facts: [['Specialist','Dr. Radhika Kapoor'],['Types','Fixed + removable'],['Purpose','Maintain alignment'],['Recommended','Lifelong maintenance']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M28 60 Q28 36 60 36 Q92 36 92 60 Q92 84 60 84 Q28 84 28 60Z" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="none" stroke-dasharray="6 4"/>
-          <path d="M36 60 Q36 44 60 44 Q84 44 84 60" stroke="rgba(255,255,255,.45)" stroke-width="2.5" fill="none"/>
-          <circle cx="60" cy="60" r="5" fill="rgba(201,169,110,.6)"/>
-          <circle cx="42" cy="53" r="3" fill="rgba(255,255,255,.2)"/>
-          <circle cx="78" cy="53" r="3" fill="rgba(255,255,255,.2)"/>
-        </svg>`
+        image: 'treatments/orthodontics.webp'
       },
     ]
   },
@@ -1056,15 +1285,7 @@ const GROUPS = [
         title: 'Laser', titleEm: 'Dentistry',
         desc: 'Diode laser for gum contouring, depigmentation, whitening, and soft-tissue procedures. Dramatically less discomfort than conventional methods, faster healing, and precision that scalpels cannot match.',
         facts: [['Specialist','Dr. Anita Sharma'],['Technology','Diode Laser System'],['Recovery','24--48 hours'],['Applications','Gum, whitening, tissue']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <line x1="60" y1="18" x2="60" y2="102" stroke="rgba(255,255,255,.5)" stroke-width="3.5" stroke-linecap="round"/>
-          <path d="M60 48 L80 34" stroke="rgba(255,255,255,.35)" stroke-width="2" stroke-linecap="round"/>
-          <path d="M60 60 L84 60" stroke="rgba(255,255,255,.22)" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M60 72 L80 86" stroke="rgba(255,255,255,.12)" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="60" cy="60" r="9" fill="rgba(201,169,110,.65)"/>
-          <circle cx="60" cy="60" r="15" stroke="rgba(201,169,110,.2)" stroke-width="1.5"/>
-          <circle cx="60" cy="60" r="22" stroke="rgba(201,169,110,.08)" stroke-width="1"/>
-        </svg>`
+        image: 'treatments/Periodontics.webp'
       },
       {
         num: '13', name: 'Gum Treatment', spec: 'Specialist -- Periodontist', badge: 'Specialist',
@@ -1072,12 +1293,7 @@ const GROUPS = [
         title: 'Periodontal', titleEm: 'Treatment',
         desc: 'From professional deep cleaning to laser-assisted flap surgery and bone regeneration -- complete gum care by our dedicated periodontist. The foundation every great smile is built on.',
         facts: [['Specialist','Dr. Anita Sharma'],['Experience','10+ years'],['Range','Maintenance  surgery'],['Technology','Laser-assisted']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M22 86 Q60 46 98 86" stroke="rgba(255,255,255,.55)" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <path d="M24 74 Q60 36 96 74" stroke="rgba(255,255,255,.32)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <path d="M22 62 Q60 26 98 62" stroke="rgba(255,255,255,.14)" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <circle cx="60" cy="66" r="7" fill="rgba(201,169,110,.4)"/>
-        </svg>`
+        image: 'treatments/Periodontics.webp'
       },
       {
         num: '14', name: 'Root Canal', spec: 'Specialist -- Single-sitting', badge: 'Pain-Free',
@@ -1085,13 +1301,7 @@ const GROUPS = [
         title: 'Root Canal', titleEm: 'Treatment',
         desc: 'Modern endodontics under The Wand STA computer-controlled anaesthesia -- virtually painless. Single-sitting for straightforward cases. Saves your natural tooth. Nothing to fear.',
         facts: [['Specialist','Endodontist'],['Anaesthesia','The Wand STA'],['Duration','1--2 sessions'],['Goal','Save natural tooth']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <path d="M60 24 Q60 52 52 82 M60 24 Q60 52 68 82" stroke="rgba(255,255,255,.4)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <ellipse cx="60" cy="32" rx="18" ry="11" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
-          <ellipse cx="60" cy="32" rx="10" ry="6" stroke="rgba(255,255,255,.4)" stroke-width="1.5"/>
-          <circle cx="60" cy="32" r="4" fill="rgba(201,169,110,.6)"/>
-          <path d="M52 82 Q48 92 50 98 M68 82 Q72 92 70 98" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>`
+        image: 'treatments/Endodontics.webp'
       },
       {
         num: '15', name: 'Oral Surgery', spec: 'Specialist -- Hospital-trained', badge: 'Expert',
@@ -1099,12 +1309,7 @@ const GROUPS = [
         title: 'Oral', titleEm: 'Surgery',
         desc: 'Wisdom tooth extractions, complex impactions, bone grafting for implant preparation, and maxillofacial procedures -- performed by our hospital-trained oral and maxillofacial surgeon.',
         facts: [['Specialist','Dr. Vikram Rajan'],['Training','Hospital-trained surgeon'],['Includes','Wisdom teeth, bone graft'],['Anaesthesia','Local / sedation options']],
-        svg: `<svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <circle cx="60" cy="60" r="30" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
-          <path d="M42 42 L78 78 M78 42 L42 78" stroke="rgba(255,255,255,.4)" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="60" cy="60" r="8" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="rgba(255,255,255,.04)"/>
-          <circle cx="60" cy="60" r="3" fill="rgba(201,169,110,.6)"/>
-        </svg>`
+        image: 'treatments/oralandmaxillofacialsurgery.jpg'
       },
     ]
   }
@@ -1156,10 +1361,10 @@ ALL.forEach((t, i) => {
   panel.id = 'panel-' + i;
   panel.innerHTML = `
     <div class="tp-visual">
-      <div class="tp-visual-bg" style="background:${t.catColor};"></div>
-      <div class="tp-visual-num">${t.num}</div>
+      <img src="${t.image}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+      <div class="tp-visual-bg" style="background:linear-gradient(to top, rgba(0,0,0,0.8), transparent); position:absolute; inset:0;"></div>
+      <div class="tp-visual-num" style="color:#fff; text-shadow:0 1px 4px rgba(0,0,0,0.5);">${t.num}</div>
       <div class="tp-badge${t.badgeGold ? ' gold' : ''}">${t.badge}</div>
-      <div class="tp-icon">${t.svg}</div>
     </div>
     <div class="tp-text">
       <div class="tp-cat">${t.cat}</div>
@@ -1199,8 +1404,8 @@ GROUPS.forEach(group => {
       </div>
       <div class="tx-mobile-body">
         <div class="tx-mobile-body-inner" style="padding-top:20px;">
-          <div class="tx-mobile-visual" style="background:${t.catColor};">
-            <div style="opacity:.7;">${t.svg}</div>
+          <div class="tx-mobile-visual" style="position:relative; height:180px; margin-bottom:16px; border-radius:8px; overflow:hidden;">
+            <img src="${t.image}" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
           </div>
           <p class="tx-mobile-desc">${t.desc}</p>
           <div class="tx-mobile-facts">${factsHTML}</div>
