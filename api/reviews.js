@@ -60,64 +60,68 @@ const CURATED_REVIEWS_DATA = {
   ]
 };
 
-async function resolvePlaceId(apiKey) {
-  const explicitQuery = process.env.GOOGLE_PLACE_QUERY;
-  const fallbackQuery = 'VinSmiles Greater Kailash II New Delhi';
-  const query = (explicitQuery && explicitQuery.trim()) || fallbackQuery;
-
-  const findUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(query)}&inputtype=textquery&fields=place_id,name,formatted_address&key=${apiKey}`;
-  const findResponse = await fetch(findUrl);
-  const findData = await findResponse.json();
-
-  if (findData.status !== 'OK' || !findData.candidates || !findData.candidates.length) {
-    const message = findData.error_message || `Could not resolve place from query: ${query}`;
-    throw new Error(message);
-  }
-
-  return findData.candidates[0].place_id;
-}
+const KNOWN_PLACE_ID = 'ChIJjeL_gFbjDDkRqUlUg38xlhU';
 
 module.exports = async function(req, res) {
   // Allow cross-origin requests
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
+  res.setHeader('Cache-Control', 's-maxage=1800, stale-while-revalidate');
 
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-  const configuredPlaceId = process.env.GOOGLE_PLACE_ID;
+  const placeId = process.env.GOOGLE_PLACE_ID || KNOWN_PLACE_ID;
 
-  // If Google Places API key is configured, attempt live fetch
+  // If Google Places API key is configured, fetch live reviews with newest prioritized
   if (apiKey) {
     try {
-      const placeId = configuredPlaceId || await resolvePlaceId(apiKey);
-      const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,user_ratings_total,rating&key=${apiKey}`;
+      const [newestRes, relevantRes] = await Promise.allSettled([
+        fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,user_ratings_total,rating&reviews_sort=newest&key=${apiKey}`).then(r => r.json()),
+        fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews,user_ratings_total,rating&key=${apiKey}`).then(r => r.json())
+      ]);
 
-      const response = await fetch(url);
-      const data = await response.json();
+      const newestData = newestRes.status === 'fulfilled' && newestRes.value && newestRes.value.status === 'OK' ? newestRes.value.result : null;
+      const relevantData = relevantRes.status === 'fulfilled' && relevantRes.value && relevantRes.value.status === 'OK' ? relevantRes.value.result : null;
+      const mainData = newestData || relevantData;
 
-      if (data.status === 'OK' && data.result) {
-        const liveReviews = Array.isArray(data.result.reviews) && data.result.reviews.length > 0
-          ? data.result.reviews.map(r => ({
-              author_name: r.author_name,
-              text: r.text,
-              rating: r.rating || 5,
-              relative_time_description: r.relative_time_description || ''
-            }))
-          : CURATED_REVIEWS_DATA.reviews;
+      if (mainData) {
+        const combined = [];
+        const seen = new Set();
+
+        const addReviews = (list) => {
+          if (!Array.isArray(list)) return;
+          for (const r of list) {
+            const key = (r.author_name || '') + '::' + (r.text || '').slice(0, 40);
+            if (!seen.has(key)) {
+              seen.add(key);
+              combined.push({
+                author_name: r.author_name,
+                text: r.text,
+                rating: r.rating || 5,
+                relative_time_description: r.relative_time_description || ''
+              });
+            }
+          }
+        };
+
+        // Add newest first so the latest patient reviews appear at the top
+        if (newestData && newestData.reviews) addReviews(newestData.reviews);
+        if (relevantData && relevantData.reviews) addReviews(relevantData.reviews);
+
+        const liveReviews = combined.length > 0 ? combined : CURATED_REVIEWS_DATA.reviews;
 
         return res.status(200).json({
-          source: 'Google Places API (Live)',
+          source: 'Google Places API (Live Latest)',
           place_id: placeId,
-          rating: Number(data.result.rating) || CURATED_REVIEWS_DATA.rating,
-          total_reviews: Number(data.result.user_ratings_total) || CURATED_REVIEWS_DATA.total_reviews,
+          rating: Number(mainData.rating) || CURATED_REVIEWS_DATA.rating,
+          total_reviews: Number(mainData.user_ratings_total) || CURATED_REVIEWS_DATA.total_reviews,
           reviews: liveReviews
         });
       }
 
-      console.warn('Google Places API returned status:', data.status, data.error_message || '');
+      console.warn('Google Places API response was not OK, falling back to curated reviews');
     } catch (err) {
       console.warn('Failed to fetch from Google Places API, falling back to curated reviews:', err.message);
     }
