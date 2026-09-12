@@ -93,12 +93,14 @@ module.exports = async function(req, res) {
         const addReviews = (list) => {
           if (!Array.isArray(list)) return;
           for (const r of list) {
-            const key = (r.author_name || '') + '::' + (r.text || '').slice(0, 40);
+            const trimmedText = (r.text || '').trim();
+            if (!trimmedText) continue; // Skip reviews without text
+            const key = (r.author_name || '') + '::' + trimmedText.slice(0, 40);
             if (!seen.has(key)) {
               seen.add(key);
               combined.push({
                 author_name: r.author_name,
-                text: r.text,
+                text: trimmedText,
                 rating: r.rating || 5,
                 relative_time_description: r.relative_time_description || ''
               });
