@@ -331,6 +331,63 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .team-card-body{padding:20px 16px 18px;}
   .team-card-name{font-size:20px;}
 }
+/* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* page specific */
+@media(max-width:1024px){
+  .featured-photo-wrap{max-width:440px;width:100%;}
+  .featured-photo{aspect-ratio:4/5!important;max-height:none!important;}
+  .featured-photo img{object-position:center 12%;}
+}
+@media(max-width:1024px) and (min-width:901px){
+  .featured-inner{grid-template-columns:320px 1fr!important;gap:48px!important;}
+  .featured-photo-wrap{position:sticky;top:96px;max-width:none;}
+  .team-grid{grid-template-columns:repeat(3,1fr);}
+}
+/* Hero: no full-screen height on tablets and phones */
+@media(max-width:1024px){
+  .hero{min-height:0!important;padding:150px 0 80px!important;}
+  .hero-quote-mark{top:84px!important;font-size:130px!important;}
+}
+@media(max-width:640px){
+  .hero{padding:132px 0 60px!important;}
+  .hero-quote-mark{top:78px!important;font-size:110px!important;}
+}
+
+/* === VS RESPONSIVE PATCH END === */
 </style>
 </head>
 <body>

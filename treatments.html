@@ -1662,7 +1662,67 @@
         padding: 16px 20px;
       }
     }
-  </style>
+  /* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* page specific */
+.tp-fact{gap:16px;}
+.tp-fact-label{flex-shrink:0;}
+.tp-fact-value{text-align:right;}
+.tp-text{overflow-x:hidden;}
+@media(max-width:1366px) and (min-width:1025px){
+  .tx-selector{grid-template-columns:400px 1fr;}
+  .tx-panel{grid-template-columns:2fr 3fr;}
+  .tp-text{padding:44px 36px;}
+}
+@media(max-width:1180px) and (min-width:1025px){
+  .tx-selector{grid-template-columns:350px 1fr;}
+  .tx-panel{grid-template-columns:1fr 2fr;}
+  .tp-text{padding:40px 28px;}
+}
+@media(max-width:1366px) and (min-width:1025px){
+  .tx-list-header{padding:32px 24px 22px;}
+  .tx-group-label{padding:0 24px 10px;}
+  .tx-item{padding:16px 22px;gap:12px;}
+  .tx-item-num{min-width:24px;}
+}
+/* Mobile accordion: never cut long content */
+.tx-mobile-item.open .tx-mobile-body{max-height:2400px;}
+
+/* === VS RESPONSIVE PATCH END === */
+</style>
 </head>
 
 <body>
@@ -3706,6 +3766,21 @@
     // Init progress
     progressFill.style.width = (1 / ALL.length * 100) + '%';
   </script>
+<!-- VS RESPONSIVE JS START -->
+<script>
+(function(){
+  function fit(){
+    document.querySelectorAll('.tx-mobile-item').forEach(function(i){
+      var b=i.querySelector('.tx-mobile-body'); if(!b) return;
+      b.style.maxHeight=i.classList.contains('open')?(b.scrollHeight+40)+'px':'';
+    });
+  }
+  var t; function soon(){clearTimeout(t);t=setTimeout(fit,20);}
+  new MutationObserver(soon).observe(document.body,{subtree:true,attributes:true,attributeFilter:['class']});
+  window.addEventListener('resize',soon); window.addEventListener('load',soon);
+})();
+</script>
+<!-- VS RESPONSIVE JS END -->
 </body>
 
 </html>

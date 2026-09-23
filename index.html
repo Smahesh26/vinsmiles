@@ -3213,7 +3213,108 @@
       text-align: center;
       margin-top: 48px;
     }
-  </style>
+  /* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* page specific */
+@media(max-width:1024px){
+  .team-grid{gap:16px;}
+  .team-header-right{text-align:left;max-width:none;}
+  .team-section{padding:80px 0;}
+}
+@media(max-width:640px){
+  .team-section{padding:64px 0;}
+  .team-header{margin-bottom:36px;}
+  .team-grid{gap:14px;}
+  .doctor-info{padding:14px 14px 18px;}
+  .doc-name{font-size:18px;}
+  .doc-role{font-size:9.5px;letter-spacing:1px;}
+  .doc-bio{font-size:12px;}
+}
+@media(max-width:1024px){
+  .founder-left{background-position:center 18%!important;min-height:min(92vw,560px);}
+}
+@media(max-width:900px){
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:1024px) and (min-width:901px){
+  .doctor-info{padding:16px 16px 20px;}
+  .doc-role{letter-spacing:1px;}
+}
+@media(max-width:380px){
+  .team-grid{grid-template-columns:1fr;}
+}
+/* Hero: image ends where stats begin; stats sit on their own band above the ticker */
+@media(max-width:1024px){
+  .hero{height:auto!important;min-height:0!important;}
+  .hero-stats{position:relative!important;inset:auto!important;z-index:3;display:grid!important;grid-template-columns:repeat(5,1fr);
+    background:#fff!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;opacity:1!important;animation:none!important;}
+  .hero-stat{padding:18px 16px!important;border-right:1px solid var(--rule)!important;border-bottom:none!important;}
+  .hero-stat:last-child{border-right:none!important;}
+}
+@media(max-width:640px){
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .hero-stat{padding:16px 20px!important;border-bottom:1px solid var(--rule)!important;}
+  .hero-stat:nth-child(2n){border-right:none!important;}
+  .hero-stat:last-child{grid-column:1/-1;border-bottom:none!important;}
+}
+/* Before/after label strip: one row on phones */
+@media(max-width:640px){
+  .gallery-label-strip{flex-direction:row!important;align-items:center!important;justify-content:space-between;gap:10px!important;padding:0 20px 16px!important;}
+  .gallery-label-center{gap:8px;font-size:9px;letter-spacing:1.2px;white-space:nowrap;}
+  .gallery-label-center-line{width:14px;}
+  .gallery-label-left,.gallery-label-right{font-size:11px;flex-shrink:0;}
+}
+@media(max-width:360px){
+  .gallery-label-center-line{display:none;}
+  .gallery-label-center{font-size:8.5px;letter-spacing:1px;}
+}
+/* Technology tiles: content was absolutely positioned inside auto-height tiles, so it collapsed */
+@media(max-width:1024px){
+  .tb,.tb-featured{height:auto!important;}
+  .tb-inner{position:relative!important;inset:auto!important;padding:28px!important;}
+  .tb-hero-icon{flex:none;height:200px;}
+}
+@media(max-width:640px){
+  .tb-inner{padding:24px 20px!important;}
+  .tb-hero-icon{height:180px;}
+  .tb-feat-title{font-size:24px;}
+}
+
+/* === VS RESPONSIVE PATCH END === */
+</style>
 </head>
 
 <body>
