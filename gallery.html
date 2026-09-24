@@ -327,10 +327,6 @@
       max-width: 1300px;
       margin: 0 auto;
       padding: 72px 52px 60px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 40px;
     }
 
     .hero-eyebrow {
@@ -1361,12 +1357,6 @@
 
       .hero-inner {
         padding: 64px 28px 52px;
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .hero-count {
-        text-align: left;
       }
 
       .filter-inner {
@@ -1658,10 +1648,6 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
         <p class="hero-p">Every image in this gallery is a real VIN SMILES patient. Click any photograph to open the
           full case study - the challenge, the treatment, and the result.</p>
       </div>
-      <div class="hero-count">
-        <div class="hero-count-num">4<span>+</span></div>
-        <div class="hero-count-label">Documented Cases</div>
-      </div>
     </div>
   </section>
 
@@ -1669,16 +1655,16 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
   <div class="filter-bar">
     <div class="filter-inner" id="filterBar">
       <button class="filter-btn active" data-cat="all" onclick="filterGallery(this,'all')">
-        All <span class="filter-count" id="countAll">4</span>
+        All <span class="filter-count" id="countAll">9</span>
       </button>
       <button class="filter-btn" data-cat="smile-design" onclick="filterGallery(this,'smile-design')">
         Smile Design <span class="filter-count" id="countSmile">1</span>
       </button>
       <button class="filter-btn" data-cat="full-mouth" onclick="filterGallery(this,'full-mouth')">
-        Full Mouth Rehab <span class="filter-count" id="countFull">1</span>
+        Full Mouth Rehab <span class="filter-count" id="countFull">3</span>
       </button>
       <button class="filter-btn" data-cat="smile-makeover" onclick="filterGallery(this,'smile-makeover')">
-        Smile Makeover <span class="filter-count" id="countMakeover">1</span>
+        Smile Makeover <span class="filter-count" id="countMakeover">4</span>
       </button>
       <button class="filter-btn" data-cat="invisalign" onclick="filterGallery(this,'invisalign')">
         Invisalign <span class="filter-count" id="countInvis">1</span>
@@ -2219,8 +2205,27 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
     document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
     /* --
+       UPDATE FILTER COUNTS
+    -- */
+    function updateFilterCounts() {
+      const counts = { all: CASES.length };
+      CASES.forEach(c => {
+        counts[c.cat] = (counts[c.cat] || 0) + 1;
+      });
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        const cat = btn.getAttribute('data-cat');
+        const countSpan = btn.querySelector('.filter-count');
+        if (countSpan && cat) {
+          countSpan.textContent = cat === 'all' ? (counts.all || 0) : (counts[cat] || 0);
+        }
+      });
+    }
+
+    /* --
        INIT
     -- */
+    updateFilterCounts();
     buildGallery(CASES);
     initCompare();
   </script>
