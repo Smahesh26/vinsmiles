@@ -1020,6 +1020,14 @@ img,video,iframe{max-width:100%;}
   .mobile-menu{gap:16px!important;}
 }
 
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
 /* page specific */
 @media(max-width:1024px) and (min-width:901px){
   .story-inner{grid-template-columns:320px 1fr!important;gap:48px!important;}
@@ -1053,6 +1061,11 @@ img,video,iframe{max-width:100%;}
   .hero-right{height:auto!important;aspect-ratio:1/1;max-height:500px;}
   .hero-portrait{background-position:center top!important;}
 }
+/* Desktop hero: text centred in the panel instead of pushed to the bottom */
+@media(min-width:1025px){
+  .hero-left{justify-content:center!important;padding:108px 64px 76px!important;}
+}
+.hero-portrait{background-position:center top!important;}
 
 /* === VS RESPONSIVE PATCH END === */
 </style>

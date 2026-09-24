@@ -3248,6 +3248,14 @@ img,video,iframe{max-width:100%;}
   .mobile-menu{gap:16px!important;}
 }
 
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
 /* page specific */
 @media(max-width:1024px){
   .team-grid{gap:16px;}
@@ -3312,6 +3320,20 @@ img,video,iframe{max-width:100%;}
   .tb-hero-icon{height:180px;}
   .tb-feat-title{font-size:24px;}
 }
+/* Desktop hero: one screen tall, text centred between nav and stats bar */
+@media(min-width:1025px){
+  .hero{height:100vh;height:100svh;min-height:660px;align-items:center;}
+  .hero-content{padding:110px 52px 80px;}
+}
+/* Founder photo: keep her face in frame on every screen */
+.founder-left{background-position:center 18%!important;}
+/* Wide screens: gallery label strip and CTA strip line up with the 1300px content column */
+@media(min-width:1025px){
+  .gallery-label-strip{padding-left:max(52px,calc((100% - 1196px) / 2))!important;padding-right:max(52px,calc((100% - 1196px) / 2))!important;}
+  div[style*="padding:24px 52px"]{padding-left:max(52px,calc((100% - 1196px) / 2))!important;padding-right:max(52px,calc((100% - 1196px) / 2))!important;}
+}
+/* Wide screens: hero text starts on the same line as the page content below it */
+@media(min-width:1301px){ .hero-content{margin-left:calc((100% - 1300px) / 2);} }
 
 /* === VS RESPONSIVE PATCH END === */
 </style>

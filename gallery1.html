@@ -1617,6 +1617,14 @@ img,video,iframe{max-width:100%;}
   .mobile-menu{gap:16px!important;}
 }
 
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
 /* page specific */
 @media(max-width:1024px){
   .hero-count{position:static;justify-self:start;align-self:start;}
@@ -1632,6 +1640,8 @@ img,video,iframe{max-width:100%;}
   .lb-panel{max-height:calc(100dvh - 16px);}
 }
 .lb-label-after{right:72px!important;}
+/* Desktop: the absolute count badge overlapped the intro text; place it in flow like gallery.html */
+.hero-count{position:static!important;margin-top:28px;}
 
 /* === VS RESPONSIVE PATCH END === */
 </style>
