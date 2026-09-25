@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smile Gallery | VinSmiles Advanced Dentistry - Greater Kailash II, New Delhi</title>
+  <title>Case Studies | VinSmiles Advanced Dentistry - Greater Kailash II, New Delhi</title>
   <meta name="description"
     content="Real patient smile transformations at VinSmiles - implants, veneers, Invisalign, full mouth rehabilitation and smile design. GK-II, New Delhi.">
   <link rel="canonical" href="https://www.vinsmiles.com/smile-gallery">
@@ -1644,6 +1644,24 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
 .hero-count{position:static!important;margin-top:28px;}
 
 /* === VS RESPONSIVE PATCH END === */
+
+    /* Nav dropdown under Smile Gallery */
+    .nav-links li.has-dd{position:relative;}
+    .nav-links .dd-caret{display:inline-block;width:7px;height:7px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s var(--ease);}
+    .nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+    .nav-links .dd{position:absolute;top:calc(100% + 18px);left:-20px;min-width:200px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.08);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;z-index:400;}
+    .nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-20px;height:20px;}
+    .nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:none;}
+    .nav-links li.has-dd:hover > a{color:var(--brand)!important;}
+    .nav-links li.has-dd:hover > a::after{right:0;}
+    .nav-links .dd a{display:block;padding:11px 20px;font-size:11px;white-space:nowrap;color:var(--ink-80)!important;}
+    .nav-links .dd a::after{display:none;}
+    .nav-links .dd a:hover{background:var(--brand-xlt);color:var(--brand)!important;}
+    .nav-links .dd a.active{color:var(--brand)!important;font-weight:600;}
+    @media(max-width:1200px){.nav-links .dd{display:none;}}
+    .mobile-menu .m-sub{display:flex;gap:22px;margin-top:-12px;}
+    .mobile-menu .m-sub a{font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);}
+    .mobile-menu .m-sub a.active,.mobile-menu .m-sub a:hover{color:var(--brand);}
 </style>
 </head>
 
@@ -1657,7 +1675,13 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
     </a>
     <ul class="nav-links">
       <li><a href="treatments.html">Treatments</a></li>
-      <li><a href="gallery.html" class="active">Smile Gallery</a></li>
+      <li class="has-dd">
+        <a href="gallery.html" class="active" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
+        <ul class="dd">
+          <li><a href="gallery.html" class="active">Case Studies</a></li>
+          <li><a href="video-gallery.html">Video Gallery</a></li>
+        </ul>
+      </li>
       <li><a href="our-team.html">Our Team</a></li>
       <li><a href="about.html">Our Story</a></li>
       <li><a href="technology.html">Technology</a></li>
@@ -1669,7 +1693,11 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
   </nav>
   <div class="mobile-menu" id="mobileMenu">
     <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
-    <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
+    <a href="gallery.html" class="active" onclick="toggleMenu()">Smile Gallery</a>
+    <div class="m-sub">
+      <a href="gallery.html" class="active" onclick="toggleMenu()">Case Studies</a>
+      <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+    </div>
     <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
     <a href="about.html" onclick="toggleMenu()">Our Story</a>
     <a href="technology.html" onclick="toggleMenu()">Technology</a>
@@ -1686,7 +1714,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
           <div class="hero-eyebrow-bar"></div>
           <span class="hero-eyebrow-txt">Real Patients - Real Results</span>
         </div>
-        <h1 class="hero-h1">Smile Gallery &<em>Case Studies</em></h1>
+        <h1 class="hero-h1">Case <em>Studies</em></h1>
         <p class="hero-p">Every image in this gallery is a real VinSmiles patient. Click any photograph to open the full
           case study - the challenge, the treatment, and the result.</p>
       </div>
@@ -1888,7 +1916,8 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
           <li><a href="about.html">Our Story</a></li>
           <li><a href="our-team.html">Our Team</a></li>
           <li><a href="technology.html">Technology</a></li>
-          <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="gallery.html">Case Studies</a></li>
+          <li><a href="video-gallery.html">Video Gallery</a></li>
         </ul>
       </div>
       <div>
