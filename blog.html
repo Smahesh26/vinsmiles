@@ -1,0 +1,2713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | VIN SMILES Advanced Dentistry - Greater Kailash II, New Delhi</title>
+  <meta name="description"
+    content="Dental health articles from VIN SMILES, Greater Kailash II: whitening and stains, tooth sensitivity, implants, braces, wisdom teeth and lifestyle.">
+  <link rel="canonical" href="https://www.vinsmiles.com/blog">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* -- TOKENS -- */
+    :root {
+      --brand: #904588;
+      --brand-dark: #64305F;
+      --brand-light: #F3EBF2;
+      --brand-xlt: #FAF5FA;
+      --gold: #C9A96E;
+      --gold-dark: #8B6B3D;
+      --gold-light: #F7F0E4;
+      --ink: #0F0E0F;
+      --ink-80: #2A2A2A;
+      --ink-60: #555;
+      --ink-40: #888;
+      --ink-20: #C2C2C2;
+      --rule: #E8E2E8;
+      --surface: #FFFFFF;
+      --surface-2: #FAFAFA;
+      --surface-3: #F5F0F5;
+      --warm: #FBF7F2;
+      --font-d: 'Cormorant Garamond', Georgia, serif;
+      --font-b: 'DM Sans', system-ui, sans-serif;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--surface);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* -- NAV - exact match -- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--rule);
+      transition: background .4s var(--ease), box-shadow .4s;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .nav-logo-mark {
+      font-family: var(--font-d);
+      font-size: 23px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: .3px;
+    }
+
+    .nav-logo-mark span {
+      color: var(--gold);
+    }
+
+    .nav-logo-sub {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ink-40);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      transition: color .2s;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+      height: 1px;
+      background: var(--brand);
+      transition: right .3s var(--ease);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      right: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--brand) !important;
+    }
+
+    .nav-cta {
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--brand-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(144, 69, 136, .3);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 290;
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding-top: 68px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 22px;
+      font-family: var(--font-d);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: 1px;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--brand);
+    }
+
+    .mobile-menu .m-cta {
+      background: var(--brand);
+      color: #fff;
+      padding: 14px 40px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* -- UTILS -- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .d1 {
+      transition-delay: .08s;
+    }
+
+    .d2 {
+      transition-delay: .16s;
+    }
+
+    .d3 {
+      transition-delay: .24s;
+    }
+
+    .d4 {
+      transition-delay: .32s;
+    }
+
+    .btn-brand {
+      background: var(--brand);
+      color: #fff;
+      padding: 14px 32px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+
+    .btn-brand:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(144, 69, 136, .28);
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--brand);
+      padding: 14px 30px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-white:hover {
+      background: var(--brand-xlt);
+      transform: translateY(-2px);
+    }
+
+    .btn-wa {
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .25);
+      padding: 14px 26px;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s;
+    }
+
+    .btn-wa:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    /* -- HERO -- */
+    .hero {
+      padding-top: 68px;
+      background: var(--warm);
+      padding-bottom: 0;
+      position: relative;
+    }
+
+    .hero-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 72px 52px 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 40px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero-eyebrow-bar {
+      width: 28px;
+      height: 1.5px;
+      background: var(--brand);
+    }
+
+    .hero-eyebrow-txt {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .hero-h1 {
+      font-family: var(--font-d);
+      font-size: clamp(48px, 5.5vw, 76px);
+      font-weight: 300;
+      line-height: 1.06;
+      color: var(--ink);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp .8s var(--ease) .1s both;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--brand);
+    }
+
+    .hero-p {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink-60);
+      line-height: 1.75;
+      max-width: 500px;
+      opacity: 0;
+      animation: fadeUp .8s var(--ease) .25s both;
+    }
+
+    .hero-count {
+      text-align: right;
+      opacity: 0;
+      animation: fadeUp .8s var(--ease) .3s both;
+      flex-shrink: 0;
+    }
+
+    .hero-count-num {
+      font-family: var(--font-d);
+      font-size: 72px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .hero-count-num span {
+      color: var(--brand);
+    }
+
+    .hero-count-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink-40);
+    }
+
+    /* -- FILTER BAR -- */
+    .filter-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 68px;
+      z-index: 100;
+    }
+
+    .filter-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 52px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .filter-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      flex-shrink: 0;
+      padding: 18px 24px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-40);
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: var(--font-b);
+      position: relative;
+      transition: color .2s;
+      white-space: nowrap;
+    }
+
+    .filter-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 24px;
+      right: 24px;
+      height: 2px;
+      background: var(--brand);
+      transform: scaleX(0);
+      transition: transform .3s var(--ease);
+    }
+
+    .filter-btn:hover {
+      color: var(--ink);
+    }
+
+    .filter-btn.active {
+      color: var(--brand);
+    }
+
+    .filter-btn.active::after {
+      transform: scaleX(1);
+    }
+
+    .filter-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: var(--brand);
+      font-size: 9px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    /* -- GALLERY GRID -- */
+    .gallery-section {
+      padding: 52px 0 120px;
+      background: var(--surface);
+    }
+
+    .gallery-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 52px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    /* Individual gallery tile */
+    .gtile {
+      margin-bottom: 0;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 3px;
+      background: var(--surface-3);
+      box-shadow: 0 1px 0 rgba(15, 14, 15, .04);
+      transition: transform .24s var(--ease), box-shadow .24s var(--ease);
+    }
+
+    .gtile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(15, 14, 15, .12);
+    }
+
+    .gtile:hover .gtile-overlay {
+      opacity: 1;
+    }
+
+    .gtile:hover .gtile-img-after {
+      transform: scale(1.04);
+    }
+
+    .gtile:hover .gtile-meta {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* After image (shown by default) */
+    .gtile-img-after {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4/5;
+      max-height: 300px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .6s var(--ease);
+    }
+
+    /* Overlay */
+    .gtile-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 14, 15, .75) 0%, rgba(15, 14, 15, .15) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity .4s var(--ease);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    /* Meta info */
+    .gtile-meta {
+      padding: 20px 18px;
+      width: 100%;
+      transform: translateY(10px);
+      opacity: 0;
+      transition: transform .4s var(--ease), opacity .4s var(--ease);
+    }
+
+    .gtile-cat {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .gtile-name {
+      font-family: var(--font-d);
+      font-size: 20px;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 3px;
+      line-height: 1.2;
+    }
+
+    .gtile-sub {
+      font-size: 10px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    /* Before tag */
+    .gtile-before-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(6px);
+      border-radius: 100px;
+      padding: 3px 12px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brand);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .gtile:hover .gtile-before-tag {
+      opacity: 1;
+    }
+
+    /* Click indicator */
+    .gtile-view {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(.8);
+      transition: opacity .3s, transform .3s var(--ease);
+    }
+
+    .gtile:hover .gtile-view {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Masonry pattern to match staggered collage look */
+    .gtile[class*="shape-"] .gtile-img-after {
+      aspect-ratio: 4/5;
+    }
+
+    /* -- CASE STUDY LIGHTBOX -- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: flex;
+      align-items: stretch;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .4s var(--ease);
+    }
+
+    .lightbox.open {
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    /* Dark backdrop */
+    .lb-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 8, 14, .88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Main panel - slides up */
+    .lb-panel {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      background: var(--surface);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      transform: translateY(48px);
+      transition: transform .5s var(--ease);
+      overflow: hidden;
+      margin: 40px;
+      border-radius: 4px;
+      box-shadow: 0 40px 120px rgba(0, 0, 0, .5);
+    }
+
+    .lightbox.open .lb-panel {
+      transform: translateY(0);
+    }
+
+    /* LEFT - before/after comparison */
+    .lb-visual {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      min-height: 0;
+    }
+
+    /* The comparison container */
+    .lb-compare {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      user-select: none;
+      cursor: col-resize;
+    }
+
+    .lb-before,
+    .lb-after {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .lb-before img,
+    .lb-after img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: #1b1a1b;
+      /* Optional: adds a dark background behind the contained image so it blends well */
+    }
+
+    /* Before is clipped from the right via clip-path */
+    .lb-before {
+      clip-path: inset(0 50% 0 0);
+    }
+
+    /* Labels */
+    .lb-label {
+      position: absolute;
+      top: 20px;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(8px);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .lb-label-before {
+      left: 20px;
+      color: var(--ink-60);
+    }
+
+    .lb-label-after {
+      right: 20px;
+      color: var(--brand);
+    }
+
+    /* Drag handle */
+    .lb-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      background: #fff;
+      pointer-events: none;
+      transition: left .05s;
+    }
+
+    .lb-handle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    /* Drag hint */
+    .lb-drag-hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, .55);
+      backdrop-filter: blur(6px);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .7);
+      pointer-events: none;
+      animation: hintPulse 2.5s ease-in-out 1s 3;
+    }
+
+    /* RIGHT - case study text */
+    .lb-text {
+      padding: 48px 52px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      scrollbar-width: thin;
+      scrollbar-color: var(--rule) transparent;
+    }
+
+    .lb-text::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .lb-text::-webkit-scrollbar-thumb {
+      background: var(--rule);
+      border-radius: 2px;
+    }
+
+    .lb-cat {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 10px;
+    }
+
+    .lb-title {
+      font-family: var(--font-d);
+      font-size: clamp(30px, 3vw, 44px);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .lb-title em {
+      font-style: italic;
+      color: var(--brand);
+    }
+
+    .lb-patient {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--ink-40);
+      letter-spacing: .5px;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Key facts */
+    .lb-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-bottom: 32px;
+    }
+
+    .lb-fact {
+      background: var(--surface);
+      padding: 14px 18px;
+    }
+
+    .lb-fact-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 3px;
+    }
+
+    .lb-fact-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-80);
+    }
+
+    .lb-fact-value.accent {
+      color: var(--brand);
+    }
+
+    /* Story blocks */
+    .lb-block {
+      margin-bottom: 24px;
+    }
+
+    .lb-block-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lb-block-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--brand-light);
+    }
+
+    .lb-block-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-60);
+      line-height: 1.8;
+    }
+
+    /* Result highlight */
+    .lb-result {
+      background: var(--brand-xlt);
+      border: 1px solid rgba(144, 69, 136, .15);
+      border-radius: 3px;
+      padding: 20px 22px;
+      margin-bottom: 28px;
+    }
+
+    .lb-result-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+
+    .lb-result-text {
+      font-family: var(--font-d);
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink-80);
+      line-height: 1.5;
+    }
+
+    /* CTA */
+    .lb-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    /* Close + navigation */
+    .lb-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .95);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
+    }
+
+    .lb-close:hover {
+      background: #fff;
+      transform: scale(1.08);
+    }
+
+    /* Prev / Next */
+    .lb-nav {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      display: flex;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    .lb-nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .92);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .12);
+    }
+
+    .lb-nav-btn:hover {
+      background: #fff;
+      transform: scale(1.06);
+    }
+
+    .lb-nav-btn:disabled {
+      opacity: .3;
+      cursor: default;
+      transform: none;
+    }
+
+    /* Case counter */
+    .lb-counter {
+      position: absolute;
+      bottom: 38px;
+      left: 28px;
+      z-index: 2;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    /* -- EMPTY STATE -- */
+    .gallery-empty {
+      text-align: center;
+      padding: 80px 20px;
+      display: none;
+    }
+
+    .gallery-empty.show {
+      display: block;
+    }
+
+    .gallery-empty p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--ink-40);
+    }
+
+    /* -- CTA -- */
+    .about-cta {
+      padding: 100px 52px;
+      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 60%, #b87ab2 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(255, 255, 255, .06), transparent 60%);
+    }
+
+    .about-cta-inner {
+      position: relative;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .cta-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 14px;
+    }
+
+    .cta-h2 {
+      font-family: var(--font-d);
+      font-size: clamp(38px, 4vw, 54px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .cta-h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .cta-p {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.75;
+      margin-bottom: 44px;
+    }
+
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* -- FOOTER -- */
+    footer {
+      background: #0F0E0F;
+      border-top: 1px solid rgba(255, 255, 255, .04);
+    }
+
+    .footer-top {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 72px 52px 56px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .f-logo-mark {
+      font-family: var(--font-d);
+      font-size: 26px;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .f-logo-mark span {
+      color: var(--gold);
+    }
+
+    .f-logo-sub {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .2);
+      margin-bottom: 20px;
+    }
+
+    .f-addr {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .4);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .f-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .f-contacts a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color .2s;
+    }
+
+    .f-contacts a:hover {
+      color: var(--gold);
+    }
+
+    .f-map {
+      margin-top: 22px;
+    }
+
+    .f-map-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .28);
+      margin-bottom: 10px;
+    }
+
+    .f-map-frame {
+      display: block;
+      width: 100%;
+      height: 150px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #1b1a1b;
+    }
+
+    .f-map-link {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201, 169, 110, .4);
+      padding-bottom: 2px;
+      transition: gap .2s, border-color .2s;
+    }
+
+    .f-map-link:hover {
+      gap: 12px;
+      border-color: var(--gold);
+    }
+
+    .f-col-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .22);
+      margin-bottom: 20px;
+    }
+
+    .f-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .f-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .42);
+      transition: color .2s;
+    }
+
+    .f-links a:hover {
+      color: #fff;
+    }
+
+    .f-hours {
+      margin-top: 24px;
+    }
+
+    .f-hours-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .2);
+      margin-bottom: 8px;
+    }
+
+    .f-hours-val {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .35);
+      line-height: 1.8;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .05);
+      padding: 22px 52px;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .f-copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .2);
+    }
+
+    .f-badges {
+      display: flex;
+      gap: 12px;
+    }
+
+    .f-badge {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .2);
+      border: 1px solid rgba(255, 255, 255, .08);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .wa-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, .4);
+      transition: transform .2s var(--ease), box-shadow .2s;
+      animation: waPulse 3s ease-in-out infinite;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, .55);
+      animation: none;
+    }
+
+    /* -- KEYFRAMES -- */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes waPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 28px rgba(37, 211, 102, .4)
+      }
+
+      50% {
+        box-shadow: 0 8px 44px rgba(37, 211, 102, .6)
+      }
+    }
+
+    @keyframes hintPulse {
+
+      0%,
+      100% {
+        opacity: .7
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    /* -- RESPONSIVE 1024px -- */
+    @media(max-width:1024px) {
+      .nav {
+        padding: 0 28px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .hero-inner {
+        padding: 64px 28px 52px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-count {
+        text-align: left;
+      }
+
+      .filter-inner {
+        padding: 0 28px;
+      }
+
+      .gallery-grid {
+        padding: 0 28px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .lb-panel {
+        margin: 24px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lb-text {
+        padding: 36px 36px;
+      }
+
+      .about-cta {
+        padding: 72px 28px;
+      }
+
+      .cta-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        padding: 56px 28px 40px;
+      }
+
+      .footer-bottom {
+        padding: 20px 28px;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    /* -- RESPONSIVE 768px -- */
+    @media(max-width:768px) {
+      .hero-inner {
+        padding: 56px 20px 44px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0 20px;
+        gap: 10px;
+      }
+
+      /* Lightbox: stack vertically */
+      .lb-panel {
+        grid-template-columns: 1fr;
+        grid-template-rows: 45vh auto;
+        margin: 12px;
+        overflow-y: auto;
+      }
+
+      .lb-visual {
+        height: 45vh;
+        min-height: 260px;
+      }
+
+      .lb-text {
+        padding: 28px 24px 80px;
+      }
+
+      .lb-facts {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lb-nav {
+        bottom: 16px;
+        right: 16px;
+      }
+
+      .lb-counter {
+        bottom: 26px;
+        left: 16px;
+      }
+    }
+
+    /* -- RESPONSIVE 640px -- */
+    @media(max-width:640px) {
+      nav .nav-cta {
+        padding: 8px 16px;
+        font-size: 10px;
+      }
+
+      .hero-inner {
+        padding: 52px 16px 40px;
+      }
+
+      .hero-h1 {
+        font-size: clamp(36px, 10vw, 52px);
+      }
+
+      .filter-inner {
+        padding: 0 16px;
+      }
+
+      .filter-btn {
+        padding: 14px 14px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+        gap: 12px;
+      }
+
+      .gtile {
+        margin-bottom: 12px;
+      }
+
+      .lb-panel {
+        margin: 8px;
+        border-radius: 3px;
+      }
+
+      .lb-visual {
+        height: 52vw;
+        min-height: 220px;
+      }
+
+      .lb-text {
+        padding: 20px 18px 72px;
+      }
+
+      .lb-title {
+        font-size: 26px;
+      }
+
+      .lb-facts {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lb-cta {
+        flex-direction: column;
+      }
+
+      .lb-cta .btn-brand,
+      .lb-cta .btn-white {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .about-cta {
+        padding: 56px 16px;
+      }
+
+      .btn-white,
+      .btn-wa {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        padding: 16px 16px;
+      }
+    }
+
+    /* -- RESPONSIVE 420px -- */
+    @media(max-width:420px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lb-visual {
+        height: 56vw;
+      }
+
+      .hero-count-num {
+        font-size: 52px;
+      }
+    }
+  /* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
+/* page specific */
+@media(max-width:1024px) and (min-width:901px){
+  .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media(max-width:768px){
+  .lb-panel{grid-template-rows:auto auto!important;max-height:calc(100dvh - 24px);}
+  .lb-visual{height:min(96vw,58vh)!important;min-height:240px!important;}
+}
+@media(max-width:640px){
+  .lb-panel{max-height:calc(100dvh - 16px);}
+}
+.lb-label-after{right:72px!important;}
+@media(max-width:1440px) and (min-width:1201px){ .nav-links{gap:24px;} }
+
+/* === VS RESPONSIVE PATCH END === */
+/* === VS OCT UPDATE START === */
+/* ---- NAV START ---- */
+/* ---- Navigation dropdowns (desktop) ---- */
+.nav-links li.has-dd{position:relative;}
+.nav-links .dd-caret{display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s ease;}
+.nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+.nav-links .dd{position:absolute;top:calc(100% + 22px);left:50%;min-width:220px;background:#fff;border:1px solid #E8E2E8;border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.10);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:400;text-align:left;}
+.nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px;}
+.nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-links .dd a{display:block;padding:10px 22px;font-size:11px!important;letter-spacing:1.3px!important;line-height:1.4;color:#555!important;white-space:nowrap;text-transform:uppercase;font-weight:400;}
+.nav-links .dd a::after{display:none!important;}
+.nav-links .dd a:hover,.nav-links .dd a.active{color:#904588!important;background:#FAF5FA;}
+.nav-links .dd-wide{min-width:560px;padding:8px;}
+.nav-links .dd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4px;}
+.nav-links .dd-grid a{padding:10px 16px;border-radius:3px;}
+.nav-links .dd-grid .dd-all{grid-column:1/-1;color:#904588!important;border-bottom:1px solid #E8E2E8;border-radius:0;margin-bottom:6px;font-weight:500;}
+@media(min-width:1201px) and (max-width:1366px){
+  .nav .nav-links{gap:18px!important;}
+  .nav .nav-links > li > a{font-size:11px!important;letter-spacing:1.1px!important;}
+  .nav .nav-cta{padding:10px 18px!important;letter-spacing:1.4px!important;}
+}
+/* ---- Mobile menu sub-lists ---- */
+.mobile-menu .m-group{display:flex;flex-direction:column;align-items:center;width:100%;}
+.mobile-menu .m-row{display:flex;align-items:center;gap:12px;padding-left:42px;}
+.mobile-menu .m-tog{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid rgba(144,69,136,.35);background:none;cursor:pointer;position:relative;color:#904588;}
+.mobile-menu .m-tog::before,.mobile-menu .m-tog::after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .25s ease;}
+.mobile-menu .m-tog::after{transform:translate(-50%,-50%) rotate(90deg);}
+.mobile-menu .m-group.open .m-tog::after{transform:translate(-50%,-50%) rotate(0deg);}
+.mobile-menu .m-subl{display:none;grid-template-columns:1fr 1fr;gap:12px 22px;margin:16px 0 4px;padding:0 24px;max-width:420px;width:100%;text-align:center;}
+.mobile-menu .m-group.open .m-subl{display:grid;}
+.mobile-menu .m-subl a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:1.3px!important;text-transform:uppercase;line-height:1.45;opacity:.72;}
+.mobile-menu .m-subl a:hover{opacity:1;}
+@media(max-width:360px){.mobile-menu .m-subl{grid-template-columns:1fr;}}
+/* ---- NAV END ---- */
+/* === VS OCT UPDATE END === */
+
+    .bl-grid{max-width:1300px;margin:0 auto;padding:0 52px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+    .bl-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--rule);border-radius:4px;overflow:hidden;transition:border-color .3s,transform .35s var(--ease),box-shadow .35s;}
+    .bl-card:hover{border-color:rgba(144,69,136,.35);transform:translateY(-4px);box-shadow:0 18px 44px rgba(144,69,136,.10);}
+    .bl-top{position:relative;aspect-ratio:3/2;background:linear-gradient(145deg,#2a0d26 0%,var(--brand-dark) 45%,var(--brand) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .bl-top svg{width:88px;height:88px;position:relative;z-index:1;}
+    .bl-top img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;transition:transform .8s var(--ease);}
+    .bl-card:hover .bl-top img{transform:scale(1.04);}
+    .bl-topic{position:absolute;left:14px;top:14px;z-index:3;font-size:9px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--brand);background:rgba(255,255,255,.94);padding:5px 11px;border-radius:100px;}
+    .bl-body{display:flex;flex-direction:column;gap:10px;padding:20px 22px 22px;flex:1;}
+    .bl-date{font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold-dark);}
+    .bl-title{font-family:var(--font-d);font-size:23px;font-weight:400;line-height:1.25;color:var(--ink);transition:color .2s;}
+    .bl-card:hover .bl-title{color:var(--brand);}
+    .bl-ex{font-size:13px;font-weight:300;line-height:1.65;color:var(--ink-40);}
+    .bl-more{margin-top:auto;padding-top:6px;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:7px;transition:gap .25s var(--ease);}
+    .bl-card:hover .bl-more{gap:12px;}
+    @media(max-width:1024px){
+      .bl-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 28px;gap:20px;}
+      .ar-hero{padding-left:28px;padding-right:28px;}
+      .ar-feat,.ar-body,.ar-share{padding-left:28px;padding-right:28px;}
+      .ar-rel-in{padding:0 28px;}
+    }
+    @media(max-width:640px){
+      .bl-grid{grid-template-columns:1fr;padding:0 20px;gap:18px;}
+      .bl-title{font-size:22px;}
+      .ar-hero{padding:calc(75px + 32px) 20px 30px;}
+      .ar-feat,.ar-body,.ar-share{padding-left:20px;padding-right:20px;}
+      .ar-body{font-size:15.5px;}
+      .ar-rel-in{padding:0 20px;}
+    }
+
+    /* ===== BLOG INDEX ===== */
+    .filter-bar{top:75px;}
+    .bl-section{padding:56px 0 110px;background:var(--surface);}
+    .bl-card[hidden]{display:none;}
+    .bl-card.feat{grid-column:span 2;flex-direction:row;}
+    .bl-card.feat .bl-top{aspect-ratio:auto;flex:0 0 52%;min-height:320px;}
+    .bl-card.feat .bl-body{padding:32px 34px;justify-content:center;}
+    .bl-card.feat .bl-title{font-size:clamp(28px,2.6vw,36px);}
+    .bl-load{display:flex;justify-content:center;margin-top:44px;}
+    .bl-load button{font-family:var(--font-b);background:none;border:1.5px solid var(--brand);color:var(--brand);padding:14px 32px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:background .2s,color .2s;}
+    .bl-load button:hover{background:var(--brand);color:#fff;}
+    @media(max-width:1024px){.bl-section{padding:44px 0 90px;}}
+    @media(max-width:760px){
+      .bl-card.feat{grid-column:auto;flex-direction:column;}
+      .bl-card.feat .bl-top{aspect-ratio:3/2;min-height:0;flex:none;}
+      .bl-card.feat .bl-body{padding:20px 22px 22px;}
+      .bl-card.feat .bl-title{font-size:22px;}
+    }
+    @media(max-width:640px){.bl-section{padding:32px 0 72px;}}
+    @media(max-width:480px){.filter-bar{top:0;position:relative;}}
+
+</style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="images/VinSmiles.png" alt=""
+        style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
+    </a>
+    <ul class="nav-links">
+      <li class="has-dd">
+        <a href="treatments.html" aria-haspopup="true">Treatments<span class="dd-caret"></span></a>
+        <div class="dd dd-wide">
+          <div class="dd-grid">
+            <a href="treatments.html" class="dd-all">All Treatments</a>
+            <a href="dental-implants.html">Dental Implants</a>
+            <a href="smile-makeover.html">Smile Makeover & Digital Smile Design</a>
+            <a href="invisalign-clear-aligners.html">Invisalign & Clear Aligners</a>
+            <a href="veneers-lumineers.html">Porcelain Veneers & Lumineers</a>
+            <a href="crowns-bridges.html">Crowns & Bridges</a>
+            <a href="root-canal-treatment.html">Root Canal Treatment</a>
+            <a href="braces-orthodontics.html">Braces & Orthodontics</a>
+            <a href="gum-treatment.html">Gum Treatment</a>
+            <a href="wisdom-teeth-oral-surgery.html">Wisdom Teeth & Oral Surgery</a>
+            <a href="kids-dentistry.html">Kids Dentistry</a>
+            <a href="full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-dd">
+        <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
+        <div class="dd">
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
+      </li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="international.html">International</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta"
+      target="_blank" rel="noopener">Book Consultation</a>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="m-group">
+      <div class="m-row"><a href="treatments.html" onclick="toggleMenu()">Treatments</a><button type="button" class="m-tog" aria-label="Show treatments" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl m-subl-tx">
+        <a href="treatments.html" onclick="toggleMenu()">All Treatments</a>
+        <a href="dental-implants.html" onclick="toggleMenu()">Dental Implants</a>
+        <a href="smile-makeover.html" onclick="toggleMenu()">Smile Makeover & Digital Smile Design</a>
+        <a href="invisalign-clear-aligners.html" onclick="toggleMenu()">Invisalign & Clear Aligners</a>
+        <a href="veneers-lumineers.html" onclick="toggleMenu()">Porcelain Veneers & Lumineers</a>
+        <a href="crowns-bridges.html" onclick="toggleMenu()">Crowns & Bridges</a>
+        <a href="root-canal-treatment.html" onclick="toggleMenu()">Root Canal Treatment</a>
+        <a href="braces-orthodontics.html" onclick="toggleMenu()">Braces & Orthodontics</a>
+        <a href="gum-treatment.html" onclick="toggleMenu()">Gum Treatment</a>
+        <a href="wisdom-teeth-oral-surgery.html" onclick="toggleMenu()">Wisdom Teeth & Oral Surgery</a>
+        <a href="kids-dentistry.html" onclick="toggleMenu()">Kids Dentistry</a>
+        <a href="full-mouth-rehabilitation.html" onclick="toggleMenu()">Full Mouth Rehabilitation</a>
+      </div>
+    </div>
+    <div class="m-group">
+      <div class="m-row"><a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a><button type="button" class="m-tog" aria-label="Show gallery pages" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl">
+        <a href="gallery.html" onclick="toggleMenu()">Photo Gallery</a>
+        <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+        <a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+      </div>
+    </div>
+    <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
+    <a href="about.html" onclick="toggleMenu()">Our Story</a>
+    <a href="technology.html" onclick="toggleMenu()">Technology</a>
+    <a href="international.html" onclick="toggleMenu()">International</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta"
+      onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-bar"></div>
+          <span class="hero-eyebrow-txt">The VIN SMILES Journal</span>
+        </div>
+        <h1 class="hero-h1">Dental Health <em>Blog</em></h1>
+        <p class="hero-p">Straight answers to the questions patients ask us every day, from stains and sensitivity to implants and braces. Written by the VIN SMILES team.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <button class="filter-btn active" onclick="filterPosts(this,'all')">
+        All <span class="filter-count">84</span>
+      </button>
+      <button class="filter-btn" onclick="filterPosts(this,'teeth')">
+        Tooth Health <span class="filter-count">14</span>
+      </button>
+      <button class="filter-btn" onclick="filterPosts(this,'whitening')">
+        Whitening and Stains <span class="filter-count">7</span>
+      </button>
+      <button class="filter-btn" onclick="filterPosts(this,'treatments')">
+        Treatments <span class="filter-count">35</span>
+      </button>
+      <button class="filter-btn" onclick="filterPosts(this,'lifestyle')">
+        Lifestyle and Health <span class="filter-count">28</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- POSTS -->
+  <section class="bl-section">
+    <div class="bl-grid" id="blGrid">
+      <a class="bl-card feat" href="blog/why-do-my-teeth-look-yellow-even-after-whitening.html" data-topic="whitening">
+        <div class="bl-top"><span class="bl-topic">Whitening and Stains</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M90 23V37M83 30H97" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M28 29V39M23 34H33" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M92 58V66M88 62H96" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/10/Why-Teeth-Still-Look-Yellow-After-Whitening.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">12 October 2026 &middot; 7 min read</div>
+          <h2 class="bl-title">Why Do My Teeth Look Yellow Even After Whitening?</h2>
+          <p class="bl-ex">Do your teeth look yellow after whitening? We explain why it happens, what&#x27;s normal, and how to keep results longer.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-are-my-teeth-becoming-transparent.html" data-topic="teeth">
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/09/ChatGPT-Image-Sep-28-2026-12_25_41-PM-1024x683.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">28 September 2026 &middot; 7 min read</div>
+          <h2 class="bl-title">Why Are My Teeth Becoming Transparent?</h2>
+          <p class="bl-ex">Seeing see-through edges on your front teeth? We explain what causes transparent teeth and what can and can&#x27;t be reversed.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-do-my-teeth-look-longer-as-i-get-older.html" data-topic="lifestyle">
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/09/15d952b1-b234-4576-8204-e0e768cfd51f-1024x936.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">19 September 2026 &middot; 6 min read</div>
+          <h2 class="bl-title">Why Do My Teeth Look Longer as I Get Older?</h2>
+          <p class="bl-ex">Your teeth aren&#x27;t actually growing. VIN SMILES Advanced Dentistry explains why teeth look longer with age, and how to slow it down.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-does-food-keep-getting-stuck-between-my-teeth.html" data-topic="lifestyle">
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-09-at-12.43.57.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">9 September 2026 &middot; 6 min read</div>
+          <h2 class="bl-title">Why Does Food Keep Getting Stuck Between My Teeth?</h2>
+          <p class="bl-ex">Same spot, every meal? Food stuck between teeth usually points to a specific cause. VIN SMILES Advanced Dentistry breaks it down.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-do-teeth-become-yellow-even-if-you-brush-everyday.html" data-topic="whitening">
+        <div class="bl-top"><span class="bl-topic">Whitening and Stains</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M90 23V37M83 30H97" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M28 29V39M23 34H33" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M92 58V66M88 62H96" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-31-at-11.58.38.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">31 August 2026 &middot; 6 min read</div>
+          <h2 class="bl-title">Why Do Teeth Become Yellow Even If You Brush Everyday?</h2>
+          <p class="bl-ex">Brushing daily but still seeing yellow teeth? VIN SMILES Advanced Dentistry explains the real causes behind stubborn discoloration.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-does-my-tooth-hurt-only-when-i-bite-down.html" data-topic="teeth">
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-21-at-14.25.41.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">22 August 2026 &middot; 7 min read</div>
+          <h2 class="bl-title">Why Does My Tooth Hurt Only When I Bite Down?</h2>
+          <p class="bl-ex">Tooth hurts when biting down? It could be a crack, a high filling, or something more serious. VIN SMILES Advanced Dentistry explains why.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/sleep-apnea-and-your-teeth.html" data-topic="lifestyle">
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-14-at-16.53.06.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">14 August 2026 &middot; 7 min read</div>
+          <h2 class="bl-title">Sleep Apnea and Your Teeth</h2>
+          <p class="bl-ex">Grinding, dry mouth, worn enamel ,  sleep apnea affects your teeth more than you think. VIN SMILES Advanced Dentistry explains the connection.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/oil-pulling-does-it-actually-work.html" data-topic="lifestyle">
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-14-at-16.53.0.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">9 August 2026 &middot; 6 min read</div>
+          <h2 class="bl-title">The Truth About Oil Pulling: Does It Actually Work?</h2>
+          <p class="bl-ex">Curious if oil pulling really whitens teeth or fights bacteria? VIN SMILES Advanced Dentistry breaks down what the science actually says.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/ozempic-face-weight-loss-teeth-oral-health.html" data-topic="lifestyle">
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-14-at-16.53.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">1 August 2026 &middot; 7 min read</div>
+          <h2 class="bl-title">Ozempic Face &amp; Weight Loss: Can Rapid Weight Loss Affect Your Teeth and Oral Health?</h2>
+          <p class="bl-ex">Discover how Ozempic, rapid weight loss, and Ozempic face affect your teeth and oral health. Learn the risk and ways to protect your smile.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-do-teeth-shift-after-braces.html" data-topic="treatments">
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-08-14-at-16.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">25 July 2026 &middot; 6 min read</div>
+          <h2 class="bl-title">Why Do Teeth Shift Even After Braces? Understanding Orthodontic Relapse</h2>
+          <p class="bl-ex">Wondering why your teeth shift after braces? Learn the causes of orthodontic relapse, prevention tips, retainer care and Invisalign.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-are-so-many-young-adults-suddenly-cracking-their-teeth.html" data-topic="teeth">
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-14-at-16.53-1.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">16 July 2026 &middot; 8 min read</div>
+          <h2 class="bl-title">Why Are So Many Young Adults Suddenly Cracking Their Teeth?</h2>
+          <p class="bl-ex">Dentists are seeing more young adults with cracked teeth than ever before. So Many Young Adults Suddenly Cracking Their Teeth ?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/wisdom-tooth-pain-removal.html" data-topic="treatments">
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-20-2026-07_34_39-PM.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">20 June 2026 &middot; 5 min read</div>
+          <h2 class="bl-title">Wisdom Tooth Pain: When Should It Be Removed?</h2>
+          <p class="bl-ex">Learn when wisdom teeth should be removed, signs of impaction, treatment options, and recovery tips from VIN SMILES Advanced Dentistry.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/best-age-for-dental-implants-gk2.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/06/ChatGPT-Image-Jun-3-2026-01_52_17-PM.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">3 June 2026 &middot; 5 min read</div>
+          <h2 class="bl-title">Best Age for Dental Implants in Delhi: Expert Guide by VIN SMILES</h2>
+          <p class="bl-ex">Learn when dental implants are recommended and whether you&#x27;re a suitable candidate at VIN SMILES Advanced Dentistry, GK2.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/advanced-dentistry-options-greater-kailash-gk2.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/05/ChatGPT-Image-May-23-2026-05_37_33-PM.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">23 May 2026 &middot; 5 min read</div>
+          <h2 class="bl-title">Advanced Dentistry Options Available in Greater Kailash</h2>
+          <p class="bl-ex">.Advanced dentistry in GK2 with dental implants, Invisalign, veneers &amp; smile makeovers at VIN SMILES Advanced Dentistry.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/dental-habits-damaging-your-smile.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/05/ChatGPT-Image-May-13-2026-05_06_15-PM.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">13 May 2026 &middot; 4 min read</div>
+          <h2 class="bl-title">5 Dental Habits That Are Secretly Damaging Your Smile</h2>
+          <p class="bl-ex">: Discover 5 common dental habits that may be secretly damaging your teeth and gums. Learn how to protect your smile with expert tips.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/coffee-stains-on-teeth-prevention-teeth-whitening-south-delhi.html" data-topic="whitening" hidden>
+        <div class="bl-top"><span class="bl-topic">Whitening and Stains</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M90 23V37M83 30H97" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M28 29V39M23 34H33" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M92 58V66M88 62H96" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/05/coffee-stains-blog.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">10 May 2026 &middot; 5 min read</div>
+          <h2 class="bl-title">Coffee Lover? Here’s How to Prevent Teeth Stains</h2>
+          <p class="bl-ex">Coffee stains making your teeth yellow? Discover expert tips to prevent teeth staining and explore professional teeth whitening solutions.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/whitening-toothpaste-side-effects.html" data-topic="whitening" hidden>
+        <div class="bl-top"><span class="bl-topic">Whitening and Stains</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M90 23V37M83 30H97" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M28 29V39M23 34H33" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M92 58V66M88 62H96" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/05/ChatGPT-Image-May-3-2026-01_36_56-PM.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">3 May 2026 &middot; 3 min read</div>
+          <h2 class="bl-title">Side Effects of Whitening Toothpaste</h2>
+          <p class="bl-ex">Overusing whitening toothpaste can damage enamel and cause sensitivity. Learn safe usage tips from a dentist in GK2, Delhi.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/how-diabetes-affects-your-teeth-gums.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/04/dd-graphic-oral-health_720.webp" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">22 April 2026 &middot; 5 min read</div>
+          <h2 class="bl-title">How Diabetes Affects Your Teeth &amp; Gums</h2>
+          <p class="bl-ex">Diabetes is often associated with blood sugar control, diet restrictions, lifestyle changes. This guide will help you understand the risks.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/how-smoking-and-chewing-tobacco-affect-your-oral-health.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/04/tobacco-and-oral-health.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">16 April 2026 &middot; 4 min read</div>
+          <h2 class="bl-title">How Smoking and Chewing Tobacco Affect Your Oral Health</h2>
+          <p class="bl-ex">Tobacco use, whether in the form of smoking or chewing, is one of the most harmful habits for your oral health.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/veneers-vs-crowns.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/04/veneers-vs-crowns.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">13 April 2026 &middot; 3 min read</div>
+          <h2 class="bl-title">Veneers vs Crowns</h2>
+          <p class="bl-ex">One of the most common questions patients ask at VIN SMILES Advanced Dentistry is: “Should I choose veneers or crowns?”</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/braces-vs-invisalign.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/04/braces-vs.-invisalign-which-is-right-for-you.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">12 April 2026 &middot; 3 min read</div>
+          <h2 class="bl-title">Braces vs Invisalign</h2>
+          <p class="bl-ex">When it comes to straightening your teeth with either braces or Invisalign, one of the most common questions patients ask is:“Will it hurt?”</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/how-painful-is-getting-braces.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/04/braces.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">8 April 2026 &middot; 3 min read</div>
+          <h2 class="bl-title">How Painful Is Getting Braces?</h2>
+          <p class="bl-ex">If you’re searching for “braces treatment in GK Part 2” or the “best dentist&quot; chances are you’re wondering: How Painful Is Getting Braces?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/what-does-painless-dentistry-really-mean.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/04/Painless-dentistry-at-VIN-SMILES-1024x683.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">3 April 2026 &middot; 4 min read</div>
+          <h2 class="bl-title">What Does “Painless Dentistry” Really Mean?</h2>
+          <p class="bl-ex">For many people, dental visit is associated with fear, anxiety, and anticipated pain. The question what does &quot;painless dentistry&quot; really mean?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/halitosis-bad-breath.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/03/halitosis.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">29 March 2026 &middot; 3 min read</div>
+          <h2 class="bl-title">Halitosis (Bad Breath)</h2>
+          <p class="bl-ex">Bad breath, medically known as halitosis, is a common yet often overlooked oral health concern. While occasional bad breath can happen</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/artificial-intelligence-ai-in-dentistry.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/03/AI.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">19 March 2026 &middot; 4 min read</div>
+          <h2 class="bl-title">Artificial Intelligence (AI) in Dentistry</h2>
+          <p class="bl-ex">Artificial Intelligence (AI) is changing the way healthcare works, and dentistry is no exception. Today, modern dental clinics are using AI</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/10-signs-you-should-visit-a-dentist.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/03/OIP-4.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">14 March 2026 &middot; 4 min read</div>
+          <h2 class="bl-title">10 Signs You Should Visit a Dentist</h2>
+          <p class="bl-ex">Maintaining good oral health is essential for your overall well-being. Many people ignore the early warning signs</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/root-canal-treatment-cost-in-gk2-south-delhi.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/05/root-canal.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">19 February 2026 &middot; 3 min read</div>
+          <h2 class="bl-title">Root Canal Treatment Cost in GK2, South Delhi - Why Does It Vary from ₹3,000 to ₹30,000 in India?</h2>
+          <p class="bl-ex">Root Canal Treatment Cost in GK2 South Delhi . It depends on multiple clinical, technological, and expertise-related factors.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/nri-dental-treatment-in-india-premium-fast-track-care.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/02/AMM7931-scaled.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">14 February 2026 &middot; 3 min read</div>
+          <h2 class="bl-title">NRI Dental Treatment in India - Premium Fast-Track Care</h2>
+          <p class="bl-ex">we offer comprehensive, painless, and digitally advanced dental care designed specifically for international patients.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/invisalign-in-gk2-south-delhi-best-clear-aligners.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/02/invisalign-vin-smiles-gk2.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">12 February 2026 &middot; 4 min read</div>
+          <h2 class="bl-title">Invisalign in GK2, South Delhi - Best Clear Aligners</h2>
+          <p class="bl-ex">f you’ve always wanted straighter teeth but don’t want metal braces, Invisalign offers a modern, discreet, and comfortable solution.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/root-canal-treatment-cost-in-india-a-complete-guide-for-patients.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/05/20231014_135853-scaled.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">8 February 2026 &middot; 5 min read</div>
+          <h2 class="bl-title">Root Canal Treatment Cost in India? A Complete Guide for Patients</h2>
+          <p class="bl-ex">Root Canal Treatment (RCT) is one of the most commonly performed dental procedures in India, yet it is also one of the most misunderstood.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/comprehensive-guide-to-smile-makeover.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2026/01/photo-output-scaled.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">3 January 2026 &middot; 10 min read</div>
+          <h2 class="bl-title">Comprehensive Guide to Smile Makeover</h2>
+          <p class="bl-ex">Smile Makeover enhances the appearance of your smile by one or more cosmetic dentistry procedures like teeth whitening, implants, veneers, etc</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/dental-tourism-india-new-delhi.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/12/dental-tourism-india-new-delhi-vinsmiles.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">27 December 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">Dental Tourism in India: Why International Patients Choose Advanced Dentistry in New Delhi</h2>
+          <p class="bl-ex">Considering dental tourism in India? Discover why international patients choose advanced dental treatment in New Delhi with transparent care and global standards.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/the-secret-behind-celebrity-smiles-that-you-can-have-too.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/12/smile-makeover.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">15 December 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">The Secret Behind Celebrity Smiles (That You Can Have Too)</h2>
+          <p class="bl-ex">Get a celebrity smile with painless cosmetic dentistry in GK2 Delhi. Teeth whitening, veneers &amp; smile design by experts. Book consultation.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/the-shocking-foods-that-make-your-teeth-age-faster.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/12/food.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">6 December 2025 &middot; 5 min read</div>
+          <h2 class="bl-title">The Shocking Foods That Make Your Teeth Age Faster</h2>
+          <p class="bl-ex">The Shocking Foods That Make Your Teeth Age Faster. Just like your skin and bones, your teeth age too.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/can-stress-or-crying-cause-tooth-pain.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/12/stress-and-tooth-pain.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">5 December 2025 &middot; 7 min read</div>
+          <h2 class="bl-title">Can Stress or Crying Cause Tooth Pain?</h2>
+          <p class="bl-ex">emotionally exhausting day, maybe you cried, maybe you were stressed out, and suddenly your teeth began to hurt?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/the-truth-about-enamel-erosion.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/11/can-teeth-heal-on-its-own.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">3 December 2025 &middot; 6 min read</div>
+          <h2 class="bl-title">The Truth About Enamel Erosion</h2>
+          <p class="bl-ex">The Truth About Enamel Erosion - one about the outermost shield of your teeth, the enamel, and why once it’s gone… it’s gone for good.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-teeth-cant-heal-like-bones-and-will-we-ever-find-a-way.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/11/can-teeth-heal-on-its-own.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">22 November 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">Why Teeth Can’t Heal Like Bones - And Will We Ever Find a Way?</h2>
+          <p class="bl-ex">Why Teeth Can’t Heal Like Bones - Will We Ever Find a Way? the best “healing” you can give your teeth is prevention and early intervention</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/how-stress-shows-up-in-your-mouth.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/09/stress.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">24 September 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">How Stress Shows Up in Your Mouth</h2>
+          <p class="bl-ex">Did you know stress can also leave clear signs inside your mouth? Most of us know how stress affects the body, it causes headaches, etc</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/bleeding-gums-causes-care-when-to-worry.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/09/Bleeding-gums.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">18 September 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">Bleeding Gums: Causes, Care &amp; When to Worry</h2>
+          <p class="bl-ex">You brush your teeth in the morning, spit, and suddenly notice blood in the sink. Scary? Yes.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/ever-experienced-jaw-pain-clicking-sounds-while-chewing.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/09/tmj-syptoms.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">11 September 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">Ever experienced jaw pain, clicking sounds while chewing?</h2>
+          <p class="bl-ex">Have you ever experienced jaw pain, clicking sounds while chewing, or difficulty opening your mouth fully? If yes</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/right-time-to-brush-your-teeth-in-the-morning-expert-tips-from-south-delhis-smile-experts.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-30-at-19.06.21_74c382ac.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">30 August 2025 &middot; 2 min read</div>
+          <h2 class="bl-title">Right time to brush your teeth in the morning - Expert tips from South Delhi’s Smile Experts</h2>
+          <p class="bl-ex">&quot;Right time to brush your teeth in the morning&quot; - Expert tips from South Delhi&#x27;s Smile Experts. Let’s clear the confusion!!!!!</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/get-the-perfect-smile-with-dental-veneers-vin-smiles-gk2.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/07/9G9A5404-scaled.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">24 July 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Get the Perfect Smile with Dental Veneers - VIN SMILES GK2</h2>
+          <p class="bl-ex">Get the perfect smile with natural-looking dental veneers at VIN SMILES, GK2 - South Delhi’s trusted cosmetic luxury dental clinic.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/oral-sedation-a-stress-free-dental-solution.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/07/images.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">11 July 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Oral Sedation for Dental Anxiety: A Stress-Free Dental Solution</h2>
+          <p class="bl-ex">Oral sedation eases dental anxiety and make your visit calm, safe, and pain-free. Ideal for nervous patients seeking stress-free dental care</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/full-mouth-reconstruction-gk2-vin-smiles.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/06/full-mouth-rehabilitation-in-pune-500x500-1.webp" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">28 June 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Full Mouth Rehabilitation Made Easy - VIN SMILES GK2</h2>
+          <p class="bl-ex">Pain-free , Full Mouth Rehabilitation at VIN SMILES GK2, restore your smile with lasting results for missing teeth, decay, and bite issues.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/painless-wisdom-tooth-extraction-fact-not-fiction.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/06/wisdom-removal.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">18 June 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Painless Wisdom Tooth Extraction - Fact, Not Fiction</h2>
+          <p class="bl-ex">Painless wisdom tooth extractions are real! Experience fast, comfortable procedures at VIN SMILES GK2 with expert care and latest tech.&quot;</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/dental-implants-safe-for-diabetics.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/06/di-for-d.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">2 June 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">Dental Implants and Diabetics: What Every Patient Should Know</h2>
+          <p class="bl-ex">Dental Implants and Diabetes: What Every Patient Should Know . A quick guide answering Are dental implants safe for diabetics?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/modern-smile-solution-invisalign.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/05/Invisalign_case_orange_bkgd-768x768-1.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">24 May 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">The Modern Smile Solution: Invisalign for Fast and Clean Results</h2>
+          <p class="bl-ex">Achieve a fast, clean, and modern smile with Invisalign clear aligners. Discreet, effective, and comfortable, perfect for today&#x27;s lifestyle.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/laser-dentistry-the-cutting-edge-of-comfortable-dental-care.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/05/IMG_6989.jpeg-scaled.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">19 May 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">Laser Dentistry: The Cutting-Edge of Comfortable Dental Care</h2>
+          <p class="bl-ex">Laser dentistry is a safe, effective, and comfortable technique at the forefront of cutting-edge dental care.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/redefining-root-canal-treatments-in-delhi-gentle-precise-and-painless.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/05/20231014_135853-scaled.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">9 May 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Redefining Root Canal Treatments in Delhi - Gentle, Precise and Painless</h2>
+          <p class="bl-ex">We at VIN SMILES , Greater Kailash Part 2, Delhi are Redefining Root Canal Treatments in Delhi making them Gentle, Precise and Painless!</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/purple-toothpaste-as-whitening-agent.html" data-topic="whitening" hidden>
+        <div class="bl-top"><span class="bl-topic">Whitening and Stains</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M90 23V37M83 30H97" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M28 29V39M23 34H33" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M92 58V66M88 62H96" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/04/Purexa_V34_Color_Corrector.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">24 April 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Purple Power or Just Pretty Paste</h2>
+          <p class="bl-ex">Purple toothpaste promises s a cutting-edge innovation in tooth whitening, offering a contemporary and effective way to enhance your smile.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/laser-teeth-whitening.html" data-topic="whitening" hidden>
+        <div class="bl-top"><span class="bl-topic">Whitening and Stains</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M90 23V37M83 30H97" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M28 29V39M23 34H33" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M92 58V66M88 62H96" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/04/whitening.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">18 April 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">The Magic of Laser Teeth Whitening Explained!</h2>
+          <p class="bl-ex">Teeth whitening is a cosmetic procedure designed to enhance the appearance of your smile by reducing discoloration and removing stains</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-replacing-old-fillings-can-improve-your-well-being.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/04/mercury-toxicity-dental-mercury-fillings.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">12 April 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Why Replacing Old Fillings Can Improve Your Well-Being</h2>
+          <p class="bl-ex">Amalgam fillings, also known as silver fillings, used for over a century to restore cavities. While they are long lasting, they can be toxic</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/smart-toothbrushes-are-they-worth-the-investment.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/04/a.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">7 April 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Smart Toothbrushes: Are They Worth the Investment?</h2>
+          <p class="bl-ex">Smart toothbrushes promise to revolutionize oral hygiene by offering real-time feedback, tracking brushing habits and connected to smartphones</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/challenges-sunita-williams-faced-with-her-dental-health-in-outer-space.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/03/space.webp" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">28 March 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Dental Challenges faced by Sunita Williams in Outer Space</h2>
+          <p class="bl-ex">Dental Challenges faced by Sunita Williams in Outer Space.The effects of spaceflight on the human body are complex and largely harmful</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/apf-gel-prevent-cavities.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/03/nirvaan.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">12 March 2025 &middot; 2 min read</div>
+          <h2 class="bl-title">How APF Gel Can Help Prevent Cavities</h2>
+          <p class="bl-ex">How APF Gel Can Help Prevent Cavities is a question many people ask when looking for effective ways to protect their teeth from decay.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/digital-impressions-in-dentistry.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/02/IMG_6416.jpeg-scaled.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">5 March 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Digital Impressions in Dentistry</h2>
+          <p class="bl-ex">Digital impressions in Dentistry represent cutting-edge technology, allowing dentist to create a virtual, computer-generated replica of mouth</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/digital-dental-implant-dentistry.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/02/Digitally-Guided-Implant-Surgery.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">23 February 2025 &middot; 3 min read</div>
+          <h2 class="bl-title">Digital Dental Implant Dentistry</h2>
+          <p class="bl-ex">Discover how modern implant dentistry is being revolutionized through digital workflows. The main objective is long term functional prognosis</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/tooth-fracture-a-crack-you-dont-want-to-deal-with.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/02/360_F_127864898_7s6IkSuuFBFYohu41dYzz2nVHTtxZkPX.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">14 February 2025 &middot; 4 min read</div>
+          <h2 class="bl-title">Tooth Fracture: A Crack You Don’t Want to Deal With!</h2>
+          <p class="bl-ex">Imagine biting on your favorite snack, and suddenly- crack! That’s a Tooth Fracture, a crack you don&#x27;t want to deal with!</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/brush-in-the-morning-after-breakfast.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2025/01/teeth-brushing-tips-1.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">30 January 2025 &middot; 2 min read</div>
+          <h2 class="bl-title">Brush In the Morning After Breakfast</h2>
+          <p class="bl-ex">Its healthy to brush your teeth in the morning after breakfast. Common oral problems with which the patients come to us include bleeding gums</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/the-benefits-of-oral-probiotics-for-promoting-oral-health.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/08/benefits-of-probiotics.webp" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">26 August 2024 &middot; 3 min read</div>
+          <h2 class="bl-title">The Benefits of Oral Probiotics for Promoting Oral Health</h2>
+          <p class="bl-ex">Oral probiotics are supplements or foods that contain beneficial bacteria aimed at improving oral health. They are friendly super-heroes.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/how-do-i-know-if-i-have-a-cavity-how-to-spot-tooth-decay-and-protect-your-oral-health.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/08/decay.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">21 August 2024 &middot; 8 min read</div>
+          <h2 class="bl-title">How Do I Know if I Have a Cavity? How to Spot Tooth Decay and Protect Your Oral Health</h2>
+          <p class="bl-ex">Cavities are a very common dental issue that can affect people of any age. Also referred to as tooth decay or dental caries</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/myths-about-oral-care-as-you-get-older.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/06/1.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">5 August 2024 &middot; 10 min read</div>
+          <h2 class="bl-title">Myths About Oral Care as You Get Older</h2>
+          <p class="bl-ex">Often we overlook need for care and treatment for our teeth. This becomes even more common when we are aging. Myths related to aging debunked</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/gum-dipigmentation.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/06/depigmentation.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">1 June 2024 &middot; 9 min read</div>
+          <h2 class="bl-title">Gum Dipigmentation</h2>
+          <p class="bl-ex">We will discuss the causes of dark gums, depigmentation treatments, and prevention measures that can help you maintain healthy, pink gums.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/pregnancy-induced-gingivitis.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/05/PG.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">9 May 2024 &middot; 6 min read</div>
+          <h2 class="bl-title">Pregnancy Induced Gingivitis</h2>
+          <p class="bl-ex">Pregnancy can bring extended periods of blissful serenity. Pregnancy can also present minor inconveniences which includes Pregnancy Gingivitis</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/bruxism.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/04/bruxism-2.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">26 April 2024 &middot; 6 min read</div>
+          <h2 class="bl-title">Bruxism</h2>
+          <p class="bl-ex">is condition when you grind your teeth and clench your jaw, either while awake or asleep, commonly associated with stress, anxiety, and anger</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/the-diabetes-oral-health-connection.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/04/diabetes-and-oral-health-1.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">12 April 2024 &middot; 6 min read</div>
+          <h2 class="bl-title">The Diabetes - Oral Health Connection</h2>
+          <p class="bl-ex">Many people do not realize the correlation between Diabetes &amp; its effects on Oral Health. It is a disease that can affect the entire body.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/align-your-teeth-dental-braces-or-clear-aligners.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/03/dental-braces-1-768x430-1.webp" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">28 March 2024 &middot; 6 min read</div>
+          <h2 class="bl-title">Align your crooked teeth: Dental Braces Vs Clear Aligners</h2>
+          <p class="bl-ex">ALIGN YOUR TEETH: BRACES OR CLEAR ALIGNERS Both methods have their pros and cons. Orthodontics is a branch of dentistry that specializes in</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/dental-anxiety.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/03/dental-anxiety-1024x1024-1.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">20 March 2024 &middot; 10 min read</div>
+          <h2 class="bl-title">Dental Anxiety</h2>
+          <p class="bl-ex">Dental Anxiety/ Dental fear/ phobia is more common than you might think : up to 90% of patients we see show some degree of dental anxiety.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/are-you-using-the-right-tooth-brush.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/03/JC-Dentist-Choosing-the-Right-Toothbrush.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">14 March 2024 &middot; 8 min read</div>
+          <h2 class="bl-title">Are you using the Right Tooth Brush?</h2>
+          <p class="bl-ex">Brush your teeth twice a day” - This is one statement that we have been hearing since we were kids. Are you using the Right Tooth Brush?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/impacted-tooth.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/02/Impacted-Wisdom-Teeth.webp" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">2 February 2024 &middot; 7 min read</div>
+          <h2 class="bl-title">Impacted Tooth</h2>
+          <p class="bl-ex">A tooth is said to be impacted when it remains stuck in gum tissue or bone and is not in occlusion (contact) with opposite tooth/teeth.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/fluoride-facts-myths.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2024/01/fluoride.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">17 January 2024 &middot; 9 min read</div>
+          <h2 class="bl-title">Fluoride: Facts &amp; Myths</h2>
+          <p class="bl-ex">Fluoride is the most effective agent available to help prevent tooth decay &amp; fluoride can make your teeth cleanings much more comfortable!</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/oral-ulcers.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/12/mouth-ulcer.jpg.web_.750.750.webp" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">30 December 2023 &middot; 7 min read</div>
+          <h2 class="bl-title">Oral Ulcers</h2>
+          <p class="bl-ex">Mouth ulcers are painful areas in the mouth and gum. The exact symptoms of the mouth ulcer will depend on what type of ulcer a person has.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/teeth-whitening.html" data-topic="whitening" hidden>
+        <div class="bl-top"><span class="bl-topic">Whitening and Stains</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M90 23V37M83 30H97" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M28 29V39M23 34H33" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M92 58V66M88 62H96" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/12/Screenshot_2023-10-13_163600-removebg-preview.png" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">3 December 2023 &middot; 12 min read</div>
+          <h2 class="bl-title">Teeth Whitening</h2>
+          <p class="bl-ex">Everybody loves a bright white smile and there are a variety of products, and procedures available to help you improve the look of your smile.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/child-dentistry.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/11/kabir-child-dentistry.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">23 November 2023 &middot; 10 min read</div>
+          <h2 class="bl-title">Child Dentistry</h2>
+          <p class="bl-ex">IDA recommends that the ideal time for the child to see a dentist is at approximately one year of age to examine the development the mouth.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/lasers-in-dentistry.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/10/laser.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">30 October 2023 &middot; 9 min read</div>
+          <h2 class="bl-title">Use of Lasers in Dentistry</h2>
+          <p class="bl-ex">Lasers in dentistry are used for dental surgery, gums (periodontal cases), some to cure restorative materials, enhancing tooth bleaching,etc.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/alarming-signs-for-oral-health-and-ways-to-prevent-or-treat-them.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/10/blog-alarmimg-signs.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">20 October 2023 &middot; 5 min read</div>
+          <h2 class="bl-title">Alarming Signs for Oral Health and ways to Prevent or Treat them</h2>
+          <p class="bl-ex">Certainly, there are some ALARMING SIGNS to watch out for in your oral health , what they could mean, and ways to prevent or treat them.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/do-i-have-to-replace-my-extracted-tooth.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/10/man-missing-tooth-1024x683-1.jpeg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">6 October 2023 &middot; 6 min read</div>
+          <h2 class="bl-title">Do I Have To Replace My Extracted Tooth</h2>
+          <p class="bl-ex">If you choose not to replace an extracted tooth, several potential consequences and oral health issues may arise.....</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/womens-oral-health.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/09/womens-dental-health-2023_620.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">24 September 2023 &middot; 8 min read</div>
+          <h2 class="bl-title">Women’s Oral Health</h2>
+          <p class="bl-ex">Changing hormone levels during menstrual cycle, pregnancy, and menopause can raise problems in your mouth, teeth, gums. | Women&#x27;s Oral Health</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/healthy-gums-healthy-mouth.html" data-topic="teeth" hidden>
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/09/healthy-gums.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">16 September 2023 &middot; 8 min read</div>
+          <h2 class="bl-title">Healthy Gums = Healthy Mouth</h2>
+          <p class="bl-ex">Improving gum health for healthy mouth involves combination of preventive steps, professional treatments, and lifestyle changes.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/transforming-smiles-the-marvels-of-cosmetic-dentistry.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/09/dental-cosmetics-img-800x521-1.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">9 September 2023 &middot; 12 min read</div>
+          <h2 class="bl-title">Transforming Smiles: The Marvels of Cosmetic Dentistry</h2>
+          <p class="bl-ex">It can have a profound impact on your self-esteem, oral health, and overall quality of life. | Cosmetic Dentistry</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/dental-tourism.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/08/Dental-Tourism-1.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">30 August 2023 &middot; 8 min read</div>
+          <h2 class="bl-title">Dental Tourism</h2>
+          <p class="bl-ex">Dental tourism involves traveling to different countries to seek dental treatments while simultaneously enjoying a vacation. |Dental Tourism</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/can-i-wear-braces-as-an-adult.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/08/sim-68314-section-square-hero_services-overview_invisalign-1024x1024-1.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">24 August 2023 &middot; 8 min read</div>
+          <h2 class="bl-title">Can I Wear Braces as an Adult?</h2>
+          <p class="bl-ex">Adults are choosing orthodontic treatment to achieve the straight, confident smile they&#x27;ve always desired.| Can I Wear Braces as an Adult?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/importance-of-oral-health-and-its-link-to-general-health.html" data-topic="lifestyle" hidden>
+        <div class="bl-top"><span class="bl-topic">Lifestyle and Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect class="d" x="50" y="18" width="20" height="30" rx="6" stroke="rgba(255,255,255,.92)" stroke-width="3"/><path class="d" d="M60 48V100" stroke="rgba(255,255,255,.92)" stroke-width="5"/><path class="a" d="M38 23H46M38 31H46M38 39H46" stroke="#C9A96E" stroke-width="3"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/08/biomedicines-10-02659-g001-550.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">16 August 2023 &middot; 7 min read</div>
+          <h2 class="bl-title">Importance of Oral Health and Its Link to General Health.</h2>
+          <p class="bl-ex">Our oral hygiene, often considered in isolation, is intricately linked to general health. | Oral hygiene and General Health</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/can-i-keep-my-wisdom-tooth.html" data-topic="treatments" hidden>
+        <div class="bl-top"><span class="bl-topic">Treatments</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M30 56C40 80 80 80 90 56" stroke="rgba(255,255,255,.92)" stroke-width="3.5"/><path class="d" d="M38 62C48 72 72 72 82 62" stroke="rgba(255,255,255,.92)" stroke-width="2" opacity=".55"/><path class="a" d="M88 27V41M81 34H95" stroke="#C9A96E" stroke-width="2.5"/><path class="a" d="M30 32V40M26 36H34" stroke="#C9A96E" stroke-width="2.5"/></svg><img src="https://vinsmiles.com/wp-content/uploads/2023/07/Impacted-Wisdom-Teeth.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">31 July 2023 &middot; 9 min read</div>
+          <h2 class="bl-title">Can I Keep My Wisdom Tooth?</h2>
+          <p class="bl-ex">It depends on various factors, including the condition of the tooth and the recommendation of your dentist.| CAN I KEEP MY WISDOM TOOTH?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+    </div>
+    <div class="bl-load" id="blLoad"><button type="button" onclick="loadMore()">Load more articles</button></div>
+  </section>
+
+  <div class="about-cta">
+    <div class="about-cta-inner">
+      <div class="cta-eyebrow">Have a Question of Your Own?</div>
+      <h2 class="cta-h2">Ask a <em>Specialist</em></h2>
+      <p class="cta-p">Send us a WhatsApp message or book a consultation. We will give you a clear, honest answer.</p>
+      <div class="cta-btns">
+        <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">Book a consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+        <a href="https://wa.me/919654988858" class="btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <img src="images/VinSmiles.png" alt=""
+          style="height: 120px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+        <div class="f-addr">Greater Kailash II, New Delhi - 110048<br>Near M-Block Market, GK-2</div>
+        <div class="f-contacts">
+          <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path
+                d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z"
+                stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>+91 96549 88858</a>
+          <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" />
+              <path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" />
+            </svg>vinsmiles88@gmail.com</a>
+        </div>
+        <div class="f-map">
+          <div class="f-map-title">Directions to the clinic</div>
+          <iframe class="f-map-frame"
+            src="https://www.google.com/maps?q=VinSmiles%20Advanced%20Dentistry%20Greater%20Kailash%20II%20New%20Delhi&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="VIN SMILES location map">
+          </iframe>
+          <a class="f-map-link" href="https://maps.app.goo.gl/5jTNMbCDFUvxKMbP9" target="_blank" rel="noopener">
+            Open in Google Maps
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6h8M6.5 2l3.5 4-3.5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="f-col-title">Treatments</div>
+        <ul class="f-links">
+          <li><a href="dental-implants.html">Dental Implants</a></li>
+          <li><a href="smile-makeover.html">Smile Design</a></li>
+          <li><a href="invisalign-clear-aligners.html">Invisalign</a></li>
+          <li><a href="veneers-lumineers.html">Veneers</a></li>
+          <li><a href="full-mouth-rehabilitation.html">Full Mouth Rehab</a></li>
+
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-title">Clinic</div>
+        <ul class="f-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-title">International</div>
+        <ul class="f-links">
+          <li><a href="international.html">Patient Guide</a></li>
+          <li><a href="international.html#cost">Cost Comparison</a></li>
+          <li><a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0">Video
+              Consultation</a></li>
+        </ul>
+        <div class="f-hours">
+          <div class="f-hours-label">Hours</div>
+          <div class="f-hours-val">Mon - Sat: 10am - 7pm<br>Sunday: By appointment</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="f-copy">&copy; 2026 VIN SMILES Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
+      <div class="f-badges">
+        <span class="f-badge">Invisalign Provider</span>
+        <span class="f-badge">IDA Member</span>
+        <span class="f-badge">5.0 &#9733; JustDial</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919654988858" class="wa-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="white">
+      <path
+        d="M14 2.5C7.6 2.5 2.5 7.6 2.5 14c0 2.1.57 4.1 1.57 5.83L2.5 25.5l5.84-1.55A11.43 11.43 0 0014 25.5c6.4 0 11.5-5.1 11.5-11.5S20.4 2.5 14 2.5zm5.65 15.9c-.23.65-1.34 1.24-1.85 1.31-.46.07-1.05.1-1.69-.1-.39-.13-.9-.3-1.54-.56C11.7 18.03 9.7 15.8 9.5 15.53c-.2-.26-1.5-2-.5-3.79.21-.37.56-.71 1.02-.98.19-.11.38-.17.53-.17h.7c.23 0 .54-.08.84.64.3.77 1.04 2.6 1.13 2.79.09.19.15.4.04.64-.11.24-.17.38-.36.58-.19.2-.39.46-.56.62-.18.17-.37.37-.15.73.21.36.96 1.5 2.06 2.43 1.41 1.23 2.59 1.61 2.96 1.8.37.18.58.15.8-.09.21-.24.92-1.07 1.17-1.44.24-.37.49-.3.83-.18l2.63 1.24c.3.14.5.2.57.32.08.12.08.72-.15 1.37z" />
+    </svg>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobileMenu');
+      m.classList.toggle('open');
+      document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+    }
+    function toggleSub(b){var g=b.closest('.m-group');var o=g.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}
+    const ro = new IntersectionObserver(entries =>
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } }),
+      { threshold: 0.06 });
+    document.querySelectorAll('.reveal,.sv-rv').forEach(el => ro.observe(el));
+
+    let topic = 'all', shown = 12;
+    function render() {
+      const cards = [...document.querySelectorAll('.bl-card')];
+      const match = cards.filter(c => topic === 'all' || c.dataset.topic === topic);
+      cards.forEach(c => { c.hidden = true; c.classList.remove('feat'); });
+      match.forEach((c, i) => { c.hidden = i >= shown; });
+      if (match[0]) match[0].classList.add('feat');
+      document.getElementById('blLoad').style.display = match.length > shown ? '' : 'none';
+    }
+    function filterPosts(btn, t) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+      topic = t; shown = 12; render();
+    }
+    function loadMore() { shown += 12; render(); }
+    render();
+
+  </script>
+</body>
+
+</html>

@@ -1730,24 +1730,59 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
 .tx-mobile-item.open .tx-mobile-body{max-height:2400px;}
 
 /* === VS RESPONSIVE PATCH END === */
-
-    /* Nav dropdown under Smile Gallery */
-    .nav-links li.has-dd{position:relative;}
-    .nav-links .dd-caret{display:inline-block;width:7px;height:7px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s var(--ease);}
-    .nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
-    .nav-links .dd{position:absolute;top:calc(100% + 18px);left:-20px;min-width:200px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.08);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;z-index:400;}
-    .nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-20px;height:20px;}
-    .nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:none;}
-    .nav-links li.has-dd:hover > a{color:var(--brand)!important;}
-    .nav-links li.has-dd:hover > a::after{right:0;}
-    .nav-links .dd a{display:block;padding:11px 20px;font-size:11px;white-space:nowrap;color:var(--ink-80)!important;}
-    .nav-links .dd a::after{display:none;}
-    .nav-links .dd a:hover{background:var(--brand-xlt);color:var(--brand)!important;}
-    .nav-links .dd a.active{color:var(--brand)!important;font-weight:600;}
-    @media(max-width:1200px){.nav-links .dd{display:none;}}
-    .mobile-menu .m-sub{display:flex;gap:22px;margin-top:-12px;}
-    .mobile-menu .m-sub a{font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);}
-    .mobile-menu .m-sub a.active,.mobile-menu .m-sub a:hover{color:var(--brand);}
+/* === VS OCT UPDATE START === */
+/* ---- NAV START ---- */
+/* ---- Navigation dropdowns (desktop) ---- */
+.nav-links li.has-dd{position:relative;}
+.nav-links .dd-caret{display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s ease;}
+.nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+.nav-links .dd{position:absolute;top:calc(100% + 22px);left:50%;min-width:220px;background:#fff;border:1px solid #E8E2E8;border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.10);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:400;text-align:left;}
+.nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px;}
+.nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-links .dd a{display:block;padding:10px 22px;font-size:11px!important;letter-spacing:1.3px!important;line-height:1.4;color:#555!important;white-space:nowrap;text-transform:uppercase;font-weight:400;}
+.nav-links .dd a::after{display:none!important;}
+.nav-links .dd a:hover,.nav-links .dd a.active{color:#904588!important;background:#FAF5FA;}
+.nav-links .dd-wide{min-width:560px;padding:8px;}
+.nav-links .dd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4px;}
+.nav-links .dd-grid a{padding:10px 16px;border-radius:3px;}
+.nav-links .dd-grid .dd-all{grid-column:1/-1;color:#904588!important;border-bottom:1px solid #E8E2E8;border-radius:0;margin-bottom:6px;font-weight:500;}
+@media(min-width:1201px) and (max-width:1366px){
+  .nav .nav-links{gap:18px!important;}
+  .nav .nav-links > li > a{font-size:11px!important;letter-spacing:1.1px!important;}
+  .nav .nav-cta{padding:10px 18px!important;letter-spacing:1.4px!important;}
+}
+/* ---- Mobile menu sub-lists ---- */
+.mobile-menu .m-group{display:flex;flex-direction:column;align-items:center;width:100%;}
+.mobile-menu .m-row{display:flex;align-items:center;gap:12px;padding-left:42px;}
+.mobile-menu .m-tog{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid rgba(144,69,136,.35);background:none;cursor:pointer;position:relative;color:#904588;}
+.mobile-menu .m-tog::before,.mobile-menu .m-tog::after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .25s ease;}
+.mobile-menu .m-tog::after{transform:translate(-50%,-50%) rotate(90deg);}
+.mobile-menu .m-group.open .m-tog::after{transform:translate(-50%,-50%) rotate(0deg);}
+.mobile-menu .m-subl{display:none;grid-template-columns:1fr 1fr;gap:12px 22px;margin:16px 0 4px;padding:0 24px;max-width:420px;width:100%;text-align:center;}
+.mobile-menu .m-group.open .m-subl{display:grid;}
+.mobile-menu .m-subl a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:1.3px!important;text-transform:uppercase;line-height:1.45;opacity:.72;}
+.mobile-menu .m-subl a:hover{opacity:1;}
+@media(max-width:360px){.mobile-menu .m-subl{grid-template-columns:1fr;}}
+/* ---- NAV END ---- */
+/* Simple treatment icons with gentle motion */
+.tp-icon{animation:tiFloat 5s ease-in-out infinite;}
+.tp-icon .ti,.tx-mobile-visual .ti{width:150px;height:150px;transition:transform .5s var(--ease);}
+.tx-panel:hover .tp-icon .ti,.tx-mobile-visual:hover .ti{transform:scale(1.08);}
+.ti .d{stroke-dasharray:420;stroke-dashoffset:0;}
+.tx-panel.active .ti .d,.tx-mobile-item.open .ti .d{animation:tiDraw 1.4s var(--ease) both;}
+.ti .a{animation:tiGlow 2.8s ease-in-out infinite;}
+.tx-panel:hover .ti .a{animation-duration:1.2s;}
+@keyframes tiDraw{from{stroke-dashoffset:420;}to{stroke-dashoffset:0;}}
+@keyframes tiGlow{0%,100%{opacity:1;}50%{opacity:.4;}}
+@keyframes tiFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.tx-mobile-visual > div{opacity:1!important;}
+@media(max-width:640px){.tx-mobile-visual .ti{width:120px;height:120px;}}
+@media(prefers-reduced-motion:reduce){.tp-icon,.ti .a,.ti .d{animation:none!important;}}
+.tx-mobile-more{display:inline-flex;align-items:center;justify-content:center;margin:10px 0 0 8px;padding:11px 22px;font-size:11px;font-weight:500;letter-spacing:1.6px;text-transform:uppercase;color:var(--brand);border:1.5px solid var(--brand);border-radius:2px;vertical-align:top;transition:background .2s,color .2s;}
+.tx-mobile-more:hover{background:var(--brand);color:#fff;}
+.tx-mobile-body-inner > a.btn-brand{margin-top:10px;vertical-align:top;}
+@media(max-width:400px){.tx-mobile-more{margin-left:0;}}
+/* === VS OCT UPDATE END === */
 </style>
 </head>
 
@@ -1760,18 +1795,38 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
         style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
     </a>
     <ul class="nav-links">
-      <li><a href="treatments.html" class="active">Treatments</a></li>
+      <li class="has-dd">
+        <a href="treatments.html" class="active" aria-haspopup="true">Treatments<span class="dd-caret"></span></a>
+        <div class="dd dd-wide">
+          <div class="dd-grid">
+            <a href="treatments.html" class="dd-all active">All Treatments</a>
+            <a href="dental-implants.html">Dental Implants</a>
+            <a href="smile-makeover.html">Smile Makeover & Digital Smile Design</a>
+            <a href="invisalign-clear-aligners.html">Invisalign & Clear Aligners</a>
+            <a href="veneers-lumineers.html">Porcelain Veneers & Lumineers</a>
+            <a href="crowns-bridges.html">Crowns & Bridges</a>
+            <a href="root-canal-treatment.html">Root Canal Treatment</a>
+            <a href="braces-orthodontics.html">Braces & Orthodontics</a>
+            <a href="gum-treatment.html">Gum Treatment</a>
+            <a href="wisdom-teeth-oral-surgery.html">Wisdom Teeth & Oral Surgery</a>
+            <a href="kids-dentistry.html">Kids Dentistry</a>
+            <a href="full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a>
+          </div>
+        </div>
+      </li>
       <li class="has-dd">
         <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
-        <ul class="dd">
-          <li><a href="gallery.html">Case Studies</a></li>
-          <li><a href="video-gallery.html">Video Gallery</a></li>
-        </ul>
+        <div class="dd">
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
       </li>
       <li><a href="our-team.html">Our Team</a></li>
       <li><a href="about.html">Our Story</a></li>
       <li><a href="technology.html">Technology</a></li>
       <li><a href="international.html">International</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
     <a href="https://wa.me/919654988858?text=Hi%20VinSmiles%2C%20I%27d%20like%20to%20know%20more%20about%20treatments"
       class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
@@ -1780,18 +1835,38 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
-    <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
-    <div class="m-sub">
-      <a href="gallery.html" onclick="toggleMenu()">Case Studies</a>
-      <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+    <div class="m-group">
+      <div class="m-row"><a href="treatments.html" onclick="toggleMenu()">Treatments</a><button type="button" class="m-tog" aria-label="Show treatments" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl m-subl-tx">
+        <a href="treatments.html" onclick="toggleMenu()">All Treatments</a>
+        <a href="dental-implants.html" onclick="toggleMenu()">Dental Implants</a>
+        <a href="smile-makeover.html" onclick="toggleMenu()">Smile Makeover & Digital Smile Design</a>
+        <a href="invisalign-clear-aligners.html" onclick="toggleMenu()">Invisalign & Clear Aligners</a>
+        <a href="veneers-lumineers.html" onclick="toggleMenu()">Porcelain Veneers & Lumineers</a>
+        <a href="crowns-bridges.html" onclick="toggleMenu()">Crowns & Bridges</a>
+        <a href="root-canal-treatment.html" onclick="toggleMenu()">Root Canal Treatment</a>
+        <a href="braces-orthodontics.html" onclick="toggleMenu()">Braces & Orthodontics</a>
+        <a href="gum-treatment.html" onclick="toggleMenu()">Gum Treatment</a>
+        <a href="wisdom-teeth-oral-surgery.html" onclick="toggleMenu()">Wisdom Teeth & Oral Surgery</a>
+        <a href="kids-dentistry.html" onclick="toggleMenu()">Kids Dentistry</a>
+        <a href="full-mouth-rehabilitation.html" onclick="toggleMenu()">Full Mouth Rehabilitation</a>
+      </div>
+    </div>
+    <div class="m-group">
+      <div class="m-row"><a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a><button type="button" class="m-tog" aria-label="Show gallery pages" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl">
+        <a href="gallery.html" onclick="toggleMenu()">Photo Gallery</a>
+        <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+        <a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+      </div>
     </div>
     <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
     <a href="about.html" onclick="toggleMenu()">Our Story</a>
     <a href="technology.html" onclick="toggleMenu()">Technology</a>
     <a href="international.html" onclick="toggleMenu()">International</a>
-    <a href="https://wa.me/919654988858?text=Hi%20VinSmiles%2C%20I%27d%20like%20to%20know%20more%20about%20treatments"
-      class="m-cta" onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta"
+      onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
   </div>
 
   <!-- -- HERO -- white editorial split -- -->
@@ -1806,7 +1881,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
       </nav>
       <div class="tx-hero-tag">
         <span class="tx-hero-tag-dot"></span>
-        15+ Treatments &middot; 7 Specialists &middot; GK-II
+        Every Discipline &middot; 7 Specialists &middot; GK-II
       </div>
       <h1 class="tx-hero-h1">
         Every Treatment.
@@ -1955,10 +2030,6 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
           <line x1="88" y1="156" x2="155" y2="180" stroke="rgba(144,69,136,.15)" stroke-width="1"
             stroke-dasharray="2 4" />
           <!-- Central text -->
-          <text x="220" y="208" text-anchor="middle" font-family="'Cormorant Garamond'" font-size="13" font-weight="300"
-            fill="rgba(144,69,136,.5)">15+</text>
-          <text x="220" y="224" text-anchor="middle" font-family="'DM Sans'" font-size="8" letter-spacing="2"
-            fill="rgba(144,69,136,.35)" text-transform="uppercase">TREATMENTS</text>
         </svg>
         <!-- Floating treatment labels -->
         <div class="tx-anat-label tal-1" onclick="activateItem(0)">
@@ -2095,11 +2166,12 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
       <div>
         <div class="f-col-title">Treatments</div>
         <ul class="f-links">
-          <li><a href="treatments.html">Dental Implants</a></li>
-          <li><a href="treatments.html">Smile Design</a></li>
-          <li><a href="treatments.html">Invisalign</a></li>
-          <li><a href="treatments.html">Veneers</a></li>
-          <li><a href="treatments.html">Full Mouth Rehab</a></li>
+          <li><a href="dental-implants.html">Dental Implants</a></li>
+          <li><a href="smile-makeover.html">Smile Design</a></li>
+          <li><a href="invisalign-clear-aligners.html">Invisalign</a></li>
+          <li><a href="veneers-lumineers.html">Veneers</a></li>
+          <li><a href="full-mouth-rehabilitation.html">Full Mouth Rehab</a></li>
+
         </ul>
       </div>
       <div>
@@ -2108,8 +2180,9 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
           <li><a href="about.html">Our Story</a></li>
           <li><a href="our-team.html">Our Team</a></li>
           <li><a href="technology.html">Technology</a></li>
-          <li><a href="gallery.html">Case Studies</a></li>
-          <li><a href="video-gallery.html">Video Gallery</a></li>
+          <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div>
@@ -2193,7 +2266,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "All Ceramic & Emax Crowns"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <rect x=\"18\" y=\"24\" width=\"84\" height=\"56\" rx=\"6\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"2\"/>\n          <path d=\"M32 52 Q48 38 60 52 Q72 66 88 52\" stroke=\"rgba(255,255,255,.55)\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"52\" r=\"5\" fill=\"rgba(201,169,110,.7)\"/>\n          <circle cx=\"60\" cy=\"52\" r=\"10\" stroke=\"rgba(201,169,110,.3)\" stroke-width=\"1\"/>\n          <line x1=\"60\" y1=\"80\" x2=\"60\" y2=\"90\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"2\"/>\n          <line x1=\"46\" y1=\"90\" x2=\"74\" y2=\"90\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"2\"/>\n          <path d=\"M22 32 L32 38\" stroke=\"rgba(255,255,255,.1)\" stroke-width=\"1\"/>\n          <circle cx=\"22\" cy=\"32\" r=\"3\" fill=\"rgba(255,255,255,.12)\"/>\n          <circle cx=\"30\" cy=\"28\" r=\"3\" fill=\"rgba(255,255,255,.08)\"/>\n          <circle cx=\"38\" cy=\"26\" r=\"3\" fill=\"rgba(255,255,255,.06)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M30 56C40 80 80 80 90 56\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.5\"/><path class=\"d\" d=\"M38 62C48 72 72 72 82 62\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2\" opacity=\".55\"/><path class=\"a\" d=\"M88 27V41M81 34H95\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/><path class=\"a\" d=\"M30 32V40M26 36H34\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>"
           },
           {
             "num": "02",
@@ -2232,7 +2305,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "15+ years"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M60 28 Q74 28 80 40 Q86 52 82 68 Q78 82 60 88 Q42 82 38 68 Q34 52 40 40 Q46 28 60 28Z\" stroke=\"rgba(255,255,255,.25)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.05)\"/>\n          <path d=\"M60 30 Q73 30 79 41 Q84 52 81 67 Q77 80 60 86\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"1.5\" fill=\"none\" stroke-dasharray=\"3 3\"/>\n          <path d=\"M46 36 Q52 30 60 29 Q68 30 74 36\" stroke=\"rgba(255,255,255,.7)\" stroke-width=\"2\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"58\" r=\"6\" fill=\"rgba(201,169,110,.5)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M44 38C48 33 54 32 60 35C66 32 72 33 76 38\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "03",
@@ -2263,7 +2336,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Chips, gaps & shade"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M28 76 Q60 44 92 76\" stroke=\"rgba(255,255,255,.55)\" stroke-width=\"3\" stroke-linecap=\"round\" fill=\"none\"/>\n          <path d=\"M32 66 Q60 36 88 66\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\" stroke-linecap=\"round\" fill=\"none\"/>\n          <path d=\"M36 56 Q60 28 84 56\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"1.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"8\" fill=\"rgba(201,169,110,.4)\" stroke=\"rgba(201,169,110,.4)\" stroke-width=\"1\"/>\n        </svg>",
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(-8 6) scale(0.9)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.33\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M88 22C88 22 98 34 98 40A10 10 0 0 1 78 40C78 34 88 22 88 22Z\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>",
             "tags": [
               "Composite Veneers",
               "Indirect Composite Veneers",
@@ -2301,7 +2374,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Take-home kit included"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <circle cx=\"60\" cy=\"60\" r=\"28\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"2\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"18\" fill=\"rgba(255,255,255,.08)\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"1.5\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"8\" fill=\"rgba(201,169,110,.6)\"/>\n          <path d=\"M60 18v8M60 94v8M18 60h8M94 60h8\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <path d=\"M31 31l5.7 5.7M83.3 83.3l5.7 5.7M83.3 36.7l-5.7 5.7M36.7 83.3l-5.7 5.7\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M90 23V37M83 30H97\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/><path class=\"a\" d=\"M28 29V39M23 34H33\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/><path class=\"a\" d=\"M92 58V66M88 62H96\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>"
           }
         ]
       },
@@ -2346,7 +2419,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
               "Single Tooth Replacement",
               "Immediate Implants"
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M60 22v14M52 36h16M46 48h28M42 60h36M46 72h28M52 84h16\" stroke=\"rgba(255,255,255,.45)\" stroke-width=\"2.5\" stroke-linecap=\"round\"/>\n          <ellipse cx=\"60\" cy=\"30\" rx=\"12\" ry=\"7\" stroke=\"rgba(255,255,255,.25)\" stroke-width=\"1.5\"/>\n          <rect x=\"42\" y=\"60\" width=\"36\" height=\"26\" rx=\"5\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"1.5\"/>\n          <circle cx=\"60\" cy=\"73\" r=\"4\" fill=\"rgba(201,169,110,.6)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M42 40C42 28 52 26 60 30C68 26 78 28 78 40C78 46 76 50 74 54H46C44 50 42 46 42 40Z\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/><path class=\"a\" d=\"M52 60H68M53 68H67M54 76H66M56 84H64M58 92H62\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "06",
@@ -2377,7 +2450,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Immediate load available"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M24 62 Q24 36 60 36 Q96 36 96 62\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"1.5\" fill=\"none\"/>\n          <rect x=\"24\" y=\"60\" width=\"16\" height=\"28\" rx=\"3\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\"/>\n          <rect x=\"44\" y=\"56\" width=\"16\" height=\"32\" rx=\"3\" stroke=\"rgba(255,255,255,.45)\" stroke-width=\"2\"/>\n          <rect x=\"64\" y=\"56\" width=\"16\" height=\"32\" rx=\"3\" stroke=\"rgba(255,255,255,.45)\" stroke-width=\"2\"/>\n          <rect x=\"80\" y=\"60\" width=\"16\" height=\"28\" rx=\"3\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\"/>\n          <line x1=\"24\" y1=\"62\" x2=\"96\" y2=\"62\" stroke=\"rgba(201,169,110,.5)\" stroke-width=\"2\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect class=\"d\" x=\"22\" y=\"38\" width=\"76\" height=\"22\" rx=\"11\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/><path class=\"a\" d=\"M34 62V86M52 62V90M68 62V90M86 62V86\" stroke=\"#C9A96E\" stroke-width=\"3\"/><path class=\"a\" d=\"M30 72H38M48 76H56M64 76H72M82 72H90\" stroke=\"#C9A96E\" stroke-width=\"2\" opacity=\".7\"/></svg>"
           },
           {
             "num": "07",
@@ -2415,7 +2488,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "10 to 15+ years"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M28 88 L34 52 L60 64 L86 52 L92 88Z\" stroke=\"rgba(255,255,255,.35)\" stroke-width=\"2\" stroke-linejoin=\"round\" fill=\"rgba(255,255,255,.05)\"/>\n          <line x1=\"28\" y1=\"92\" x2=\"92\" y2=\"92\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"64\" r=\"5\" fill=\"rgba(201,169,110,.5)\"/>\n          <path d=\"M34 52 C34 44 92 44 86 52\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"1.5\" fill=\"none\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect class=\"d\" x=\"26\" y=\"40\" width=\"22\" height=\"30\" rx=\"8\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/><rect class=\"d\" x=\"49\" y=\"40\" width=\"22\" height=\"30\" rx=\"8\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/><rect class=\"d\" x=\"72\" y=\"40\" width=\"22\" height=\"30\" rx=\"8\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/><path class=\"a\" d=\"M26 34H94\" stroke=\"#C9A96E\" stroke-width=\"3\"/><path class=\"d\" d=\"M37 70V86M83 70V86\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "08",
@@ -2446,7 +2519,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Severe wear, bite collapse"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <circle cx=\"60\" cy=\"60\" r=\"32\" stroke=\"rgba(255,255,255,.1)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"20\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"2\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"9\" fill=\"rgba(255,255,255,.08)\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"1.5\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"3.5\" fill=\"rgba(201,169,110,.7)\"/>\n          <path d=\"M46 34 L42 26 M74 34 L78 26 M34 46 L26 42 M86 46 L94 42\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect class=\"d\" x=\"24\" y=\"28\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"24\" y=\"66\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"42\" y=\"28\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"42\" y=\"66\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"62\" y=\"28\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"62\" y=\"66\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"80\" y=\"28\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"80\" y=\"66\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><path class=\"a\" d=\"M18 59H102\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>"
           },
           {
             "num": "09",
@@ -2477,7 +2550,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "10--15+ years"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n  <path d=\"M30 40 L60 25 L90 40 L90 80 L60 95 L30 80 Z\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.04)\"/>\n  <path d=\"M42 48 L60 38 L78 48 L78 72 L60 82 L42 72 Z\" stroke=\"rgba(201,169,110,.7)\" stroke-width=\"2\" fill=\"rgba(201,169,110,.12)\"/>\n  <circle cx=\"60\" cy=\"60\" r=\"6\" fill=\"rgba(201,169,110,.8)\"/>\n  <line x1=\"60\" y1=\"25\" x2=\"60\" y2=\"38\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"1.5\" stroke-dasharray=\"2 2\"/>\n</svg>",
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><rect class=\"a\" x=\"52\" y=\"36\" width=\"16\" height=\"12\" rx=\"3\" stroke=\"#C9A96E\" stroke-width=\"2.8\"/></svg>",
             "tags": [
               "Inlay, Onlay & Table Tops",
               "Table Top Restorations",
@@ -2514,7 +2587,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Pressure-free anatomical fit"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n  <path d=\"M25 70 C25 40 95 40 95 70\" stroke=\"rgba(201,169,110,.6)\" stroke-width=\"4\" stroke-linecap=\"round\" fill=\"none\"/>\n  <rect x=\"28\" y=\"52\" width=\"12\" height=\"18\" rx=\"3\" fill=\"rgba(255,255,255,.25)\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"1.5\"/>\n  <rect x=\"44\" y=\"48\" width=\"14\" height=\"22\" rx=\"3\" fill=\"rgba(255,255,255,.3)\" stroke=\"rgba(255,255,255,.6)\" stroke-width=\"1.5\"/>\n  <rect x=\"62\" y=\"48\" width=\"14\" height=\"22\" rx=\"3\" fill=\"rgba(255,255,255,.3)\" stroke=\"rgba(255,255,255,.6)\" stroke-width=\"1.5\"/>\n  <rect x=\"80\" y=\"52\" width=\"12\" height=\"18\" rx=\"3\" fill=\"rgba(255,255,255,.25)\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"1.5\"/>\n  <path d=\"M22 75 C22 88 98 88 98 75\" stroke=\"rgba(144,69,136,.4)\" stroke-width=\"2\" fill=\"none\"/>\n</svg>",
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"a\" d=\"M18 78C18 40 102 40 102 78\" stroke=\"#C9A96E\" stroke-width=\"6\"/><rect class=\"d\" x=\"22\" y=\"62\" width=\"15\" height=\"20\" rx=\"5\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"38\" y=\"52\" width=\"15\" height=\"20\" rx=\"5\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"53\" y=\"48\" width=\"15\" height=\"20\" rx=\"5\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"68\" y=\"52\" width=\"15\" height=\"20\" rx=\"5\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"84\" y=\"62\" width=\"15\" height=\"20\" rx=\"5\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/></svg>",
             "tags": [
               "Removable Partial Dentures",
               "Full Dentures",
@@ -2552,7 +2625,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Severely compromised teeth"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n  <path d=\"M40 85 L50 45 L70 45 L80 85\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\" stroke-linecap=\"round\" fill=\"none\"/>\n  <rect x=\"56\" y=\"22\" width=\"8\" height=\"60\" rx=\"3\" fill=\"rgba(201,169,110,.8)\" stroke=\"rgba(201,169,110,1)\" stroke-width=\"1.5\"/>\n  <path d=\"M48 45 L72 45 L68 25 L52 25 Z\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.1)\"/>\n  <circle cx=\"60\" cy=\"52\" r=\"3\" fill=\"#fff\"/>\n</svg>",
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M60 40V80\" stroke=\"#C9A96E\" stroke-width=\"4\"/></svg>",
             "tags": [
               "Post & Core Build-Up",
               "Custom Metal Post & Core",
@@ -2596,7 +2669,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "18--22 hours daily"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M26 80 Q60 96 94 80\" stroke=\"rgba(255,255,255,.6)\" stroke-width=\"3\" stroke-linecap=\"round\" fill=\"none\"/>\n          <path d=\"M28 68 Q60 82 92 68\" stroke=\"rgba(255,255,255,.38)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <path d=\"M26 56 Q60 70 94 56\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"2\" stroke-linecap=\"round\" fill=\"none\"/>\n          <path d=\"M28 44 Q60 58 92 44\" stroke=\"rgba(255,255,255,.08)\" stroke-width=\"1.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"32\" r=\"10\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"1.5\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"32\" r=\"5\" fill=\"rgba(201,169,110,.5)\"/>\n        </svg>",
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect class=\"d\" x=\"24\" y=\"46\" width=\"18\" height=\"26\" rx=\"7\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"43\" y=\"46\" width=\"18\" height=\"26\" rx=\"7\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"62\" y=\"46\" width=\"18\" height=\"26\" rx=\"7\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"81\" y=\"46\" width=\"18\" height=\"26\" rx=\"7\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"a\" x=\"18\" y=\"40\" width=\"88\" height=\"38\" rx=\"14\" stroke=\"#C9A96E\" stroke-width=\"2.5\" stroke-dasharray=\"4 5\"/></svg>",
             "tags": [
               "Invisalign",
               "Smile Architect",
@@ -2636,7 +2709,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "8--30 months"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <rect x=\"18\" y=\"50\" width=\"18\" height=\"20\" rx=\"3\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"none\"/>\n          <rect x=\"42\" y=\"46\" width=\"18\" height=\"24\" rx=\"3\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"2\" fill=\"none\"/>\n          <rect x=\"66\" y=\"46\" width=\"18\" height=\"24\" rx=\"3\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"2\" fill=\"none\"/>\n          <rect x=\"90\" y=\"50\" width=\"18\" height=\"20\" rx=\"3\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"none\"/>\n          <line x1=\"14\" y1=\"60\" x2=\"112\" y2=\"60\" stroke=\"rgba(201,169,110,.5)\" stroke-width=\"2.5\"/>\n          <circle cx=\"27\" cy=\"60\" r=\"3\" fill=\"rgba(255,255,255,.3)\"/>\n          <circle cx=\"51\" cy=\"60\" r=\"3\" fill=\"rgba(255,255,255,.3)\"/>\n          <circle cx=\"75\" cy=\"60\" r=\"3\" fill=\"rgba(255,255,255,.3)\"/>\n          <circle cx=\"99\" cy=\"60\" r=\"3\" fill=\"rgba(255,255,255,.3)\"/>\n        </svg>",
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect class=\"d\" x=\"24\" y=\"40\" width=\"20\" height=\"38\" rx=\"8\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect x=\"30\" y=\"53\" width=\"8\" height=\"8\" rx=\"1.5\" fill=\"rgba(255,255,255,.92)\"/><rect class=\"d\" x=\"50\" y=\"40\" width=\"20\" height=\"38\" rx=\"8\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect x=\"56\" y=\"53\" width=\"8\" height=\"8\" rx=\"1.5\" fill=\"rgba(255,255,255,.92)\"/><rect class=\"d\" x=\"76\" y=\"40\" width=\"20\" height=\"38\" rx=\"8\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect x=\"82\" y=\"53\" width=\"8\" height=\"8\" rx=\"1.5\" fill=\"rgba(255,255,255,.92)\"/><path class=\"a\" d=\"M20 57H100\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>",
             "tags": [
               "Damon Braces",
               "Self-Ligating Brackets",
@@ -2675,7 +2748,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Digital precision scan"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M28 60 Q28 36 60 36 Q92 36 92 60 Q92 84 60 84 Q28 84 28 60Z\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"1.5\" fill=\"none\" stroke-dasharray=\"6 4\"/>\n          <path d=\"M36 60 Q36 44 60 44 Q84 44 84 60\" stroke=\"rgba(255,255,255,.45)\" stroke-width=\"2.5\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"5\" fill=\"rgba(201,169,110,.6)\"/>\n          <circle cx=\"42\" cy=\"53\" r=\"3\" fill=\"rgba(255,255,255,.2)\"/>\n          <circle cx=\"78\" cy=\"53\" r=\"3\" fill=\"rgba(255,255,255,.2)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M24 80C24 40 96 40 96 80\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.5\"/><path class=\"a\" d=\"M32 80C32 52 88 52 88 80\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/><circle class=\"a\" cx=\"24\" cy=\"84\" r=\"3\" fill=\"#C9A96E\"/><circle class=\"a\" cx=\"96\" cy=\"84\" r=\"3\" fill=\"#C9A96E\"/></svg>"
           }
         ]
       },
@@ -2712,7 +2785,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Virtually pain-free & bloodless"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <line x1=\"60\" y1=\"18\" x2=\"60\" y2=\"102\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"3.5\" stroke-linecap=\"round\"/>\n          <path d=\"M60 48 L80 34\" stroke=\"rgba(255,255,255,.35)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <path d=\"M60 60 L84 60\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n          <path d=\"M60 72 L80 86\" stroke=\"rgba(255,255,255,.12)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"9\" fill=\"rgba(201,169,110,.65)\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"15\" stroke=\"rgba(201,169,110,.2)\" stroke-width=\"1.5\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"22\" stroke=\"rgba(201,169,110,.08)\" stroke-width=\"1\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(10 8) scale(0.85)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.53\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M14 18L52 46\" stroke=\"#C9A96E\" stroke-width=\"3\"/><path class=\"a\" d=\"M56 45V55M51 50H61\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>"
           },
           {
             "num": "16",
@@ -2743,7 +2816,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Stop infection & save teeth"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M22 86 Q60 46 98 86\" stroke=\"rgba(255,255,255,.55)\" stroke-width=\"3\" stroke-linecap=\"round\" fill=\"none\"/>\n          <path d=\"M24 74 Q60 36 96 74\" stroke=\"rgba(255,255,255,.32)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <path d=\"M22 62 Q60 26 98 62\" stroke=\"rgba(255,255,255,.14)\" stroke-width=\"2\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"66\" r=\"7\" fill=\"rgba(201,169,110,.4)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M30 58C38 50 46 66 52 58C58 50 62 66 68 58C74 50 82 66 90 58\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "17",
@@ -2774,7 +2847,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Rotary endodontics + apex locator + rubber dam"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M60 24 Q60 52 52 82 M60 24 Q60 52 68 82\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <ellipse cx=\"60\" cy=\"32\" rx=\"18\" ry=\"11\" stroke=\"rgba(255,255,255,.25)\" stroke-width=\"2\"/>\n          <ellipse cx=\"60\" cy=\"32\" rx=\"10\" ry=\"6\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"1.5\"/>\n          <circle cx=\"60\" cy=\"32\" r=\"4\" fill=\"rgba(201,169,110,.6)\"/>\n          <path d=\"M52 82 Q48 92 50 98 M68 82 Q72 92 70 98\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M60 44V58M60 58C56 66 55 80 54 88M60 58C64 66 65 80 66 88\" stroke=\"#C9A96E\" stroke-width=\"2.6\"/></svg>"
           },
           {
             "num": "18",
@@ -2805,7 +2878,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Fast-track surgical healing"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <circle cx=\"60\" cy=\"60\" r=\"30\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"2\"/>\n          <path d=\"M42 42 L78 78 M78 42 L42 78\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2.5\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"8\" stroke=\"rgba(255,255,255,.2)\" stroke-width=\"1.5\" fill=\"rgba(255,255,255,.04)\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"3\" fill=\"rgba(201,169,110,.6)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 12) scale(0.9)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.33\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M60 6V24M52 14L60 6L68 14\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           }
         ]
       },
@@ -2849,7 +2922,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "100% gentle, child-friendly anaesthesia"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M40 30 C30 50 30 85 45 95 C55 102 65 102 75 95 C90 85 90 50 80 30 C72 16 48 16 40 30 Z\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.05)\"/>\n          <path d=\"M48 60 C48 78 52 88 56 94 M72 60 C72 78 68 88 64 94\" stroke=\"rgba(201,169,110,.8)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"45\" r=\"8\" fill=\"rgba(201,169,110,.25)\" stroke=\"rgba(201,169,110,.7)\" stroke-width=\"1.5\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><circle class=\"a\" cx=\"52\" cy=\"46\" r=\"2.6\" fill=\"#C9A96E\"/><circle class=\"a\" cx=\"68\" cy=\"46\" r=\"2.6\" fill=\"#C9A96E\"/><path class=\"a\" d=\"M52 55C56 60 64 60 68 55\" stroke=\"#C9A96E\" stroke-width=\"2.6\"/></svg>"
           },
           {
             "num": "20",
@@ -2887,7 +2960,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Lasts until natural tooth exfoliation"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M30 45 C30 35 45 35 60 38 C75 35 90 35 90 45 C90 65 85 85 60 88 C35 85 30 65 30 45 Z\" stroke=\"rgba(255,255,255,.45)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.07)\"/>\n          <path d=\"M30 50 Q60 62 90 50\" stroke=\"rgba(201,169,110,.7)\" stroke-width=\"2\" fill=\"none\"/>\n          <path d=\"M42 37 L46 47 M78 37 L74 47 M60 38 L60 48\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"1.5\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M38 48C37 30 50 24 60 30C70 24 83 30 82 48Z\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "21",
@@ -2925,7 +2998,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Restores aesthetics, speech & confidence"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M38 32 C48 26 72 26 82 32 C88 48 88 78 60 92 C32 78 32 48 38 32 Z\" stroke=\"rgba(201,169,110,.7)\" stroke-width=\"2\" fill=\"rgba(201,169,110,.1)\"/>\n          <path d=\"M44 42 C52 38 68 38 76 42\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"1.5\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"58\" r=\"6\" fill=\"#fff\" opacity=\".6\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M38 48C37 30 50 24 60 30C70 24 83 30 82 48Z\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "22",
@@ -2963,7 +3036,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Maintained until adult tooth erupts"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <rect x=\"25\" y=\"45\" width=\"22\" height=\"32\" rx=\"4\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.05)\"/>\n          <path d=\"M47 52 L85 52 C92 52 95 68 85 68 L47 68\" stroke=\"rgba(201,169,110,.8)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"90\" cy=\"60\" r=\"4\" fill=\"rgba(201,169,110,.6)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><circle class=\"a\" cx=\"52\" cy=\"46\" r=\"2.6\" fill=\"#C9A96E\"/><circle class=\"a\" cx=\"68\" cy=\"46\" r=\"2.6\" fill=\"#C9A96E\"/><path class=\"a\" d=\"M52 55C56 60 64 60 68 55\" stroke=\"#C9A96E\" stroke-width=\"2.6\"/></svg>"
           },
           {
             "num": "23",
@@ -3001,7 +3074,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Prevents open bite & severe skeletal misalignment"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M30 40 Q60 30 90 40\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\" fill=\"none\"/>\n          <path d=\"M40 40 v30 M50 40 v35 M60 40 v38 M70 40 v35 M80 40 v30\" stroke=\"rgba(201,169,110,.75)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"85\" r=\"5\" fill=\"rgba(255,255,255,.4)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><circle class=\"a\" cx=\"52\" cy=\"46\" r=\"2.6\" fill=\"#C9A96E\"/><circle class=\"a\" cx=\"68\" cy=\"46\" r=\"2.6\" fill=\"#C9A96E\"/><path class=\"a\" d=\"M52 55C56 60 64 60 68 55\" stroke=\"#C9A96E\" stroke-width=\"2.6\"/></svg>"
           },
           {
             "num": "24",
@@ -3039,7 +3112,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Child-approved delicious flavours"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M60 25 C45 45 35 65 35 78 C35 92 46 102 60 102 C74 102 85 92 85 78 C85 65 75 45 60 25 Z\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.08)\"/>\n          <path d=\"M50 75 Q60 62 70 75\" stroke=\"rgba(201,169,110,.8)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"82\" r=\"5\" fill=\"rgba(201,169,110,.6)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(-8 6) scale(0.9)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.33\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M88 22C88 22 98 34 98 40A10 10 0 0 1 78 40C78 34 88 22 88 22Z\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>"
           },
           {
             "num": "25",
@@ -3077,7 +3150,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Protects for 5--10 years"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <rect x=\"30\" y=\"30\" width=\"60\" height=\"60\" rx=\"10\" stroke=\"rgba(255,255,255,.35)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.04)\"/>\n          <path d=\"M40 40 L80 80 M80 40 L40 80\" stroke=\"rgba(201,169,110,.6)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"14\" fill=\"rgba(201,169,110,.25)\" stroke=\"rgba(201,169,110,.8)\" stroke-width=\"2\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M60 22L88 32V56C88 76 74 90 60 96C46 90 32 76 32 56V32Z\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/><path class=\"a\" d=\"M48 58L57 67L74 48\" stroke=\"#C9A96E\" stroke-width=\"3.5\"/></svg>"
           },
           {
             "num": "26",
@@ -3115,7 +3188,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Guides natural facial growth & prevents complex braces"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M25 65 Q60 30 95 65 Q60 45 25 65 Z\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.06)\"/>\n          <path d=\"M35 72 Q60 48 85 72\" stroke=\"rgba(201,169,110,.7)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"52\" r=\"4\" fill=\"rgba(201,169,110,.8)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect class=\"d\" x=\"24\" y=\"28\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"24\" y=\"66\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"42\" y=\"28\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"42\" y=\"66\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"62\" y=\"28\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"62\" y=\"66\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"80\" y=\"28\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><rect class=\"d\" x=\"80\" y=\"66\" width=\"16\" height=\"24\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"2.6\"/><path class=\"a\" d=\"M18 59H102\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>"
           }
         ]
       },
@@ -3159,7 +3232,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Halts periodontal pocketing"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M30 90 L75 35 L88 45 L42 100 Z\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.05)\"/>\n          <path d=\"M75 35 Q85 20 95 22\" stroke=\"rgba(201,169,110,.9)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"55\" cy=\"65\" r=\"4\" fill=\"rgba(201,169,110,.5)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(-8 4) scale(0.92)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.26\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M100 18L78 56C76 60 72 60 70 57\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "28",
@@ -3197,7 +3270,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "coral-pink gums"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M25 75 Q60 45 95 75\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\" fill=\"none\"/>\n          <line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"60\" stroke=\"rgba(201,169,110,.9)\" stroke-width=\"3\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"10\" fill=\"rgba(201,169,110,.3)\" stroke=\"rgba(201,169,110,.7)\" stroke-width=\"1.5\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M30 58C38 50 46 66 52 58C58 50 62 66 68 58C74 50 82 66 90 58\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "29",
@@ -3235,7 +3308,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Halts tooth loosening"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M30 50 Q60 30 90 50 L85 85 Q60 70 35 85 Z\" stroke=\"rgba(255,255,255,.35)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.05)\"/>\n          <path d=\"M40 65 Q60 55 80 65\" stroke=\"rgba(201,169,110,.7)\" stroke-width=\"2\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"5\" fill=\"rgba(201,169,110,.6)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M30 58C38 50 46 66 52 58C58 50 62 66 68 58C74 50 82 66 90 58\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "30",
@@ -3273,7 +3346,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Significantly reduces pocket depth"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M45 25 Q60 20 75 25 L70 95 Q60 100 50 95 Z\" stroke=\"rgba(255,255,255,.35)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.04)\"/>\n          <path d=\"M40 60 L80 60 M42 72 L78 72\" stroke=\"rgba(201,169,110,.65)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"45\" r=\"4\" fill=\"rgba(201,169,110,.8)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(-8 4) scale(0.92)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.26\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M100 18L78 56C76 60 72 60 70 57\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "31",
@@ -3311,7 +3384,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Enhances crown visibility"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M25 80 Q45 55 60 75 Q75 55 95 80\" stroke=\"rgba(201,169,110,.8)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"45\" cy=\"52\" r=\"3\" fill=\"#fff\"/>\n          <circle cx=\"75\" cy=\"52\" r=\"3\" fill=\"#fff\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M30 58C38 50 46 66 52 58C58 50 62 66 68 58C74 50 82 66 90 58\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "32",
@@ -3349,7 +3422,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Prosthodontist coordination"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <rect x=\"42\" y=\"30\" width=\"36\" height=\"50\" rx=\"6\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.06)\"/>\n          <path d=\"M30 65 Q60 55 90 65\" stroke=\"rgba(201,169,110,.85)\" stroke-width=\"2.5\" fill=\"none\"/>\n          <line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"28\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"2\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M30 58C38 50 46 66 52 58C58 50 62 66 68 58C74 50 82 66 90 58\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "33",
@@ -3387,7 +3460,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Prevents tooth loss"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M30 75 Q60 50 90 75\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\" fill=\"none\"/>\n          <rect x=\"44\" y=\"60\" width=\"32\" height=\"18\" rx=\"4\" fill=\"rgba(201,169,110,.3)\" stroke=\"rgba(201,169,110,.8)\" stroke-width=\"1.5\"/>\n          <circle cx=\"60\" cy=\"69\" r=\"3\" fill=\"#fff\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M30 58C38 50 46 66 52 58C58 50 62 66 68 58C74 50 82 66 90 58\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "34",
@@ -3425,7 +3498,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Virtually painless procedure"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <line x1=\"60\" y1=\"18\" x2=\"60\" y2=\"102\" stroke=\"rgba(255,255,255,.5)\" stroke-width=\"3.5\" stroke-linecap=\"round\"/>\n          <path d=\"M60 48 L80 34\" stroke=\"rgba(255,255,255,.35)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <path d=\"M60 60 L84 60\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"9\" fill=\"rgba(201,169,110,.65)\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"15\" stroke=\"rgba(201,169,110,.2)\" stroke-width=\"1.5\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(10 8) scale(0.85)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.53\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M14 18L52 46\" stroke=\"#C9A96E\" stroke-width=\"3\"/><path class=\"a\" d=\"M56 45V55M51 50H61\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>"
           }
         ]
       },
@@ -3469,7 +3542,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Included with routine dental check-ups"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <circle cx=\"60\" cy=\"60\" r=\"34\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\"/>\n          <path d=\"M45 60 L55 70 L75 50\" stroke=\"rgba(201,169,110,.9)\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\" fill=\"none\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect class=\"d\" x=\"50\" y=\"18\" width=\"20\" height=\"30\" rx=\"6\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/><path class=\"d\" d=\"M60 48V100\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"5\"/><path class=\"a\" d=\"M38 23H46M38 31H46M38 39H46\" stroke=\"#C9A96E\" stroke-width=\"3\"/></svg>"
           },
           {
             "num": "36",
@@ -3507,7 +3580,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Prevents anterior open bite & future braces"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n  <path d=\"M30 40 Q60 30 90 40\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"2\" fill=\"none\"/>\n  <path d=\"M40 40 v30 M50 40 v35 M60 40 v38 M70 40 v35 M80 40 v30\" stroke=\"rgba(201,169,110,.75)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n  <circle cx=\"60\" cy=\"85\" r=\"5\" fill=\"rgba(255,255,255,.4)\"/>\n</svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(0 0) scale(1)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.00\" stroke-linejoin=\"round\" fill=\"none\"/><circle class=\"a\" cx=\"52\" cy=\"46\" r=\"2.6\" fill=\"#C9A96E\"/><circle class=\"a\" cx=\"68\" cy=\"46\" r=\"2.6\" fill=\"#C9A96E\"/><path class=\"a\" d=\"M52 55C56 60 64 60 68 55\" stroke=\"#C9A96E\" stroke-width=\"2.6\"/></svg>"
           },
           {
             "num": "37",
@@ -3545,7 +3618,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Recommended every 3--6 months"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <path d=\"M60 25 C45 45 35 65 35 78 C35 92 46 102 60 102 C74 102 85 92 85 78 C85 65 75 45 60 25 Z\" stroke=\"rgba(255,255,255,.4)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.08)\"/>\n          <path d=\"M50 75 Q60 62 70 75\" stroke=\"rgba(201,169,110,.8)\" stroke-width=\"2.5\" stroke-linecap=\"round\" fill=\"none\"/>\n          <circle cx=\"60\" cy=\"82\" r=\"5\" fill=\"rgba(201,169,110,.6)\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z\" transform=\"translate(-8 6) scale(0.9)\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3.33\" stroke-linejoin=\"round\" fill=\"none\"/><path class=\"a\" d=\"M88 22C88 22 98 34 98 40A10 10 0 0 1 78 40C78 34 88 22 88 22Z\" stroke=\"#C9A96E\" stroke-width=\"2.5\"/></svg>"
           },
           {
             "num": "38",
@@ -3583,12 +3656,15 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
                 "Long-lasting multi-year barrier"
               ]
             ],
-            "svg": "<svg width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\">\n          <rect x=\"30\" y=\"30\" width=\"60\" height=\"60\" rx=\"10\" stroke=\"rgba(255,255,255,.35)\" stroke-width=\"2\" fill=\"rgba(255,255,255,.04)\"/>\n          <path d=\"M40 40 L80 80 M80 40 L40 80\" stroke=\"rgba(201,169,110,.6)\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n          <circle cx=\"60\" cy=\"60\" r=\"14\" fill=\"rgba(201,169,110,.25)\" stroke=\"rgba(201,169,110,.8)\" stroke-width=\"2\"/>\n        </svg>"
+            "svg": "<svg class=\"ti\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path class=\"d\" d=\"M60 22L88 32V56C88 76 74 90 60 96C46 90 32 76 32 56V32Z\" stroke=\"rgba(255,255,255,.92)\" stroke-width=\"3\"/><path class=\"a\" d=\"M48 58L57 67L74 48\" stroke=\"#C9A96E\" stroke-width=\"3.5\"/></svg>"
           }
         ]
       }
     ];
 
+    const SERVICE_PAGES = {"01": "smile-makeover.html", "02": "veneers-lumineers.html", "03": "smile-makeover.html", "05": "dental-implants.html", "06": "dental-implants.html", "07": "crowns-bridges.html", "08": "full-mouth-rehabilitation.html", "12": "invisalign-clear-aligners.html", "13": "braces-orthodontics.html", "14": "braces-orthodontics.html", "16": "gum-treatment.html", "17": "root-canal-treatment.html", "18": "wisdom-teeth-oral-surgery.html", "19": "kids-dentistry.html", "20": "kids-dentistry.html", "21": "kids-dentistry.html", "22": "kids-dentistry.html", "23": "kids-dentistry.html", "24": "kids-dentistry.html", "25": "kids-dentistry.html", "26": "kids-dentistry.html", "36": "kids-dentistry.html", "37": "kids-dentistry.html", "38": "kids-dentistry.html", "27": "gum-treatment.html", "28": "gum-treatment.html", "29": "gum-treatment.html", "30": "gum-treatment.html", "31": "gum-treatment.html", "32": "gum-treatment.html", "33": "gum-treatment.html", "34": "gum-treatment.html"};
+    function learnHref(t) { return SERVICE_PAGES[t.num] || 'https://wa.me/919654988858?text=' + encodeURIComponent('Hi VIN SMILES, I would like to know more about ' + t.name + '.'); }
+    function learnTarget(t) { return SERVICE_PAGES[t.num] ? '' : ' target="_blank" rel="noopener"'; }
     // Flatten treatments with group reference
     const ALL = GROUPS.flatMap(g => g.treatments.map(t => ({ ...t, groupId: g.id })));
     let activeIdx = 0;
@@ -3655,7 +3731,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
           Book This Treatment
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="gallery.html" class="btn-outline-brand">See Results</a>
+        <a href="${learnHref(t)}" class="btn-outline-brand"${learnTarget(t)}>Learn More</a>
       </div>
     </div>`;
       panelsContainer.appendChild(panel);
@@ -3697,7 +3773,7 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
           <a href="https://wa.me/919654988858?text=Hi%20VinSmiles%2C%20I%27d%20like%20to%20know%20more%20about%20treatments" class="btn-brand" style="display:inline-flex;font-size:11px;padding:12px 24px;" target="_blank" rel="noopener">
             Book This Treatment
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
+          </a><a href="${learnHref(t)}" class="tx-mobile-more"${learnTarget(t)}>Learn More</a>
         </div>
       </div>`;
         groupSection.appendChild(item);
@@ -3818,6 +3894,9 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
 })();
 </script>
 <!-- VS RESPONSIVE JS END -->
+<!-- VS NAV JS START -->
+<script>function toggleSub(b){var g=b.closest('.m-group');var o=g.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}</script>
+<!-- VS NAV JS END -->
 </body>
 
 </html>

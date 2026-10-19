@@ -1068,24 +1068,69 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
 .hero-portrait{background-position:center top!important;}
 
 /* === VS RESPONSIVE PATCH END === */
+/* === VS OCT UPDATE START === */
+/* ---- NAV START ---- */
+/* ---- Navigation dropdowns (desktop) ---- */
+.nav-links li.has-dd{position:relative;}
+.nav-links .dd-caret{display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s ease;}
+.nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+.nav-links .dd{position:absolute;top:calc(100% + 22px);left:50%;min-width:220px;background:#fff;border:1px solid #E8E2E8;border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.10);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:400;text-align:left;}
+.nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px;}
+.nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-links .dd a{display:block;padding:10px 22px;font-size:11px!important;letter-spacing:1.3px!important;line-height:1.4;color:#555!important;white-space:nowrap;text-transform:uppercase;font-weight:400;}
+.nav-links .dd a::after{display:none!important;}
+.nav-links .dd a:hover,.nav-links .dd a.active{color:#904588!important;background:#FAF5FA;}
+.nav-links .dd-wide{min-width:560px;padding:8px;}
+.nav-links .dd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4px;}
+.nav-links .dd-grid a{padding:10px 16px;border-radius:3px;}
+.nav-links .dd-grid .dd-all{grid-column:1/-1;color:#904588!important;border-bottom:1px solid #E8E2E8;border-radius:0;margin-bottom:6px;font-weight:500;}
+@media(min-width:1201px) and (max-width:1366px){
+  .nav .nav-links{gap:18px!important;}
+  .nav .nav-links > li > a{font-size:11px!important;letter-spacing:1.1px!important;}
+  .nav .nav-cta{padding:10px 18px!important;letter-spacing:1.4px!important;}
+}
+/* ---- Mobile menu sub-lists ---- */
+.mobile-menu .m-group{display:flex;flex-direction:column;align-items:center;width:100%;}
+.mobile-menu .m-row{display:flex;align-items:center;gap:12px;padding-left:42px;}
+.mobile-menu .m-tog{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid rgba(144,69,136,.35);background:none;cursor:pointer;position:relative;color:#904588;}
+.mobile-menu .m-tog::before,.mobile-menu .m-tog::after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .25s ease;}
+.mobile-menu .m-tog::after{transform:translate(-50%,-50%) rotate(90deg);}
+.mobile-menu .m-group.open .m-tog::after{transform:translate(-50%,-50%) rotate(0deg);}
+.mobile-menu .m-subl{display:none;grid-template-columns:1fr 1fr;gap:12px 22px;margin:16px 0 4px;padding:0 24px;max-width:420px;width:100%;text-align:center;}
+.mobile-menu .m-group.open .m-subl{display:grid;}
+.mobile-menu .m-subl a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:1.3px!important;text-transform:uppercase;line-height:1.45;opacity:.72;}
+.mobile-menu .m-subl a:hover{opacity:1;}
+@media(max-width:360px){.mobile-menu .m-subl{grid-template-columns:1fr;}}
+/* ---- NAV END ---- */
+/* Clinic gallery: 13 photos */
+.gallery-bento{grid-template-rows:360px 260px 260px 300px 260px 300px;}
+.gb-item:nth-child(n+8) .gb-bg{background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;}
+.gb-item:nth-child(8){grid-column:1/3;grid-row:4;}
+.gb-item:nth-child(9){grid-column:3;grid-row:4/6;}
+.gb-item:nth-child(10){grid-column:1;grid-row:5;}
+.gb-item:nth-child(11){grid-column:2;grid-row:5;}
+.gb-item:nth-child(12){grid-column:1;grid-row:6;}
+.gb-item:nth-child(13){grid-column:2/4;grid-row:6;}
+@media(max-width:1024px){
+  .gallery-bento{grid-template-columns:1fr 1fr!important;grid-template-rows:none!important;grid-auto-rows:240px;grid-auto-flow:row dense;}
+  .gallery-bento .gb-item{grid-row:auto!important;grid-column:auto!important;height:auto!important;}
+  .gallery-bento .gb-item:nth-child(1),.gallery-bento .gb-item:nth-child(4),.gallery-bento .gb-item:nth-child(8){grid-column:1/3!important;}
+  .gallery-bento .gb-item:nth-child(1){grid-row:span 2!important;}
+}
+@media(max-width:640px){
+  .gallery-bento{grid-template-columns:1fr!important;grid-auto-rows:220px;}
+  .gallery-bento .gb-item{grid-column:auto!important;}
+  .gallery-bento .gb-item:nth-child(1){grid-row:span 1!important;}
+  .gallery-bento .gb-item:nth-child(9){grid-row:span 2!important;}
+}
 
-    /* Nav dropdown under Smile Gallery */
-    .nav-links li.has-dd{position:relative;}
-    .nav-links .dd-caret{display:inline-block;width:7px;height:7px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s var(--ease);}
-    .nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
-    .nav-links .dd{position:absolute;top:calc(100% + 18px);left:-20px;min-width:200px;list-style:none;background:#fff;border:1px solid var(--rule);border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.08);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;z-index:400;}
-    .nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-20px;height:20px;}
-    .nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:none;}
-    .nav-links li.has-dd:hover > a{color:var(--brand)!important;}
-    .nav-links li.has-dd:hover > a::after{right:0;}
-    .nav-links .dd a{display:block;padding:11px 20px;font-size:11px;white-space:nowrap;color:var(--ink-80)!important;}
-    .nav-links .dd a::after{display:none;}
-    .nav-links .dd a:hover{background:var(--brand-xlt);color:var(--brand)!important;}
-    .nav-links .dd a.active{color:var(--brand)!important;font-weight:600;}
-    @media(max-width:1200px){.nav-links .dd{display:none;}}
-    .mobile-menu .m-sub{display:flex;gap:22px;margin-top:-12px;}
-    .mobile-menu .m-sub a{font-family:var(--font-b);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);}
-    .mobile-menu .m-sub a.active,.mobile-menu .m-sub a:hover{color:var(--brand);}
+/* Intro stats: 3 + 2 layout on small tablets so they never spill */
+@media(max-width:900px) and (min-width:641px){
+  .intro-strip-inner{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));border-left:1px solid var(--rule);}
+  .is-stat{grid-column:span 2;min-width:0;border-bottom:1px solid var(--rule);padding:24px 20px!important;}
+  .is-stat:nth-child(4),.is-stat:nth-child(5){grid-column:span 3;border-bottom:none;}
+}
+/* === VS OCT UPDATE END === */
 </style>
 </head>
 <body>
@@ -1096,37 +1141,78 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
     <img src="images/VinSmiles.png" alt="" style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
   </a>
   <ul class="nav-links">
-    <li><a href="treatments.html">Treatments</a></li>
-    <li class="has-dd">
-      <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
-      <ul class="dd">
-        <li><a href="gallery.html">Case Studies</a></li>
-        <li><a href="video-gallery.html">Video Gallery</a></li>
-      </ul>
-    </li>
-    <li><a href="our-team.html">Our Team</a></li>
-    <li><a href="about.html" class="active">Our Story</a></li>
-    <li><a href="technology.html">Technology</a></li>
-    <li><a href="international.html">International</a></li>
-  </ul>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
+      <li class="has-dd">
+        <a href="treatments.html" aria-haspopup="true">Treatments<span class="dd-caret"></span></a>
+        <div class="dd dd-wide">
+          <div class="dd-grid">
+            <a href="treatments.html" class="dd-all">All Treatments</a>
+            <a href="dental-implants.html">Dental Implants</a>
+            <a href="smile-makeover.html">Smile Makeover & Digital Smile Design</a>
+            <a href="invisalign-clear-aligners.html">Invisalign & Clear Aligners</a>
+            <a href="veneers-lumineers.html">Porcelain Veneers & Lumineers</a>
+            <a href="crowns-bridges.html">Crowns & Bridges</a>
+            <a href="root-canal-treatment.html">Root Canal Treatment</a>
+            <a href="braces-orthodontics.html">Braces & Orthodontics</a>
+            <a href="gum-treatment.html">Gum Treatment</a>
+            <a href="wisdom-teeth-oral-surgery.html">Wisdom Teeth & Oral Surgery</a>
+            <a href="kids-dentistry.html">Kids Dentistry</a>
+            <a href="full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-dd">
+        <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
+        <div class="dd">
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
+      </li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li><a href="about.html" class="active">Our Story</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="international.html">International</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
-  <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
-  <div class="m-sub">
-    <a href="gallery.html" onclick="toggleMenu()">Case Studies</a>
-    <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+    <div class="m-group">
+      <div class="m-row"><a href="treatments.html" onclick="toggleMenu()">Treatments</a><button type="button" class="m-tog" aria-label="Show treatments" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl m-subl-tx">
+        <a href="treatments.html" onclick="toggleMenu()">All Treatments</a>
+        <a href="dental-implants.html" onclick="toggleMenu()">Dental Implants</a>
+        <a href="smile-makeover.html" onclick="toggleMenu()">Smile Makeover & Digital Smile Design</a>
+        <a href="invisalign-clear-aligners.html" onclick="toggleMenu()">Invisalign & Clear Aligners</a>
+        <a href="veneers-lumineers.html" onclick="toggleMenu()">Porcelain Veneers & Lumineers</a>
+        <a href="crowns-bridges.html" onclick="toggleMenu()">Crowns & Bridges</a>
+        <a href="root-canal-treatment.html" onclick="toggleMenu()">Root Canal Treatment</a>
+        <a href="braces-orthodontics.html" onclick="toggleMenu()">Braces & Orthodontics</a>
+        <a href="gum-treatment.html" onclick="toggleMenu()">Gum Treatment</a>
+        <a href="wisdom-teeth-oral-surgery.html" onclick="toggleMenu()">Wisdom Teeth & Oral Surgery</a>
+        <a href="kids-dentistry.html" onclick="toggleMenu()">Kids Dentistry</a>
+        <a href="full-mouth-rehabilitation.html" onclick="toggleMenu()">Full Mouth Rehabilitation</a>
+      </div>
+    </div>
+    <div class="m-group">
+      <div class="m-row"><a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a><button type="button" class="m-tog" aria-label="Show gallery pages" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl">
+        <a href="gallery.html" onclick="toggleMenu()">Photo Gallery</a>
+        <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+        <a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+      </div>
+    </div>
+    <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
+    <a href="about.html" onclick="toggleMenu()">Our Story</a>
+    <a href="technology.html" onclick="toggleMenu()">Technology</a>
+    <a href="international.html" onclick="toggleMenu()">International</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta"
+      onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
   </div>
-  <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
-  <a href="about.html" onclick="toggleMenu()">Our Story</a>
-  <a href="technology.html" onclick="toggleMenu()">Technology</a>
-  <a href="international.html" onclick="toggleMenu()">International</a>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta" onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
-</div>
 
 <!-- -- HERO -- -->
 <section class="about-hero">
@@ -1770,6 +1856,60 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
           <div class="gb-caption-sub">Behind-the-scenes precision that supports every procedure</div>
         </div>
       </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-08.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">08</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Waiting Lounge</div>
+          <div class="gb-caption-sub">Soft seating and warm light for an unhurried arrival</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-09.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">09</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Front Desk</div>
+          <div class="gb-caption-sub">Where every visit begins, with a welcome by name</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-10.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">10</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Consultation Room</div>
+          <div class="gb-caption-sub">A quiet space to talk through your options</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-11.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">11</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Clinic Corridor</div>
+          <div class="gb-caption-sub">Calm, uncluttered spaces from door to chair</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-12.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">12</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Doctor&#39;s Desk</div>
+          <div class="gb-caption-sub">Treatment plans explained clearly, one step at a time</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-13.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">13</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Consultation Suite</div>
+          <div class="gb-caption-sub">Bright, private and designed for honest conversations</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1897,11 +2037,12 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
     <div>
       <div class="f-col-title">Treatments</div>
       <ul class="f-links">
-        <li><a href="treatments.html">Dental Implants</a></li>
-        <li><a href="treatments.html">Smile Design</a></li>
-        <li><a href="treatments.html">Invisalign</a></li>
-        <li><a href="treatments.html">Veneers</a></li>
-        <li><a href="treatments.html">Full Mouth Rehab</a></li>
+          <li><a href="dental-implants.html">Dental Implants</a></li>
+          <li><a href="smile-makeover.html">Smile Design</a></li>
+          <li><a href="invisalign-clear-aligners.html">Invisalign</a></li>
+          <li><a href="veneers-lumineers.html">Veneers</a></li>
+          <li><a href="full-mouth-rehabilitation.html">Full Mouth Rehab</a></li>
+
       </ul>
     </div>
     <div>
@@ -1910,8 +2051,9 @@ footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!impo
         <li><a href="about.html">Our Story</a></li>
         <li><a href="our-team.html">Our Team</a></li>
         <li><a href="technology.html">Technology</a></li>
-        <li><a href="gallery.html">Case Studies</a></li>
-        <li><a href="video-gallery.html">Video Gallery</a></li>
+        <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
       </ul>
     </div>
     <div>
@@ -2087,6 +2229,9 @@ const autoObs = new IntersectionObserver(entries => {
 const tj = document.querySelector('.tooth-journey');
 if (tj) autoObs.observe(tj);
 </script>
+<!-- VS NAV JS START -->
+<script>function toggleSub(b){var g=b.closest('.m-group');var o=g.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}</script>
+<!-- VS NAV JS END -->
 </body>
 </html>
 
