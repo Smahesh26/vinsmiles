@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <base href="../">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Do I Know if I Have a Cavity? How to Spot Tooth Decay and Protect Your Oral Health | VIN SMILES Blog</title>
+  <meta name="description"
+    content="Cavities are a very common dental issue that can affect people of any age. Also referred to as tooth decay or dental caries">
+  <link rel="canonical" href="https://www.vinsmiles.com/blog/how-do-i-know-if-i-have-a-cavity-how-to-spot-tooth-decay-and-protect-your-oral-health">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* -- TOKENS -- */
+    :root {
+      --brand: #904588;
+      --brand-dark: #64305F;
+      --brand-light: #F3EBF2;
+      --brand-xlt: #FAF5FA;
+      --gold: #C9A96E;
+      --gold-dark: #8B6B3D;
+      --gold-light: #F7F0E4;
+      --ink: #0F0E0F;
+      --ink-80: #2A2A2A;
+      --ink-60: #555;
+      --ink-40: #888;
+      --ink-20: #C2C2C2;
+      --rule: #E8E2E8;
+      --surface: #FFFFFF;
+      --surface-2: #FAFAFA;
+      --surface-3: #F5F0F5;
+      --warm: #FBF7F2;
+      --font-d: 'Cormorant Garamond', Georgia, serif;
+      --font-b: 'DM Sans', system-ui, sans-serif;
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-b);
+      background: var(--surface);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* -- NAV - exact match -- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--rule);
+      transition: background .4s var(--ease), box-shadow .4s;
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .nav-logo-mark {
+      font-family: var(--font-d);
+      font-size: 23px;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: .3px;
+    }
+
+    .nav-logo-mark span {
+      color: var(--gold);
+    }
+
+    .nav-logo-sub {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ink-40);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-60);
+      transition: color .2s;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 100%;
+      height: 1px;
+      background: var(--brand);
+      transition: right .3s var(--ease);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      right: 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--brand) !important;
+    }
+
+    .nav-cta {
+      background: var(--brand);
+      color: #fff;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--brand-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(144, 69, 136, .3);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 290;
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding-top: 68px;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      font-size: 22px;
+      font-family: var(--font-d);
+      font-weight: 300;
+      color: var(--ink);
+      letter-spacing: 1px;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--brand);
+    }
+
+    .mobile-menu .m-cta {
+      background: var(--brand);
+      color: #fff;
+      padding: 14px 40px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    /* -- UTILS -- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .d1 {
+      transition-delay: .08s;
+    }
+
+    .d2 {
+      transition-delay: .16s;
+    }
+
+    .d3 {
+      transition-delay: .24s;
+    }
+
+    .d4 {
+      transition-delay: .32s;
+    }
+
+    .btn-brand {
+      background: var(--brand);
+      color: #fff;
+      padding: 14px 32px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+
+    .btn-brand:hover {
+      background: var(--brand-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(144, 69, 136, .28);
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--brand);
+      padding: 14px 30px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-white:hover {
+      background: var(--brand-xlt);
+      transform: translateY(-2px);
+    }
+
+    .btn-wa {
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, .25);
+      padding: 14px 26px;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background .2s;
+    }
+
+    .btn-wa:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    /* -- HERO -- */
+    .hero {
+      padding-top: 68px;
+      background: var(--warm);
+      padding-bottom: 0;
+      position: relative;
+    }
+
+    .hero-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 72px 52px 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 40px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .hero-eyebrow-bar {
+      width: 28px;
+      height: 1.5px;
+      background: var(--brand);
+    }
+
+    .hero-eyebrow-txt {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .hero-h1 {
+      font-family: var(--font-d);
+      font-size: clamp(48px, 5.5vw, 76px);
+      font-weight: 300;
+      line-height: 1.06;
+      color: var(--ink);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp .8s var(--ease) .1s both;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--brand);
+    }
+
+    .hero-p {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink-60);
+      line-height: 1.75;
+      max-width: 500px;
+      opacity: 0;
+      animation: fadeUp .8s var(--ease) .25s both;
+    }
+
+    .hero-count {
+      text-align: right;
+      opacity: 0;
+      animation: fadeUp .8s var(--ease) .3s both;
+      flex-shrink: 0;
+    }
+
+    .hero-count-num {
+      font-family: var(--font-d);
+      font-size: 72px;
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1;
+    }
+
+    .hero-count-num span {
+      color: var(--brand);
+    }
+
+    .hero-count-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink-40);
+    }
+
+    /* -- FILTER BAR -- */
+    .filter-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 68px;
+      z-index: 100;
+    }
+
+    .filter-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 52px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .filter-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      flex-shrink: 0;
+      padding: 18px 24px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-40);
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: var(--font-b);
+      position: relative;
+      transition: color .2s;
+      white-space: nowrap;
+    }
+
+    .filter-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 24px;
+      right: 24px;
+      height: 2px;
+      background: var(--brand);
+      transform: scaleX(0);
+      transition: transform .3s var(--ease);
+    }
+
+    .filter-btn:hover {
+      color: var(--ink);
+    }
+
+    .filter-btn.active {
+      color: var(--brand);
+    }
+
+    .filter-btn.active::after {
+      transform: scaleX(1);
+    }
+
+    .filter-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: var(--brand);
+      font-size: 9px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    /* -- GALLERY GRID -- */
+    .gallery-section {
+      padding: 52px 0 120px;
+      background: var(--surface);
+    }
+
+    .gallery-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 52px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    /* Individual gallery tile */
+    .gtile {
+      margin-bottom: 0;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 3px;
+      background: var(--surface-3);
+      box-shadow: 0 1px 0 rgba(15, 14, 15, .04);
+      transition: transform .24s var(--ease), box-shadow .24s var(--ease);
+    }
+
+    .gtile:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(15, 14, 15, .12);
+    }
+
+    .gtile:hover .gtile-overlay {
+      opacity: 1;
+    }
+
+    .gtile:hover .gtile-img-after {
+      transform: scale(1.04);
+    }
+
+    .gtile:hover .gtile-meta {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* After image (shown by default) */
+    .gtile-img-after {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4/5;
+      max-height: 300px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .6s var(--ease);
+    }
+
+    /* Overlay */
+    .gtile-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 14, 15, .75) 0%, rgba(15, 14, 15, .15) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity .4s var(--ease);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    /* Meta info */
+    .gtile-meta {
+      padding: 20px 18px;
+      width: 100%;
+      transform: translateY(10px);
+      opacity: 0;
+      transition: transform .4s var(--ease), opacity .4s var(--ease);
+    }
+
+    .gtile-cat {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 5px;
+    }
+
+    .gtile-name {
+      font-family: var(--font-d);
+      font-size: 20px;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 3px;
+      line-height: 1.2;
+    }
+
+    .gtile-sub {
+      font-size: 10px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    /* Before tag */
+    .gtile-before-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255, 255, 255, .9);
+      backdrop-filter: blur(6px);
+      border-radius: 100px;
+      padding: 3px 12px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brand);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .gtile:hover .gtile-before-tag {
+      opacity: 1;
+    }
+
+    /* Click indicator */
+    .gtile-view {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(.8);
+      transition: opacity .3s, transform .3s var(--ease);
+    }
+
+    .gtile:hover .gtile-view {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Masonry pattern to match staggered collage look */
+    .gtile[class*="shape-"] .gtile-img-after {
+      aspect-ratio: 4/5;
+    }
+
+    /* -- CASE STUDY LIGHTBOX -- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: flex;
+      align-items: stretch;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .4s var(--ease);
+    }
+
+    .lightbox.open {
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    /* Dark backdrop */
+    .lb-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 8, 14, .88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* Main panel - slides up */
+    .lb-panel {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      background: var(--surface);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      transform: translateY(48px);
+      transition: transform .5s var(--ease);
+      overflow: hidden;
+      margin: 40px;
+      border-radius: 4px;
+      box-shadow: 0 40px 120px rgba(0, 0, 0, .5);
+    }
+
+    .lightbox.open .lb-panel {
+      transform: translateY(0);
+    }
+
+    /* LEFT - before/after comparison */
+    .lb-visual {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      min-height: 0;
+    }
+
+    /* The comparison container */
+    .lb-compare {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      user-select: none;
+      cursor: col-resize;
+    }
+
+    .lb-before,
+    .lb-after {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .lb-before img,
+    .lb-after img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: #1b1a1b;
+      /* Optional: adds a dark background behind the contained image so it blends well */
+    }
+
+    /* Before is clipped from the right via clip-path */
+    .lb-before {
+      clip-path: inset(0 50% 0 0);
+    }
+
+    /* Labels */
+    .lb-label {
+      position: absolute;
+      top: 20px;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(8px);
+      border-radius: 100px;
+      padding: 4px 14px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .lb-label-before {
+      left: 20px;
+      color: var(--ink-60);
+    }
+
+    .lb-label-after {
+      right: 20px;
+      color: var(--brand);
+    }
+
+    /* Drag handle */
+    .lb-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      background: #fff;
+      pointer-events: none;
+      transition: left .05s;
+    }
+
+    .lb-handle-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    /* Drag hint */
+    .lb-drag-hint {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, .55);
+      backdrop-filter: blur(6px);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .7);
+      pointer-events: none;
+      animation: hintPulse 2.5s ease-in-out 1s 3;
+    }
+
+    /* RIGHT - case study text */
+    .lb-text {
+      padding: 48px 52px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      scrollbar-width: thin;
+      scrollbar-color: var(--rule) transparent;
+    }
+
+    .lb-text::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .lb-text::-webkit-scrollbar-thumb {
+      background: var(--rule);
+      border-radius: 2px;
+    }
+
+    .lb-cat {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 10px;
+    }
+
+    .lb-title {
+      font-family: var(--font-d);
+      font-size: clamp(30px, 3vw, 44px);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .lb-title em {
+      font-style: italic;
+      color: var(--brand);
+    }
+
+    .lb-patient {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--ink-40);
+      letter-spacing: .5px;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* Key facts */
+    .lb-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin-bottom: 32px;
+    }
+
+    .lb-fact {
+      background: var(--surface);
+      padding: 14px 18px;
+    }
+
+    .lb-fact-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ink-40);
+      margin-bottom: 3px;
+    }
+
+    .lb-fact-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-80);
+    }
+
+    .lb-fact-value.accent {
+      color: var(--brand);
+    }
+
+    /* Story blocks */
+    .lb-block {
+      margin-bottom: 24px;
+    }
+
+    .lb-block-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lb-block-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--brand-light);
+    }
+
+    .lb-block-text {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--ink-60);
+      line-height: 1.8;
+    }
+
+    /* Result highlight */
+    .lb-result {
+      background: var(--brand-xlt);
+      border: 1px solid rgba(144, 69, 136, .15);
+      border-radius: 3px;
+      padding: 20px 22px;
+      margin-bottom: 28px;
+    }
+
+    .lb-result-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+
+    .lb-result-text {
+      font-family: var(--font-d);
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink-80);
+      line-height: 1.5;
+    }
+
+    /* CTA */
+    .lb-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    /* Close + navigation */
+    .lb-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .95);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .15);
+    }
+
+    .lb-close:hover {
+      background: #fff;
+      transform: scale(1.08);
+    }
+
+    /* Prev / Next */
+    .lb-nav {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      display: flex;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    .lb-nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .92);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .12);
+    }
+
+    .lb-nav-btn:hover {
+      background: #fff;
+      transform: scale(1.06);
+    }
+
+    .lb-nav-btn:disabled {
+      opacity: .3;
+      cursor: default;
+      transform: none;
+    }
+
+    /* Case counter */
+    .lb-counter {
+      position: absolute;
+      bottom: 38px;
+      left: 28px;
+      z-index: 2;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    /* -- EMPTY STATE -- */
+    .gallery-empty {
+      text-align: center;
+      padding: 80px 20px;
+      display: none;
+    }
+
+    .gallery-empty.show {
+      display: block;
+    }
+
+    .gallery-empty p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--ink-40);
+    }
+
+    /* -- CTA -- */
+    .about-cta {
+      padding: 100px 52px;
+      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 60%, #b87ab2 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(255, 255, 255, .06), transparent 60%);
+    }
+
+    .about-cta-inner {
+      position: relative;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .cta-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 14px;
+    }
+
+    .cta-h2 {
+      font-family: var(--font-d);
+      font-size: clamp(38px, 4vw, 54px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .cta-h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .cta-p {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.75;
+      margin-bottom: 44px;
+    }
+
+    .cta-btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* -- FOOTER -- */
+    footer {
+      background: #0F0E0F;
+      border-top: 1px solid rgba(255, 255, 255, .04);
+    }
+
+    .footer-top {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 72px 52px 56px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .f-logo-mark {
+      font-family: var(--font-d);
+      font-size: 26px;
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .f-logo-mark span {
+      color: var(--gold);
+    }
+
+    .f-logo-sub {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .2);
+      margin-bottom: 20px;
+    }
+
+    .f-addr {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .4);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .f-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .f-contacts a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color .2s;
+    }
+
+    .f-contacts a:hover {
+      color: var(--gold);
+    }
+
+    .f-map {
+      margin-top: 22px;
+    }
+
+    .f-map-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .28);
+      margin-bottom: 10px;
+    }
+
+    .f-map-frame {
+      display: block;
+      width: 100%;
+      height: 150px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #1b1a1b;
+    }
+
+    .f-map-link {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(201, 169, 110, .4);
+      padding-bottom: 2px;
+      transition: gap .2s, border-color .2s;
+    }
+
+    .f-map-link:hover {
+      gap: 12px;
+      border-color: var(--gold);
+    }
+
+    .f-col-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .22);
+      margin-bottom: 20px;
+    }
+
+    .f-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .f-links a {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .42);
+      transition: color .2s;
+    }
+
+    .f-links a:hover {
+      color: #fff;
+    }
+
+    .f-hours {
+      margin-top: 24px;
+    }
+
+    .f-hours-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .2);
+      margin-bottom: 8px;
+    }
+
+    .f-hours-val {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .35);
+      line-height: 1.8;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .05);
+      padding: 22px 52px;
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .f-copy {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .2);
+    }
+
+    .f-badges {
+      display: flex;
+      gap: 12px;
+    }
+
+    .f-badge {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .2);
+      border: 1px solid rgba(255, 255, 255, .08);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .wa-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, .4);
+      transition: transform .2s var(--ease), box-shadow .2s;
+      animation: waPulse 3s ease-in-out infinite;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, .55);
+      animation: none;
+    }
+
+    /* -- KEYFRAMES -- */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes waPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 28px rgba(37, 211, 102, .4)
+      }
+
+      50% {
+        box-shadow: 0 8px 44px rgba(37, 211, 102, .6)
+      }
+    }
+
+    @keyframes hintPulse {
+
+      0%,
+      100% {
+        opacity: .7
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    /* -- RESPONSIVE 1024px -- */
+    @media(max-width:1024px) {
+      .nav {
+        padding: 0 28px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .hero-inner {
+        padding: 64px 28px 52px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-count {
+        text-align: left;
+      }
+
+      .filter-inner {
+        padding: 0 28px;
+      }
+
+      .gallery-grid {
+        padding: 0 28px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .lb-panel {
+        margin: 24px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lb-text {
+        padding: 36px 36px;
+      }
+
+      .about-cta {
+        padding: 72px 28px;
+      }
+
+      .cta-btns {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        padding: 56px 28px 40px;
+      }
+
+      .footer-bottom {
+        padding: 20px 28px;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    /* -- RESPONSIVE 768px -- */
+    @media(max-width:768px) {
+      .hero-inner {
+        padding: 56px 20px 44px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0 20px;
+        gap: 10px;
+      }
+
+      /* Lightbox: stack vertically */
+      .lb-panel {
+        grid-template-columns: 1fr;
+        grid-template-rows: 45vh auto;
+        margin: 12px;
+        overflow-y: auto;
+      }
+
+      .lb-visual {
+        height: 45vh;
+        min-height: 260px;
+      }
+
+      .lb-text {
+        padding: 28px 24px 80px;
+      }
+
+      .lb-facts {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lb-nav {
+        bottom: 16px;
+        right: 16px;
+      }
+
+      .lb-counter {
+        bottom: 26px;
+        left: 16px;
+      }
+    }
+
+    /* -- RESPONSIVE 640px -- */
+    @media(max-width:640px) {
+      nav .nav-cta {
+        padding: 8px 16px;
+        font-size: 10px;
+      }
+
+      .hero-inner {
+        padding: 52px 16px 40px;
+      }
+
+      .hero-h1 {
+        font-size: clamp(36px, 10vw, 52px);
+      }
+
+      .filter-inner {
+        padding: 0 16px;
+      }
+
+      .filter-btn {
+        padding: 14px 14px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+        gap: 12px;
+      }
+
+      .gtile {
+        margin-bottom: 12px;
+      }
+
+      .lb-panel {
+        margin: 8px;
+        border-radius: 3px;
+      }
+
+      .lb-visual {
+        height: 52vw;
+        min-height: 220px;
+      }
+
+      .lb-text {
+        padding: 20px 18px 72px;
+      }
+
+      .lb-title {
+        font-size: 26px;
+      }
+
+      .lb-facts {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lb-cta {
+        flex-direction: column;
+      }
+
+      .lb-cta .btn-brand,
+      .lb-cta .btn-white {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .about-cta {
+        padding: 56px 16px;
+      }
+
+      .btn-white,
+      .btn-wa {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .footer-bottom {
+        padding: 16px 16px;
+      }
+    }
+
+    /* -- RESPONSIVE 420px -- */
+    @media(max-width:420px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lb-visual {
+        height: 56vw;
+      }
+
+      .hero-count-num {
+        font-size: 52px;
+      }
+    }
+  /* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
+/* page specific */
+@media(max-width:1024px) and (min-width:901px){
+  .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media(max-width:768px){
+  .lb-panel{grid-template-rows:auto auto!important;max-height:calc(100dvh - 24px);}
+  .lb-visual{height:min(96vw,58vh)!important;min-height:240px!important;}
+}
+@media(max-width:640px){
+  .lb-panel{max-height:calc(100dvh - 16px);}
+}
+.lb-label-after{right:72px!important;}
+@media(max-width:1440px) and (min-width:1201px){ .nav-links{gap:24px;} }
+
+/* === VS RESPONSIVE PATCH END === */
+/* === VS OCT UPDATE START === */
+/* ---- NAV START ---- */
+/* ---- Navigation dropdowns (desktop) ---- */
+.nav-links li.has-dd{position:relative;}
+.nav-links .dd-caret{display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s ease;}
+.nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+.nav-links .dd{position:absolute;top:calc(100% + 22px);left:50%;min-width:220px;background:#fff;border:1px solid #E8E2E8;border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.10);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:400;text-align:left;}
+.nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px;}
+.nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-links .dd a{display:block;padding:10px 22px;font-size:11px!important;letter-spacing:1.3px!important;line-height:1.4;color:#555!important;white-space:nowrap;text-transform:uppercase;font-weight:400;}
+.nav-links .dd a::after{display:none!important;}
+.nav-links .dd a:hover,.nav-links .dd a.active{color:#904588!important;background:#FAF5FA;}
+.nav-links .dd-wide{min-width:560px;padding:8px;}
+.nav-links .dd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4px;}
+.nav-links .dd-grid a{padding:10px 16px;border-radius:3px;}
+.nav-links .dd-grid .dd-all{grid-column:1/-1;color:#904588!important;border-bottom:1px solid #E8E2E8;border-radius:0;margin-bottom:6px;font-weight:500;}
+@media(min-width:1201px) and (max-width:1366px){
+  .nav .nav-links{gap:18px!important;}
+  .nav .nav-links > li > a{font-size:11px!important;letter-spacing:1.1px!important;}
+  .nav .nav-cta{padding:10px 18px!important;letter-spacing:1.4px!important;}
+}
+/* ---- Mobile menu sub-lists ---- */
+.mobile-menu .m-group{display:flex;flex-direction:column;align-items:center;width:100%;}
+.mobile-menu .m-row{display:flex;align-items:center;gap:12px;padding-left:42px;}
+.mobile-menu .m-tog{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid rgba(144,69,136,.35);background:none;cursor:pointer;position:relative;color:#904588;}
+.mobile-menu .m-tog::before,.mobile-menu .m-tog::after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .25s ease;}
+.mobile-menu .m-tog::after{transform:translate(-50%,-50%) rotate(90deg);}
+.mobile-menu .m-group.open .m-tog::after{transform:translate(-50%,-50%) rotate(0deg);}
+.mobile-menu .m-subl{display:none;grid-template-columns:1fr 1fr;gap:12px 22px;margin:16px 0 4px;padding:0 24px;max-width:420px;width:100%;text-align:center;}
+.mobile-menu .m-group.open .m-subl{display:grid;}
+.mobile-menu .m-subl a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:1.3px!important;text-transform:uppercase;line-height:1.45;opacity:.72;}
+.mobile-menu .m-subl a:hover{opacity:1;}
+@media(max-width:360px){.mobile-menu .m-subl{grid-template-columns:1fr;}}
+/* ---- NAV END ---- */
+/* === VS OCT UPDATE END === */
+
+    /* ===== BLOG ARTICLE ===== */
+    .ar-hero{background:var(--warm);padding:calc(75px + clamp(40px,6vw,72px)) 52px clamp(36px,5vw,56px);}
+    .ar-hero-in{max-width:820px;margin:0 auto;}
+    .ar-crumb{display:flex;flex-wrap:wrap;gap:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-40);margin-bottom:22px;}
+    .ar-crumb a{color:var(--ink-40);transition:color .2s;}
+    .ar-crumb a:hover{color:var(--brand);}
+    .ar-crumb i{font-style:normal;color:var(--ink-20);}
+    .ar-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-bottom:18px;font-size:10.5px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold-dark);}
+    .ar-meta .ar-topic{color:var(--brand);background:var(--brand-light);padding:5px 12px;border-radius:100px;letter-spacing:1.6px;}
+    .ar-h1{font-family:var(--font-d);font-size:clamp(34px,4.6vw,58px);font-weight:300;line-height:1.1;color:var(--ink);}
+    .ar-lead{margin-top:20px;font-size:clamp(15px,1.5vw,17px);font-weight:300;line-height:1.8;color:var(--ink-60);max-width:62ch;}
+    .ar-feat{max-width:1000px;margin:clamp(28px,4vw,48px) auto 0;padding:0 52px;}
+    .ar-feat img{width:100%;height:auto;border-radius:4px;display:block;background:var(--surface-3);}
+    .ar-body{max-width:720px;margin:0 auto;padding:clamp(36px,5vw,64px) 52px clamp(56px,7vw,90px);font-size:16px;line-height:1.9;font-weight:300;color:var(--ink-60);overflow-wrap:break-word;}
+    .ar-body > *:first-child{margin-top:0;}
+    .ar-body p{margin:0 0 20px;}
+    .ar-body h2{font-family:var(--font-d);font-size:clamp(26px,3vw,34px);font-weight:400;line-height:1.2;color:var(--ink);margin:44px 0 16px;}
+    .ar-body h3{font-family:var(--font-d);font-size:clamp(21px,2.3vw,25px);font-weight:500;line-height:1.3;color:var(--ink);margin:32px 0 12px;}
+    .ar-body h4{font-size:15px;font-weight:600;color:var(--ink-80);margin:26px 0 10px;}
+    .ar-body strong{font-weight:500;color:var(--ink-80);}
+    .ar-body a{color:var(--brand);text-decoration:underline;text-decoration-color:rgba(144,69,136,.35);text-underline-offset:3px;transition:text-decoration-color .2s;}
+    .ar-body a:hover{text-decoration-color:var(--brand);}
+    .ar-body ul,.ar-body ol{margin:0 0 22px;padding-left:22px;}
+    .ar-body li{margin-bottom:8px;padding-left:4px;}
+    .ar-body li::marker{color:var(--brand);}
+    .ar-body hr{border:0;height:1px;background:var(--rule);margin:36px 0;}
+    .ar-body img{max-width:100%;height:auto;border-radius:4px;margin:12px 0 24px;display:block;}
+    .ar-body figure{margin:0 0 24px;}
+    .ar-body figcaption{font-size:12px;font-style:italic;color:var(--ink-40);margin-top:-14px;}
+    .ar-body blockquote{margin:28px 0;padding:6px 0 6px 22px;border-left:2px solid var(--brand);font-family:var(--font-d);font-size:22px;font-style:italic;color:var(--ink-80);line-height:1.5;}
+    .ar-body table{width:100%;border-collapse:collapse;margin:8px 0 26px;font-size:14px;line-height:1.6;display:block;overflow-x:auto;}
+    .ar-body th,.ar-body td{border:1px solid var(--rule);padding:10px 12px;text-align:left;vertical-align:top;min-width:120px;}
+    .ar-body th,.ar-body thead td{background:var(--brand-xlt);color:var(--ink-80);font-weight:500;}
+    .ar-share{max-width:720px;margin:0 auto;padding:0 52px;}
+    .ar-back{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--brand);border-top:1px solid var(--rule);padding-top:22px;width:100%;}
+    .ar-rel{background:var(--surface-3);border-top:1px solid var(--rule);padding:clamp(48px,6vw,80px) 0;margin-top:clamp(40px,5vw,64px);}
+    .ar-rel-in{max-width:1300px;margin:0 auto;padding:0 52px;}
+    .ar-rel-t{font-family:var(--font-d);font-size:clamp(27px,3.2vw,40px);font-weight:300;color:var(--ink);margin-bottom:28px;}
+    .ar-rel-t em{font-style:italic;color:var(--brand);}
+
+    .bl-grid{max-width:1300px;margin:0 auto;padding:0 52px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+    .bl-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--rule);border-radius:4px;overflow:hidden;transition:border-color .3s,transform .35s var(--ease),box-shadow .35s;}
+    .bl-card:hover{border-color:rgba(144,69,136,.35);transform:translateY(-4px);box-shadow:0 18px 44px rgba(144,69,136,.10);}
+    .bl-top{position:relative;aspect-ratio:3/2;background:linear-gradient(145deg,#2a0d26 0%,var(--brand-dark) 45%,var(--brand) 100%);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+    .bl-top svg{width:88px;height:88px;position:relative;z-index:1;}
+    .bl-top img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;transition:transform .8s var(--ease);}
+    .bl-card:hover .bl-top img{transform:scale(1.04);}
+    .bl-topic{position:absolute;left:14px;top:14px;z-index:3;font-size:9px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--brand);background:rgba(255,255,255,.94);padding:5px 11px;border-radius:100px;}
+    .bl-body{display:flex;flex-direction:column;gap:10px;padding:20px 22px 22px;flex:1;}
+    .bl-date{font-size:10px;font-weight:500;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold-dark);}
+    .bl-title{font-family:var(--font-d);font-size:23px;font-weight:400;line-height:1.25;color:var(--ink);transition:color .2s;}
+    .bl-card:hover .bl-title{color:var(--brand);}
+    .bl-ex{font-size:13px;font-weight:300;line-height:1.65;color:var(--ink-40);}
+    .bl-more{margin-top:auto;padding-top:6px;font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--brand);display:inline-flex;align-items:center;gap:7px;transition:gap .25s var(--ease);}
+    .bl-card:hover .bl-more{gap:12px;}
+    @media(max-width:1024px){
+      .bl-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 28px;gap:20px;}
+      .ar-hero{padding-left:28px;padding-right:28px;}
+      .ar-feat,.ar-body,.ar-share{padding-left:28px;padding-right:28px;}
+      .ar-rel-in{padding:0 28px;}
+    }
+    @media(max-width:640px){
+      .bl-grid{grid-template-columns:1fr;padding:0 20px;gap:18px;}
+      .bl-title{font-size:22px;}
+      .ar-hero{padding:calc(75px + 32px) 20px 30px;}
+      .ar-feat,.ar-body,.ar-share{padding-left:20px;padding-right:20px;}
+      .ar-body{font-size:15.5px;}
+      .ar-rel-in{padding:0 20px;}
+    }
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How Do I Know if I Have a Cavity? How to Spot Tooth Decay and Protect Your Oral Health", "datePublished": "2024-08-21", "image": "images/blog/2024/08/decay.jpg", "author": {"@type": "Organization", "name": "VIN SMILES Advanced Dentistry"}, "publisher": {"@type": "Organization", "name": "VIN SMILES Advanced Dentistry"}, "mainEntityOfPage": "https://www.vinsmiles.com/blog/how-do-i-know-if-i-have-a-cavity-how-to-spot-tooth-decay-and-protect-your-oral-health"}</script>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="images/VinSmiles.png" alt=""
+        style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
+    </a>
+    <ul class="nav-links">
+      <li class="has-dd">
+        <a href="treatments.html" aria-haspopup="true">Treatments<span class="dd-caret"></span></a>
+        <div class="dd dd-wide">
+          <div class="dd-grid">
+            <a href="treatments.html" class="dd-all">All Treatments</a>
+            <a href="dental-implants.html">Dental Implants</a>
+            <a href="smile-makeover.html">Smile Makeover & Digital Smile Design</a>
+            <a href="invisalign-clear-aligners.html">Invisalign & Clear Aligners</a>
+            <a href="veneers-lumineers.html">Porcelain Veneers & Lumineers</a>
+            <a href="crowns-bridges.html">Crowns & Bridges</a>
+            <a href="root-canal-treatment.html">Root Canal Treatment</a>
+            <a href="braces-orthodontics.html">Braces & Orthodontics</a>
+            <a href="gum-treatment.html">Gum Treatment</a>
+            <a href="wisdom-teeth-oral-surgery.html">Wisdom Teeth & Oral Surgery</a>
+            <a href="kids-dentistry.html">Kids Dentistry</a>
+            <a href="full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-dd">
+        <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
+        <div class="dd">
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
+      </li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="international.html">International</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta"
+      target="_blank" rel="noopener">Book Consultation</a>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="m-group">
+      <div class="m-row"><a href="treatments.html" onclick="toggleMenu()">Treatments</a><button type="button" class="m-tog" aria-label="Show treatments" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl m-subl-tx">
+        <a href="treatments.html" onclick="toggleMenu()">All Treatments</a>
+        <a href="dental-implants.html" onclick="toggleMenu()">Dental Implants</a>
+        <a href="smile-makeover.html" onclick="toggleMenu()">Smile Makeover & Digital Smile Design</a>
+        <a href="invisalign-clear-aligners.html" onclick="toggleMenu()">Invisalign & Clear Aligners</a>
+        <a href="veneers-lumineers.html" onclick="toggleMenu()">Porcelain Veneers & Lumineers</a>
+        <a href="crowns-bridges.html" onclick="toggleMenu()">Crowns & Bridges</a>
+        <a href="root-canal-treatment.html" onclick="toggleMenu()">Root Canal Treatment</a>
+        <a href="braces-orthodontics.html" onclick="toggleMenu()">Braces & Orthodontics</a>
+        <a href="gum-treatment.html" onclick="toggleMenu()">Gum Treatment</a>
+        <a href="wisdom-teeth-oral-surgery.html" onclick="toggleMenu()">Wisdom Teeth & Oral Surgery</a>
+        <a href="kids-dentistry.html" onclick="toggleMenu()">Kids Dentistry</a>
+        <a href="full-mouth-rehabilitation.html" onclick="toggleMenu()">Full Mouth Rehabilitation</a>
+      </div>
+    </div>
+    <div class="m-group">
+      <div class="m-row"><a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a><button type="button" class="m-tog" aria-label="Show gallery pages" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl">
+        <a href="gallery.html" onclick="toggleMenu()">Photo Gallery</a>
+        <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+        <a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+      </div>
+    </div>
+    <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
+    <a href="about.html" onclick="toggleMenu()">Our Story</a>
+    <a href="technology.html" onclick="toggleMenu()">Technology</a>
+    <a href="international.html" onclick="toggleMenu()">International</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta"
+      onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
+  </div>
+
+  <!-- ARTICLE -->
+  <header class="ar-hero">
+    <div class="ar-hero-in">
+      <nav class="ar-crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><i>/</i><a href="blog.html">Blog</a><i>/</i><span>Tooth Health</span></nav>
+      <div class="ar-meta"><span class="ar-topic">Tooth Health</span><span>21 August 2024</span><span>8 min read</span></div>
+      <h1 class="ar-h1">How Do I Know if I Have a Cavity? How to Spot Tooth Decay and Protect Your Oral Health</h1>
+    </div>
+  </header>
+  <div class="ar-feat"><img src="images/blog/2024/08/decay.jpg" alt="How Do I Know if I Have a Cavity? How to Spot Tooth Decay and Protect Your Oral Health" decoding="async" onerror="this.parentNode.remove()"></div>
+
+  <article class="ar-body">
+<p>Cavities are a very common dental issue that can affect people of any age. Also referred to as tooth decay or <a href="https://www.nidcr.nih.gov/research/data-statistics/dental-caries" target="_blank" rel="noopener">dental caries</a>, these occur when bacteria accumulate on the teeth and produce an acidic substance that corrodes the enamel. If left untreated, this can result in serious issues like infections and even tooth loss.</p>
+<p><strong>What Is Tooth Decay?</strong></p>
+<p><a href="https://www.nidcr.nih.gov/health-info/tooth-decay" target="_blank" rel="noopener">Tooth decay</a> is a severe bacterial infection that wreaks havoc on the hard tissues of our teeth, such as the enamel, dentin, and cementum. The bacteria in our mouths secretes acids that erode the tooth enamel, creating small holes or openings known as cavities. If left untreated these dental problems can become much larger, penetrating further into your teeth and causing pain.</p>
+<p>Tooth decay could potentially affect your nerves and lead to an infection in the bone around your tooth, resulting in what’s known as a <a href="https://www.webmd.com/oral-health/abscessed-tooth" target="_blank" rel="noopener">tooth abscess</a>. It could also become a more serious issue where the infection spreads from your mouth throughout other parts of your body. To prevent this from happening, it is highly important to maintain good oral hygiene, along with regular brushing and flossing accompanied by trips to your dentist for <a href="https://api.whatsapp.com/send/?phone=919654988858&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">regular checkups and cleanings</a>.</p>
+<p><strong>What Is A Cavity?</strong></p>
+<p>You know it as a<a href="https://youtu.be/ObqfwBb7czE" target="_blank" rel="noopener">cavity</a>. Your dentist may refer to it as tooth decay or dental caries. All three are names for a hole in your tooth. A cavity is a type of decay that develops in the tooth from bacterial activity. It manifests itself as an opening or crevice and is usually caused by germs latching onto food particles left behind in the mouth, creating an acidic substance. Tooth disintegration is an ongoing process, and cavities are just one part of the process where the damage to the enamel can be seen with the naked eye.</p>
+<p><strong>Recognizing the Signs of Cavities for Early Detection and Prevention</strong></p>
+<p>It’s not uncommon to experience no symptoms in the early stages of cavities. However, as decay intensifies near your tooth’s nerve, you will notice that something is amiss. Below are some telltale signs you may have a cavity:</p>
+<p><strong>Sensitivity when eating or drinking hot, cold, or sugary foods/drinks:</strong></p>
+<p>This is one of the most common indicators that someone has a cavity. Discomfort or pain may be present with such items.</p>
+<p><strong>Pain while biting down:</strong></p>
+<p>As cavities advance they can cause more severe pain, specifically while chewing food. It could manifest as sharp sensations or consistent discomfort depending on the severity level.</p>
+<p><strong>Discoloration and holes on the surface area:</strong></p>
+<p>Visible changes like dark spots and small holes will appear on teeth if there’s a cavity present, so keep an eye out for these noticeable indicators!</p>
+<p>At first, these spots may look like simple staining and you may even assume that you just have mild tooth discoloration. However, over time, the dark spot gets larger, signalling tooth decay. In some cases, cavities can even look like white spots or light marks on the tooth.</p>
+<p><strong>Bad breath/unpleasant taste:</strong></p>
+<p>The increased bacteria caused by cavities can release foul smells and tastes, leading to bad breath and an unpleasant taste in your mouth, this should be addressed as soon as possible.</p>
+<p><strong>Swelling or Bleeding Gums</strong></p>
+<p>When the cavity is near the gum line, the infection of the tooth can have an impact on the surrounding soft tissue. This can result in <a href="https://www.absolutedental.com/blog/why-are-my-gums-bleeding/" target="_blank" rel="noopener">bleeding or swollen gums</a>, especially when brushing or flossing. Bleeding gums can also be a sign of gingivitis, so a trip to the dental office is warranted.</p>
+<p><strong>Jaw ache and difficulty chewing:</strong></p>
+<p>More advanced cases might lead to jaw pains when opening wide enough to eat properly, along with trouble actually consuming food due to extreme sensitivity from decayed areas within your teeth.</p>
+<p>The tooth that has a cavity may be causing you pain. You may find it difficult to bite down without sharp, shocking pain. Other patients find it difficult to brush or floss certain areas because of pain or sensitivity. This is caused by the dentin being exposed and affecting the inner nerve of the tooth.</p>
+<p><strong>No Symptoms At All:</strong></p>
+<p>When a cavity is smaller in size, there may be no symptoms at all. In fact, most patients won’t know they have a cavity until they go for their regular dental checkup. While it’s fortunate to not have to deal with the symptoms and signs of tooth decay, it can also be problematic in receiving timely treatment. You may not notice that there’s a problem with your teeth, which allows the cavity to grow.</p>
+<p><strong>Different Types of Cavities and The Pain You May Experience</strong></p>
+<p>Cavities come in many forms, each with its own unique set of symptoms and pain levels:</p>
+<ul>
+<li><strong>Pit and fissure cavities</strong>lurk in the most inconspicuous places, on the surfaces of your molars. Not only are they difficult to spot, but they can also cause severe pain or sensitivity when eating certain foods.</li></ul>
+<p>As we age, <strong>root cavities</strong> may also become more common due to gum recession; this type is signalled by increased discomfort from hot and cold drinks/foods.</p>
+<ul>
+<li><strong>Smooth surface cavities</strong>often reveal themselves through discoloration and small concavities on flat teeth enamel.</li></ul>
+<p>The intensity and type of pain caused by a cavity can be quite varied. When the decay is only at its beginning stages, there might not be any pain felt as it has yet to penetrate into deeper layers of the tooth. However, when you start feeling sharp twinges from biting down on food or sensitivity toward sweet substances, this should not be taken lightly! In more severe cases, people may even experience a dull ache in the affected area accompanied by referred pains like numbness in their heads/necks, which requires immediate attention.</p>
+<p>If you’re dealing with cavity pain, don’t worry, there are a few quick and easy ways to relieve your discomfort while you wait for your scheduled dentist visit.</p>
+<ul>
+<li>Painkillers can help reduce the discomfort and numbing gels or solutions can be applied directly to your affected area to soothe the pain.</li>
+<li>Rinsing your mouth with warm salt water may also provide much-needed relief as it helps clear away debris around the painful area.</li>
+<li>Avoid foods and drinks that inflict the most pain on your tooth.</li></ul>
+<p><strong>Treatment of Cavities</strong></p>
+<p>If you’ve developed a cavity, quick action is crucial to prevent further deterioration and potential complications. When it comes to treatment options, your dentist will be able to determine the best way forward based on an examination of your teeth and X-rays. Here are some possibilities:</p>
+<p><strong>Fillings:</strong> If the decay isn’t too severe, a filling can be used, this removes the decayed area of tooth material before replacing it with customized composite fillings.</p>
+<p><strong>Crowns:</strong> In cases where there’s been more significant damage done by cavities, crowning may be necessary in order to safeguard and repair what remains of the tooth. This involves reshaping its surface so that a cap can then fit securely over top for protection against further destruction.</p>
+<p><strong>Root Canal Treatment:</strong> If a cavity has reached all the way down into pulp tissue or caused an infection within its depths, <a href="https://youtu.be/ZMG609uFaCI" target="_blank" rel="noopener">root canal therapy</a>could provide much-needed relief from those symptoms, as well as successfully remove any infected areas present prior to sealing off whatever space is left behind with special fillers.</p>
+<p><strong>Extraction:</strong> If there’s extensive damage already incurred by decaying teeth, an <a href="wisdom-teeth-oral-surgery.html">extraction</a> may be the only option left.</p>
+<p><strong>Cavity Prevention: Tips For Protecting Your Teeth and Maintaining Good Oral Health</strong></p>
+<p>If you want to make sure your teeth stay healthy and cavity-free, there are a few steps you can take.</p>
+<ul>
+<li>Brush twice a day with fluoride toothpaste</li>
+<li>Floss at least once a day to remove food particles between teeth</li>
+<li>Use an antibacterial mouthwash to kill bacteria that cause cavities</li>
+<li>Cut back on sugary and acidic foods and drinks</li>
+<li>Choose water over sugary drinks</li>
+<li>Chew <a href="https://www.dentalhealth.org/sugar-free-chewing-gum" target="_blank" rel="noopener">sugar-free gum</a>after meals to stimulate saliva flow and neutralize acids</li>
+<li>Get regular dental checkups and cleanings</li>
+<li>Consider dental sealants, a protective coating applied to the chewing surfaces of back teeth</li>
+<li>Replace your toothbrush every three months</li></ul>
+<p>To avoid dental cavities, do your best to practice good oral hygiene and let your dentist know if you are experiencing any symptoms. The sooner you catch a cavity, the better your chances are of only needing a dental filling rather than a more invasive procedure.</p>
+<p>Importance of Dental Hygiene and Checkups</p>
+<p>Dental hygiene is crucial in keeping your teeth and mouth healthy. Brushing twice a day and getting into the habit of flossing can have a positive impact on your teeth and improve the health of your mouth. Regularly rinsing with mouthwash can also help reduce bacteria and plaque.</p>
+<p>It is also just as important to make trips to the dental office every six months for both a professional cleaning and a dental exam. The cleaning is designed to help get rid of hardened plaque and tartar from the mouth while the exam helps to check for signs of cavities. By being proactive with your dental health and keeping up with bi-annual appointments, you can be sure to catch cavities as early as possible.</p>
+  </article>
+  <div class="ar-share"><a class="ar-back" href="blog.html">&larr; All articles</a></div>
+
+  <section class="ar-rel">
+    <div class="ar-rel-in">
+      <h2 class="ar-rel-t">Keep <em>reading</em></h2>
+      <div class="bl-grid">
+      <a class="bl-card" href="blog/why-are-my-teeth-becoming-transparent.html" data-topic="teeth">
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="images/blog/2026/09/ChatGPT-Image-Sep-28-2026-12_25_41-PM-1024x683.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">28 September 2026 &middot; 7 min read</div>
+          <h2 class="bl-title">Why Are My Teeth Becoming Transparent?</h2>
+          <p class="bl-ex">Seeing see-through edges on your front teeth? We explain what causes transparent teeth and what can and can&#x27;t be reversed.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-does-my-tooth-hurt-only-when-i-bite-down.html" data-topic="teeth">
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="images/blog/2026/08/WhatsApp-Image-2026-08-21-at-14.25.41.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">22 August 2026 &middot; 7 min read</div>
+          <h2 class="bl-title">Why Does My Tooth Hurt Only When I Bite Down?</h2>
+          <p class="bl-ex">Tooth hurts when biting down? It could be a crack, a high filling, or something more serious. VIN SMILES Advanced Dentistry explains why.</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="bl-card" href="blog/why-are-so-many-young-adults-suddenly-cracking-their-teeth.html" data-topic="teeth">
+        <div class="bl-top"><span class="bl-topic">Tooth Health</span><svg viewBox="0 0 120 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="d" d="M38 40C38 28 50 24 60 30C70 24 82 28 82 40C82 52 78 60 76 70C74 82 72 94 66 94C61 94 62 76 60 76C58 76 59 94 54 94C48 94 46 82 44 70C42 60 38 52 38 40Z" transform="translate(0 0) scale(1)" stroke="rgba(255,255,255,.92)" stroke-width="3.00" stroke-linejoin="round" fill="none"/><path class="a" d="M44 38C48 33 54 32 60 35C66 32 72 33 76 38" stroke="#C9A96E" stroke-width="3"/></svg><img src="images/blog/2026/08/WhatsApp-Image-2026-08-14-at-16.53-1.jpg" alt="" loading="lazy" decoding="async" onerror="this.remove()"></div>
+        <div class="bl-body">
+          <div class="bl-date">16 July 2026 &middot; 8 min read</div>
+          <h2 class="bl-title">Why Are So Many Young Adults Suddenly Cracking Their Teeth?</h2>
+          <p class="bl-ex">Dentists are seeing more young adults with cracked teeth than ever before. So Many Young Adults Suddenly Cracking Their Teeth ?</p>
+          <span class="bl-more">Read article <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="about-cta">
+    <div class="about-cta-inner">
+      <div class="cta-eyebrow">Have a Question of Your Own?</div>
+      <h2 class="cta-h2">Ask a <em>Specialist</em></h2>
+      <p class="cta-p">Send us a WhatsApp message or book a consultation. We will give you a clear, honest answer.</p>
+      <div class="cta-btns">
+        <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">Book a consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+        <a href="https://wa.me/919654988858" class="btn-wa" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <img src="images/VinSmiles.png" alt=""
+          style="height: 120px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
+        <div class="f-addr">303 Basement, Block S,<br>Greater Kailash II, New Delhi, Delhi 110048</div>
+        <div class="f-contacts">
+          <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path
+                d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z"
+                stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>+91 96549 88858</a>
+          <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" />
+              <path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" />
+            </svg>vinsmiles88@gmail.com</a>
+        </div>
+        <div class="f-map">
+          <div class="f-map-title">Directions to the clinic</div>
+          <iframe class="f-map-frame"
+            src="https://www.google.com/maps?q=VinSmiles%20Advanced%20Dentistry%20Greater%20Kailash%20II%20New%20Delhi&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="VIN SMILES location map">
+          </iframe>
+          <a class="f-map-link" href="https://maps.app.goo.gl/5jTNMbCDFUvxKMbP9" target="_blank" rel="noopener">
+            Open in Google Maps
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6h8M6.5 2l3.5 4-3.5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="f-col-title">Treatments</div>
+        <ul class="f-links">
+          <li><a href="dental-implants.html">Dental Implants</a></li>
+          <li><a href="smile-makeover.html">Smile Makeover</a></li>
+          <li><a href="invisalign-clear-aligners.html">Invisalign</a></li>
+          <li><a href="veneers-lumineers.html">Veneers</a></li>
+          <li><a href="full-mouth-rehabilitation.html">Full Mouth Rehab</a></li>
+
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-title">Clinic</div>
+        <ul class="f-links">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-title">International</div>
+        <ul class="f-links">
+          <li><a href="international.html">Patient Guide</a></li>
+          <li><a href="international.html#cost">Cost Comparison</a></li>
+          <li><a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0">Video
+              Consultation</a></li>
+        </ul>
+        <div class="f-hours">
+          <div class="f-hours-label">Hours</div>
+          <div class="f-hours-val">Mon, Wed - Sat: 10am - 8pm<br>Sunday: 10am - 7pm<br>Tuesday: Closed</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="f-copy">&copy; 2026 VIN SMILES Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
+      <div class="f-badges">
+        <span class="f-badge">Invisalign Provider</span>
+        <span class="f-badge">IDA Member</span>
+        <span class="f-badge">5.0 &#9733; JustDial</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919654988858" class="wa-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="white">
+      <path
+        d="M14 2.5C7.6 2.5 2.5 7.6 2.5 14c0 2.1.57 4.1 1.57 5.83L2.5 25.5l5.84-1.55A11.43 11.43 0 0014 25.5c6.4 0 11.5-5.1 11.5-11.5S20.4 2.5 14 2.5zm5.65 15.9c-.23.65-1.34 1.24-1.85 1.31-.46.07-1.05.1-1.69-.1-.39-.13-.9-.3-1.54-.56C11.7 18.03 9.7 15.8 9.5 15.53c-.2-.26-1.5-2-.5-3.79.21-.37.56-.71 1.02-.98.19-.11.38-.17.53-.17h.7c.23 0 .54-.08.84.64.3.77 1.04 2.6 1.13 2.79.09.19.15.4.04.64-.11.24-.17.38-.36.58-.19.2-.39.46-.56.62-.18.17-.37.37-.15.73.21.36.96 1.5 2.06 2.43 1.41 1.23 2.59 1.61 2.96 1.8.37.18.58.15.8-.09.21-.24.92-1.07 1.17-1.44.24-.37.49-.3.83-.18l2.63 1.24c.3.14.5.2.57.32.08.12.08.72-.15 1.37z" />
+    </svg>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      const m = document.getElementById('mobileMenu');
+      m.classList.toggle('open');
+      document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+    }
+    function toggleSub(b){var g=b.closest('.m-group');var o=g.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}
+    const ro = new IntersectionObserver(entries =>
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } }),
+      { threshold: 0.06 });
+    document.querySelectorAll('.reveal,.sv-rv').forEach(el => ro.observe(el));
+
+  </script>
+</body>
+
+</html>

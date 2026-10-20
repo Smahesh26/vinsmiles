@@ -764,6 +764,108 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .pin-3{bottom:28%;left:4%;}
   .hero-quote-txt{font-size:12px;}
 }
+/* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
+/* page specific */
+@media(max-width:1024px){
+  .stories-grid{grid-template-columns:repeat(3,1fr);gap:20px;}
+  .letter-photo-wrap{max-width:440px;width:100%;}
+  .letter-photo{aspect-ratio:4/5!important;max-height:none!important;}
+  .letter-photo img{object-position:center 15%;}
+}
+@media(max-width:900px){
+  .stories-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .stories-grid{grid-template-columns:1fr;}
+  .story-photo{height:clamp(260px,70vw,380px);}
+}
+/* Hero photo: taller frame, framed from the top so faces are not cut */
+@media(max-width:1024px){
+  .hero-right{height:auto!important;aspect-ratio:1/1;max-height:600px!important;min-height:0!important;}
+  .hero-img{background-position:center 12%!important;}
+}
+@media(max-width:640px){
+  .hero-right{aspect-ratio:4/5;max-height:none!important;}
+}
+
+/* === VS RESPONSIVE PATCH END === */
+/* === VS OCT UPDATE START === */
+/* ---- NAV START ---- */
+/* ---- Navigation dropdowns (desktop) ---- */
+.nav-links li.has-dd{position:relative;}
+.nav-links .dd-caret{display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s ease;}
+.nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+.nav-links .dd{position:absolute;top:calc(100% + 22px);left:50%;min-width:220px;background:#fff;border:1px solid #E8E2E8;border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.10);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:400;text-align:left;}
+.nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px;}
+.nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-links .dd a{display:block;padding:10px 22px;font-size:11px!important;letter-spacing:1.3px!important;line-height:1.4;color:#555!important;white-space:nowrap;text-transform:uppercase;font-weight:400;}
+.nav-links .dd a::after{display:none!important;}
+.nav-links .dd a:hover,.nav-links .dd a.active{color:#904588!important;background:#FAF5FA;}
+.nav-links .dd-wide{min-width:560px;padding:8px;}
+.nav-links .dd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4px;}
+.nav-links .dd-grid a{padding:10px 16px;border-radius:3px;}
+.nav-links .dd-grid .dd-all{grid-column:1/-1;color:#904588!important;border-bottom:1px solid #E8E2E8;border-radius:0;margin-bottom:6px;font-weight:500;}
+@media(min-width:1201px) and (max-width:1366px){
+  .nav .nav-links{gap:18px!important;}
+  .nav .nav-links > li > a{font-size:11px!important;letter-spacing:1.1px!important;}
+  .nav .nav-cta{padding:10px 18px!important;letter-spacing:1.4px!important;}
+}
+/* ---- Mobile menu sub-lists ---- */
+.mobile-menu .m-group{display:flex;flex-direction:column;align-items:center;width:100%;}
+.mobile-menu .m-row{display:flex;align-items:center;gap:12px;padding-left:42px;}
+.mobile-menu .m-tog{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid rgba(144,69,136,.35);background:none;cursor:pointer;position:relative;color:#904588;}
+.mobile-menu .m-tog::before,.mobile-menu .m-tog::after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .25s ease;}
+.mobile-menu .m-tog::after{transform:translate(-50%,-50%) rotate(90deg);}
+.mobile-menu .m-group.open .m-tog::after{transform:translate(-50%,-50%) rotate(0deg);}
+.mobile-menu .m-subl{display:none;grid-template-columns:1fr 1fr;gap:12px 22px;margin:16px 0 4px;padding:0 24px;max-width:420px;width:100%;text-align:center;}
+.mobile-menu .m-group.open .m-subl{display:grid;}
+.mobile-menu .m-subl a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:1.3px!important;text-transform:uppercase;line-height:1.45;opacity:.72;}
+.mobile-menu .m-subl a:hover{opacity:1;}
+@media(max-width:360px){.mobile-menu .m-subl{grid-template-columns:1fr;}}
+/* ---- NAV END ---- */
+/* === VS OCT UPDATE END === */
 </style>
 </head>
 <body>
@@ -774,25 +876,76 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <img src="images/VinSmiles.png" alt="" style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
   </a>
   <ul class="nav-links">
-    <li><a href="treatments.html">Treatments</a></li>
-    <li><a href="gallery.html">Smile Gallery</a></li>
-    <li><a href="our-team.html">Our Team</a></li>
-    <li><a href="about.html">Our Story</a></li>
-    <li><a href="technology.html">Technology</a></li>
-    <li><a href="international.html" class="active">International</a></li>
-  </ul>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
+      <li class="has-dd">
+        <a href="treatments.html" aria-haspopup="true">Treatments<span class="dd-caret"></span></a>
+        <div class="dd dd-wide">
+          <div class="dd-grid">
+            <a href="treatments.html" class="dd-all">All Treatments</a>
+            <a href="dental-implants.html">Dental Implants</a>
+            <a href="smile-makeover.html">Smile Makeover & Digital Smile Design</a>
+            <a href="invisalign-clear-aligners.html">Invisalign & Clear Aligners</a>
+            <a href="veneers-lumineers.html">Porcelain Veneers & Lumineers</a>
+            <a href="crowns-bridges.html">Crowns & Bridges</a>
+            <a href="root-canal-treatment.html">Root Canal Treatment</a>
+            <a href="braces-orthodontics.html">Braces & Orthodontics</a>
+            <a href="gum-treatment.html">Gum Treatment</a>
+            <a href="wisdom-teeth-oral-surgery.html">Wisdom Teeth & Oral Surgery</a>
+            <a href="kids-dentistry.html">Kids Dentistry</a>
+            <a href="full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-dd">
+        <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
+        <div class="dd">
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
+      </li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="international.html" class="active">International</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
-  <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
-  <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
-  <a href="about.html" onclick="toggleMenu()">Our Story</a>
-  <a href="technology.html" onclick="toggleMenu()">Technology</a>
-  <a href="international.html" onclick="toggleMenu()">International</a>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta" onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
-</div>
+    <div class="m-group">
+      <div class="m-row"><a href="treatments.html" onclick="toggleMenu()">Treatments</a><button type="button" class="m-tog" aria-label="Show treatments" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl m-subl-tx">
+        <a href="treatments.html" onclick="toggleMenu()">All Treatments</a>
+        <a href="dental-implants.html" onclick="toggleMenu()">Dental Implants</a>
+        <a href="smile-makeover.html" onclick="toggleMenu()">Smile Makeover & Digital Smile Design</a>
+        <a href="invisalign-clear-aligners.html" onclick="toggleMenu()">Invisalign & Clear Aligners</a>
+        <a href="veneers-lumineers.html" onclick="toggleMenu()">Porcelain Veneers & Lumineers</a>
+        <a href="crowns-bridges.html" onclick="toggleMenu()">Crowns & Bridges</a>
+        <a href="root-canal-treatment.html" onclick="toggleMenu()">Root Canal Treatment</a>
+        <a href="braces-orthodontics.html" onclick="toggleMenu()">Braces & Orthodontics</a>
+        <a href="gum-treatment.html" onclick="toggleMenu()">Gum Treatment</a>
+        <a href="wisdom-teeth-oral-surgery.html" onclick="toggleMenu()">Wisdom Teeth & Oral Surgery</a>
+        <a href="kids-dentistry.html" onclick="toggleMenu()">Kids Dentistry</a>
+        <a href="full-mouth-rehabilitation.html" onclick="toggleMenu()">Full Mouth Rehabilitation</a>
+      </div>
+    </div>
+    <div class="m-group">
+      <div class="m-row"><a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a><button type="button" class="m-tog" aria-label="Show gallery pages" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl">
+        <a href="gallery.html" onclick="toggleMenu()">Photo Gallery</a>
+        <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+        <a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+      </div>
+    </div>
+    <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
+    <a href="about.html" onclick="toggleMenu()">Our Story</a>
+    <a href="technology.html" onclick="toggleMenu()">Technology</a>
+    <a href="international.html" onclick="toggleMenu()">International</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta"
+      onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
+  </div>
 
 <!-- --
      HERO
@@ -911,7 +1064,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
         </div>
         <h3 class="why-card-title">Same technology. A fraction of the cost.</h3>
-        <p class="why-card-desc">CBCT scanning, iTero, The Wand, Diode Laser - the same instruments found in London's Harley Street clinics. Not because we're trying to impress you, but because precision requires them.</p>
+        <p class="why-card-desc">CBCT-guided planning, iTero scanning, The Wand and Diode Laser: the same standard of technology found in London's Harley Street clinics. Not because we're trying to impress you, but because precision requires them.</p>
       </div>
       <div class="why-card reveal d2">
         <div class="why-card-num">03</div>
@@ -1332,7 +1485,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="footer-top">
     <div>
       <img src="images/VinSmiles.png" alt="" style="height: 120px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
-      <div class="f-addr">Greater Kailash II, New Delhi - 110048<br>Near M-Block Market, GK-2</div>
+      <div class="f-addr">303 Basement, Block S,<br>Greater Kailash II, New Delhi, Delhi 110048</div>
       <div class="f-contacts">
         <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+91 96549 88858</a>
         <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>vinsmiles88@gmail.com</a>
@@ -1355,11 +1508,12 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <div>
       <div class="f-col-title">Treatments</div>
       <ul class="f-links">
-        <li><a href="treatments.html">Dental Implants</a></li>
-        <li><a href="treatments.html">Smile Design</a></li>
-        <li><a href="treatments.html">Invisalign</a></li>
-        <li><a href="treatments.html">Veneers</a></li>
-        <li><a href="treatments.html">Full Mouth Rehab</a></li>
+          <li><a href="dental-implants.html">Dental Implants</a></li>
+          <li><a href="smile-makeover.html">Smile Makeover</a></li>
+          <li><a href="invisalign-clear-aligners.html">Invisalign</a></li>
+          <li><a href="veneers-lumineers.html">Veneers</a></li>
+          <li><a href="full-mouth-rehabilitation.html">Full Mouth Rehab</a></li>
+
       </ul>
     </div>
     <div>
@@ -1369,6 +1523,8 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
         <li><a href="our-team.html">Our Team</a></li>
         <li><a href="technology.html">Technology</a></li>
         <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
       </ul>
     </div>
     <div>
@@ -1380,7 +1536,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       </ul>
       <div class="f-hours">
         <div class="f-hours-label">Hours</div>
-        <div class="f-hours-val">Mon - Sat: 10am - 7pm<br>Sunday: By appointment</div>
+        <div class="f-hours-val">Mon, Wed - Sat: 10am - 8pm<br>Sunday: 10am - 7pm<br>Tuesday: Closed</div>
       </div>
     </div>
   </div>
@@ -1456,6 +1612,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 </script>
+<!-- VS NAV JS START -->
+<script>function toggleSub(b){var g=b.closest('.m-group');var o=g.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}</script>
+<!-- VS NAV JS END -->
 </body>
 </html>
 

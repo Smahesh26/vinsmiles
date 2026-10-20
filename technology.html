@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Technology | VinSmiles Advanced Dentistry -- Greater Kailash II, New Delhi</title>
-<meta name="description" content="Precision dental technology at VinSmiles -- CBCT 3D imaging, Digital Smile Design, iTero scanning, The Wand STA, diode laser and Invisalign. GK-II, New Delhi.">
+<title>Technology | VIN SMILES Advanced Dentistry - Greater Kailash II, New Delhi</title>
+<meta name="description" content="Precision dental technology at VIN SMILES: CBCT-guided planning, Digital Smile Design, iTero scanning, The Wand STA, diode laser and Invisalign. GK-II, New Delhi.">
 <link rel="canonical" href="https://www.vinsmiles.com/technology">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -464,6 +464,93 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   .footer-bottom{padding:16px 20px;}
   .ht-tl,.ht-bl{display:none;}
 }
+/* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
+/* page specific */
+@media(max-width:640px){
+  .hero-scroll{display:none;}
+  .tech-visual{min-height:72vw;}
+}
+/* Desktop hero: keep the eyebrow clear of the nav on shorter laptop screens */
+@media(min-width:1025px){ .hero{padding-top:118px!important;padding-bottom:24px;} }
+
+/* === VS RESPONSIVE PATCH END === */
+/* === VS OCT UPDATE START === */
+/* ---- NAV START ---- */
+/* ---- Navigation dropdowns (desktop) ---- */
+.nav-links li.has-dd{position:relative;}
+.nav-links .dd-caret{display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s ease;}
+.nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+.nav-links .dd{position:absolute;top:calc(100% + 22px);left:50%;min-width:220px;background:#fff;border:1px solid #E8E2E8;border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.10);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:400;text-align:left;}
+.nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px;}
+.nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-links .dd a{display:block;padding:10px 22px;font-size:11px!important;letter-spacing:1.3px!important;line-height:1.4;color:#555!important;white-space:nowrap;text-transform:uppercase;font-weight:400;}
+.nav-links .dd a::after{display:none!important;}
+.nav-links .dd a:hover,.nav-links .dd a.active{color:#904588!important;background:#FAF5FA;}
+.nav-links .dd-wide{min-width:560px;padding:8px;}
+.nav-links .dd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4px;}
+.nav-links .dd-grid a{padding:10px 16px;border-radius:3px;}
+.nav-links .dd-grid .dd-all{grid-column:1/-1;color:#904588!important;border-bottom:1px solid #E8E2E8;border-radius:0;margin-bottom:6px;font-weight:500;}
+@media(min-width:1201px) and (max-width:1366px){
+  .nav .nav-links{gap:18px!important;}
+  .nav .nav-links > li > a{font-size:11px!important;letter-spacing:1.1px!important;}
+  .nav .nav-cta{padding:10px 18px!important;letter-spacing:1.4px!important;}
+}
+/* ---- Mobile menu sub-lists ---- */
+.mobile-menu .m-group{display:flex;flex-direction:column;align-items:center;width:100%;}
+.mobile-menu .m-row{display:flex;align-items:center;gap:12px;padding-left:42px;}
+.mobile-menu .m-tog{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid rgba(144,69,136,.35);background:none;cursor:pointer;position:relative;color:#904588;}
+.mobile-menu .m-tog::before,.mobile-menu .m-tog::after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .25s ease;}
+.mobile-menu .m-tog::after{transform:translate(-50%,-50%) rotate(90deg);}
+.mobile-menu .m-group.open .m-tog::after{transform:translate(-50%,-50%) rotate(0deg);}
+.mobile-menu .m-subl{display:none;grid-template-columns:1fr 1fr;gap:12px 22px;margin:16px 0 4px;padding:0 24px;max-width:420px;width:100%;text-align:center;}
+.mobile-menu .m-group.open .m-subl{display:grid;}
+.mobile-menu .m-subl a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:1.3px!important;text-transform:uppercase;line-height:1.45;opacity:.72;}
+.mobile-menu .m-subl a:hover{opacity:1;}
+@media(max-width:360px){.mobile-menu .m-subl{grid-template-columns:1fr;}}
+/* ---- NAV END ---- */
+/* === VS OCT UPDATE END === */
 </style>
 </head>
 <body>
@@ -474,25 +561,76 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <img src="images/VinSmiles.png" alt="" style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
   </a>
   <ul class="nav-links">
-    <li><a href="treatments.html">Treatments</a></li>
-    <li><a href="gallery.html">Smile Gallery</a></li>
-    <li><a href="our-team.html">Our Team</a></li>
-    <li><a href="about.html">Our Story</a></li>
-    <li><a href="technology.html" class="active">Technology</a></li>
-    <li><a href="international.html">International</a></li>
-  </ul>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
+      <li class="has-dd">
+        <a href="treatments.html" aria-haspopup="true">Treatments<span class="dd-caret"></span></a>
+        <div class="dd dd-wide">
+          <div class="dd-grid">
+            <a href="treatments.html" class="dd-all">All Treatments</a>
+            <a href="dental-implants.html">Dental Implants</a>
+            <a href="smile-makeover.html">Smile Makeover & Digital Smile Design</a>
+            <a href="invisalign-clear-aligners.html">Invisalign & Clear Aligners</a>
+            <a href="veneers-lumineers.html">Porcelain Veneers & Lumineers</a>
+            <a href="crowns-bridges.html">Crowns & Bridges</a>
+            <a href="root-canal-treatment.html">Root Canal Treatment</a>
+            <a href="braces-orthodontics.html">Braces & Orthodontics</a>
+            <a href="gum-treatment.html">Gum Treatment</a>
+            <a href="wisdom-teeth-oral-surgery.html">Wisdom Teeth & Oral Surgery</a>
+            <a href="kids-dentistry.html">Kids Dentistry</a>
+            <a href="full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-dd">
+        <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
+        <div class="dd">
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
+      </li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li><a href="about.html">Our Story</a></li>
+      <li><a href="technology.html" class="active">Technology</a></li>
+      <li><a href="international.html">International</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
-  <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
-  <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
-  <a href="about.html" onclick="toggleMenu()">Our Story</a>
-  <a href="technology.html" onclick="toggleMenu()">Technology</a>
-  <a href="international.html" onclick="toggleMenu()">International</a>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta" onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
-</div>
+    <div class="m-group">
+      <div class="m-row"><a href="treatments.html" onclick="toggleMenu()">Treatments</a><button type="button" class="m-tog" aria-label="Show treatments" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl m-subl-tx">
+        <a href="treatments.html" onclick="toggleMenu()">All Treatments</a>
+        <a href="dental-implants.html" onclick="toggleMenu()">Dental Implants</a>
+        <a href="smile-makeover.html" onclick="toggleMenu()">Smile Makeover & Digital Smile Design</a>
+        <a href="invisalign-clear-aligners.html" onclick="toggleMenu()">Invisalign & Clear Aligners</a>
+        <a href="veneers-lumineers.html" onclick="toggleMenu()">Porcelain Veneers & Lumineers</a>
+        <a href="crowns-bridges.html" onclick="toggleMenu()">Crowns & Bridges</a>
+        <a href="root-canal-treatment.html" onclick="toggleMenu()">Root Canal Treatment</a>
+        <a href="braces-orthodontics.html" onclick="toggleMenu()">Braces & Orthodontics</a>
+        <a href="gum-treatment.html" onclick="toggleMenu()">Gum Treatment</a>
+        <a href="wisdom-teeth-oral-surgery.html" onclick="toggleMenu()">Wisdom Teeth & Oral Surgery</a>
+        <a href="kids-dentistry.html" onclick="toggleMenu()">Kids Dentistry</a>
+        <a href="full-mouth-rehabilitation.html" onclick="toggleMenu()">Full Mouth Rehabilitation</a>
+      </div>
+    </div>
+    <div class="m-group">
+      <div class="m-row"><a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a><button type="button" class="m-tog" aria-label="Show gallery pages" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl">
+        <a href="gallery.html" onclick="toggleMenu()">Photo Gallery</a>
+        <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+        <a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+      </div>
+    </div>
+    <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
+    <a href="about.html" onclick="toggleMenu()">Our Story</a>
+    <a href="technology.html" onclick="toggleMenu()">Technology</a>
+    <a href="international.html" onclick="toggleMenu()">International</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta"
+      onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
+  </div>
 
 <!-- -- HERO -- -->
 <section class="hero" id="hero">
@@ -509,14 +647,14 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="hero-content">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-line"></div>
-      <span class="hero-eyebrow-txt">Clinical Technology -- VinSmiles</span>
+      <span class="hero-eyebrow-txt">Clinical Technology · VIN SMILES</span>
       <div class="hero-eyebrow-line"></div>
     </div>
     <h1 class="hero-h1">
       Precision.
       <em>By Design.</em>
     </h1>
-    <p class="hero-p">Every instrument in our clinic was chosen because it makes the impossible routine -- and the routine extraordinary. Six technologies. One standard: yours.</p>
+    <p class="hero-p">Every technology we work with was chosen because it makes the impossible routine, and the routine extraordinary. Six technologies. One standard: yours.</p>
 
     <!-- Hero central instrument SVG -->
     <div class="hero-instrument">
@@ -590,7 +728,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 <section class="tech-section" id="tech-0">
   <div class="tech-visual">
     <div class="tech-visual-num">01</div>
-    <div class="tech-visual-label"><span class="tech-visual-label-dot"></span><span class="tech-visual-label-txt">Diagnostic Imaging</span></div>
+    <div class="tech-visual-label"><span class="tech-visual-label-dot"></span><span class="tech-visual-label-txt">Diagnostic Planning</span></div>
     <div class="tech-anim">
       <svg viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg" id="cbct-svg">
         <!-- Jaw wireframe -->
@@ -619,9 +757,9 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
         <rect x="50" y="60" width="280" height="8" rx="1" fill="url(#scanGrad)" opacity=".8" style="animation:scanBeam 2.8s ease-in-out infinite;"/>
         <!-- Scan data readout -->
         <rect x="290" y="260" width="72" height="52" rx="2" fill="rgba(0,0,0,.4)" stroke="rgba(144,69,136,.3)" stroke-width="1"/>
-        <text x="304" y="278" font-family="'DM Sans'" font-size="7" fill="rgba(144,69,136,.8)" letter-spacing="1">SCAN</text>
-        <text x="296" y="292" font-family="'DM Sans'" font-size="10" font-weight="600" fill="rgba(255,255,255,.7)">0.09mm</text>
-        <text x="304" y="304" font-family="'DM Sans'" font-size="7" fill="rgba(255,255,255,.3)" letter-spacing="1">VOXEL</text>
+        <text x="304" y="278" font-family="'DM Sans'" font-size="7" fill="rgba(144,69,136,.8)" letter-spacing="1">PLAN</text>
+        <text x="296" y="292" font-family="'DM Sans'" font-size="10" font-weight="600" fill="rgba(255,255,255,.7)">3D</text>
+        <text x="304" y="304" font-family="'DM Sans'" font-size="7" fill="rgba(255,255,255,.3)" letter-spacing="1">MODEL</text>
         <defs>
           <linearGradient id="scanGrad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stop-color="transparent"/>
@@ -637,14 +775,14 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="tech-info">
     <div class="tech-info-inner">
       <div class="tech-num reveal">01 / 06</div>
-      <div class="tech-cat reveal d1">Diagnostic Imaging</div>
-      <h2 class="tech-name reveal d1">CBCT <em>3D Imaging</em></h2>
-      <p class="tech-desc reveal d2">Cone Beam CT scanning produces a complete 3D map of your jaw, teeth, nerves, and bone density in a single 14-second scan. We plan implants, root canals, and extractions with surgical precision before touching a single tooth.</p>
+      <div class="tech-cat reveal d1">Diagnostic Planning</div>
+      <h2 class="tech-name reveal d1">CBCT-Guided <em>3D Planning</em></h2>
+      <p class="tech-desc reveal d2">Where a case needs it, we plan on a Cone Beam CT scan: a complete 3D map of your jaw, teeth, nerves and bone density. Implants, complex root canals and surgical extractions are planned with surgical precision before a single tooth is touched.</p>
       <div class="tech-specs reveal d2">
-        <div class="tech-spec"><div class="tech-spec-label">Voxel Resolution</div><div class="tech-spec-value accent">0.09 mm</div></div>
-        <div class="tech-spec"><div class="tech-spec-label">Scan Duration</div><div class="tech-spec-value">14 seconds</div></div>
-        <div class="tech-spec"><div class="tech-spec-label">Radiation Dose</div><div class="tech-spec-value"> 98% vs CT</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Used for</div><div class="tech-spec-value accent">Implants &amp; surgery</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Shows</div><div class="tech-spec-value">Bone, nerves, roots</div></div>
         <div class="tech-spec"><div class="tech-spec-label">Output</div><div class="tech-spec-value">Full 3D model</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Result</div><div class="tech-spec-value">Guided treatment plan</div></div>
       </div>
       <div class="tech-cta reveal d3">
         <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-brand" target="_blank" rel="noopener">Book a Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -707,10 +845,10 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <div class="tech-num reveal">02 / 06</div>
       <div class="tech-cat reveal d1">Treatment Planning</div>
       <h2 class="tech-name reveal d1">Digital <em>Smile Makeover</em></h2>
-      <p class="tech-desc reveal d2">DSD translates your face, proportions, and personality into a precise 3D simulation of your transformed smile. You see -- and approve -- every detail before any procedure begins. No guesswork. No surprises.</p>
+      <p class="tech-desc reveal d2">DSD translates your face, proportions, and personality into a precise 3D simulation of your transformed smile. You see, and approve, every detail before any procedure begins. No guesswork. No surprises.</p>
       <div class="tech-specs reveal d2">
         <div class="tech-spec"><div class="tech-spec-label">Preview</div><div class="tech-spec-value accent">Before treatment</div></div>
-        <div class="tech-spec"><div class="tech-spec-label">Process</div><div class="tech-spec-value">2-visit design</div></div>
+        <div class="tech-spec"><div class="tech-spec-label">Process</div><div class="tech-spec-value">2 to 4 visit design</div></div>
         <div class="tech-spec"><div class="tech-spec-label">Approval</div><div class="tech-spec-value">Patient sign-off</div></div>
         <div class="tech-spec"><div class="tech-spec-label">Accuracy</div><div class="tech-spec-value">Sub-mm precision</div></div>
       </div>
@@ -759,7 +897,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <div class="tech-num reveal">03 / 06</div>
       <div class="tech-cat reveal d1">Digital Impressions</div>
       <h2 class="tech-name reveal d1">iTero <em>Scanner</em></h2>
-      <p class="tech-desc reveal d2">A handheld wand replaces the messy impression trays of traditional dentistry. 6,000 laser pulses per second build a perfectly accurate 3D model of your mouth in minutes -- used for Invisalign planning, crown fabrication, and smile simulation.</p>
+      <p class="tech-desc reveal d2">A handheld wand replaces the messy impression trays of traditional dentistry. 6,000 laser pulses per second build a perfectly accurate 3D model of your mouth in minutes, used for Invisalign planning, crown fabrication, and smile simulation.</p>
       <div class="tech-specs reveal d2">
         <div class="tech-spec"><div class="tech-spec-label">Scan Accuracy</div><div class="tech-spec-value accent">17 microns</div></div>
         <div class="tech-spec"><div class="tech-spec-label">Impressions</div><div class="tech-spec-value">None required</div></div>
@@ -817,7 +955,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <div class="tech-num reveal">04 / 06</div>
       <div class="tech-cat reveal d1">Pain-Free Anaesthesia</div>
       <h2 class="tech-name reveal d1">Conscious Sedation <em>+ Wand STA</em></h2>
-      <p class="tech-desc reveal d2">Computer-controlled local anaesthesia delivery at a precisely metered 0.005 ml/sec -- the exact rate at which tissue absorbs anaesthetic without pain. No sharp jab. No burning. For high-anxiety cases, conscious sedation protocols can be integrated for a calmer, safer experience.</p>
+      <p class="tech-desc reveal d2">Computer-controlled local anaesthesia delivery at a precisely metered 0.005 ml/sec, the exact rate at which tissue absorbs anaesthetic without pain. No sharp jab. No burning. For high-anxiety cases, conscious sedation protocols can be integrated for a calmer, safer experience.</p>
       <div class="tech-specs reveal d2">
         <div class="tech-spec"><div class="tech-spec-label">Delivery Rate</div><div class="tech-spec-value accent">0.005 ml/sec</div></div>
         <div class="tech-spec"><div class="tech-spec-label">Control</div><div class="tech-spec-value">Computer-regulated</div></div>
@@ -881,7 +1019,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <div class="tech-num reveal">05 / 06</div>
       <div class="tech-cat reveal d1">Soft Tissue Precision</div>
       <h2 class="tech-name reveal d1">Triple Wavelength <em>Diode Laser</em></h2>
-      <p class="tech-desc reveal d2">A triple wavelength diode laser platform replaces scalpels for gum contouring, depigmentation, crown lengthening, and soft-tissue procedures. Cuts with light -- no bleeding, no stitches in most cases, dramatically faster healing, and precision that no blade can achieve.</p>
+      <p class="tech-desc reveal d2">A triple wavelength diode laser platform replaces scalpels for gum contouring, depigmentation, crown lengthening, and soft-tissue procedures. Cuts with light: no bleeding, no stitches in most cases, dramatically faster healing, and precision that no blade can achieve.</p>
       <div class="tech-specs reveal d2">
         <div class="tech-spec"><div class="tech-spec-label">Wavelength</div><div class="tech-spec-value accent">940 nm</div></div>
         <div class="tech-spec"><div class="tech-spec-label">Bleeding</div><div class="tech-spec-value">Near zero</div></div>
@@ -940,7 +1078,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       <div class="tech-num reveal">06 / 06</div>
       <div class="tech-cat reveal d1">Clear Orthodontics</div>
       <h2 class="tech-name reveal d1">Invisalign <em>System</em></h2>
-      <p class="tech-desc reveal d2">Invisalign certification is awarded to individual clinicians rather than a clinic. At VinSmiles, three certified doctors -- Dr. Som, Dr. Mitiksha, and Dr. Neha -- collaborate together on your treatment plan alongside an Invisalign company clinical doctor. Powered by iTero 3D digital scanning, ClinCheck software, and Invisalign Smile Architect -- a unique feature where you can see your ClinCheck tooth-movement plan visualised directly on your actual smile -- you review and approve your complete smile simulation before aligners are fabricated.</p>
+      <p class="tech-desc reveal d2">Invisalign certification is awarded to individual clinicians rather than a clinic. At VIN SMILES, three certified doctors (Dr. Som, Dr. Mitiksha, and Dr. Neha) collaborate together on your treatment plan alongside an Invisalign company clinical doctor. Powered by iTero 3D digital scanning, ClinCheck software, and Invisalign Smile Architect, a unique feature where you can see your ClinCheck tooth-movement plan visualised directly on your actual smile: you review and approve your complete smile simulation before aligners are fabricated.</p>
       <div class="tech-specs reveal d2">
         <div class="tech-spec"><div class="tech-spec-label">Doctors</div><div class="tech-spec-value accent">3 Certified Clinicians + Align Team</div></div>
         <div class="tech-spec"><div class="tech-spec-label">Planning</div><div class="tech-spec-value">Collaborative Multi-Doctor Review</div></div>
@@ -959,23 +1097,19 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
 <div class="precision-strip">
   <div class="precision-strip-inner">
     <!-- Repeated twice for seamless loop -->
-    <div class="ps-item"><div class="ps-val">0.09<span>mm</span></div><div class="ps-label">CBCT voxel resolution</div></div>
-    <div class="ps-item"><div class="ps-val">17<span>--m</span></div><div class="ps-label">iTero scan accuracy</div></div>
-    <div class="ps-item"><div class="ps-val">14<span>sec</span></div><div class="ps-label">Full jaw 3D scan</div></div>
+    <div class="ps-item"><div class="ps-val">3D<span></span></div><div class="ps-label">CBCT-guided implant planning</div></div>
+    <div class="ps-item"><div class="ps-val">17<span>&micro;m</span></div><div class="ps-label">iTero scan accuracy</div></div>
     <div class="ps-item"><div class="ps-val">940<span>nm</span></div><div class="ps-label">Laser wavelength</div></div>
     <div class="ps-item"><div class="ps-val">98.7<span>%</span></div><div class="ps-label">Implant success rate</div></div>
-    <div class="ps-item"><div class="ps-val">0<span>--</span></div><div class="ps-label">Traditional impressions needed</div></div>
+    <div class="ps-item"><div class="ps-val">0<span></span></div><div class="ps-label">Traditional impressions needed</div></div>
     <div class="ps-item"><div class="ps-val">6,000<span>fps</span></div><div class="ps-label">iTero laser pulses/sec</div></div>
-    <div class="ps-item"><div class="ps-val">98<span>%</span></div><div class="ps-label">Radiation vs medical CT</div></div>
     <!-- Duplicate for scroll -->
-    <div class="ps-item"><div class="ps-val">0.09<span>mm</span></div><div class="ps-label">CBCT voxel resolution</div></div>
-    <div class="ps-item"><div class="ps-val">17<span>--m</span></div><div class="ps-label">iTero scan accuracy</div></div>
-    <div class="ps-item"><div class="ps-val">14<span>sec</span></div><div class="ps-label">Full jaw 3D scan</div></div>
+    <div class="ps-item"><div class="ps-val">3D<span></span></div><div class="ps-label">CBCT-guided implant planning</div></div>
+    <div class="ps-item"><div class="ps-val">17<span>&micro;m</span></div><div class="ps-label">iTero scan accuracy</div></div>
     <div class="ps-item"><div class="ps-val">940<span>nm</span></div><div class="ps-label">Laser wavelength</div></div>
     <div class="ps-item"><div class="ps-val">98.7<span>%</span></div><div class="ps-label">Implant success rate</div></div>
-    <div class="ps-item"><div class="ps-val">0<span>--</span></div><div class="ps-label">Traditional impressions needed</div></div>
+    <div class="ps-item"><div class="ps-val">0<span></span></div><div class="ps-label">Traditional impressions needed</div></div>
     <div class="ps-item"><div class="ps-val">6,000<span>fps</span></div><div class="ps-label">iTero laser pulses/sec</div></div>
-    <div class="ps-item"><div class="ps-val">98<span>%</span></div><div class="ps-label">Radiation vs medical CT</div></div>
   </div>
 </div>
 
@@ -984,9 +1118,9 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="about-cta-inner">
     <div class="cta-eyebrow">Experience the Difference</div>
     <h2 class="cta-h2">See Our Technology <em>In Action</em></h2>
-    <p class="cta-p">Book a free consultation -- we'll walk you through every instrument relevant to your treatment and show you exactly what precision looks like.</p>
+    <p class="cta-p">Book a consultation and we'll walk you through every instrument relevant to your treatment and show you exactly what precision looks like.</p>
     <div class="cta-btns">
-      <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">Book a Free Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">Book a Consultation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="https://wa.me/919654988858" class="btn-wa" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="white"><path d="M9 1.5C4.86 1.5 1.5 4.86 1.5 9c0 1.35.37 2.63 1 3.74L1.5 16.5l3.88-1c1.06.55 2.27.87 3.62.87 4.14 0 7.5-3.36 7.5-7.5S13.14 1.5 9 1.5zm3.69 10.35c-.15.42-.87.8-1.2.85-.3.04-.68.06-1.1-.07-.25-.08-.58-.18-.99-.36C7.8 11.65 6.5 10.2 6.38 10.03c-.12-.17-.97-1.29-.97-2.46 0-1.17.61-1.74.83-1.98.22-.24.48-.3.64-.3h.46c.15 0 .35-.06.54.41.2.5.68 1.68.74 1.8.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.24.25-.1.49.14.24.62.97 1.33 1.57.91.8 1.68 1.05 1.92 1.17.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12l1.71.81c.2.1.33.14.38.22.05.08.05.48-.1.9z"/></svg>
         WhatsApp Us
@@ -1000,7 +1134,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
   <div class="footer-top">
     <div>
       <img src="images/VinSmiles.png" alt="" style="height: 120px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
-      <div class="f-addr">Greater Kailash II, New Delhi - 110048<br>Near M-Block Market, GK-2</div>
+      <div class="f-addr">303 Basement, Block S,<br>Greater Kailash II, New Delhi, Delhi 110048</div>
       <div class="f-contacts">
         <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+91 96549 88858</a>
         <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>vinsmiles88@gmail.com</a>
@@ -1012,7 +1146,7 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
           src="https://www.google.com/maps?q=VinSmiles%20Advanced%20Dentistry%20Greater%20Kailash%20II%20New%20Delhi&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="VinSmiles location map">
+          title="VIN SMILES location map">
         </iframe>
         <a class="f-map-link" href="https://maps.app.goo.gl/5jTNMbCDFUvxKMbP9" target="_blank" rel="noopener">
           Open in Google Maps
@@ -1023,11 +1157,12 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
     <div>
       <div class="f-col-title">Treatments</div>
       <ul class="f-links">
-        <li><a href="treatments.html">Dental Implants</a></li>
-        <li><a href="treatments.html">Smile Design</a></li>
-        <li><a href="treatments.html">Invisalign</a></li>
-        <li><a href="treatments.html">Veneers</a></li>
-        <li><a href="treatments.html">Full Mouth Rehab</a></li>
+          <li><a href="dental-implants.html">Dental Implants</a></li>
+          <li><a href="smile-makeover.html">Smile Makeover</a></li>
+          <li><a href="invisalign-clear-aligners.html">Invisalign</a></li>
+          <li><a href="veneers-lumineers.html">Veneers</a></li>
+          <li><a href="full-mouth-rehabilitation.html">Full Mouth Rehab</a></li>
+
       </ul>
     </div>
     <div>
@@ -1037,6 +1172,8 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
         <li><a href="our-team.html">Our Team</a></li>
         <li><a href="technology.html">Technology</a></li>
         <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
       </ul>
     </div>
     <div>
@@ -1048,12 +1185,12 @@ footer{background:#0F0E0F;border-top:1px solid rgba(255,255,255,.04);}
       </ul>
       <div class="f-hours">
         <div class="f-hours-label">Hours</div>
-        <div class="f-hours-val">Mon - Sat: 10am - 7pm<br>Sunday: By appointment</div>
+        <div class="f-hours-val">Mon, Wed - Sat: 10am - 8pm<br>Sunday: 10am - 7pm<br>Tuesday: Closed</div>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="f-copy">&copy; 2026 VinSmiles Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
+    <div class="f-copy">&copy; 2026 VIN SMILES Advanced Dentistry &middot; Greater Kailash II, New Delhi</div>
     <div class="f-badges">
       <span class="f-badge">Invisalign Provider</span>
       <span class="f-badge">IDA Member</span>
@@ -1177,6 +1314,9 @@ document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => ro.observ
   });
 })();
 </script>
+<!-- VS NAV JS START -->
+<script>function toggleSub(b){var g=b.closest('.m-group');var o=g.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}</script>
+<!-- VS NAV JS END -->
 </body>
 </html>
 

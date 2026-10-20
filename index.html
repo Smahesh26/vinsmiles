@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VIN SMILES Advanced Dentistry | South Delhi's Premier Dental Clinic</title>
   <meta name="description"
-    content="VIN SMILES Advanced Dentistry, Greater Kailash II - South Delhi's destination for smile makeovers, dental implants, Invisalign, and full mouth rehabilitation. 11 specialists.">
+    content="VIN SMILES Advanced Dentistry, Greater Kailash II - South Delhi's destination for smile makeovers, dental implants, Invisalign, and full mouth rehabilitation, by specialists.">
   <meta name="keywords"
     content="VIN SMILES, dentist in Greater Kailash 2, dental implants Delhi, Invisalign Delhi, smile makeover Delhi, full mouth rehabilitation, veneers Delhi, laser dentistry">
   <meta name="author" content="VIN SMILES Advanced Dentistry">
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="VIN SMILES Advanced Dentistry">
   <meta property="og:title" content="VIN SMILES Advanced Dentistry | South Delhi's Premier Dental Clinic">
   <meta property="og:description"
-    content="Smile makeovers, dental implants, Invisalign, and full mouth rehabilitation by 11 specialists in GK-II, New Delhi.">
+    content="Smile makeovers, dental implants, Invisalign, and full mouth rehabilitation by specialists in GK-II, New Delhi.">
   <meta property="og:url" content="https://www.vinsmiles.com/">
   <meta property="og:image" content="https://www.vinsmiles.com/assets/og-home.jpg">
 
@@ -38,11 +38,12 @@
   "email": "vinsmiles88@gmail.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Greater Kailash II",
+    "streetAddress": "303 Basement, Block S, Greater Kailash II",
     "addressLocality": "New Delhi",
     "postalCode": "110048",
     "addressCountry": "IN"
   },
+  "openingHours": ["Mo,We,Th,Fr,Sa 10:00-20:00", "Su 10:00-19:00"],
   "medicalSpecialty": [
     "Dentistry",
     "Oral and Maxillofacial Surgery",
@@ -889,10 +890,6 @@
       clip-path: inset(0 0 0 0);
     }
 
-    /* Real before/after photo pairs for homepage marquee */
-    .gallery-track .gallery-card:nth-child(6n+1) .gc-before {
-      background-image: url("images/Gallery%20Page/Gallery%20Page%201%20-%20Before.jpeg");
-    }
 
     .gallery-track .gallery-card:nth-child(6n+1) .gc-after {
       background-image: url("images/Gallery%20Page/Gallery%20Page%201%20-%20After.jpeg");
@@ -3213,7 +3210,165 @@
       text-align: center;
       margin-top: 48px;
     }
-  </style>
+  /* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
+/* page specific */
+@media(max-width:1024px){
+  .team-grid{gap:16px;}
+  .team-header-right{text-align:left;max-width:none;}
+  .team-section{padding:80px 0;}
+}
+@media(max-width:640px){
+  .team-section{padding:64px 0;}
+  .team-header{margin-bottom:36px;}
+  .team-grid{gap:14px;}
+  .doctor-info{padding:14px 14px 18px;}
+  .doc-name{font-size:18px;}
+  .doc-role{font-size:9.5px;letter-spacing:1px;}
+  .doc-bio{font-size:12px;}
+}
+@media(max-width:1024px){
+  .founder-left{background-position:center 18%!important;min-height:min(92vw,560px);}
+}
+@media(max-width:900px){
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:1024px) and (min-width:901px){
+  .doctor-info{padding:16px 16px 20px;}
+  .doc-role{letter-spacing:1px;}
+}
+@media(max-width:380px){
+  .team-grid{grid-template-columns:1fr;}
+}
+/* Hero: image ends where stats begin; stats sit on their own band above the ticker */
+@media(max-width:1024px){
+  .hero{height:auto!important;min-height:0!important;}
+  .hero-stats{position:relative!important;inset:auto!important;z-index:3;display:grid!important;grid-template-columns:repeat(5,1fr);
+    background:#fff!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;opacity:1!important;animation:none!important;}
+  .hero-stat{padding:18px 16px!important;border-right:1px solid var(--rule)!important;border-bottom:none!important;}
+  .hero-stat:last-child{border-right:none!important;}
+}
+@media(max-width:640px){
+  .hero-stats{grid-template-columns:1fr 1fr;}
+  .hero-stat{padding:16px 20px!important;border-bottom:1px solid var(--rule)!important;}
+  .hero-stat:nth-child(2n){border-right:none!important;}
+  .hero-stat:last-child{grid-column:1/-1;border-bottom:none!important;}
+}
+/* Before/after label strip: one row on phones */
+@media(max-width:640px){
+  .gallery-label-strip{flex-direction:row!important;align-items:center!important;justify-content:space-between;gap:10px!important;padding:0 20px 16px!important;}
+  .gallery-label-center{gap:8px;font-size:9px;letter-spacing:1.2px;white-space:nowrap;}
+  .gallery-label-center-line{width:14px;}
+  .gallery-label-left,.gallery-label-right{font-size:11px;flex-shrink:0;}
+}
+@media(max-width:360px){
+  .gallery-label-center-line{display:none;}
+  .gallery-label-center{font-size:8.5px;letter-spacing:1px;}
+}
+/* Technology tiles: content was absolutely positioned inside auto-height tiles, so it collapsed */
+@media(max-width:1024px){
+  .tb,.tb-featured{height:auto!important;}
+  .tb-inner{position:relative!important;inset:auto!important;padding:28px!important;}
+  .tb-hero-icon{flex:none;height:200px;}
+}
+@media(max-width:640px){
+  .tb-inner{padding:24px 20px!important;}
+  .tb-hero-icon{height:180px;}
+  .tb-feat-title{font-size:24px;}
+}
+/* Desktop hero: one screen tall, text centred between nav and stats bar */
+@media(min-width:1025px){
+  .hero{height:100vh;height:100svh;min-height:660px;align-items:center;}
+  .hero-content{padding:110px 52px 80px;}
+}
+/* Founder photo: keep her face in frame on every screen */
+.founder-left{background-position:center 18%!important;}
+/* Wide screens: gallery label strip and CTA strip line up with the 1300px content column */
+@media(min-width:1025px){
+  .gallery-label-strip{padding-left:max(52px,calc((100% - 1196px) / 2))!important;padding-right:max(52px,calc((100% - 1196px) / 2))!important;}
+  div[style*="padding:24px 52px"]{padding-left:max(52px,calc((100% - 1196px) / 2))!important;padding-right:max(52px,calc((100% - 1196px) / 2))!important;}
+}
+/* Wide screens: hero text starts on the same line as the page content below it */
+@media(min-width:1301px){ .hero-content{margin-left:calc((100% - 1300px) / 2);} }
+
+/* === VS RESPONSIVE PATCH END === */
+/* === VS OCT UPDATE START === */
+/* ---- NAV START ---- */
+/* ---- Navigation dropdowns (desktop) ---- */
+.nav-links li.has-dd{position:relative;}
+.nav-links .dd-caret{display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s ease;}
+.nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+.nav-links .dd{position:absolute;top:calc(100% + 22px);left:50%;min-width:220px;background:#fff;border:1px solid #E8E2E8;border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.10);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:400;text-align:left;}
+.nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px;}
+.nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-links .dd a{display:block;padding:10px 22px;font-size:11px!important;letter-spacing:1.3px!important;line-height:1.4;color:#555!important;white-space:nowrap;text-transform:uppercase;font-weight:400;}
+.nav-links .dd a::after{display:none!important;}
+.nav-links .dd a:hover,.nav-links .dd a.active{color:#904588!important;background:#FAF5FA;}
+.nav-links .dd-wide{min-width:560px;padding:8px;}
+.nav-links .dd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4px;}
+.nav-links .dd-grid a{padding:10px 16px;border-radius:3px;}
+.nav-links .dd-grid .dd-all{grid-column:1/-1;color:#904588!important;border-bottom:1px solid #E8E2E8;border-radius:0;margin-bottom:6px;font-weight:500;}
+@media(min-width:1201px) and (max-width:1366px){
+  .nav .nav-links{gap:18px!important;}
+  .nav .nav-links > li > a{font-size:11px!important;letter-spacing:1.1px!important;}
+  .nav .nav-cta{padding:10px 18px!important;letter-spacing:1.4px!important;}
+}
+/* ---- Mobile menu sub-lists ---- */
+.mobile-menu .m-group{display:flex;flex-direction:column;align-items:center;width:100%;}
+.mobile-menu .m-row{display:flex;align-items:center;gap:12px;padding-left:42px;}
+.mobile-menu .m-tog{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid rgba(144,69,136,.35);background:none;cursor:pointer;position:relative;color:#904588;}
+.mobile-menu .m-tog::before,.mobile-menu .m-tog::after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .25s ease;}
+.mobile-menu .m-tog::after{transform:translate(-50%,-50%) rotate(90deg);}
+.mobile-menu .m-group.open .m-tog::after{transform:translate(-50%,-50%) rotate(0deg);}
+.mobile-menu .m-subl{display:none;grid-template-columns:1fr 1fr;gap:12px 22px;margin:16px 0 4px;padding:0 24px;max-width:420px;width:100%;text-align:center;}
+.mobile-menu .m-group.open .m-subl{display:grid;}
+.mobile-menu .m-subl a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:1.3px!important;text-transform:uppercase;line-height:1.45;opacity:.72;}
+.mobile-menu .m-subl a:hover{opacity:1;}
+@media(max-width:360px){.mobile-menu .m-subl{grid-template-columns:1fr;}}
+/* ---- NAV END ---- */
+/* === VS OCT UPDATE END === */
+</style>
 </head>
 
 <body>
@@ -3224,12 +3379,38 @@
       <img src="images/VinSmiles.png" alt="" style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
     </a>
     <ul class="nav-links">
-      <li><a href="treatments.html">Treatments</a></li>
-      <li><a href="gallery.html">Smile Gallery</a></li>
+      <li class="has-dd">
+        <a href="treatments.html" aria-haspopup="true">Treatments<span class="dd-caret"></span></a>
+        <div class="dd dd-wide">
+          <div class="dd-grid">
+            <a href="treatments.html" class="dd-all">All Treatments</a>
+            <a href="dental-implants.html">Dental Implants</a>
+            <a href="smile-makeover.html">Smile Makeover & Digital Smile Design</a>
+            <a href="invisalign-clear-aligners.html">Invisalign & Clear Aligners</a>
+            <a href="veneers-lumineers.html">Porcelain Veneers & Lumineers</a>
+            <a href="crowns-bridges.html">Crowns & Bridges</a>
+            <a href="root-canal-treatment.html">Root Canal Treatment</a>
+            <a href="braces-orthodontics.html">Braces & Orthodontics</a>
+            <a href="gum-treatment.html">Gum Treatment</a>
+            <a href="wisdom-teeth-oral-surgery.html">Wisdom Teeth & Oral Surgery</a>
+            <a href="kids-dentistry.html">Kids Dentistry</a>
+            <a href="full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-dd">
+        <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
+        <div class="dd">
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
+      </li>
       <li><a href="our-team.html">Our Team</a></li>
       <li><a href="about.html">Our Story</a></li>
       <li><a href="technology.html">Technology</a></li>
       <li><a href="international.html">International</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
     <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta"
       target="_blank" rel="noopener">Book Consultation</a>
@@ -3238,12 +3419,36 @@
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
-    <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
+    <div class="m-group">
+      <div class="m-row"><a href="treatments.html" onclick="toggleMenu()">Treatments</a><button type="button" class="m-tog" aria-label="Show treatments" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl m-subl-tx">
+        <a href="treatments.html" onclick="toggleMenu()">All Treatments</a>
+        <a href="dental-implants.html" onclick="toggleMenu()">Dental Implants</a>
+        <a href="smile-makeover.html" onclick="toggleMenu()">Smile Makeover & Digital Smile Design</a>
+        <a href="invisalign-clear-aligners.html" onclick="toggleMenu()">Invisalign & Clear Aligners</a>
+        <a href="veneers-lumineers.html" onclick="toggleMenu()">Porcelain Veneers & Lumineers</a>
+        <a href="crowns-bridges.html" onclick="toggleMenu()">Crowns & Bridges</a>
+        <a href="root-canal-treatment.html" onclick="toggleMenu()">Root Canal Treatment</a>
+        <a href="braces-orthodontics.html" onclick="toggleMenu()">Braces & Orthodontics</a>
+        <a href="gum-treatment.html" onclick="toggleMenu()">Gum Treatment</a>
+        <a href="wisdom-teeth-oral-surgery.html" onclick="toggleMenu()">Wisdom Teeth & Oral Surgery</a>
+        <a href="kids-dentistry.html" onclick="toggleMenu()">Kids Dentistry</a>
+        <a href="full-mouth-rehabilitation.html" onclick="toggleMenu()">Full Mouth Rehabilitation</a>
+      </div>
+    </div>
+    <div class="m-group">
+      <div class="m-row"><a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a><button type="button" class="m-tog" aria-label="Show gallery pages" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl">
+        <a href="gallery.html" onclick="toggleMenu()">Photo Gallery</a>
+        <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+        <a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+      </div>
+    </div>
     <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
     <a href="about.html" onclick="toggleMenu()">Our Story</a>
     <a href="technology.html" onclick="toggleMenu()">Technology</a>
     <a href="international.html" onclick="toggleMenu()">International</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
     <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta"
       onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
   </div>
@@ -3272,7 +3477,7 @@
         Where Precision<br>Dentistry Meets
         <em>Personal Transformation</em>
       </h1>
-      <p class="hero-p hero-text-anim" id="hero-desc">11 specialists. Cutting-edge technology. A patient experience
+      <p class="hero-p hero-text-anim" id="hero-desc">Specialist-led care. Cutting-edge technology. A patient experience
         built around comfort, confidence, and clinical excellence - in the heart of Greater Kailash II.</p>
       <div class="hero-btns">
         <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0"
@@ -3381,137 +3586,173 @@
         <span class="gallery-label-right">After</span>
       </div>
       <div class="gallery-track" id="galleryTrack">
-        <!-- Card 1 -->
         <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba1-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba1-after.jpg')"></div>
           <div class="gc-divider"></div>
           <span class="gc-tag-b">Before</span>
           <span class="gc-tag-a">After</span>
           <div class="gc-info">
-            <span class="gc-badge">INVISALIGN</span>
-            <div class="gc-name">Aligned Without<br>Compromise</div>
-            <div class="gc-detail">Clear Aligners . No enamel loss</div>
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">A Smile Worth<br>Sharing</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <!-- Card 2 -->
         <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba2-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba2-after.jpg')"></div>
           <div class="gc-divider"></div>
           <span class="gc-tag-b">Before</span>
           <span class="gc-tag-a">After</span>
           <div class="gc-info">
-            <span class="gc-badge">FULL MOUTH REHAB</span>
-            <div class="gc-name">A Story Worth<br>Rebuilding</div>
-            <div class="gc-detail">Full Mouth Rehabilitation . 5mm bite raised</div>
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">Confidence,<br>Restored</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <!-- Card 3 -->
         <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba3-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba3-after.jpg')"></div>
           <div class="gc-divider"></div>
           <span class="gc-tag-b">Before</span>
           <span class="gc-tag-a">After</span>
           <div class="gc-info">
-            <span class="gc-badge">SMILE MAKEOVER</span>
-            <div class="gc-name">Smile<br>Transformation</div>
-            <div class="gc-detail">Smile Makeover . 2 appointments only</div>
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">Smiling Freely<br>Again</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <!-- Card 4 -->
         <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba4-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba4-after.jpg')"></div>
           <div class="gc-divider"></div>
           <span class="gc-tag-b">Before</span>
           <span class="gc-tag-a">After</span>
           <div class="gc-info">
-            <span class="gc-badge">SMILE DESIGN</span>
-            <div class="gc-name">From Paris,<br>For This Smile</div>
-            <div class="gc-detail">Invisalign + Veneers + Frenectomy</div>
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">Natural,<br>Lasting Results</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <!-- Card 5 -->
         <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba5-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba5-after.jpg')"></div>
           <div class="gc-divider"></div>
           <span class="gc-tag-b">Before</span>
           <span class="gc-tag-a">After</span>
           <div class="gc-info">
-            <span class="gc-badge">INVISALIGN</span>
-            <div class="gc-name">Aligned Without<br>Compromise</div>
-            <div class="gc-detail">Clear Aligners . No enamel loss</div>
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">A Brighter<br>Everyday Smile</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <!-- Card 6 -->
         <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba6-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba6-after.jpg')"></div>
           <div class="gc-divider"></div>
           <span class="gc-tag-b">Before</span>
           <span class="gc-tag-a">After</span>
           <div class="gc-info">
-            <span class="gc-badge">FULL MOUTH REHAB</span>
-            <div class="gc-name">A Story Worth<br>Rebuilding</div>
-            <div class="gc-detail">Full Mouth Rehabilitation . 5mm bite raised</div>
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">Made for<br>This Smile</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
+          </div>
+        </div>
+        <div class="gallery-card">
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba7-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba7-after.jpg')"></div>
+          <div class="gc-divider"></div>
+          <span class="gc-tag-b">Before</span>
+          <span class="gc-tag-a">After</span>
+          <div class="gc-info">
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">The Smile She<br>Wanted</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
         <!-- Duplicate set for seamless loop -->
-        <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
-          <div class="gc-divider"></div><span class="gc-tag-b">Before</span><span class="gc-tag-a">After</span>
-          <div class="gc-info"><span class="gc-badge">INVISALIGN</span>
-            <div class="gc-name">Aligned Without<br>Compromise</div>
-            <div class="gc-detail">Clear Aligners . No enamel loss</div>
+        <div class="gallery-card" aria-hidden="true">
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba1-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba1-after.jpg')"></div>
+          <div class="gc-divider"></div>
+          <span class="gc-tag-b">Before</span>
+          <span class="gc-tag-a">After</span>
+          <div class="gc-info">
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">A Smile Worth<br>Sharing</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
-          <div class="gc-divider"></div><span class="gc-tag-b">Before</span><span class="gc-tag-a">After</span>
-          <div class="gc-info"><span class="gc-badge">FULL MOUTH REHAB</span>
-            <div class="gc-name">A Story Worth<br>Rebuilding</div>
-            <div class="gc-detail">Full Mouth Rehabilitation . 5mm bite raised</div>
+        <div class="gallery-card" aria-hidden="true">
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba2-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba2-after.jpg')"></div>
+          <div class="gc-divider"></div>
+          <span class="gc-tag-b">Before</span>
+          <span class="gc-tag-a">After</span>
+          <div class="gc-info">
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">Confidence,<br>Restored</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
-          <div class="gc-divider"></div><span class="gc-tag-b">Before</span><span class="gc-tag-a">After</span>
-          <div class="gc-info"><span class="gc-badge">SMILE MAKEOVER</span>
-            <div class="gc-name">Smile<br>Transformation</div>
-            <div class="gc-detail">Smile Makeover . 2 appointments only</div>
+        <div class="gallery-card" aria-hidden="true">
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba3-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba3-after.jpg')"></div>
+          <div class="gc-divider"></div>
+          <span class="gc-tag-b">Before</span>
+          <span class="gc-tag-a">After</span>
+          <div class="gc-info">
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">Smiling Freely<br>Again</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
-          <div class="gc-divider"></div><span class="gc-tag-b">Before</span><span class="gc-tag-a">After</span>
-          <div class="gc-info"><span class="gc-badge">SMILE DESIGN</span>
-            <div class="gc-name">From Paris,<br>For This Smile</div>
-            <div class="gc-detail">Invisalign + Veneers + Frenectomy</div>
+        <div class="gallery-card" aria-hidden="true">
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba4-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba4-after.jpg')"></div>
+          <div class="gc-divider"></div>
+          <span class="gc-tag-b">Before</span>
+          <span class="gc-tag-a">After</span>
+          <div class="gc-info">
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">Natural,<br>Lasting Results</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
-          <div class="gc-divider"></div><span class="gc-tag-b">Before</span><span class="gc-tag-a">After</span>
-          <div class="gc-info"><span class="gc-badge">INVISALIGN</span>
-            <div class="gc-name">Aligned Without<br>Compromise</div>
-            <div class="gc-detail">Clear Aligners . No enamel loss</div>
+        <div class="gallery-card" aria-hidden="true">
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba5-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba5-after.jpg')"></div>
+          <div class="gc-divider"></div>
+          <span class="gc-tag-b">Before</span>
+          <span class="gc-tag-a">After</span>
+          <div class="gc-info">
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">A Brighter<br>Everyday Smile</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
-        <div class="gallery-card">
-          <div class="gc-before"></div>
-          <div class="gc-after"></div>
-          <div class="gc-divider"></div><span class="gc-tag-b">Before</span><span class="gc-tag-a">After</span>
-          <div class="gc-info"><span class="gc-badge">FULL MOUTH REHAB</span>
-            <div class="gc-name">A Story Worth<br>Rebuilding</div>
-            <div class="gc-detail">Full Mouth Rehabilitation . 5mm bite raised</div>
+        <div class="gallery-card" aria-hidden="true">
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba6-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba6-after.jpg')"></div>
+          <div class="gc-divider"></div>
+          <span class="gc-tag-b">Before</span>
+          <span class="gc-tag-a">After</span>
+          <div class="gc-info">
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">Made for<br>This Smile</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
+          </div>
+        </div>
+        <div class="gallery-card" aria-hidden="true">
+          <div class="gc-before" style="background-image:url('images/homepage/before-after/ba7-before.jpg')"></div>
+          <div class="gc-after" style="background-image:url('images/homepage/before-after/ba7-after.jpg')"></div>
+          <div class="gc-divider"></div>
+          <span class="gc-tag-b">Before</span>
+          <span class="gc-tag-a">After</span>
+          <div class="gc-info">
+            <span class="gc-badge">REAL PATIENT</span>
+            <div class="gc-name">The Smile She<br>Wanted</div>
+            <div class="gc-detail">VIN SMILES, Greater Kailash II</div>
           </div>
         </div>
       </div>
@@ -3586,7 +3827,7 @@
               </div>
               <div class="tx-body">
                 <div class="tx-body-inner">
-                  <p class="tx-desc">Conventional and digital dental implants, All-on-4, and full-arch restorations -- placed by our specialist oral implantologist with CBCT-guided planning and custom surgical guides. 98.7% success rate.</p>
+                  <p class="tx-desc">Conventional and digital dental implants, All-on-4, and full-arch restorations, placed by our specialist oral implantologist with CBCT-guided planning and custom surgical guides. 98.7% success rate.</p>
                   <a href="treatments.html" class="tx-micro-link">Explore Implants <svg width="12" height="12"
                       viewBox="0 0 12 12" fill="none">
                       <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -3604,7 +3845,7 @@
               <div class="tx-body">
                 <div class="tx-body-inner">
                   <p class="tx-desc">See your final smile before any treatment begins. Our DSD workflow creates a
-                    digital blueprint of your ideal result -- previewing Lumineers, Emax Crowns, Porcelain crowns, and All Ceramic Crowns -- approved by you before we start.</p>
+                    digital blueprint of your ideal result, previewing Lumineers, Emax Crowns, Porcelain crowns, and All Ceramic Crowns, approved by you before we start.</p>
                   <a href="treatments.html" class="tx-micro-link">Explore DSD <svg width="12" height="12"
                       viewBox="0 0 12 12" fill="none">
                       <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -3933,10 +4174,6 @@
             backed by diagnostic and treatment technology that matches - and often surpasses - international standards.
           </p>
         </div>
-        <div class="tech-intro-right">
-          <div class="tech-intro-num">6</div>
-          <div class="tech-intro-num-label">Advanced Systems</div>
-        </div>
       </div>
 
       <div class="tech-bento reveal reveal-d1">
@@ -4013,18 +4250,13 @@
               </svg>
             </div>
             <div class="tb-wide-text">
-              <div class="tb-wide-name">CBCT 3D Imaging - The Wand STA - Conscious Sedation</div>
-              <div class="tb-benefit" style="font-size:13px;color:var(--ink-60);margin-top:4px;">High-precision
-                diagnostics with CBCT, computer-controlled painless anaesthesia, and conscious sedation support for
+              <div class="tb-wide-name">CBCT-Guided Planning · The Wand STA · Conscious Sedation</div>
+              <div class="tb-benefit" style="font-size:13px;color:var(--ink-60);margin-top:4px;">Precise 3D planning with CBCT scans, computer-controlled painless anaesthesia, and conscious sedation support for
                 anxious patients.</div>
               <div class="tb-wide-stat">
                 <div class="tb-wide-stat-item">
                   <div class="tb-wide-stat-n">0</div>
                   <div class="tb-wide-stat-l">Messy impressions</div>
-                </div>
-                <div class="tb-wide-stat-item">
-                  <div class="tb-wide-stat-n">3</div>
-                  <div class="tb-wide-stat-l">Advanced systems</div>
                 </div>
                 <div class="tb-wide-stat-item">
                   <div class="tb-wide-stat-n">100%</div>
@@ -4060,7 +4292,7 @@
           </div>
           <h2 class="s-title">The Team Behind <em>Every Smile</em></h2>
         </div>
-        <p class="team-header-right">Ten specialists. One clinic. Every discipline covered by someone who has spent
+        <p class="team-header-right">Specialists only. One clinic. Every discipline covered by someone who has spent
           their career perfecting exactly that procedure.</p>
       </div>
 
@@ -4068,15 +4300,15 @@
 
         <div class="doctor-card reveal" style="--photo-bg:linear-gradient(160deg,#f0e6ef 0%,#dcc5d8 100%);">
           <div class="doctor-photo">
-            <img src="images/Our Story Page/Our Story Team Members Images/1 Dr. Shincy Anthony.jpg"
-              alt="Dr. Shincy Anthony" loading="lazy">
-            <div class="doc-specialty-chip">Endodontist</div>
+            <img src="images/Our Story Page/Our Story Team Members Images/2 Dr. Sombir Singh.jpg" alt="Dr. Sombir Singh"
+              loading="lazy">
+            <div class="doc-specialty-chip">Orthodontist</div>
           </div>
           <div class="doctor-info">
-            <div class="doc-name">Dr. Shincy Anthony</div>
-            <div class="doc-role">MDS -- Endodontist</div>
-            <div class="doc-bio">Specialist in conservative dentistry and endodontics, focused on precise and gentle
-              root canal care with modern protocols.</div>
+            <div class="doc-name">Dr. Sombir Singh</div>
+            <div class="doc-role">MDS · Orthodontist</div>
+            <div class="doc-bio">Expert in comprehensive alignment and bite correction with evidence-based orthodontic
+              planning for teens and adults.</div>
             <a href="our-team.html" class="doc-link">Full Profile
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -4088,15 +4320,15 @@
 
         <div class="doctor-card reveal d1" style="--photo-bg:linear-gradient(135deg,#ede0ec 0%,#d4b8cf 100%);">
           <div class="doctor-photo">
-            <img src="images/Our Story Page/Our Story Team Members Images/2 Dr. Sombir Singh.jpg" alt="Dr. Sombir Singh"
-              loading="lazy">
-            <div class="doc-specialty-chip">Orthodontist</div>
+            <img src="images/Our Story Page/Our Story Team Members Images/1 Dr. Shincy Anthony.jpg"
+              alt="Dr. Shincy Anthony" loading="lazy">
+            <div class="doc-specialty-chip">Endodontist</div>
           </div>
           <div class="doctor-info">
-            <div class="doc-name">Dr. Sombir Singh</div>
-            <div class="doc-role">MDS -- Orthodontist</div>
-            <div class="doc-bio">Expert in comprehensive alignment and bite correction with evidence-based orthodontic
-              planning for teens and adults.</div>
+            <div class="doc-name">Dr. Shincy Anthony</div>
+            <div class="doc-role">MDS · Endodontist</div>
+            <div class="doc-bio">Specialist in conservative dentistry and endodontics, focused on precise and gentle
+              root canal care with modern protocols.</div>
             <a href="our-team.html" class="doc-link">Full Profile
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
@@ -4114,7 +4346,7 @@
           </div>
           <div class="doctor-info">
             <div class="doc-name">Dr. Varun Suhag</div>
-            <div class="doc-role">MDS -- Periodontist & Laser Dentist</div>
+            <div class="doc-role">MDS · Periodontist & Laser Dentist</div>
             <div class="doc-bio">Specialist in gum therapies, laser-assisted periodontal procedures, and cosmetic gum
               contouring with minimally invasive care.</div>
             <a href="our-team.html" class="doc-link">Full Profile
@@ -4261,7 +4493,7 @@
       <div>
         <img src="images/VinSmiles.png" alt=""
           style="height: 150px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
-        <div class="f-addr">Greater Kailash II, New Delhi - 110048<br>Near M-Block Market, GK-2</div>
+        <div class="f-addr">303 Basement, Block S,<br>Greater Kailash II, New Delhi, Delhi 110048</div>
         <div class="f-contacts">
           <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
@@ -4291,11 +4523,12 @@
       <div>
         <div class="f-col-title">Treatments</div>
         <ul class="f-links">
-          <li><a href="treatments.html">Dental Implants</a></li>
-          <li><a href="treatments.html">Smile Design</a></li>
-          <li><a href="treatments.html">Invisalign</a></li>
-          <li><a href="treatments.html">Veneers</a></li>
-          <li><a href="treatments.html">Full Mouth Rehab</a></li>
+          <li><a href="dental-implants.html">Dental Implants</a></li>
+          <li><a href="smile-makeover.html">Smile Makeover</a></li>
+          <li><a href="invisalign-clear-aligners.html">Invisalign</a></li>
+          <li><a href="veneers-lumineers.html">Veneers</a></li>
+          <li><a href="full-mouth-rehabilitation.html">Full Mouth Rehab</a></li>
+
         </ul>
       </div>
       <div>
@@ -4305,6 +4538,8 @@
           <li><a href="our-team.html">Our Team</a></li>
           <li><a href="technology.html">Technology</a></li>
           <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div>
@@ -4317,7 +4552,7 @@
         </ul>
         <div class="f-hours">
           <div class="f-hours-label">Hours</div>
-          <div class="f-hours-val">Mon - Sat: 10am - 7pm<br>Sunday: By appointment</div>
+          <div class="f-hours-val">Mon, Wed - Sat: 10am - 8pm<br>Sunday: 10am - 7pm<br>Tuesday: Closed</div>
         </div>
       </div>
     </div>
@@ -4485,12 +4720,12 @@
         {
           author_name: 'Rajesh Khurana',
           rating: 5,
-          text: 'Got my dental implants done at VinSmiles with Dr. Som. The CBCT 3D planning made the entire procedure virtually painless and precise. The digital workflow and surgical guide made a huge difference. State of the art clinic in GK-2!'
+          text: 'Got my dental implants done at VIN SMILES with Dr. Som. The CBCT 3D planning made the entire procedure virtually painless and precise. The digital workflow and surgical guide made a huge difference. State of the art clinic in GK-2!'
         },
         {
           author_name: 'Pooja Malhotra',
           rating: 5,
-          text: 'I came from London for my smile makeover with Emax porcelain veneers. Dr. Mitiksha and the team were exceptionally thorough. From the digital mock-up to final bonding, the results look so natural. Highly recommend VinSmiles to all international patients.'
+          text: 'I came from London for my smile makeover with Emax porcelain veneers. Dr. Mitiksha and the team were exceptionally thorough. From the digital mock-up to final bonding, the results look so natural. Highly recommend VIN SMILES to all international patients.'
         },
         {
           author_name: 'Ananya Sengupta',
@@ -4622,6 +4857,9 @@
       renderCurrentPage();
     });
   </script>
+<!-- VS NAV JS START -->
+<script>function toggleSub(b){var g=b.closest('.m-group');var o=g.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}</script>
+<!-- VS NAV JS END -->
 </body>
 
 </html>

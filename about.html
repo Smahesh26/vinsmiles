@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Story | VIN SMILES Advanced Dentistry -- Greater Kailash II, New Delhi</title>
+<title>Our Story | VIN SMILES Advanced Dentistry - Greater Kailash II, New Delhi</title>
 <meta name="description" content="Meet Dr. Neha Sachdeva and the story behind VIN SMILES. Practicing since 2009, with VIN SMILES established in 2019, the clinic is built around comfort-first dentistry and what patients actually deserve.">
 <link rel="canonical" href="https://www.vinsmiles.com/about">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Our Story | VIN SMILES Advanced Dentistry">
-<meta property="og:description" content="The clinic Dr. Neha Sachdeva built -- because dentistry deserved to be different.">
+<meta property="og:description" content="The clinic Dr. Neha Sachdeva built, because dentistry deserved to be different.">
 <meta property="og:image" content="https://www.vinsmiles.com/assets/images/og-about.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -985,6 +985,164 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   .hero-h1 { font-size:36px; }
   .team-grid { grid-template-columns:1fr; }
 }
+/* === VS RESPONSIVE PATCH START === */
+/* Global safety net: no sideways scroll on any device */
+html,body{max-width:100%;overflow-x:hidden;}
+@supports (overflow-x:clip){html,body{overflow-x:clip;}}
+img,video,iframe{max-width:100%;}
+
+/* Nav: keep logo, CTA and hamburger inside the screen */
+.nav{gap:12px;}
+@media(max-width:1200px){
+  .nav .nav-cta{margin-left:auto;}
+  .nav-hamburger{flex-shrink:0;padding:8px 0 8px 4px;}
+}
+@media(max-width:640px){
+  .nav{padding:0 18px!important;}
+  .nav-logo img{height:120px!important;margin:-24px 0 -24px -16px!important;}
+}
+@media(max-width:480px){
+  .nav{padding:0 14px!important;gap:10px;}
+  .nav-logo img{height:108px!important;margin:-22px 0 -22px -14px!important;}
+  nav .nav-cta{white-space:normal!important;max-width:100px;text-align:center;line-height:1.3!important;
+    padding:6px 10px!important;font-size:9px!important;letter-spacing:1.2px!important;}
+}
+@media(max-width:350px){
+  .nav-logo img{height:96px!important;margin:-20px 0 -20px -12px!important;}
+  nav .nav-cta{max-width:90px;padding:6px 8px!important;letter-spacing:.8px!important;}
+}
+
+/* Mobile menu: start links near the top instead of centring */
+@media(max-width:1200px){
+  .mobile-menu{justify-content:flex-start!important;padding-top:118px!important;padding-bottom:40px!important;gap:24px!important;overflow-y:auto;}
+}
+@media(max-height:560px){
+  .mobile-menu{gap:16px!important;}
+}
+
+/* Desktop: nav items never wrap */
+@media(min-width:1201px){
+  .nav-links a,.nav .nav-cta{white-space:nowrap;}
+}
+/* Footer logo: the PNG has transparent padding, which pushed the first column below the others */
+footer img[src*="VinSmiles.png"]{display:block;margin:-41px 0 -26px -16px!important;}
+footer img[src*="VinSmiles.png"][style*="150px"]{margin:-51px 0 -32px -20px!important;}
+
+/* page specific */
+@media(max-width:1024px) and (min-width:901px){
+  .story-inner{grid-template-columns:320px 1fr!important;gap:48px!important;}
+  .story-left{position:sticky;top:110px;}
+  .story-portrait-frame{max-width:none;aspect-ratio:3/4;}
+  .team-grid{grid-template-columns:repeat(4,1fr);gap:16px;}
+}
+/* Hero: image first, then text, then CTAs, with less empty space */
+@media(max-width:1024px){
+  .about-hero{display:flex!important;flex-direction:column;min-height:0!important;}
+  .hero-right{order:-1;min-height:0!important;height:clamp(260px,62vw,460px);margin-top:75px;}
+  .hero-left{min-height:0!important;justify-content:flex-start!important;padding:48px 36px 56px!important;}
+  .hero-left [class*=scroll]{display:none!important;}
+}
+@media(max-width:640px){
+  .hero-left{padding:36px 24px 48px!important;}
+}
+/* Founder portrait: keep her face in frame */
+@media(max-width:1024px){
+  .story-portrait-frame{background-position:center 18%!important;}
+}
+@media(max-width:900px){
+  .story-portrait-frame{aspect-ratio:4/5!important;max-width:460px;}
+}
+/* Philosophy: hide the outline number that sat behind the intro text */
+@media(max-width:1024px){
+  .philosophy-intro-num{display:none;}
+}
+@media(max-width:1024px){ .hero-scroll-hint{display:none!important;} }
+@media(max-width:1024px){
+  .hero-right{height:auto!important;aspect-ratio:1/1;max-height:500px;}
+  .hero-portrait{background-position:center top!important;}
+}
+/* Desktop hero: text centred in the panel instead of pushed to the bottom */
+@media(min-width:1025px){
+  .hero-left{justify-content:center!important;padding:108px 64px 76px!important;}
+}
+.hero-portrait{background-position:center top!important;}
+
+/* === VS RESPONSIVE PATCH END === */
+/* === VS OCT UPDATE START === */
+/* ---- NAV START ---- */
+/* ---- Navigation dropdowns (desktop) ---- */
+.nav-links li.has-dd{position:relative;}
+.nav-links .dd-caret{display:inline-block;width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .25s ease;}
+.nav-links li.has-dd:hover .dd-caret,.nav-links li.has-dd:focus-within .dd-caret{transform:translateY(0) rotate(-135deg);}
+.nav-links .dd{position:absolute;top:calc(100% + 22px);left:50%;min-width:220px;background:#fff;border:1px solid #E8E2E8;border-radius:4px;box-shadow:0 18px 44px rgba(15,14,15,.10);padding:10px 0;opacity:0;visibility:hidden;transform:translate(-50%,8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;z-index:400;text-align:left;}
+.nav-links .dd::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px;}
+.nav-links li.has-dd:hover .dd,.nav-links li.has-dd:focus-within .dd{opacity:1;visibility:visible;transform:translate(-50%,0);}
+.nav-links .dd a{display:block;padding:10px 22px;font-size:11px!important;letter-spacing:1.3px!important;line-height:1.4;color:#555!important;white-space:nowrap;text-transform:uppercase;font-weight:400;}
+.nav-links .dd a::after{display:none!important;}
+.nav-links .dd a:hover,.nav-links .dd a.active{color:#904588!important;background:#FAF5FA;}
+.nav-links .dd-wide{min-width:560px;padding:8px;}
+.nav-links .dd-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:4px;}
+.nav-links .dd-grid a{padding:10px 16px;border-radius:3px;}
+.nav-links .dd-grid .dd-all{grid-column:1/-1;color:#904588!important;border-bottom:1px solid #E8E2E8;border-radius:0;margin-bottom:6px;font-weight:500;}
+@media(min-width:1201px) and (max-width:1366px){
+  .nav .nav-links{gap:18px!important;}
+  .nav .nav-links > li > a{font-size:11px!important;letter-spacing:1.1px!important;}
+  .nav .nav-cta{padding:10px 18px!important;letter-spacing:1.4px!important;}
+}
+/* ---- Mobile menu sub-lists ---- */
+.mobile-menu .m-group{display:flex;flex-direction:column;align-items:center;width:100%;}
+.mobile-menu .m-row{display:flex;align-items:center;gap:12px;padding-left:42px;}
+.mobile-menu .m-tog{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:1px solid rgba(144,69,136,.35);background:none;cursor:pointer;position:relative;color:#904588;}
+.mobile-menu .m-tog::before,.mobile-menu .m-tog::after{content:'';position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .25s ease;}
+.mobile-menu .m-tog::after{transform:translate(-50%,-50%) rotate(90deg);}
+.mobile-menu .m-group.open .m-tog::after{transform:translate(-50%,-50%) rotate(0deg);}
+.mobile-menu .m-subl{display:none;grid-template-columns:1fr 1fr;gap:12px 22px;margin:16px 0 4px;padding:0 24px;max-width:420px;width:100%;text-align:center;}
+.mobile-menu .m-group.open .m-subl{display:grid;}
+.mobile-menu .m-subl a{font-family:'DM Sans',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:1.3px!important;text-transform:uppercase;line-height:1.45;opacity:.72;}
+.mobile-menu .m-subl a:hover{opacity:1;}
+@media(max-width:360px){.mobile-menu .m-subl{grid-template-columns:1fr;}}
+/* ---- NAV END ---- */
+/* Clinic gallery: 13 photos */
+.gallery-bento{grid-template-rows:360px 260px 260px 300px 260px 300px;}
+.gb-item:nth-child(n+8) .gb-bg{background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important;}
+.gb-item:nth-child(8){grid-column:1/3;grid-row:4;}
+.gb-item:nth-child(9){grid-column:3;grid-row:4/6;}
+.gb-item:nth-child(10){grid-column:1;grid-row:5;}
+.gb-item:nth-child(11){grid-column:2;grid-row:5;}
+.gb-item:nth-child(12){grid-column:1;grid-row:6;}
+.gb-item:nth-child(13){grid-column:2/4;grid-row:6;}
+.gallery-bento{grid-template-rows:360px 260px 260px 300px 260px 300px 300px;}
+.gb-item:nth-child(14){grid-column:1/3;grid-row:7;}
+.gb-item:nth-child(15){grid-column:3;grid-row:7;}
+/* Clinic video, first in the clinic gallery */
+.clinic-video{position:relative;border-radius:4px;overflow:hidden;background:#1a1019;margin-bottom:8px;aspect-ratio:16/9;width:100%;}
+.clinic-video video{display:block;width:100%;height:100%;object-fit:contain;background:#1a1019;}
+.cv-sound{position:absolute;right:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:9px 16px 9px 13px;border-radius:100px;background:rgba(15,14,15,.62);color:#fff;font-size:11px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);cursor:pointer;transition:background .2s;}
+.cv-sound:hover{background:rgba(144,69,136,.85);}
+.cv-sound .cv-wave{display:none;}
+.cv-sound[aria-pressed="true"] .cv-wave{display:inline;}
+.cv-sound[aria-pressed="true"] .cv-x{display:none;}
+@media(max-width:640px){.cv-sound{right:10px;bottom:10px;padding:7px 12px 7px 10px;font-size:10px;}}
+@media(max-width:1024px){
+  .gallery-bento{grid-template-columns:1fr 1fr!important;grid-template-rows:none!important;grid-auto-rows:240px;grid-auto-flow:row dense;}
+  .gallery-bento .gb-item{grid-row:auto!important;grid-column:auto!important;height:auto!important;}
+  .gallery-bento .gb-item:nth-child(1),.gallery-bento .gb-item:nth-child(4),.gallery-bento .gb-item:nth-child(8){grid-column:1/3!important;}
+  .gallery-bento .gb-item:nth-child(1){grid-row:span 2!important;}
+}
+@media(max-width:640px){
+  .gallery-bento{grid-template-columns:1fr!important;grid-auto-rows:220px;}
+  .gallery-bento .gb-item{grid-column:auto!important;}
+  .gallery-bento .gb-item:nth-child(1){grid-row:span 1!important;}
+  .gallery-bento .gb-item:nth-child(9){grid-row:span 2!important;}
+}
+
+/* Intro stats: 3 + 2 layout on small tablets so they never spill */
+@media(max-width:900px) and (min-width:641px){
+  .intro-strip-inner{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));border-left:1px solid var(--rule);}
+  .is-stat{grid-column:span 2;min-width:0;border-bottom:1px solid var(--rule);padding:24px 20px!important;}
+  .is-stat:nth-child(4),.is-stat:nth-child(5){grid-column:span 3;border-bottom:none;}
+}
+/* === VS OCT UPDATE END === */
 </style>
 </head>
 <body>
@@ -995,27 +1153,78 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     <img src="images/VinSmiles.png" alt="" style="height: 160px; width: auto; object-fit: contain; margin-top: -30px; margin-bottom: -30px;">
   </a>
   <ul class="nav-links">
-    <li><a href="treatments.html">Treatments</a></li>
-    <li><a href="gallery.html">Smile Gallery</a></li>
-    <li><a href="our-team.html">Our Team</a></li>
-    <li><a href="about.html" class="active">Our Story</a></li>
-    <li><a href="technology.html">Technology</a></li>
-    <li><a href="international.html">International</a></li>
-  </ul>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
+      <li class="has-dd">
+        <a href="treatments.html" aria-haspopup="true">Treatments<span class="dd-caret"></span></a>
+        <div class="dd dd-wide">
+          <div class="dd-grid">
+            <a href="treatments.html" class="dd-all">All Treatments</a>
+            <a href="dental-implants.html">Dental Implants</a>
+            <a href="smile-makeover.html">Smile Makeover & Digital Smile Design</a>
+            <a href="invisalign-clear-aligners.html">Invisalign & Clear Aligners</a>
+            <a href="veneers-lumineers.html">Porcelain Veneers & Lumineers</a>
+            <a href="crowns-bridges.html">Crowns & Bridges</a>
+            <a href="root-canal-treatment.html">Root Canal Treatment</a>
+            <a href="braces-orthodontics.html">Braces & Orthodontics</a>
+            <a href="gum-treatment.html">Gum Treatment</a>
+            <a href="wisdom-teeth-oral-surgery.html">Wisdom Teeth & Oral Surgery</a>
+            <a href="kids-dentistry.html">Kids Dentistry</a>
+            <a href="full-mouth-rehabilitation.html">Full Mouth Rehabilitation</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-dd">
+        <a href="gallery.html" aria-haspopup="true">Smile Gallery<span class="dd-caret"></span></a>
+        <div class="dd">
+          <a href="gallery.html">Photo Gallery</a>
+          <a href="video-gallery.html">Video Gallery</a>
+          <a href="testimonials.html">Testimonials</a>
+        </div>
+      </li>
+      <li><a href="our-team.html">Our Team</a></li>
+      <li><a href="about.html" class="active">Our Story</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="international.html">International</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="nav-cta" target="_blank" rel="noopener">Book Consultation</a>
   <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="treatments.html" onclick="toggleMenu()">Treatments</a>
-  <a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a>
-  <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
-  <a href="about.html" onclick="toggleMenu()">Our Story</a>
-  <a href="technology.html" onclick="toggleMenu()">Technology</a>
-  <a href="international.html" onclick="toggleMenu()">International</a>
-  <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta" onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
-</div>
+    <div class="m-group">
+      <div class="m-row"><a href="treatments.html" onclick="toggleMenu()">Treatments</a><button type="button" class="m-tog" aria-label="Show treatments" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl m-subl-tx">
+        <a href="treatments.html" onclick="toggleMenu()">All Treatments</a>
+        <a href="dental-implants.html" onclick="toggleMenu()">Dental Implants</a>
+        <a href="smile-makeover.html" onclick="toggleMenu()">Smile Makeover & Digital Smile Design</a>
+        <a href="invisalign-clear-aligners.html" onclick="toggleMenu()">Invisalign & Clear Aligners</a>
+        <a href="veneers-lumineers.html" onclick="toggleMenu()">Porcelain Veneers & Lumineers</a>
+        <a href="crowns-bridges.html" onclick="toggleMenu()">Crowns & Bridges</a>
+        <a href="root-canal-treatment.html" onclick="toggleMenu()">Root Canal Treatment</a>
+        <a href="braces-orthodontics.html" onclick="toggleMenu()">Braces & Orthodontics</a>
+        <a href="gum-treatment.html" onclick="toggleMenu()">Gum Treatment</a>
+        <a href="wisdom-teeth-oral-surgery.html" onclick="toggleMenu()">Wisdom Teeth & Oral Surgery</a>
+        <a href="kids-dentistry.html" onclick="toggleMenu()">Kids Dentistry</a>
+        <a href="full-mouth-rehabilitation.html" onclick="toggleMenu()">Full Mouth Rehabilitation</a>
+      </div>
+    </div>
+    <div class="m-group">
+      <div class="m-row"><a href="gallery.html" onclick="toggleMenu()">Smile Gallery</a><button type="button" class="m-tog" aria-label="Show gallery pages" aria-expanded="false" onclick="toggleSub(this)"></button></div>
+      <div class="m-subl">
+        <a href="gallery.html" onclick="toggleMenu()">Photo Gallery</a>
+        <a href="video-gallery.html" onclick="toggleMenu()">Video Gallery</a>
+        <a href="testimonials.html" onclick="toggleMenu()">Testimonials</a>
+      </div>
+    </div>
+    <a href="our-team.html" onclick="toggleMenu()">Our Team</a>
+    <a href="about.html" onclick="toggleMenu()">Our Story</a>
+    <a href="technology.html" onclick="toggleMenu()">Technology</a>
+    <a href="international.html" onclick="toggleMenu()">International</a>
+    <a href="blog.html" onclick="toggleMenu()">Blog</a>
+    <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="m-cta"
+      onclick="toggleMenu()" target="_blank" rel="noopener">Book Consultation</a>
+  </div>
 
 <!-- -- HERO -- -->
 <section class="about-hero">
@@ -1033,7 +1242,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
     <div class="hero-tag" style="opacity:0;animation:floatIn .7s var(--ease) .2s both;">
       <span class="hero-tag-dot"></span>
-      Practicing Since 2009 -- VIN SMILES Established 2019
+      Practicing Since 2009 · VIN SMILES Established 2019
     </div>
 
     <h1 class="hero-h1" style="opacity:0;animation:floatIn .8s var(--ease) .35s both;">
@@ -1042,7 +1251,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     </h1>
 
     <p class="hero-p" style="opacity:0;animation:floatIn .8s var(--ease) .5s both;">
-      The story of a clinic built on an uncompromising belief -- that patients deserve world-class dentistry delivered with genuine warmth, specialist expertise, and absolutely no anxiety.
+      The story of a clinic built on an uncompromising belief: that patients deserve world-class dentistry delivered with genuine warmth, specialist expertise, and absolutely no anxiety.
     </p>
 
     <div class="hero-btns" style="opacity:0;animation:floatIn .8s var(--ease) .65s both;">
@@ -1107,11 +1316,11 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <div class="portrait-accent"></div>
           <div class="portrait-name-badge">
             <div class="pnb-name">Dr. Neha <em>Sachdeva</em></div>
-            <div class="pnb-role">Founder -- Prosthodontist & Oral Implantologist</div>
+            <div class="pnb-role">Founder · Prosthodontist & Oral Implantologist</div>
           </div>
         </div>
         <div class="cred-list">
-          <div class="cred-item"><span class="cred-icon"></span>BDS, MDS -- Prosthodontics &amp; Implantology</div>
+          <div class="cred-item"><span class="cred-icon"></span>BDS, MDS · Prosthodontics &amp; Implantology</div>
           <div class="cred-item"><span class="cred-icon"></span>Clinical Research Fellowship, Bilcare Academy</div>
           <div class="cred-item"><span class="cred-icon"></span>Certified Invisalign Provider</div>
           <div class="cred-item"><span class="cred-icon"></span>Member, Indian Dental Association & Indian Prosthodontic Society</div>
@@ -1129,21 +1338,21 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         </p>
 
         <p class="story-body">
-          Dr. Neha Sachdeva has been practicing dentistry since 2009, and established VIN SMILES in 2019 with a belief that was, frankly, radical at the time: that patients should <strong>want</strong> to come to the dentist. Not reluctantly, not anxiously -- but with confidence, curiosity, and the expectation of being genuinely cared for.
+          Dr. Neha Sachdeva has been practicing dentistry since 2009, and established VIN SMILES in 2019 with a belief that was, frankly, radical at the time: that patients should <strong>want</strong> to come to the dentist. Not reluctantly, not anxiously, but with confidence, curiosity, and the expectation of being genuinely cared for.
         </p>
 
         <p class="story-body">
-          The dental sector had a problem. Not with clinical quality -- India had extraordinary dentists -- but with how care was <strong>delivered</strong>. Cold environments. Rushed consultations. Patients who left knowing what had been done to them, but not why. Dental anxiety, especially among women and children, was near-universal. VIN SMILES was built to actively alleviate dental anxiety at every step.
+          The dental sector had a problem. Not with clinical quality (India had extraordinary dentists) but with how care was <strong>delivered</strong>. Cold environments. Rushed consultations. Patients who left knowing what had been done to them, but not why. Dental anxiety, especially among women and children, was near-universal. VIN SMILES was built to actively alleviate dental anxiety at every step.
         </p>
 
         <div class="pull-quote">
           <div class="pull-quote-mark">"</div>
-          <div class="pull-quote-text">I founded VIN SMILES to do two things -- change how people feel about dentists, and show what women in dentistry can achieve.</div>
-          <div class="pull-quote-attr">Dr. Neha Sachdeva -- Founder &amp; Lead Prosthodontist</div>
+          <div class="pull-quote-text">I founded VIN SMILES to do two things: change how people feel about dentists, and show what women in dentistry can achieve.</div>
+          <div class="pull-quote-attr">Dr. Neha Sachdeva, Founder &amp; Lead Prosthodontist</div>
         </div>
 
         <p class="story-body">
-          Today, VIN SMILES is South Delhi's most trusted specialist dental practice -- a clinic where 11 specialists work under one roof, where technology is deployed not to impress but to serve precision, and where every patient walks out knowing exactly what their smile journey looks like.
+          Today, VIN SMILES is South Delhi's most trusted specialist dental practice, a clinic where specialists across every discipline work under one roof, where technology is deployed not to impress but to serve precision, and where every patient walks out knowing exactly what their smile journey looks like.
         </p>
 
         <p class="story-body">
@@ -1169,7 +1378,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   <div class="timeline-header container reveal">
     <div class="eyebrow" style="justify-content:center;"><div class="eyebrow-bar"></div><span class="eyebrow-txt">Our Journey</span></div>
     <h2 class="s-title">A Journey of <em>Growth</em></h2>
-    <p style="font-size:14px;font-weight:300;color:var(--ink-60);margin-top:14px;line-height:1.7;">Navigate our milestones through the anatomy of a tooth -- from founding roots to the crown of where we are today.</p>
+    <p style="font-size:14px;font-weight:300;color:var(--ink-60);margin-top:14px;line-height:1.7;">Navigate our milestones through the anatomy of a tooth, from founding roots to the crown of where we are today.</p>
   </div>
 
   <div class="tooth-journey">
@@ -1353,8 +1562,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-year-big">2009</span>
           <span class="tj-badge">Practice Begins</span>
           <h3 class="tj-title">Dr. Neha <em>Begins Practice in GK&#8209;2</em></h3>
-          <p class="tj-desc">Dr. Neha Sachdeva begins her clinical journey in South Delhi with a clear mission -- anxiety-free, specialist-grade dentistry. That philosophy later led to VIN SMILES being formally established in 2019.</p>
-          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Root Tip -- Where every great thing begins</div>
+          <p class="tj-desc">Dr. Neha Sachdeva begins her clinical journey in South Delhi with a clear mission: anxiety-free, specialist-grade dentistry. That philosophy later led to VIN SMILES being formally established in 2019.</p>
+          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Root Tip: Where every great thing begins</div>
           <div class="tj-dots" id="tjDots"></div>
         </div>
 
@@ -1363,8 +1572,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-year-big">2008</span>
           <span class="tj-badge">Growth</span>
           <h3 class="tj-title">Multi-Specialty <em>Expansion</em></h3>
-          <p class="tj-desc">First specialist hires -- an Orthodontist and a Periodontist join the practice. VIN SMILES becomes a true multi-specialty clinic, meaning patients receive each procedure from someone whose entire training was dedicated to that discipline.</p>
-          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Root -- Building the foundation</div>
+          <p class="tj-desc">First specialist hires: an Orthodontist and a Periodontist join the practice. VIN SMILES becomes a true multi-specialty clinic, meaning patients receive each procedure from someone whose entire training was dedicated to that discipline.</p>
+          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Root: Building the foundation</div>
           <div class="tj-dots" id="tjDots1"></div>
         </div>
 
@@ -1373,8 +1582,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-year-big">2011</span>
           <span class="tj-badge">Innovation</span>
           <h3 class="tj-title">Advanced Technology <em>Adopted</em></h3>
-          <p class="tj-desc">First clinic in GK-2 to introduce digital imaging and CBCT 3D scanning. Diagnostic accuracy is transformed overnight. Implant planning, bone assessment, and complex diagnosis now operate at a standard most South Delhi clinics wouldn't reach for another decade.</p>
-          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Root Canal -- Precision at the core</div>
+          <p class="tj-desc">First clinic in GK-2 to introduce digital imaging and CBCT-based 3D planning. Diagnostic accuracy is transformed overnight. Implant planning, bone assessment, and complex diagnosis now operate at a standard most South Delhi clinics wouldn't reach for another decade.</p>
+          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Root Canal: Precision at the core</div>
           <div class="tj-dots" id="tjDots2"></div>
         </div>
 
@@ -1383,8 +1592,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-year-big">2014</span>
           <span class="tj-badge">Certification</span>
           <h3 class="tj-title">Certified <em>Invisalign Provider</em></h3>
-          <p class="tj-desc">VIN SMILES becomes one of the first certified Invisalign providers in South Delhi. The clear aligner programme launches and is immediately in high demand -- straightening without wire, discomfort, or self-consciousness.</p>
-          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Neck -- Connecting what came before to what follows</div>
+          <p class="tj-desc">VIN SMILES becomes one of the first certified Invisalign providers in South Delhi. The clear aligner programme launches and is immediately in high demand, straightening without wire, discomfort, or self-consciousness.</p>
+          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Neck: Connecting what came before to what follows</div>
           <div class="tj-dots" id="tjDots3"></div>
         </div>
 
@@ -1394,7 +1603,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-badge">Precision</span>
           <h3 class="tj-title">Laser Dentistry <em>Programme Launched</em></h3>
           <p class="tj-desc">Triple wavelength diode laser integrated into the practice. Gum contouring, depigmentation, crown lengthening, and laser whitening become part of the standard treatment menu. Patient comfort scores rise sharply. Anxiety around procedures drops significantly.</p>
-          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Dentin -- Strength beneath the surface</div>
+          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Dentin: Strength beneath the surface</div>
           <div class="tj-dots" id="tjDots4"></div>
         </div>
 
@@ -1403,8 +1612,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-year-big">2018</span>
           <span class="tj-badge">Experience</span>
           <h3 class="tj-title">Smile Makeover Planning <em>Introduced</em></h3>
-          <p class="tj-desc">The DSD workflow changes everything about the consultation. Patients see their final smile before a single procedure begins. The guesswork is gone -- replaced by a digital blueprint, patient-approved, that guides every step of the treatment.</p>
-          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Pulp -- The living heart of the tooth</div>
+          <p class="tj-desc">The DSD workflow changes everything about the consultation. Patients see their final smile before a single procedure begins. The guesswork is gone, replaced by a digital blueprint, patient-approved, that guides every step of the treatment.</p>
+          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Pulp: The living heart of the tooth</div>
           <div class="tj-dots" id="tjDots5"></div>
         </div>
 
@@ -1413,8 +1622,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-year-big">2020</span>
           <span class="tj-badge gold">Milestone</span>
           <h3 class="tj-title">1,000 Smile <em>Transformations</em></h3>
-          <p class="tj-desc">The 1,000th complete smile makeover is delivered. The international patient programme is formalised -- creating a structured pathway for NRI and global patients to receive world-class care in Delhi. Patients arrive from the UK, UAE, USA, and Australia.</p>
-          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Enamel -- The visible layer of excellence</div>
+          <p class="tj-desc">The 1,000th complete smile makeover is delivered. The international patient programme is formalised, creating a structured pathway for NRI and global patients to receive world-class care in Delhi. Patients arrive from the UK, UAE, USA, and Australia.</p>
+          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Enamel: The visible layer of excellence</div>
           <div class="tj-dots" id="tjDots6"></div>
         </div>
 
@@ -1424,7 +1633,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-badge">Technology</span>
           <h3 class="tj-title">iTero Scanner &amp; <em>Painless Anaesthesia</em></h3>
           <p class="tj-desc">Two transformative systems added: the iTero intraoral scanner eliminates messy impressions entirely, and The Wand STA system delivers virtually painless anaesthesia through computer-controlled pressure. Anxiety around treatment reaches an all-time low.</p>
-          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Crown Cusps -- The functional peaks</div>
+          <div class="tj-anatomy-tag"><span class="tj-anatomy-tag-dot"></span>Crown Cusps: The functional peaks</div>
           <div class="tj-dots" id="tjDots7"></div>
         </div>
 
@@ -1433,8 +1642,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           <span class="tj-year-big">2026</span>
           <span class="tj-badge gold">Today</span>
           <h3 class="tj-title">South Delhi&rsquo;s <em>Premier Destination</em></h3>
-          <p class="tj-desc">11 specialists. 2,000+ smile transformations. Patients from 15+ countries. A five-star rating across every platform. From Dr. Neha's practice beginning in 2009 to VIN SMILES being established in 2019 -- this is the clinic that set the standard for what dentistry in South Delhi should look like.</p>
-          <div class="tj-anatomy-tag" style="background:rgba(201,169,110,.12);border-color:rgba(201,169,110,.3);color:var(--gold-dark);"><span class="tj-anatomy-tag-dot" style="background:var(--gold);"></span>Crown Apex -- The highest point, hard-earned</div>
+          <p class="tj-desc">A full specialist team. 2,000+ smile transformations. Patients from 15+ countries. A five-star rating across every platform. From Dr. Neha's practice beginning in 2009 to VIN SMILES being established in 2019: this is the clinic that set the standard for what dentistry in South Delhi should look like.</p>
+          <div class="tj-anatomy-tag" style="background:rgba(201,169,110,.12);border-color:rgba(201,169,110,.3);color:var(--gold-dark);"><span class="tj-anatomy-tag-dot" style="background:var(--gold);"></span>Crown Apex: The highest point, hard-earned</div>
           <div class="tj-dots" id="tjDots8"></div>
         </div>
 
@@ -1452,7 +1661,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
       <div class="philosophy-intro-num">3</div>
       <h2 class="s-title on-dark reveal-left">The VIN SMILES <em>Philosophy</em></h2>
       <p style="font-size:15px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.85;margin-top:20px;position:relative;z-index:1;" class="reveal-left d1">
-        Three beliefs that shape every decision we make -- from how we hire specialists to how we design every appointment.
+        Three beliefs that shape every decision we make, from how we hire specialists to how we design every appointment.
       </p>
     </div>
 
@@ -1467,7 +1676,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           </svg>
         </div>
         <div class="pillar-title">Comfort First</div>
-        <div class="pillar-desc">Dental anxiety is real -- and preventable. Every aspect of VIN SMILES is engineered to remove it. From the clinic's lighting and interiors to the way consultations are conducted, comfort is non-negotiable before clinical excellence is even discussed.</div>
+        <div class="pillar-desc">Dental anxiety is real, and preventable. Every aspect of VIN SMILES is engineered to remove it. From the clinic's lighting and interiors to the way consultations are conducted, comfort is non-negotiable before clinical excellence is even discussed.</div>
       </div>
 
       <div class="pillar reveal d2">
@@ -1480,7 +1689,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           </svg>
         </div>
         <div class="pillar-title">Specialist Excellence</div>
-        <div class="pillar-desc">No generalists. Every treatment at VIN SMILES is performed by a specialist -- someone who has trained specifically in that discipline and does it every day. Your implant is placed by an implantologist. Your aligners are monitored by an orthodontist.</div>
+        <div class="pillar-desc">No generalists. Every treatment at VIN SMILES is performed by a specialist, someone who has trained specifically in that discipline and does it every day. Your implant is placed by an implantologist. Your aligners are monitored by an orthodontist.</div>
       </div>
 
       <div class="pillar reveal d3">
@@ -1493,7 +1702,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
           </svg>
         </div>
         <div class="pillar-title">Technology Forward</div>
-        <div class="pillar-desc">Every procedure we offer is backed by the diagnostic and treatment technology it deserves. CBCT imaging. Digital Smile Design. Intraoral scanning. Laser precision. Not as features -- as the standard of care every patient should expect.</div>
+        <div class="pillar-desc">Every procedure we offer is backed by the diagnostic and treatment technology it deserves. CBCT-guided planning. Digital Smile Design. Intraoral scanning. Laser precision. Not as features, as the standard of care every patient should expect.</div>
       </div>
 
     </div>
@@ -1508,20 +1717,20 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <div class="eyebrow"><div class="eyebrow-bar"></div><span class="eyebrow-txt">Our Specialists</span></div>
         <h2 class="s-title">The Team Behind <em>Every Smile</em></h2>
       </div>
-      <p class="team-header-right">Ten specialists. One clinic. Every discipline covered by someone who has spent their career perfecting exactly that procedure.</p>
+      <p class="team-header-right">Specialists only. One clinic. Every discipline covered by someone who has spent their career perfecting exactly that procedure.</p>
     </div>
 
     <div class="team-grid">
 
       <div class="doctor-card reveal" style="--photo-bg:linear-gradient(160deg,#f0e6ef 0%,#dcc5d8 100%);">
         <div class="doctor-photo">
-          <img src="images/Our Story Page/Our Story Team Members Images/1 Dr. Shincy Anthony.jpg" alt="Dr. Shincy Anthony" loading="lazy">
-          <div class="doc-specialty-chip">Endodontist</div>
+          <img src="images/Our Story Page/Our Story Team Members Images/2 Dr. Sombir Singh.jpg" alt="Dr. Sombir Singh" loading="lazy">
+          <div class="doc-specialty-chip">Orthodontist</div>
         </div>
         <div class="doctor-info">
-          <div class="doc-name">Dr. Shincy Anthony</div>
-          <div class="doc-role">MDS -- Endodontist</div>
-          <div class="doc-bio">Specialist in conservative dentistry and endodontics, focused on precise and gentle root canal care with modern protocols.</div>
+          <div class="doc-name">Dr. Sombir Singh</div>
+          <div class="doc-role">MDS · Orthodontist</div>
+          <div class="doc-bio">Expert in comprehensive alignment and bite correction with evidence-based orthodontic planning for teens and adults.</div>
           <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -1530,13 +1739,13 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
 
       <div class="doctor-card reveal d1" style="--photo-bg:linear-gradient(135deg,#ede0ec 0%,#d4b8cf 100%);">
         <div class="doctor-photo">
-          <img src="images/Our Story Page/Our Story Team Members Images/2 Dr. Sombir Singh.jpg" alt="Dr. Sombir Singh" loading="lazy">
-          <div class="doc-specialty-chip">Orthodontist</div>
+          <img src="images/Our Story Page/Our Story Team Members Images/1 Dr. Shincy Anthony.jpg" alt="Dr. Shincy Anthony" loading="lazy">
+          <div class="doc-specialty-chip">Endodontist</div>
         </div>
         <div class="doctor-info">
-          <div class="doc-name">Dr. Sombir Singh</div>
-          <div class="doc-role">MDS -- Orthodontist</div>
-          <div class="doc-bio">Expert in comprehensive alignment and bite correction with evidence-based orthodontic planning for teens and adults.</div>
+          <div class="doc-name">Dr. Shincy Anthony</div>
+          <div class="doc-role">MDS · Endodontist</div>
+          <div class="doc-bio">Specialist in conservative dentistry and endodontics, focused on precise and gentle root canal care with modern protocols.</div>
           <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -1550,7 +1759,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         </div>
         <div class="doctor-info">
           <div class="doc-name">Dr. Varun Suhag</div>
-          <div class="doc-role">MDS -- Periodontist & Laser Dentist</div>
+          <div class="doc-role">MDS · Periodontist & Laser Dentist</div>
           <div class="doc-bio">Specialist in gum therapies, laser-assisted periodontal procedures, and cosmetic gum contouring with minimally invasive care.</div>
           <a href="our-team.html" class="doc-link">Full Profile
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1595,6 +1804,14 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
       <p style="font-size:14px;font-weight:300;color:var(--ink-60);max-width:340px;line-height:1.8;text-align:right;">Designed to be calm, not clinical. Every room is an extension of the VIN SMILES philosophy.</p>
     </div>
 
+    <div class="clinic-video reveal">
+      <video id="clinicVideo" src="images/Our Story Page/Clinic/clinic-video.mp4" poster="images/Our Story Page/Clinic/clinic-video-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="A walk through the VIN SMILES clinic"></video>
+      <button class="cv-sound" type="button" onclick="cvSound(this)" aria-pressed="false">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 6h2.5L8 3v10L4.5 10H2z" fill="currentColor"/><path class="cv-wave" d="M10.5 5.5a3.5 3.5 0 010 5M12.5 3.5a6.5 6.5 0 010 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path class="cv-x" d="M11 6l4 4M15 6l-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        <span>Sound on</span>
+      </button>
+    </div>
+
     <div class="gallery-bento reveal reveal-d1">
       <div class="gb-item">
         <div class="gb-bg"></div>
@@ -1620,7 +1837,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <div class="gb-num">03</div>
         <div class="gb-caption">
           <div class="gb-caption-title">Consultation Room</div>
-          <div class="gb-caption-sub">A dedicated space for honest conversations -- not a chair with a drill in sight</div>
+          <div class="gb-caption-sub">A dedicated space for honest conversations · not a chair with a drill in sight</div>
         </div>
       </div>
       <div class="gb-item">
@@ -1628,8 +1845,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <div class="gb-overlay"></div>
         <div class="gb-num">04</div>
         <div class="gb-caption">
-          <div class="gb-caption-title">Digital Imaging Suite</div>
-          <div class="gb-caption-sub">CBCT and intraoral scanner in a dedicated diagnostics room</div>
+          <div class="gb-caption-title">Digital Diagnostics</div>
+          <div class="gb-caption-sub">Intraoral scanning and digital planning in a dedicated room</div>
         </div>
       </div>
       <div class="gb-item">
@@ -1637,8 +1854,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <div class="gb-overlay"></div>
         <div class="gb-num">05</div>
         <div class="gb-caption">
-          <div class="gb-caption-title">Clinic Exterior</div>
-          <div class="gb-caption-sub">Ground floor entry, S-Block Market Lane, Greater Kailash II</div>
+          <div class="gb-caption-title">Clinic Entrance</div>
+          <div class="gb-caption-sub">A calm, welcoming first step inside</div>
         </div>
       </div>
       <div class="gb-item">
@@ -1657,6 +1874,78 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <div class="gb-caption">
           <div class="gb-caption-title">Sterilization &amp; Prep</div>
           <div class="gb-caption-sub">Behind-the-scenes precision that supports every procedure</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-08.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">08</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Waiting Lounge</div>
+          <div class="gb-caption-sub">Soft seating and warm light for an unhurried arrival</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-09.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">09</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Front Desk</div>
+          <div class="gb-caption-sub">Where every visit begins, with a welcome by name</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-10.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">10</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Consultation Room</div>
+          <div class="gb-caption-sub">A quiet space to talk through your options</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-11.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">11</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Clinic Corridor</div>
+          <div class="gb-caption-sub">Calm, uncluttered spaces from door to chair</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-12.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">12</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Doctor&#39;s Desk</div>
+          <div class="gb-caption-sub">Treatment plans explained clearly, one step at a time</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-13.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">13</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Consultation Suite</div>
+          <div class="gb-caption-sub">Bright, private and designed for honest conversations</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-14.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">14</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Patient Lounge</div>
+          <div class="gb-caption-sub">A calm place to settle in before your appointment</div>
+        </div>
+      </div>
+      <div class="gb-item">
+        <div class="gb-bg" style="background-image:url('images/Our Story Page/Clinic/clinic-15.jpg')"></div>
+        <div class="gb-overlay"></div>
+        <div class="gb-num">15</div>
+        <div class="gb-caption">
+          <div class="gb-caption-title">Private Treatment Suite</div>
+          <div class="gb-caption-sub">Glass-walled, quiet and fully equipped</div>
         </div>
       </div>
     </div>
@@ -1744,7 +2033,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   <div class="about-cta-inner">
     <div class="cta-eyebrow">Ready to Begin</div>
     <h2 class="cta-h2">Come and See What<br><em>Dentistry Can Feel Like</em></h2>
-    <p class="cta-p">Book a consultation -- no pressure, no commitment. Just an honest conversation about your smile with a specialist who has spent two decades doing exactly this.</p>
+    <p class="cta-p">Book a consultation: no pressure, no commitment. Just an honest conversation about your smile with a specialist who has spent two decades doing exactly this.</p>
     <div class="cta-btns">
       <a href="https://api.whatsapp.com/send/?phone=919654988858&text&type=phone_number&app_absent=0" class="btn-white" target="_blank" rel="noopener">
         Book a Consultation
@@ -1763,7 +2052,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
   <div class="footer-top">
     <div>
       <img src="images/VinSmiles.png" alt="" style="height: 120px; width: auto; object-fit: contain; filter: brightness(0) invert(1);">
-      <div class="f-addr">Greater Kailash II, New Delhi - 110048<br>Near M-Block Market, GK-2</div>
+      <div class="f-addr">303 Basement, Block S,<br>Greater Kailash II, New Delhi, Delhi 110048</div>
       <div class="f-contacts">
         <a href="tel:+919654988858"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h3l1.5 3.5-1.8 1.1c.9 1.8 2.2 3.1 4 4l1.1-1.8L13 10v3c0 .6-.5 1-1 .9C3.4 13.2.8 10.6.1 3A1 1 0 012 2z" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+91 96549 88858</a>
         <a href="mailto:vinsmiles88@gmail.com"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="3" width="11" height="8" rx="1.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/><path d="M1.5 4.5L7 8l5.5-3.5" stroke="rgba(255,255,255,.35)" stroke-width="1.2" stroke-linecap="round"/></svg>vinsmiles88@gmail.com</a>
@@ -1786,11 +2075,12 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
     <div>
       <div class="f-col-title">Treatments</div>
       <ul class="f-links">
-        <li><a href="treatments.html">Dental Implants</a></li>
-        <li><a href="treatments.html">Smile Design</a></li>
-        <li><a href="treatments.html">Invisalign</a></li>
-        <li><a href="treatments.html">Veneers</a></li>
-        <li><a href="treatments.html">Full Mouth Rehab</a></li>
+          <li><a href="dental-implants.html">Dental Implants</a></li>
+          <li><a href="smile-makeover.html">Smile Makeover</a></li>
+          <li><a href="invisalign-clear-aligners.html">Invisalign</a></li>
+          <li><a href="veneers-lumineers.html">Veneers</a></li>
+          <li><a href="full-mouth-rehabilitation.html">Full Mouth Rehab</a></li>
+
       </ul>
     </div>
     <div>
@@ -1800,6 +2090,8 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
         <li><a href="our-team.html">Our Team</a></li>
         <li><a href="technology.html">Technology</a></li>
         <li><a href="gallery.html">Smile Gallery</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
       </ul>
     </div>
     <div>
@@ -1811,7 +2103,7 @@ footer { background:#0F0E0F; border-top:1px solid rgba(255,255,255,.04); }
       </ul>
       <div class="f-hours">
         <div class="f-hours-label">Hours</div>
-        <div class="f-hours-val">Mon - Sat: 10am - 7pm<br>Sunday: By appointment</div>
+        <div class="f-hours-val">Mon, Wed - Sat: 10am - 8pm<br>Sunday: 10am - 7pm<br>Tuesday: Closed</div>
       </div>
     </div>
   </div>
@@ -1975,6 +2267,13 @@ const autoObs = new IntersectionObserver(entries => {
 const tj = document.querySelector('.tooth-journey');
 if (tj) autoObs.observe(tj);
 </script>
+<script>
+function cvSound(b){var v=document.getElementById('clinicVideo');if(!v)return;v.muted=!v.muted;if(!v.muted){v.volume=1;v.play();}b.setAttribute('aria-pressed',v.muted?'false':'true');b.querySelector('span').textContent=v.muted?'Sound on':'Sound off';}
+</script>
+<!-- VS NAV JS START -->
+<script>function toggleSub(b){var g=b.closest('.m-group');var o=g.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}
+</script>
+<!-- VS NAV JS END -->
 </body>
 </html>
 
